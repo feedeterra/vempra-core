@@ -1,0 +1,64 @@
+/* checkout.css — snippets 59, 63 y 64 */
+
+/* snippet 59: Checkout a dos columnas */
+@media (min-width: 769px) {
+        .woocommerce-checkout #customer_details,
+        .woocommerce-checkout #customer_details + div {
+            float: left !important;
+            clear: left !important;
+            width: 52% !important;
+            box-sizing: border-box !important;
+        }
+        .woocommerce-checkout #customer_details .col-1,
+        .woocommerce-checkout #customer_details .col-2 {
+            float: none !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        .woocommerce-checkout #order_review_heading,
+        .woocommerce-checkout #order_review {
+            float: right !important;
+            width: 44% !important;
+            clear: right !important;
+        }
+        .woocommerce-checkout form.checkout::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+/* snippet 63: Compactar y alinear el detalle de cada ítem en el resumen del checkout. */
+#order_review .variation{ margin:6px 0 0; }
+    #order_review .variation dt,
+    #order_review .variation dd{
+        display:inline; margin:0; padding:0;
+        font-weight:400; line-height:1.5;
+    }
+    #order_review .variation dt{ font-weight:600; }
+    #order_review .variation dd p{ display:inline; margin:0; }
+    /* salto de línea entre cada par dato:valor */
+    #order_review .variation dd::after{ content:""; display:block; }
+    #order_review td.product-name{ line-height:1.5; }
+
+/* snippet 64: Checkout compacto + botón "Ir a pagar" tras las notas. */
+#customer_details .form-row{ margin-bottom:10px !important; padding-top:0 !important; padding-bottom:0 !important; }
+  #customer_details .col-1, #customer_details .col-2{ padding:0 !important; }
+  #customer_details label{ margin-bottom:5px !important; }
+  #customer_details h3, .woocommerce-additional-fields h3{ margin:14px 0 8px !important; }
+  .vempra-ir-pago{ display:block; text-align:center; background:#B85C38; color:#fff !important; padding:15px 20px; border-radius:8px; font-weight:700; text-decoration:none; margin:18px 0 0; font-size:1.05em; }
+  .vempra-ir-pago:hover{ background:#a04e2f; color:#fff !important; }
+
+/* ===== snippets 58, 60 y 65: cartel del asesor, sellos y cupon (antes eran estilos inline) ===== */
+.vempra-aviso-asesor{margin:24px 0;padding:22px 24px;background:#F5F0E6;border-left:5px solid #5B0B2B;border-radius:8px}
+.vempra-aviso-asesor h3{margin:0 0 10px;color:#5B0B2B;font-size:1.2em}
+.vempra-aviso-asesor p{margin:0;color:#3a3a3a;line-height:1.6}
+.vempra-aviso-gracias{margin:0 0 28px}
+.vempra-aviso-gracias h3{font-size:1.25em}
+.vempra-sellos{margin:0 0 16px;padding:14px 16px;background:#fff;border:1px solid #e6ddd0;border-radius:8px}
+.vempra-sellos-lista{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:center;text-align:center;font-size:.9em;color:#5B0B2B;line-height:1.4}
+.vempra-sellos-lista span{white-space:nowrap}
+.vempra-cupon{margin:0 0 18px;padding:14px 16px;background:#F5F0E6;border-radius:8px}
+.vempra-cupon label{display:block;margin-bottom:8px;color:#5B0B2B;font-weight:600}
+.vempra-cupon-fila{display:flex;gap:8px}
+.vempra-cupon-fila input{flex:1;min-width:0}

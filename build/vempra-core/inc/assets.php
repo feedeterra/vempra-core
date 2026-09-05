@@ -143,6 +143,36 @@ add_action( 'wp_enqueue_scripts', function () {
 		wp_enqueue_script( 'vempra-ux', vempra_asset_url( 'ux.js' ), array(), null, true );
 	}
 
+	// Lo que salio de Code Snippets en la 1.9.0. Un solo CSS para todo el
+	// sitio (portada, pie, paginas, legales, blog) y un JS chico con el
+	// slider de resenas y los detalles de Preguntas frecuentes y Contacto.
+	if ( file_exists( VEMPRA_CORE_DIR . 'assets/sitio.css' ) ) {
+		wp_enqueue_style( 'vempra-sitio', vempra_asset_url( 'sitio.css' ), array( 'vempra-core' ), null );
+	}
+	if ( file_exists( VEMPRA_CORE_DIR . 'assets/sitio.js' ) ) {
+		wp_enqueue_script( 'vempra-sitio', vempra_asset_url( 'sitio.js' ), array(), null, true );
+	}
+
+	// La pagina Tours en Mendoza (331): filtros y orden de las tarjetas.
+	if ( is_page( 331 ) && file_exists( VEMPRA_CORE_DIR . 'assets/tienda.js' ) ) {
+		wp_enqueue_script( 'vempra-tienda', vempra_asset_url( 'tienda.js' ), array(), null, true );
+	}
+
+	// Checkout y pedido recibido.
+	if ( function_exists( 'is_checkout' ) && is_checkout() ) {
+		if ( file_exists( VEMPRA_CORE_DIR . 'assets/checkout.css' ) ) {
+			wp_enqueue_style( 'vempra-checkout', vempra_asset_url( 'checkout.css' ), array(), null );
+		}
+		if ( file_exists( VEMPRA_CORE_DIR . 'assets/checkout.js' ) ) {
+			wp_enqueue_script( 'vempra-checkout', vempra_asset_url( 'checkout.js' ), array( 'jquery' ), null, true );
+		}
+	}
+
+	// Fichas de tour: badges de confianza, FAQ de compra y "Valor".
+	if ( is_singular( VEMPRA_TOUR_CPT ) && file_exists( VEMPRA_CORE_DIR . 'assets/tour-extras.js' ) ) {
+		wp_enqueue_script( 'vempra-tour-extras', vempra_asset_url( 'tour-extras.js' ), array(), null, true );
+	}
+
 	if ( ! vempra_ficha_optimizada() ) { return; }
 
 	$js = VEMPRA_CORE_DIR . 'assets/vempra.js';

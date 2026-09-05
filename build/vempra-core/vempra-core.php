@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:  Vempra Core
- * Description:  Personalizaciones de Vempra en archivos versionados: precio unico leido de WooCommerce, CSS y JavaScript de la ficha.
- * Version:      1.8.0
+ * Description:  La tienda de Vempra en codigo: precios, textos, portada, pie, checkout, fichas y todo lo que antes vivia en Code Snippets.
+ * Version:      1.9.0
  * Author:       Vempra
  * Text Domain:  vempra-core
  * Requires PHP: 7.4
@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'VEMPRA_CORE_VERSION', '1.8.0' );
+define( 'VEMPRA_CORE_VERSION', '1.9.0' );
 define( 'VEMPRA_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'VEMPRA_CORE_URL', plugin_dir_url( __FILE__ ) );
 
@@ -31,6 +31,12 @@ require_once VEMPRA_CORE_DIR . 'inc/accesibilidad.php';
 require_once VEMPRA_CORE_DIR . 'inc/actualizador.php';
 require_once VEMPRA_CORE_DIR . 'inc/assets.php';
 require_once VEMPRA_CORE_DIR . 'inc/frontend.php';
+require_once VEMPRA_CORE_DIR . 'inc/sitio.php';
+require_once VEMPRA_CORE_DIR . 'inc/portada.php';
+require_once VEMPRA_CORE_DIR . 'inc/paginas.php';
+require_once VEMPRA_CORE_DIR . 'inc/tours.php';
+require_once VEMPRA_CORE_DIR . 'inc/tienda.php';
+require_once VEMPRA_CORE_DIR . 'inc/snippets.php';
 
 /**
  * WooCommerce es imprescindible: sin el no hay de donde leer los precios.

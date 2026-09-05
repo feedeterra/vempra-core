@@ -1,0 +1,3898 @@
+/* sitio.css — CSS que vivia en Code Snippets. Cada bloque dice de que snippet salio. */
+
+/* ===== snippet 54: banner temporada nieve (prioridad 20) ===== */
+.vempra-nieve-banner{background:#F5F0E6;border-top:3px solid #5B0B2B;border-bottom:1px solid rgba(91,11,43,.12);font-family:'Inter Tight',system-ui,sans-serif}
+    .vempra-nieve-banner .vnb-inner{max-width:1200px;margin:0 auto;padding:26px 40px 18px;display:flex;align-items:center;gap:40px}
+    .vempra-nieve-banner .vnb-text{flex:1 1 auto}
+    .vempra-nieve-banner .vnb-photo{flex:0 0 40%;aspect-ratio:17/10;border-radius:14px;background:#dcd6c9 url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/banner-foto.jpg') center/cover no-repeat}
+    .vempra-nieve-banner .vnb-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B85C38;margin-bottom:10px}
+    .vempra-nieve-banner .vnb-title{font-family:'Bodoni Moda','Playfair Display',Georgia,serif;color:#5B0B2B;font-size:32px;line-height:1.08;margin:0 0 10px;font-weight:600}
+    .vempra-nieve-banner .vnb-sub{color:#7a565e;font-size:15px;line-height:1.5;margin:0 0 18px;max-width:480px}
+    .vempra-nieve-banner .vnb-cta{display:inline-flex;align-items:center;gap:10px;background:#B85C38;color:#F5F0E6;text-decoration:none;font-weight:700;font-size:15px;padding:14px 28px;border-radius:999px;box-shadow:0 6px 18px rgba(184,92,56,.32);transition:transform .2s ease}
+    .vempra-nieve-banner .vnb-cta:hover{transform:translateY(-2px);color:#F5F0E6}
+    @media(max-width:768px){
+      .vempra-nieve-banner .vnb-inner{flex-direction:column;align-items:stretch;padding:0;gap:0}
+      .vempra-nieve-banner .vnb-photo{order:-1;flex-basis:auto;width:100%;border-radius:0;aspect-ratio:17/10}
+      .vempra-nieve-banner .vnb-text{padding:24px 22px}
+      .vempra-nieve-banner .vnb-title{font-size:26px}
+      .vempra-nieve-banner .vnb-cta{width:100%;justify-content:center}
+    }
+
+/* ===== snippet 16: boton whatsapp (prioridad 99) ===== */
+.vempra-wa-floating {
+        position: fixed !important;
+        bottom: 24px !important;
+        right: 24px !important;
+        z-index: 9999 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        transition: transform 0.3s ease !important;
+      }
+      .vempra-wa-floating:hover {
+        transform: scale(1.05) translateY(-2px) !important;
+        text-decoration: none !important;
+      }
+      .vempra-wa-floating-tooltip {
+        background-color: #ffffff !important;
+        color: #5B0B2B !important;
+        font-family: "Playfair Display", Georgia, serif !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        padding: 10px 16px !important;
+        border-radius: 24px !important;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15) !important;
+        white-space: nowrap !important;
+        opacity: 0 !important;
+        transform: translateX(10px) !important;
+        transition: all 0.3s ease !important;
+        pointer-events: none !important;
+      }
+      .vempra-wa-floating:hover .vempra-wa-floating-tooltip {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+      }
+      .vempra-wa-floating-icon {
+        width: 60px !important;
+        height: 60px !important;
+        background-color: #25D366 !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 4px 14px rgba(37,211,102,0.4) !important;
+        animation: vempra-wa-pulse 2s infinite !important;
+      }
+      .vempra-wa-floating-icon svg {
+        width: 32px !important;
+        height: 32px !important;
+        display: block !important;
+      }
+      @keyframes vempra-wa-pulse {
+        0%, 100% { box-shadow: 0 4px 14px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.6); }
+        50% { box-shadow: 0 4px 14px rgba(37,211,102,0.4), 0 0 0 12px rgba(37,211,102,0); }
+      }
+      @media (max-width: 768px) {
+        .vempra-wa-floating { bottom: 18px !important; right: 18px !important; }
+        .vempra-wa-floating-icon { width: 54px !important; height: 54px !important; }
+        .vempra-wa-floating-icon svg { width: 28px !important; height: 28px !important; }
+        .vempra-wa-floating-tooltip { display: none !important; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .vempra-wa-floating-icon { animation: none !important; }
+      }
+
+/* ===== snippet 43: formato paginas legales (prioridad 99) ===== */
+/* === Banner del título superior === */
+    .vempra-legal-page .page_title_wrapper {
+        background: #5B0B2B !important;
+        padding: 70px 20px !important;
+    }
+    .vempra-legal-page .page_title_content h1 {
+        font-family: 'Bodoni Moda', Georgia, serif !important;
+        font-size: 44px !important;
+        font-weight: 500 !important;
+        color: #F5F0E6 !important;
+        letter-spacing: -0.5px !important;
+        line-height: 1.15 !important;
+    }
+
+    /* === Cuerpo del page === */
+    .vempra-legal-page #page_content_wrapper {
+        background: #F5F0E6 !important;
+        padding: 0 !important;
+    }
+    .vempra-legal-page #page_content_wrapper .inner {
+        max-width: 800px !important;
+        margin: 60px auto !important;
+        padding: 60px 50px !important;
+        background: #fff !important;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.05) !important;
+    }
+
+    /* Párrafos */
+    .vempra-legal-page #page_content_wrapper p {
+        font-family: 'Inter Tight', -apple-system, sans-serif !important;
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+        color: #3A3833 !important;
+        margin: 0 0 16px 0 !important;
+    }
+
+    /* H2 secciones */
+    .vempra-legal-page #page_content_wrapper h2,
+    .vempra-legal-page #page_content_wrapper h2.wp-block-heading {
+        font-family: 'Bodoni Moda', Georgia, serif !important;
+        font-size: 24px !important;
+        font-weight: 500 !important;
+        color: #5B0B2B !important;
+        margin: 48px 0 18px 0 !important;
+        padding-top: 28px !important;
+        border-top: 1px solid #E5DDD0 !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.2px !important;
+    }
+    .vempra-legal-page #page_content_wrapper h2:first-of-type,
+    .vempra-legal-page #page_content_wrapper h2.wp-block-heading:first-of-type {
+        border-top: none !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* H3 sub-secciones */
+    .vempra-legal-page #page_content_wrapper h3,
+    .vempra-legal-page #page_content_wrapper h3.wp-block-heading {
+        font-family: 'Inter Tight', sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #1A1A1A !important;
+        margin: 28px 0 10px 0 !important;
+    }
+
+    /* Strong / em */
+    .vempra-legal-page #page_content_wrapper strong {
+        color: #1A1A1A !important;
+        font-weight: 600 !important;
+    }
+    .vempra-legal-page #page_content_wrapper em {
+        font-style: italic !important;
+        color: #6A655E !important;
+        display: inline-block !important;
+        margin-bottom: 24px !important;
+        font-size: 13px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* Listas */
+    .vempra-legal-page #page_content_wrapper ul {
+        margin: 0 0 24px 0 !important;
+        padding-left: 0 !important;
+        list-style: none !important;
+    }
+    .vempra-legal-page #page_content_wrapper ul li {
+        position: relative !important;
+        padding: 10px 0 10px 24px !important;
+        border-bottom: 1px solid #F0EBE0 !important;
+        line-height: 1.65 !important;
+        font-family: 'Inter Tight', sans-serif !important;
+        font-size: 15px !important;
+        color: #3A3833 !important;
+    }
+    .vempra-legal-page #page_content_wrapper ul li:last-child {
+        border-bottom: none !important;
+    }
+    .vempra-legal-page #page_content_wrapper ul li::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 20px !important;
+        width: 10px !important;
+        height: 1px !important;
+        background: #B85C38 !important;
+    }
+
+    /* Links */
+    .vempra-legal-page #page_content_wrapper a {
+        color: #B85C38 !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #E8C8B5 !important;
+        transition: all 0.2s ease !important;
+    }
+    .vempra-legal-page #page_content_wrapper a:hover {
+        color: #5B0B2B !important;
+        border-bottom-color: #5B0B2B !important;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .vempra-legal-page .page_title_content h1 { font-size: 30px !important; }
+        .vempra-legal-page #page_content_wrapper .inner {
+            margin: 30px 20px !important;
+            padding: 40px 24px !important;
+        }
+        .vempra-legal-page #page_content_wrapper h2 { font-size: 20px !important; }
+    }
+
+/* ===== snippet 44: Vempra · Ocultar footer del theme (prioridad 99) ===== */
+/* Ocultar footer del theme */
+    .footer_bar_wrapper { display: none !important; }
+
+    /* Ocultar imagen rota del logo */
+    .vempra-footer-logo { display: none !important; }
+
+    /* Padding del footer custom */
+    .vempra-footer-container {
+        padding: 60px 40px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+    @media (max-width: 768px) {
+        .vempra-footer-container {
+            padding: 40px 20px !important;
+        }
+    }
+
+/* ===== snippet 14: filtros tienda (prioridad 150) ===== */
+/* Fix: garantiza que las cards ocultas NUNCA se vean, sin importar el theme */
+      #vempra-shop-grid .vempra-shop-card.vempra-hidden {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        position: absolute !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+      }
+		   /* === TRUST BAR (debajo del hero) === */
+.vempra-shop-trustbar{
+  background:#F5F0E6;
+  border-top:1px solid rgba(184,92,56,.15);
+  border-bottom:1px solid rgba(184,92,56,.15);
+  padding:18px 24px;
+  margin:0;
+}
+.vempra-shop-trustbar-inner{
+  max-width:1280px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px 24px;
+  font-family:'Inter Tight',system-ui,sans-serif;
+  font-size:13px;
+  color:#3D0719;
+  letter-spacing:.02em;
+}
+.vempra-shop-trustbar-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-weight:500;
+}
+.vempra-shop-trustbar-item em{
+  font-style:normal;
+  font-weight:400;
+  opacity:.75;
+}
+.vempra-shop-trustbar-stars{
+  color:#B85C38;
+  letter-spacing:1px;
+  font-size:14px;
+}
+.vempra-shop-trustbar-divider{
+  width:1px;
+  height:14px;
+  background:rgba(91,11,43,.2);
+}
+@media (max-width:768px){
+  .vempra-shop-trustbar{padding:14px 16px;}
+  .vempra-shop-trustbar-inner{font-size:12px;gap:6px 14px;}
+  .vempra-shop-trustbar-divider{display:none;}
+}
+
+/* === FEATURED CARD (Alta Montaña, span 2 columnas en desktop) === */
+.vempra-shop-card-feature{
+  grid-column:span 2;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  border:2px solid #B85C38;
+  box-shadow:0 8px 32px rgba(184,92,56,.18);
+  position:relative;
+}
+.vempra-shop-card-feature .vempra-shop-card-image{
+  min-height:380px;
+  border-radius:0;
+}
+.vempra-shop-card-feature .vempra-shop-card-body{
+  padding:36px 32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.vempra-shop-card-feature .vempra-shop-card-title{
+  font-size:32px;
+  line-height:1.15;
+  margin:8px 0 14px;
+}
+.vempra-shop-card-feature .vempra-shop-card-desc{
+  font-size:15px;
+  line-height:1.55;
+  margin-bottom:18px;
+}
+.vempra-shop-card-feature .vempra-shop-card-price-value{
+  font-size:28px;
+}
+
+/* Badge "Más vendido" — prominente, dorado/terracota */
+.vempra-shop-card-badge-top{
+  background:#B85C38 !important;
+  color:#FAF7F0 !important;
+  font-weight:600 !important;
+  padding:8px 14px !important;
+  font-size:12px !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+/* Subtexto "3 cuotas sin interés" en el precio de la featured */
+.vempra-shop-card-price-cuotas{
+  display:block;
+  font-size:11px;
+  color:#5B0B2B;
+  opacity:.7;
+  margin-top:4px;
+  font-weight:400;
+  letter-spacing:.02em;
+}
+
+/* En mobile/tablet, la featured vuelve a 1 columna */
+@media (max-width:900px){
+  .vempra-shop-card-feature{
+    grid-column:span 1;
+    grid-template-columns:1fr;
+  }
+  .vempra-shop-card-feature .vempra-shop-card-image{
+    min-height:240px;
+  }
+  .vempra-shop-card-feature .vempra-shop-card-body{
+    padding:24px 22px;
+  }
+  .vempra-shop-card-feature .vempra-shop-card-title{
+    font-size:24px;
+  }
+}
+
+/* Limpieza: los counts ya no existen en el HTML */
+.vempra-shop-filter-count{display:none;}
+		   /* === FIX MOBILE: filtros y orden dentro de la pantalla === */
+@media (max-width: 768px){
+  .vempra-shop-controls{
+    flex-direction: column !important;
+    align-items: stretch !important;
+    max-width: 100% !important;
+    gap: 14px !important;
+  }
+  .vempra-shop-filters{
+    flex-wrap: wrap !important;     /* envuelven, no se salen */
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;        /* clave del bug de flexbox */
+    gap: 8px !important;
+  }
+  .vempra-shop-filter{
+    flex: 0 0 auto !important;
+  }
+  .vempra-shop-sort{
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+  .vempra-shop-sort-select{
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ===== snippet 15: footer (prioridad 999) ===== */
+footer#footer, #footer_widgets, #footer_bottom,
+      .footer_widgets, .footer_copyright, #colophon { display: none !important; }
+.vempra-footer-logo { display: none !important; }
+.vempra-footer-wordmark {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-size: 38px;
+  font-weight: 500;
+  color: #F5F0E6;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+.vempra-footer-container { padding: 0 60px !important; }
+.vempra-footer-asociaciones { padding: 30px 60px 0 !important; }
+@media (max-width: 768px) {
+  .vempra-footer-container { padding: 0 24px !important; }
+  .vempra-footer-asociaciones { padding: 24px 24px 0 !important; }
+  .vempra-footer-wordmark { font-size: 30px; margin-bottom: 14px; }
+}
+
+/* ===== snippet 17: Vempra Fase 2 - CSS conversion boosters (prioridad 999) ===== */
+/* === FASE 2: BANDA ASOCIACIONES + RATINGS + AVATARES === */
+    .vempra-home-trustbar { background-color: #F5F0E6 !important; padding: 30px 24px !important; margin: 0 !important; border-bottom: 1px solid #e8dfd0 !important; }
+    .vempra-home-trustbar-inner { max-width: 1280px !important; margin: 0 auto !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 32px !important; flex-wrap: wrap !important; }
+    .vempra-home-trustbar-label { font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; color: #888 !important; letter-spacing: 1.5px !important; text-transform: uppercase !important; font-weight: 700 !important; white-space: nowrap !important; }
+    .vempra-home-trustbar-logos { display: flex !important; align-items: center !important; justify-content: center !important; gap: 14px !important; flex-wrap: wrap !important; }
+    .vempra-home-trustbar-badge { display: inline-flex !important; align-items: center !important; justify-content: center !important; background-color: #ffffff !important; padding: 10px 18px !important; border-radius: 6px !important; min-height: 54px !important; min-width: 130px !important; box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important; border: 1px solid #ebe3d4 !important; transition: all 0.25s ease !important; text-decoration: none !important; }
+    .vempra-home-trustbar-badge img { max-height: 32px !important; max-width: 130px !important; width: auto !important; height: auto !important; display: block !important; object-fit: contain !important; }
+    .vempra-home-trustbar-badge-link { cursor: pointer !important; }
+    .vempra-home-trustbar-badge-link:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 14px rgba(0,0,0,0.12) !important; border-color: #B85C38 !important; }
+
+    .vempra-home-tour-rating { display: flex !important; align-items: center !important; gap: 8px !important; margin-bottom: 10px !important; font-size: 13px !important; line-height: 1 !important; font-family: inherit !important; }
+    .vempra-home-tour-rating-stars { color: #f4b400 !important; font-size: 14px !important; letter-spacing: 1px !important; line-height: 1 !important; }
+    .vempra-home-tour-rating-text { color: #666 !important; font-size: 13px !important; font-family: inherit !important; }
+    .vempra-home-tour-rating-text strong { color: #242424 !important; font-weight: 700 !important; margin-right: 2px !important; }
+
+    .vempra-home-tour-price-cuotas { font-size: 11px !important; color: #B85C38 !important; font-weight: 700 !important; letter-spacing: 0.3px !important; margin-top: 3px !important; font-family: inherit !important; text-transform: none !important; }
+
+    .vempra-home-review-meta { display: flex !important; align-items: center !important; gap: 12px !important; margin-top: 4px !important; }
+    .vempra-home-review-avatar { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: 44px !important; border-radius: 50% !important; background-color: #B85C38 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0 !important; line-height: 1 !important; text-transform: uppercase !important; box-shadow: 0 2px 6px rgba(184,92,56,0.25) !important; }
+    .vempra-home-review-author-block { display: flex !important; flex-direction: column !important; gap: 2px !important; line-height: 1.3 !important; }
+
+    /* === BLOG EN HOME === */
+    .vempra-home-blog-section { background-color: #ffffff !important; }
+    .vempra-home-blog-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 28px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
+    .vempra-home-blog-card { background-color: #ffffff !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(0,0,0,0.06) !important; display: flex !important; flex-direction: column !important; font-size: 16px !important; border: 1px solid #f0f0f0 !important; }
+    .vempra-home-blog-card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important; text-decoration: none !important; border-color: #B85C38 !important; }
+    .vempra-home-blog-card-image { position: relative !important; width: 100% !important; height: 200px !important; background-size: cover !important; background-position: center !important; background-color: #ddd !important; }
+    .vempra-home-blog-card-badge { position: absolute !important; top: 14px !important; left: 14px !important; background-color: #5B0B2B !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.8px !important; text-transform: uppercase !important; padding: 5px 12px !important; border-radius: 2px !important; z-index: 2 !important; }
+    .vempra-home-blog-card-body { padding: 24px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+    .vempra-home-blog-card-category { font-size: 11px !important; color: #B85C38 !important; font-weight: 700 !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-bottom: 10px !important; font-family: inherit !important; }
+    .vempra-home-blog-card-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 20px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 10px 0 !important; line-height: 1.35 !important; border-left: none !important; padding-left: 0 !important; }
+    .vempra-home-blog-card-desc { font-size: 14.5px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 0 18px 0 !important; flex-grow: 1 !important; }
+    .vempra-home-blog-card-cta { font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; font-weight: 700 !important; color: #B85C38 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; transition: color 0.3s ease !important; }
+    .vempra-home-blog-card:hover .vempra-home-blog-card-cta { color: #5B0B2B !important; }
+
+    /* === PÁGINA BLOG INDEX === */
+    body.page-id-592 .ppb_header, body.page-id-592 h1.entry-title, body.page-id-592 article > header { display: none !important; }
+    body.page-id-592 .container, body.page-id-592 .page_content_wrapper, body.page-id-592 #content, body.page-id-592 .row { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
+    .vempra-blog-wrap { position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; width: 100vw !important; max-width: 100vw !important; }
+    .vempra-blog-hero { position: relative !important; width: 100% !important; min-height: 50vh !important; background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.85) 100%), url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+    .vempra-blog-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
+    .vempra-blog-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 28px !important; }
+    .vempra-blog-hero-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 56px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.1 !important; letter-spacing: -0.5px !important; border-left: none !important; padding-left: 0 !important; }
+    .vempra-blog-hero-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 !important; font-weight: 300 !important; }
+    .vempra-blog-section { padding: 90px 24px !important; background-color: #ffffff !important; }
+    .vempra-blog-section-header { max-width: 760px !important; margin: 0 auto 60px auto !important; text-align: center !important; }
+    .vempra-blog-section-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 44px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 16px 0 !important; letter-spacing: -0.3px !important; line-height: 1.2 !important; border-left: none !important; padding-left: 0 !important; }
+    .vempra-blog-section-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 !important; }
+    .vempra-blog-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 28px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
+    .vempra-blog-card { background-color: #ffffff !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(0,0,0,0.07) !important; display: flex !important; flex-direction: column !important; font-size: 16px !important; border: 1px solid #f0f0f0 !important; }
+    .vempra-blog-card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important; text-decoration: none !important; border-color: #B85C38 !important; }
+    .vempra-blog-card-image { position: relative !important; width: 100% !important; height: 220px !important; background-size: cover !important; background-position: center !important; }
+    .vempra-blog-card-badge { position: absolute !important; top: 14px !important; left: 14px !important; background-color: #5B0B2B !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.8px !important; text-transform: uppercase !important; padding: 5px 12px !important; border-radius: 2px !important; z-index: 2 !important; }
+    .vempra-blog-card-body { padding: 24px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+    .vempra-blog-card-category { font-size: 11px !important; color: #B85C38 !important; font-weight: 700 !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-bottom: 10px !important; }
+    .vempra-blog-card-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 21px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 10px 0 !important; line-height: 1.3 !important; border-left: none !important; padding-left: 0 !important; }
+    .vempra-blog-card-desc { font-size: 14.5px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 0 14px 0 !important; flex-grow: 1 !important; }
+    .vempra-blog-card-meta { font-size: 12.5px !important; color: #888 !important; margin-bottom: 14px !important; padding-bottom: 14px !important; border-bottom: 1px solid #eee !important; }
+    .vempra-blog-card-cta { font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; font-weight: 700 !important; color: #B85C38 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; }
+    .vempra-blog-finalcta { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 90px 24px !important; }
+    .vempra-blog-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
+    .vempra-blog-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 42px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.15 !important; border-left: none !important; padding-left: 0 !important; }
+    .vempra-blog-finalcta-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 32px 0 !important; font-weight: 300 !important; }
+    .vempra-blog-finalcta-buttons { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .vempra-blog-finalcta .vempra-btn-primary { background-color: #ffffff !important; color: #5B0B2B !important; border-color: #ffffff !important; }
+    .vempra-blog-finalcta .vempra-btn-primary:hover { background-color: #F5F0E6 !important; color: #5B0B2B !important; border-color: #F5F0E6 !important; }
+    .vempra-blog-finalcta .vempra-btn-ghost { border-color: rgba(255,255,255,0.7) !important; }
+
+    /* === MOBILE === */
+    @media only screen and (max-width: 768px) {
+        .vempra-home-trustbar { padding: 22px 16px !important; }
+        .vempra-home-trustbar-inner { gap: 16px !important; }
+        .vempra-home-trustbar-label { font-size: 11px !important; letter-spacing: 1px !important; }
+        .vempra-home-trustbar-logos { gap: 10px !important; }
+        .vempra-home-trustbar-badge { padding: 8px 14px !important; min-width: 110px !important; min-height: 46px !important; }
+        .vempra-home-trustbar-badge img { max-height: 26px !important; max-width: 100px !important; }
+        .vempra-home-tour-rating { font-size: 12px !important; }
+        .vempra-home-tour-rating-stars { font-size: 13px !important; }
+        .vempra-home-review-avatar { width: 40px !important; height: 40px !important; font-size: 16px !important; }
+        .vempra-home-blog-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+        .vempra-home-blog-card-image { height: 180px !important; }
+        .vempra-home-blog-card-title { font-size: 18px !important; }
+        .vempra-blog-hero-title { font-size: 32px !important; }
+        .vempra-blog-section { padding: 60px 16px !important; }
+        .vempra-blog-section-title { font-size: 30px !important; }
+        .vempra-blog-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+        .vempra-blog-finalcta-title { font-size: 28px !important; }
+        .vempra-blog-finalcta-buttons { flex-direction: column !important; gap: 12px !important; }
+        .vempra-blog-finalcta-buttons a { width: 100% !important; max-width: 320px !important; }
+    }
+    @media only screen and (min-width: 769px) and (max-width: 1100px) {
+        .vempra-home-blog-grid { grid-template-columns: 1fr 1fr !important; }
+        .vempra-blog-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+
+/* ===== snippet 18: Vempra Hero V2 + Fixes (prioridad 999) ===== */
+body.home .ppb_header, body.page-id-9 .ppb_header,
+body.home .post_header, body.page-id-9 .post_header,
+body.home .page_title, body.page-id-9 .page_title,
+body.home h1.entry-title, body.page-id-9 h1.entry-title,
+body.home .entry-header, body.page-id-9 .entry-header,
+body.home article > header, body.page-id-9 article > header,
+body.page-id-9 article > h1, body.page-id-9 .row > h1 {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+#main_menu li a, #main_menu.nav li a {
+  color: #242424 !important;
+  font-weight: 500 !important;
+}
+#main_menu li.boton-menu-principal a { color: #fff !important; }
+.vempra-v2-hero {
+  position: relative !important;
+  min-height: 92vh !important;
+  background-color: #5B0B2B !important;
+  overflow: hidden !important;
+  display: grid !important;
+  grid-template-columns: 1.1fr 1fr !important;
+  align-items: end !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-hero-photo {
+  position: absolute !important;
+  top: 0 !important; right: 0 !important;
+  width: 56% !important; height: 100% !important;
+  background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  z-index: 1 !important;
+}
+.vempra-v2-hero-photo::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(105deg, #5B0B2B 0%, rgba(91,11,43,0.4) 25%, transparent 50%) !important;
+}
+.vempra-v2-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 100px 5% 80px 5% !important;
+  grid-column: 1 !important;
+  color: #fff !important;
+  align-self: end !important;
+}
+.vempra-v2-hero-eyebrow-vertical {
+  position: absolute !important;
+  left: 28px !important; top: 50% !important;
+  transform: rotate(-90deg) translateX(50%) !important;
+  transform-origin: left top !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.5) !important;
+  white-space: nowrap !important;
+  z-index: 3 !important;
+}
+.vempra-v2-hero-issue {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.65) !important;
+  margin-bottom: 50px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-hero-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(56px, 8.5vw, 140px) !important;
+  font-weight: 400 !important;
+  line-height: 0.94 !important;
+  letter-spacing: -3px !important;
+  color: #fff !important;
+  margin: 0 0 36px 0 !important;
+}
+.vempra-v2-hero-title em {
+  font-style: italic !important;
+  color: #F5F0E6 !important;
+}
+.vempra-v2-hero-subtitle {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  color: rgba(255,255,255,0.78) !important;
+  max-width: 440px !important;
+  margin: 0 0 50px 0 !important;
+}
+.vempra-v2-hero-actions {
+  display: flex !important;
+  gap: 32px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+.vempra-v2-btn-primary {
+  background: #B85C38 !important;
+  color: #fff !important;
+  padding: 19px 38px !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  border-radius: 2px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+.vempra-v2-btn-primary:hover {
+  background: #fff !important;
+  color: #5B0B2B !important;
+}
+.vempra-v2-btn-link-light {
+  color: #fff !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.4) !important;
+  padding-bottom: 6px !important;
+}
+.vempra-v2-hero-rating-card {
+  position: absolute !important;
+  z-index: 3 !important;
+  right: 5% !important;
+  bottom: 80px !important;
+  background: #FAF7F0 !important;
+  padding: 36px 44px !important;
+  max-width: 320px !important;
+}
+.vempra-v2-hero-rating-stars {
+  font-size: 18px !important;
+  color: #B85C38 !important;
+  letter-spacing: 4px !important;
+  margin-bottom: 8px !important;
+}
+.vempra-v2-hero-rating-number {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 88px !important;
+  line-height: 1 !important;
+  color: #5B0B2B !important;
+  letter-spacing: -4px !important;
+  margin-bottom: 8px !important;
+}
+.vempra-v2-hero-rating-label {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+  color: #5A5651 !important;
+  margin-bottom: 18px !important;
+}
+.vempra-v2-hero-rating-meta {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  padding-top: 16px !important;
+  border-top: 1px solid #E5DDD0 !important;
+}
+.vempra-home-trust-icon {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 30px 30px !important;
+}
+.vempra-home-trust-card:nth-child(1) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E") !important; }
+.vempra-home-trust-card:nth-child(2) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='13' rx='2'/%3E%3Cpath d='M2 11h20M6 15h4'/%3E%3C/svg%3E") !important; }
+.vempra-home-trust-card:nth-child(3) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") !important; }
+.vempra-home-trust-card:nth-child(4) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") !important; }
+.vempra-blog-bg-agencia { background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; }
+.vempra-blog-bg-altamontana { background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/card-alta-montana.jpg') !important; }
+.vempra-blog-bg-winetour { background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/card-wine-tour.jpg') !important; }
+@media (max-width: 1024px) {
+  .vempra-v2-hero { grid-template-columns: 1fr !important; min-height: 80vh !important; }
+  .vempra-v2-hero-photo { width: 100% !important; opacity: 0.4 !important; }
+  .vempra-v2-hero-rating-card {
+    position: relative !important;
+    right: auto !important; bottom: auto !important;
+    max-width: 100% !important;
+    margin: 40px 5% 60px !important;
+  }
+  .vempra-v2-hero-eyebrow-vertical { display: none !important; }
+}
+@media (max-width: 600px) {
+  .vempra-v2-hero-title { font-size: 52px !important; }
+  .vempra-v2-hero-actions { flex-direction: column !important; align-items: flex-start !important; gap: 18px !important; }
+}
+
+/* ===== snippet 19: Vempra Etapa B - Stats + Reviews + Trustbar (prioridad 999) ===== */
+/* === BANDA ASOCIACIONES V2 (MALBEC DARK) === */
+.vempra-v2-trustbar {
+  background-color: #3D0719 !important;
+  color: #fff !important;
+  padding: 28px 5% !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  margin: 0 !important;
+}
+.vempra-v2-trustbar-inner {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 60px !important;
+  flex-wrap: wrap !important;
+}
+.vempra-v2-trustbar-label {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+  color: rgba(255,255,255,0.7) !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
+}
+.vempra-v2-trustbar-label strong {
+  font-style: normal !important;
+  color: #F5F0E6 !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  display: block !important;
+  margin-top: 4px !important;
+}
+.vempra-v2-trustbar-logos {
+  display: flex !important;
+  align-items: center !important;
+  gap: 50px !important;
+  flex-wrap: wrap !important;
+}
+.vempra-v2-trustbar-badge {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500 !important;
+  padding-left: 28px !important;
+  border-left: 1px solid rgba(255,255,255,0.2) !important;
+  text-decoration: none !important;
+  transition: color 0.25s ease !important;
+}
+.vempra-v2-trustbar-logos > .vempra-v2-trustbar-badge:first-child {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+.vempra-v2-trustbar-badge em {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: rgba(255,255,255,0.5) !important;
+  font-size: 11px !important;
+  display: block !important;
+  margin-top: 4px !important;
+  font-weight: 400 !important;
+}
+.vempra-v2-trustbar-link:hover { color: #fff !important; }
+.vempra-v2-trustbar-link:hover em { color: #B85C38 !important; }
+
+/* === STATS EDITORIAL === */
+.vempra-v2-stats {
+  padding: 140px 5% !important;
+  background: #FAF7F0 !important;
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-stats-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin: 0 auto 28px auto !important;
+  max-width: 1400px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+.vempra-v2-stats-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #B85C38 !important;
+}
+.vempra-v2-stats-headline {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  color: #1A1A1A !important;
+  max-width: 1400px !important;
+  margin: 0 auto 90px auto !important;
+  text-align: left !important;
+}
+.vempra-v2-stats-headline em {
+  font-style: italic !important;
+  color: #B85C38 !important;
+}
+.vempra-v2-stats-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr !important;
+  gap: 0 !important;
+  border-top: 1px solid #E5DDD0 !important;
+}
+.vempra-v2-stat-cell {
+  padding: 48px 36px 48px 0 !important;
+  border-right: 1px solid #E5DDD0 !important;
+  position: relative !important;
+}
+.vempra-v2-stat-cell:last-child {
+  border-right: none !important;
+  padding-right: 0 !important;
+}
+.vempra-v2-stat-cell:not(:first-child) { padding-left: 36px !important; }
+.vempra-v2-stat-big {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(72px, 10vw, 144px) !important;
+  font-weight: 400 !important;
+  line-height: 0.9 !important;
+  color: #5B0B2B !important;
+  letter-spacing: -5px !important;
+  margin-bottom: 18px !important;
+}
+.vempra-v2-stat-medium {
+  font-size: clamp(48px, 6vw, 88px) !important;
+  letter-spacing: -2px !important;
+}
+.vempra-v2-stat-big sub {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 0.3em !important;
+  font-weight: 400 !important;
+  color: #B85C38 !important;
+  letter-spacing: 0 !important;
+  vertical-align: super !important;
+  margin-left: 6px !important;
+}
+.vempra-v2-stat-label {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #5A5651 !important;
+  font-weight: 500 !important;
+  margin-bottom: 8px !important;
+}
+.vempra-v2-stat-desc {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 14px !important;
+  color: #5A5651 !important;
+  line-height: 1.4 !important;
+}
+
+/* === REVIEWS EDITORIAL === */
+.vempra-v2-reviews {
+  padding: 160px 5% !important;
+  background: #5B0B2B !important;
+  color: #fff !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-reviews::before {
+  content: '"' !important;
+  position: absolute !important;
+  top: -80px !important;
+  left: 4% !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 600px !important;
+  color: rgba(184,92,56,0.08) !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  pointer-events: none !important;
+}
+.vempra-v2-reviews-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: rgba(245,240,230,0.6) !important;
+  margin: 0 auto 60px auto !important;
+  max-width: 1400px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.vempra-v2-reviews-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: rgba(245,240,230,0.4) !important;
+}
+.vempra-v2-reviews-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr !important;
+  gap: 80px !important;
+  align-items: start !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.vempra-v2-review-quote {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(28px, 3.4vw, 44px) !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.5px !important;
+  color: #fff !important;
+  margin: 0 0 40px 0 !important;
+}
+.vempra-v2-review-quote em {
+  font-style: italic !important;
+  color: #F5F0E6 !important;
+}
+.vempra-v2-review-featured-meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 22px !important;
+  padding-top: 30px !important;
+  border-top: 1px solid rgba(255,255,255,0.15) !important;
+}
+.vempra-v2-review-avatar-big {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background: #B85C38 !important;
+  color: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  flex-shrink: 0 !important;
+}
+.vempra-v2-review-name {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  margin-bottom: 4px !important;
+  letter-spacing: -0.3px !important;
+}
+.vempra-v2-review-source {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.5) !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-reviews-small {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 36px !important;
+}
+.vempra-v2-review-small {
+  padding-bottom: 32px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+.vempra-v2-review-small:last-child {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+.vempra-v2-review-small-stars {
+  color: #B85C38 !important;
+  font-size: 13px !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 12px !important;
+}
+.vempra-v2-review-small-text {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+  color: rgba(255,255,255,0.88) !important;
+  margin-bottom: 18px !important;
+  font-weight: 400 !important;
+}
+.vempra-v2-review-small-name {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.6) !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-review-small-name em {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  color: rgba(255,255,255,0.45) !important;
+  font-weight: 400 !important;
+}
+.vempra-v2-reviews-cta {
+  max-width: 1400px !important;
+  margin: 60px auto 0 auto !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.vempra-v2-reviews-link {
+  color: #F5F0E6 !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(255,255,255,0.4) !important;
+  padding-bottom: 6px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-reviews-link:hover {
+  color: #B85C38 !important;
+  border-bottom-color: #B85C38 !important;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .vempra-v2-trustbar-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+  }
+  .vempra-v2-trustbar-logos { gap: 24px !important; }
+  .vempra-v2-trustbar-badge {
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+  .vempra-v2-stats { padding: 80px 5% !important; }
+  .vempra-v2-stats-headline { margin-bottom: 50px !important; }
+  .vempra-v2-stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-v2-stat-cell {
+    padding: 32px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #E5DDD0 !important;
+  }
+  .vempra-v2-stat-cell:nth-child(odd) { border-right: 1px solid #E5DDD0 !important; }
+  .vempra-v2-stat-cell:nth-last-child(-n+2) { border-bottom: none !important; }
+  .vempra-v2-reviews { padding: 80px 5% !important; }
+  .vempra-v2-reviews::before { font-size: 300px !important; top: -40px !important; }
+  .vempra-v2-reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 60px !important;
+  }
+}
+@media (max-width: 600px) {
+  .vempra-v2-stats-grid { grid-template-columns: 1fr !important; }
+  .vempra-v2-stat-cell { border-right: none !important; }
+  .vempra-v2-stat-cell:nth-child(odd) { border-right: none !important; }
+  .vempra-v2-stat-big { font-size: 80px !important; letter-spacing: -3px !important; }
+  .vempra-v2-stat-medium { font-size: 56px !important; letter-spacing: -1.5px !important; }
+}
+
+/* ===== snippet 20: Vempra Etapa C - Tour Cards Asimétricas (prioridad 999) ===== */
+/* === TEXTURA GRAIN GLOBAL === */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E") !important;
+  opacity: 0.03 !important;
+  pointer-events: none !important;
+  z-index: 9998 !important;
+  mix-blend-mode: multiply !important;
+}
+
+/* === FEATURED SECTION === */
+.vempra-v2-featured {
+  padding: 140px 5% 160px !important;
+  background: #F5F0E6 !important;
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-featured-header {
+  max-width: 1400px !important;
+  margin: 0 auto 80px auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: end !important;
+}
+.vempra-v2-featured-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin-bottom: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-featured-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #B85C38 !important;
+}
+.vempra-v2-featured-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+}
+.vempra-v2-featured-title em {
+  font-style: italic !important;
+  color: #5B0B2B !important;
+}
+.vempra-v2-featured-intro {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: #5A5651 !important;
+  padding-bottom: 14px !important;
+  margin: 0 !important;
+}
+
+/* === GRID ASIMÉTRICO === */
+.vempra-v2-featured-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+grid-template-columns: 1fr 1fr !important;  grid-template-rows: auto auto auto !important;
+  gap: 28px !important;
+}
+.vempra-v2-tour-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.5s ease !important;
+  display: block !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+}
+.vempra-v2-tour-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 50px rgba(91,11,43,0.18) !important;
+}
+
+/* Feature card (Alta Montaña) ocupa col 1, span 3 rows */
+.vempra-v2-tour-feature {
+  grid-row: 1 / 4 !important;
+  grid-column: 1 !important;
+  display: grid !important;
+  grid-template-rows: 1fr auto !important;
+}
+.vempra-v2-tour-feature .vempra-v2-tour-image { height: 100% !important; min-height: 480px !important; }
+.vempra-v2-tour-feature .vempra-v2-tour-title { font-size: 48px !important; line-height: 1 !important; letter-spacing: -1.5px !important; }
+.vempra-v2-tour-feature .vempra-v2-tour-body { padding: 36px 36px 40px !important; }
+
+.vempra-v2-tour-image {
+  position: relative !important;
+  width: 100% !important;
+  height: 226px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  overflow: hidden !important;
+}
+.vempra-v2-tour-image::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%) !important;
+  pointer-events: none !important;
+}
+.vempra-v2-tour-duration {
+  position: absolute !important;
+  top: 22px !important;
+  left: 22px !important;
+  background: rgba(250,247,240,0.95) !important;
+  padding: 8px 14px !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #5B0B2B !important;
+  font-weight: 500 !important;
+  z-index: 2 !important;
+}
+.vempra-v2-tour-number {
+  position: absolute !important;
+  bottom: 22px !important;
+  right: 24px !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 14px !important;
+  color: rgba(255,255,255,0.85) !important;
+  font-style: italic !important;
+  letter-spacing: 1px !important;
+  z-index: 2 !important;
+}
+.vempra-v2-tour-body {
+  padding: 30px 28px 32px !important;
+  background: #fff !important;
+  position: relative !important;
+}
+.vempra-v2-tour-category {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 14px !important;
+}
+.vempra-v2-tour-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 26px !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+  color: #5B0B2B !important;
+  margin: 0 0 14px 0 !important;
+}
+.vempra-v2-tour-desc {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  color: #5A5651 !important;
+  margin: 0 0 24px 0 !important;
+}
+.vempra-v2-tour-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-top: 22px !important;
+  border-top: 1px solid #E5DDD0 !important;
+}
+.vempra-v2-tour-price { display: flex !important; flex-direction: column !important; }
+.vempra-v2-tour-price-label {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 12px !important;
+  color: #5A5651 !important;
+  margin-bottom: 2px !important;
+}
+.vempra-v2-tour-price-value {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  color: #1A1A1A !important;
+  line-height: 1 !important;
+  letter-spacing: -0.5px !important;
+}
+.vempra-v2-tour-price-cuotas {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin-top: 5px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-tour-arrow {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  border: 1px solid #E5DDD0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #5B0B2B !important;
+  font-size: 18px !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0 !important;
+}
+.vempra-v2-tour-card:hover .vempra-v2-tour-arrow {
+  background: #5B0B2B !important;
+  color: #fff !important;
+  border-color: #5B0B2B !important;
+  transform: translateX(4px) !important;
+}
+
+/* === CTA === */
+.vempra-v2-featured-cta {
+  max-width: 1400px !important;
+  margin: 60px auto 0 auto !important;
+  text-align: center !important;
+}
+.vempra-v2-btn-link-dark {
+  color: #5B0B2B !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #5B0B2B !important;
+  padding-bottom: 6px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+.vempra-v2-btn-link-dark:hover {
+  color: #B85C38 !important;
+  border-bottom-color: #B85C38 !important;
+}
+
+/* === OCULTAR GRID VIEJO si todavía está en página === */
+.vempra-home-featured-section { display: none !important; }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .vempra-v2-featured { padding: 80px 5% 100px !important; }
+  .vempra-v2-featured-header { grid-template-columns: 1fr !important; gap: 30px !important; margin-bottom: 50px !important; }
+  .vempra-v2-featured-grid { grid-template-columns: 1fr !important; }
+  .vempra-v2-tour-feature { grid-row: auto !important; grid-column: auto !important; }
+  .vempra-v2-tour-feature .vempra-v2-tour-image { min-height: 280px !important; height: 280px !important; }
+  .vempra-v2-tour-feature .vempra-v2-tour-title { font-size: 32px !important; }
+  .vempra-v2-tour-body { padding: 24px 24px 28px !important; }
+  .vempra-v2-tour-feature .vempra-v2-tour-body { padding: 28px 28px 32px !important; }
+}
+
+/* ===== snippet 21: Vempra Etapa D - Categorías Editoriales (prioridad 999) ===== */
+/* === SECCIÓN CATEGORÍAS V2 === */
+.vempra-v2-categories {
+  padding: 140px 5% 140px !important;
+  background: #FAF7F0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-categories-header {
+  max-width: 1400px !important;
+  margin: 0 auto 70px auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: end !important;
+}
+.vempra-v2-categories-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin-bottom: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-categories-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #B85C38 !important;
+}
+.vempra-v2-categories-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+}
+.vempra-v2-categories-title em {
+  font-style: italic !important;
+  color: #5B0B2B !important;
+}
+.vempra-v2-categories-intro {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: #5A5651 !important;
+  padding-bottom: 14px !important;
+  margin: 0 !important;
+}
+
+/* === GRID 3X2 === */
+.vempra-v2-categories-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+/* === CARDS === */
+.vempra-v2-cat-card {
+  position: relative !important;
+  display: block !important;
+  height: 380px !important;
+  overflow: hidden !important;
+  background-size: cover !important;
+  background-position: center !important;
+  text-decoration: none !important;
+  color: #fff !important;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  background-color: #5B0B2B !important;
+}
+.vempra-v2-cat-card::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: inherit !important;
+  background-size: cover !important;
+  background-position: center !important;
+  transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+.vempra-v2-cat-card:hover::before { transform: scale(1.08) !important; }
+
+.vempra-v2-cat-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(91,11,43,0.15) 0%, rgba(91,11,43,0.25) 40%, rgba(61,7,25,0.85) 100%) !important;
+  z-index: 1 !important;
+  transition: background 0.4s ease !important;
+}
+.vempra-v2-cat-card:hover .vempra-v2-cat-overlay {
+  background: linear-gradient(180deg, rgba(91,11,43,0.25) 0%, rgba(91,11,43,0.5) 40%, rgba(61,7,25,0.92) 100%) !important;
+}
+
+.vempra-v2-cat-number {
+  position: absolute !important;
+  top: 28px !important;
+  left: 32px !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 84px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: rgba(245,240,230,0.35) !important;
+  letter-spacing: -2px !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.vempra-v2-cat-content {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  padding: 32px !important;
+  z-index: 2 !important;
+}
+.vempra-v2-cat-name {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 32px !important;
+  font-weight: 500 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -1px !important;
+  color: #fff !important;
+  margin-bottom: 8px !important;
+}
+.vempra-v2-cat-desc {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  color: rgba(255,255,255,0.78) !important;
+  margin-bottom: 18px !important;
+  font-weight: 400 !important;
+}
+.vempra-v2-cat-from {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255,255,255,0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.vempra-v2-cat-arrow {
+  font-size: 16px !important;
+  transition: transform 0.3s ease !important;
+  color: #F5F0E6 !important;
+}
+.vempra-v2-cat-card:hover .vempra-v2-cat-arrow { transform: translateX(6px) !important; color: #B85C38 !important; }
+
+/* === OCULTAR VERSIÓN VIEJA === */
+.vempra-home-categories-section { display: none !important; }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .vempra-v2-categories { padding: 80px 5% 80px !important; }
+  .vempra-v2-categories-header { grid-template-columns: 1fr !important; gap: 30px !important; margin-bottom: 40px !important; }
+  .vempra-v2-categories-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .vempra-v2-cat-card { height: 320px !important; }
+  .vempra-v2-cat-number { font-size: 64px !important; top: 22px !important; left: 24px !important; }
+  .vempra-v2-cat-content { padding: 24px !important; }
+  .vempra-v2-cat-name { font-size: 26px !important; }
+}
+@media (max-width: 600px) {
+  .vempra-v2-categories-grid { grid-template-columns: 1fr !important; }
+  .vempra-v2-cat-card { height: 280px !important; }
+}
+
+/* ===== snippet 22: Vempra Etapa E - Promise Editorial (prioridad 999) ===== */
+/* === PROMISE SECTION === */
+.vempra-v2-promise {
+  padding: 140px 5% 140px !important;
+  background: #fff !important;
+  width: 100% !important;
+  margin: 0 !important;
+  position: relative !important;
+}
+.vempra-v2-promise-header {
+  max-width: 1400px !important;
+  margin: 0 auto 100px auto !important;
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr !important;
+  gap: 80px !important;
+  align-items: end !important;
+}
+.vempra-v2-promise-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin-bottom: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-promise-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #B85C38 !important;
+}
+.vempra-v2-promise-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+}
+.vempra-v2-promise-title em {
+  font-style: italic !important;
+  color: #5B0B2B !important;
+}
+.vempra-v2-promise-intro {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: #5A5651 !important;
+  padding-bottom: 14px !important;
+  margin: 0 !important;
+}
+
+/* === GRID 4 COLS CON LÍNEAS DIVISORAS === */
+.vempra-v2-promise-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  border-top: 1px solid #E5DDD0 !important;
+}
+.vempra-v2-promise-item {
+  padding: 50px 36px 50px 0 !important;
+  border-right: 1px solid #E5DDD0 !important;
+  text-align: left !important;
+}
+.vempra-v2-promise-item:last-child {
+  border-right: none !important;
+  padding-right: 0 !important;
+}
+.vempra-v2-promise-item:not(:first-child) {
+  padding-left: 36px !important;
+}
+
+.vempra-v2-promise-head {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  margin-bottom: 32px !important;
+}
+.vempra-v2-promise-number {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 72px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #5B0B2B !important;
+  letter-spacing: -2px !important;
+}
+.vempra-v2-promise-icon {
+  width: 38px !important;
+  height: 38px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  margin-top: 6px !important;
+  opacity: 0.85 !important;
+}
+.vempra-v2-promise-icon-shield {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E") !important;
+}
+.vempra-v2-promise-icon-card {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='13' rx='2'/%3E%3Cpath d='M2 11h20M6 15h4'/%3E%3C/svg%3E") !important;
+}
+.vempra-v2-promise-icon-check {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") !important;
+}
+.vempra-v2-promise-icon-pin {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") !important;
+}
+
+.vempra-v2-promise-name {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.5px !important;
+  color: #5B0B2B !important;
+  margin: 0 0 16px 0 !important;
+}
+.vempra-v2-promise-desc {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  color: #5A5651 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* === OCULTAR VERSIÓN VIEJA === */
+.vempra-home-trust-section { display: none !important; }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .vempra-v2-promise { padding: 80px 5% 80px !important; }
+  .vempra-v2-promise-header { grid-template-columns: 1fr !important; gap: 30px !important; margin-bottom: 50px !important; }
+  .vempra-v2-promise-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-v2-promise-item {
+    padding: 36px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #E5DDD0 !important;
+  }
+  .vempra-v2-promise-item:nth-child(odd) { border-right: 1px solid #E5DDD0 !important; }
+  .vempra-v2-promise-item:nth-last-child(-n+2) { border-bottom: none !important; }
+  .vempra-v2-promise-number { font-size: 56px !important; }
+}
+@media (max-width: 600px) {
+  .vempra-v2-promise-grid { grid-template-columns: 1fr !important; }
+  .vempra-v2-promise-item {
+    border-right: none !important;
+    padding: 32px 0 !important;
+  }
+  .vempra-v2-promise-item:nth-child(odd) { border-right: none !important; }
+}
+
+/* ===== snippet 23: Vempra Etapa F - Howto + Blog Editorial (prioridad 999) ===== */
+/* === HOWTO V2 === */
+.vempra-v2-howto {
+  padding: 140px 5% 140px !important;
+  background: #FAF7F0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-howto-header {
+  max-width: 1400px !important;
+  margin: 0 auto 100px auto !important;
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr !important;
+  gap: 80px !important;
+  align-items: end !important;
+}
+.vempra-v2-howto-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin-bottom: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-howto-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #B85C38 !important;
+}
+.vempra-v2-howto-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+}
+.vempra-v2-howto-title em {
+  font-style: italic !important;
+  color: #5B0B2B !important;
+}
+.vempra-v2-howto-intro {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: #5A5651 !important;
+  padding-bottom: 14px !important;
+  margin: 0 !important;
+}
+.vempra-v2-howto-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0 !important;
+  border-top: 1px solid #E5DDD0 !important;
+}
+.vempra-v2-howto-step {
+  padding: 56px 40px 40px 0 !important;
+  border-right: 1px solid #E5DDD0 !important;
+  position: relative !important;
+}
+.vempra-v2-howto-step:last-child {
+  border-right: none !important;
+  padding-right: 0 !important;
+}
+.vempra-v2-howto-step:not(:first-child) { padding-left: 40px !important; }
+.vempra-v2-howto-number {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: clamp(96px, 11vw, 160px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #5B0B2B !important;
+  letter-spacing: -5px !important;
+  margin-bottom: 28px !important;
+  display: block !important;
+}
+.vempra-v2-howto-name {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.8px !important;
+  color: #5B0B2B !important;
+  margin: 0 0 16px 0 !important;
+}
+.vempra-v2-howto-desc {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+  max-width: 320px !important;
+}
+
+/* === BLOG V2 === */
+.vempra-v2-blog {
+  padding: 140px 5% 140px !important;
+  background: #fff !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+.vempra-v2-blog-header {
+  max-width: 1400px !important;
+  margin: 0 auto 80px auto !important;
+  display: grid !important;
+  grid-template-columns: 1.3fr 1fr !important;
+  gap: 80px !important;
+  align-items: end !important;
+}
+.vempra-v2-blog-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  margin-bottom: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-weight: 500 !important;
+}
+.vempra-v2-blog-eyebrow::before {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #B85C38 !important;
+}
+.vempra-v2-blog-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -2px !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+}
+.vempra-v2-blog-title em {
+  font-style: italic !important;
+  color: #5B0B2B !important;
+}
+.vempra-v2-blog-intro {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: #5A5651 !important;
+  padding-bottom: 14px !important;
+  margin: 0 !important;
+}
+.vempra-v2-blog-grid {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 32px !important;
+}
+.vempra-v2-blog-card {
+  background: #fff !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  display: block !important;
+  position: relative !important;
+}
+.vempra-v2-blog-card:hover {
+  transform: translateY(-6px) !important;
+}
+.vempra-v2-blog-card-image {
+  position: relative !important;
+  width: 100% !important;
+  height: 280px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  margin-bottom: 24px !important;
+  overflow: hidden !important;
+}
+.vempra-v2-blog-card-image::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.25) 100%) !important;
+  pointer-events: none !important;
+}
+.vempra-v2-blog-card-badge {
+  position: absolute !important;
+  top: 18px !important;
+  left: 18px !important;
+  background: rgba(250,247,240,0.95) !important;
+  padding: 7px 13px !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #5B0B2B !important;
+  font-weight: 500 !important;
+  z-index: 2 !important;
+}
+.vempra-v2-blog-card-body {
+  padding: 0 4px !important;
+}
+.vempra-v2-blog-card-category {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 14px !important;
+}
+.vempra-v2-blog-card-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.7px !important;
+  color: #5B0B2B !important;
+  margin: 0 0 14px 0 !important;
+  transition: color 0.3s ease !important;
+}
+.vempra-v2-blog-card:hover .vempra-v2-blog-card-title { color: #B85C38 !important; }
+.vempra-v2-blog-card-desc {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  color: #5A5651 !important;
+  margin: 0 0 20px 0 !important;
+  font-weight: 400 !important;
+}
+.vempra-v2-blog-card-cta {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  padding-top: 16px !important;
+  border-top: 1px solid #E5DDD0 !important;
+  display: block !important;
+  transition: color 0.3s ease !important;
+}
+.vempra-v2-blog-card:hover .vempra-v2-blog-card-cta { color: #5B0B2B !important; }
+.vempra-v2-blog-cta {
+  max-width: 1400px !important;
+  margin: 60px auto 0 auto !important;
+  text-align: center !important;
+}
+
+/* === OCULTAR VERSIONES VIEJAS === */
+.vempra-home-howto-section { display: none !important; }
+.vempra-home-blog-section { display: none !important; }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .vempra-v2-howto { padding: 80px 5% 80px !important; }
+  .vempra-v2-howto-header { grid-template-columns: 1fr !important; gap: 30px !important; margin-bottom: 50px !important; }
+  .vempra-v2-howto-grid { grid-template-columns: 1fr !important; }
+  .vempra-v2-howto-step {
+    padding: 40px 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #E5DDD0 !important;
+  }
+  .vempra-v2-howto-step:last-child { border-bottom: none !important; }
+  .vempra-v2-howto-step:not(:first-child) { padding-left: 0 !important; }
+  .vempra-v2-howto-number { font-size: 96px !important; margin-bottom: 16px !important; }
+
+  .vempra-v2-blog { padding: 80px 5% 80px !important; }
+  .vempra-v2-blog-header { grid-template-columns: 1fr !important; gap: 30px !important; margin-bottom: 40px !important; }
+  .vempra-v2-blog-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .vempra-v2-blog-card-image { height: 220px !important; }
+}
+
+/* ===== snippet 24: Vempra Etapa G - FinalCTA Editorial (prioridad 999) ===== */
+/* === FINAL CTA EDITORIAL === */
+.vempra-v2-finalcta {
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 78vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background-color: #3D0719 !important;
+}
+.vempra-v2-finalcta-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important;
+  background-size: cover !important;
+  background-position: center 30% !important;
+  z-index: 1 !important;
+  opacity: 0.35 !important;
+  filter: contrast(1.05) saturate(0.85) !important;
+}
+.vempra-v2-finalcta-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(61,7,25,0.5) 0%, rgba(91,11,43,0.78) 50%, rgba(61,7,25,0.95) 100%) !important;
+  z-index: 2 !important;
+}
+.vempra-v2-finalcta-content {
+  position: relative !important;
+  z-index: 3 !important;
+  max-width: 1100px !important;
+  padding: 120px 5% !important;
+  text-align: center !important;
+  color: #fff !important;
+}
+.vempra-v2-finalcta-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: rgba(245,240,230,0.65) !important;
+  margin-bottom: 36px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+.vempra-v2-finalcta-eyebrow::before,
+.vempra-v2-finalcta-eyebrow::after {
+  content: '' !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: rgba(245,240,230,0.4) !important;
+}
+.vempra-v2-finalcta-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(48px, 7vw, 96px) !important;
+  font-weight: 400 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -3px !important;
+  color: #fff !important;
+  margin: 0 0 40px 0 !important;
+}
+.vempra-v2-finalcta-title em {
+  font-style: italic !important;
+  color: #F5F0E6 !important;
+}
+.vempra-v2-finalcta-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 660px !important;
+  margin: 0 auto 56px auto !important;
+  font-weight: 400 !important;
+}
+.vempra-v2-finalcta-actions {
+  display: flex !important;
+  gap: 36px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 80px !important;
+}
+.vempra-v2-finalcta-trust {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 32px !important;
+  flex-wrap: wrap !important;
+  padding-top: 36px !important;
+  border-top: 1px solid rgba(255,255,255,0.15) !important;
+}
+.vempra-v2-finalcta-trust-item {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.75) !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.vempra-v2-finalcta-trust-item em {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  margin-left: 6px !important;
+}
+.vempra-v2-finalcta-trust-stars {
+  color: #B85C38 !important;
+  letter-spacing: 2px !important;
+  font-size: 13px !important;
+}
+.vempra-v2-finalcta-trust-divider {
+  width: 1px !important;
+  height: 18px !important;
+  background: rgba(255,255,255,0.2) !important;
+}
+
+/* === OCULTAR VIEJA === */
+.vempra-home-finalcta-section { display: none !important; }
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .vempra-v2-finalcta { min-height: 60vh !important; }
+  .vempra-v2-finalcta-content { padding: 80px 5% !important; }
+  .vempra-v2-finalcta-actions { gap: 20px !important; margin-bottom: 50px !important; flex-direction: column !important; }
+  .vempra-v2-finalcta-trust { gap: 20px !important; flex-direction: column !important; }
+  .vempra-v2-finalcta-trust-divider { width: 30px !important; height: 1px !important; }
+}
+@media (max-width: 600px) {
+  .vempra-v2-finalcta-title { font-size: 44px !important; letter-spacing: -1.5px !important; }
+  .vempra-v2-finalcta-subtitle { font-size: 16px !important; }
+}
+
+/* ===== snippet 45: estilo blogs (prioridad 999) ===== */
+/* === BLOG POSTS — ESTILO EDITORIAL === */
+
+    /* Título del artículo (es un <h1> sin clase) */
+    .single-post h1 {
+        font-family: 'Bodoni Moda', Georgia, serif !important;
+        font-weight: 600 !important;
+        color: #5B0B2B !important;
+        font-size: 46px !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.4px !important;
+    }
+
+    /* Cuerpo del post */
+    .single-post .post_content_wrapper {
+        font-family: 'Inter Tight', sans-serif !important;
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+        color: #2c2926 !important;
+    }
+    .single-post .post_content_wrapper p { margin: 0 0 1.4em !important; }
+
+    /* Subtítulos dentro del post */
+    .single-post .post_content_wrapper h2,
+    .single-post .post_content_wrapper h3 {
+        font-family: 'Bodoni Moda', Georgia, serif !important;
+        font-weight: 600 !important;
+        color: #5B0B2B !important;
+        line-height: 1.25 !important;
+        margin: 1.8em 0 0.6em !important;
+    }
+    .single-post .post_content_wrapper h2 { font-size: 30px !important; }
+    .single-post .post_content_wrapper h3 {
+        font-size: 23px !important;
+        padding-left: 14px !important;
+        border-left: 3px solid #B85C38 !important;
+    }
+
+    /* Cita / destacado */
+    .single-post .post_content_wrapper blockquote {
+        background-color: #F5F0E6 !important;
+        border-left: 4px solid #B85C38 !important;
+        margin: 1.8em 0 !important;
+        padding: 22px 26px !important;
+        font-family: 'Bodoni Moda', Georgia, serif !important;
+        font-style: italic !important;
+        font-size: 20px !important;
+        color: #5B0B2B !important;
+        border-radius: 0 4px 4px 0 !important;
+    }
+
+    /* Enlaces */
+    .single-post .post_content_wrapper a {
+        color: #B85C38 !important;
+        text-decoration: underline !important;
+        text-underline-offset: 3px !important;
+    }
+    .single-post .post_content_wrapper a:hover { color: #5B0B2B !important; }
+
+    /* Imágenes dentro del post */
+    .single-post .post_content_wrapper img { border-radius: 6px !important; height: auto !important; }
+
+/* ===== snippet 47: fotos blog home (prioridad 1000) ===== */
+.vempra-v2-blog-card[href*="alta-montana"] .vempra-v2-blog-card-image {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important;
+}
+.vempra-v2-blog-card[href*="wine-tour"] .vempra-v2-blog-card-image {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important;
+}
+.vempra-v2-blog-card[href*="agencia"] .vempra-v2-blog-card-image {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important;
+}
+
+/* ===== snippet 48: fotos blog - pagina blog (prioridad 1000) ===== */
+.vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 280px !important;
+}
+.vempra-blog-card[href*="wine-tour"] .vempra-blog-card-image {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 280px !important;
+}
+.vempra-blog-card[href*="agencia"] .vempra-blog-card-image {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 280px !important;
+}
+
+/* ===== snippet 49: menu mobile fix (prioridad 1000) ===== */
+/* Panel: posición limpia + CERRADO por defecto (fuera de pantalla) */
+.mobile_menu_wrapper {
+  left: 0 !important;
+  right: auto !important;
+  transform: translateX(-100%) !important;
+  transition: transform .3s ease !important;
+}
+/* ABIERTO: el tema agrega body.js_nav al tocar el ☰ */
+body.js_nav .mobile_menu_wrapper {
+  transform: translateX(0) !important;
+}
+/* Fondo oscuro detrás del menú abierto (que no se vea el contenido a medias) */
+body.js_nav::after {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(15,5,12,0.55) !important;
+  z-index: 9998 !important;
+  pointer-events: none !important;
+}
+
+/* ===== snippet 50: fotos paginas (prioridad 1000) ===== */
+/* ===== HOME — HERO Y FINALCTA ===== */
+.vempra-v2-hero-photo,
+.vempra-v2-finalcta-photo {
+  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/2f.jpg") !important;
+}
+
+/* ===== HOME — CATEGORÍAS (6) ===== */
+.vempra-cat-bg-panoramicos { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/panoramicos.jpg") !important; }
+.vempra-cat-bg-wine        { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/2023-Bodega.jpg") !important; }
+.vempra-cat-bg-cabalgatas  { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/cabalgatas.jpg") !important; }
+.vempra-cat-bg-aventura    { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/Rafting-0001.jpg") !important; }
+.vempra-cat-bg-nieve       { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/nieve.jpg") !important; }
+.vempra-cat-bg-relax       { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/5b.jpg") !important; }
+
+/* ===== HEADERS DE PÁGINAS ===== */
+.vempra-about-hero { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/portada.jpg") !important; }    /* Nosotros */
+.vempra-howto-hero { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/NORTON-52-1.jpg") !important; } /* Cómo Funciona */
+.vempra-shop-hero  { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MG_0859.jpg") !important; }     /* Tours en Mendoza */
+
+/* ===== BLOG — TARJETAS DEL HOME ===== */
+.vempra-v2-blog-card[href*="alta-montana"] .vempra-v2-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important; }
+.vempra-v2-blog-card[href*="wine-tour"]    .vempra-v2-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important; }
+.vempra-v2-blog-card[href*="agencia"]      .vempra-v2-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important; }
+
+/* ===== BLOG — TARJETAS DEL LISTADO ===== */
+.vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image,
+.vempra-blog-card[href*="wine-tour"] .vempra-blog-card-image,
+.vempra-blog-card[href*="agencia"] .vempra-blog-card-image {
+  background-size: cover !important;
+  background-position: center !important;
+  height: 280px !important;
+}
+.vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important; }
+.vempra-blog-card[href*="wine-tour"]    .vempra-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important; }
+.vempra-blog-card[href*="agencia"]      .vempra-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important; }
+
+/* ===== snippet 51: botones flotantes (prioridad 1000) ===== */
+/* WhatsApp: queda abajo del todo (canal principal de leads) */
+a.vempra-wa-floating {
+  bottom: 18px !important;
+  right: 18px !important;
+}
+/* Carrito: apilado por encima del WhatsApp, alineado y sin taparlo */
+div.xoo-wsc-basket {
+  bottom: 88px !important;
+  right: 13px !important;
+}
+
+/* ===== snippet 25: Vempra - Hide Page Title Global (prioridad 9999) ===== */
+/* OCULTAR PAGE TITLE DEL THEME EN TODAS LAS PÁGINAS */
+#page_caption {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* EXCEPCIÓN: en posts individuales del blog SÍ mostrar el title */
+body.single-post #page_caption {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+  margin: initial !important;
+  padding: initial !important;
+}
+
+/* ===== snippet 26: Vempra Fix - Force Hide Theme Page Header (prioridad 9999) ===== */
+/* === FORCE HIDE THEME PAGE HEADER === */
+body.home .page_header,
+body.home .ppb_header,
+body.home .post_header,
+body.home #page_header,
+body.home .single_post_header,
+body.home #single_post_header,
+body.home .top_header_image,
+body.home #top_image,
+body.home #header_image,
+body.home #page-header,
+body.home .page-header,
+body.home .header-image,
+body.home .page_header_overlay,
+body.home #page_header_overlay,
+body.home .header_overlay,
+body.home .top_image,
+body.home .header_image_wrapper,
+body.home #header_image_wrapper,
+body.home .image_overlay,
+body.home #image_overlay,
+body.page-id-9 .page_header,
+body.page-id-9 .ppb_header,
+body.page-id-9 .post_header,
+body.page-id-9 #page_header,
+body.page-id-9 .single_post_header,
+body.page-id-9 #single_post_header,
+body.page-id-9 .top_header_image,
+body.page-id-9 #top_image,
+body.page-id-9 #header_image,
+body.page-id-9 #page-header,
+body.page-id-9 .page-header,
+body.page-id-9 .header-image,
+body.page-id-9 .page_header_overlay,
+body.page-id-9 #page_header_overlay,
+body.page-id-9 .header_overlay,
+body.page-id-9 .top_image,
+body.page-id-9 .header_image_wrapper,
+body.page-id-9 .image_overlay {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* === FORCE TRANSPARENT WRAPPER === */
+body.home #wrap_all,
+body.home #main,
+body.home #content,
+body.home #primary,
+body.home .container_wrap,
+body.home .content_wrapper,
+body.home #page_content,
+body.home .page_content,
+body.home .post_content,
+body.page-id-9 #wrap_all,
+body.page-id-9 #main,
+body.page-id-9 #content,
+body.page-id-9 #primary,
+body.page-id-9 .container_wrap,
+body.page-id-9 .content_wrapper,
+body.page-id-9 #page_content,
+body.page-id-9 .page_content,
+body.page-id-9 .post_content {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* === RESET BODY BG TO WHITE === */
+body.home, body.page-id-9 {
+  background: #fff !important;
+  background-color: #fff !important;
+}
+
+/* === REMOVE ANY ::before / ::after OVERLAY ON BODY === */
+body.home::after, body.home::before,
+body.page-id-9::after, body.page-id-9::before {
+  display: none !important;
+}
+
+/* ===== snippet 28: Vempra- como funciona editorial (prioridad 9999) ===== */
+/* === HERO === */
+.vempra-howto-hero { min-height: 60vh !important; }
+.vempra-howto-hero-overlay { background: linear-gradient(180deg, rgba(61,7,25,0.6) 0%, rgba(91,11,43,0.85) 100%) !important; }
+.vempra-howto-hero-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  background: #B85C38 !important;
+  border: none !important;
+  padding: 10px 22px !important;
+  margin-bottom: 32px !important;
+}
+.vempra-howto-hero-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(56px, 7vw, 96px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  line-height: 1 !important;
+  margin-bottom: 24px !important;
+  color: #fff !important;
+}
+.vempra-howto-hero-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,0.9) !important;
+}
+.vempra-howto-hero-trust {
+  margin-top: 40px !important;
+  padding: 16px 32px !important;
+  background: rgba(0,0,0,0.3) !important;
+  display: inline-block !important;
+  font-size: 13px !important;
+}
+
+/* === HEADERS === */
+.vempra-howto-section { padding: 100px 5% !important; }
+.vempra-howto-section-header { max-width: 700px !important; margin: 0 auto 70px auto !important; text-align: center !important; }
+.vempra-howto-section-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(36px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  margin: 0 0 16px 0 !important;
+}
+.vempra-howto-section-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+/* === SECCIÓN 1: 4 PASOS — FONDO BLANCO === */
+.vempra-howto-steps-section { background: #fff !important; border-top: 1px solid #E5DDD0 !important; }
+.vempra-howto-steps-section .vempra-howto-section-title { color: #1A1A1A !important; }
+.vempra-howto-steps-section .vempra-howto-section-subtitle { color: #5A5651 !important; }
+.vempra-howto-steps-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+}
+.vempra-howto-step {
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+  border-radius: 0 !important;
+  padding: 40px 28px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+  position: relative !important;
+}
+.vempra-howto-step:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 32px rgba(91,11,43,0.08) !important; border-color: #B85C38 !important; }
+.vempra-howto-step-number {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 24px !important;
+  letter-spacing: 0 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  margin: 0 auto 24px auto !important;
+  text-transform: none !important;
+  width: 56px !important;
+  height: 56px !important;
+  background: #5B0B2B !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.vempra-howto-step-number::before { content: '' !important; }
+.vempra-howto-step-icon {
+  width: 80px !important;
+  height: 80px !important;
+  margin: 0 auto 24px auto !important;
+  background: #5B0B2B !important;
+  border: none !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+.vempra-howto-step-icon::after {
+  content: '' !important;
+  width: 32px !important;
+  height: 32px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  display: block !important;
+}
+.vempra-howto-step:nth-child(1) .vempra-howto-step-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") !important; }
+.vempra-howto-step:nth-child(2) .vempra-howto-step-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cline x1='16' y1='2' x2='16' y2='6'/%3E%3Cline x1='8' y1='2' x2='8' y2='6'/%3E%3Cline x1='3' y1='10' x2='21' y2='10'/%3E%3C/svg%3E") !important; }
+.vempra-howto-step:nth-child(3) .vempra-howto-step-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E") !important; }
+.vempra-howto-step:nth-child(4) .vempra-howto-step-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 20l5-9 4 6 3-4 6 7H3z'/%3E%3Ccircle cx='17' cy='6' r='2'/%3E%3C/svg%3E") !important; }
+.vempra-howto-step-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.3px !important;
+  color: #1A1A1A !important;
+  margin: 0 0 14px 0 !important;
+  text-align: center !important;
+}
+.vempra-howto-step-text {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+.vempra-howto-step-text strong { color: #B85C38 !important; font-weight: 600 !important; }
+
+/* === SECCIÓN 2: MP — FONDO MALBEC DARK === */
+.vempra-howto-mp-section { background: #3D0719 !important; padding: 80px 5% !important; }
+.vempra-howto-mp-inner {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  background: #fff !important;
+  padding: 56px !important;
+  display: grid !important;
+  grid-template-columns: 100px 1fr !important;
+  gap: 32px !important;
+  align-items: center !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25) !important;
+  position: relative !important;
+}
+.vempra-howto-mp-inner::before {
+  content: 'Medios de pago' !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: 0 !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.6) !important;
+  font-weight: 500 !important;
+}
+.vempra-howto-mp-icon { width: 100px !important; height: 100px !important; background: #5B0B2B !important; border-radius: 50% !important; margin: 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; position: relative !important; }
+.vempra-howto-mp-icon::after { content: '' !important; width: 44px !important; height: 44px !important; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F5F0E6' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='13' rx='2'/%3E%3Cpath d='M2 11h20M6 15h4'/%3E%3C/svg%3E") !important; background-repeat: no-repeat !important; background-position: center !important; background-size: contain !important; display: block !important; }
+.vempra-howto-mp-title { font-family: 'Bodoni Moda', Georgia, serif !important; font-size: 28px !important; font-weight: 500 !important; letter-spacing: -0.5px !important; color: #1A1A1A !important; margin: 0 0 12px 0 !important; }
+.vempra-howto-mp-text { font-family: 'Inter Tight', sans-serif !important; font-size: 15px !important; line-height: 1.6 !important; color: #5A5651 !important; margin: 0 0 20px 0 !important; }
+.vempra-howto-mp-text strong { color: #B85C38 !important; font-weight: 600 !important; }
+.vempra-howto-mp-badges { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+.vempra-howto-mp-badge { font-family: 'Inter Tight', sans-serif !important; font-size: 10px !important; letter-spacing: 1.5px !important; text-transform: uppercase !important; color: #5B0B2B !important; background: #FAF7F0 !important; border: 1px solid #E5DDD0 !important; padding: 7px 12px !important; font-weight: 600 !important; }
+
+/* === SECCIÓN 3: GARANTÍAS — FONDO CREMA === */
+.vempra-howto-garantias-section { background: #FAF7F0 !important; }
+.vempra-howto-garantias-section .vempra-howto-section-title { color: #1A1A1A !important; }
+.vempra-howto-garantias-section .vempra-howto-section-subtitle { color: #5A5651 !important; }
+.vempra-howto-garantias-grid { max-width: 1280px !important; margin: 0 auto !important; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 24px !important; }
+.vempra-howto-garantia { background: #fff !important; box-shadow: 0 4px 20px rgba(91,11,43,0.06) !important; border: none !important; border-radius: 0 !important; padding: 40px 24px !important; text-align: center !important; transition: transform 0.3s ease !important; }
+.vempra-howto-garantia:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 32px rgba(91,11,43,0.12) !important; }
+.vempra-howto-garantia-icon { width: 70px !important; height: 70px !important; margin: 0 auto 24px auto !important; background: #B85C38 !important; border: none !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; position: relative !important; }
+.vempra-howto-garantia-icon::after { content: '' !important; width: 32px !important; height: 32px !important; background-repeat: no-repeat !important; background-position: center !important; background-size: contain !important; display: block !important; }
+.vempra-howto-garantia:nth-child(1) .vempra-howto-garantia-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") !important; }
+.vempra-howto-garantia:nth-child(2) .vempra-howto-garantia-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/%3E%3Cpath d='M3 3v5h5'/%3E%3C/svg%3E") !important; }
+.vempra-howto-garantia:nth-child(3) .vempra-howto-garantia-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'/%3E%3C/svg%3E") !important; }
+.vempra-howto-garantia:nth-child(4) .vempra-howto-garantia-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='7'/%3E%3Cpolyline points='8.21 13.89 7 23 12 20 17 23 15.79 13.88'/%3E%3C/svg%3E") !important; }
+.vempra-howto-garantia-title { font-family: 'Bodoni Moda', Georgia, serif !important; font-size: 20px !important; font-weight: 500 !important; color: #1A1A1A !important; margin: 0 0 12px 0 !important; text-align: center !important; }
+.vempra-howto-garantia-text { font-family: 'Inter Tight', sans-serif !important; font-size: 14px !important; line-height: 1.55 !important; color: #5A5651 !important; text-align: center !important; margin: 0 !important; }
+
+/* === SECCIÓN 4: FAQ — FONDO BLANCO === */
+.vempra-howto-faq-section { background: #fff !important; border-top: 1px solid #E5DDD0 !important; }
+.vempra-howto-faq-section .vempra-howto-section-title { color: #1A1A1A !important; }
+.vempra-howto-faq-section .vempra-howto-section-subtitle { color: #5A5651 !important; }
+.vempra-howto-faq-list { max-width: 800px !important; margin: 0 auto !important; }
+.vempra-howto-faq-item { background: #fff !important; border: 1px solid #E5DDD0 !important; border-radius: 0 !important; margin: 0 0 10px 0 !important; box-shadow: none !important; padding: 0 !important; transition: all 0.2s ease !important; }
+.vempra-howto-faq-item:hover { border-color: #B85C38 !important; }
+.vempra-howto-faq-q { font-family: 'Bodoni Moda', Georgia, serif !important; font-size: 17px !important; font-weight: 500 !important; color: #1A1A1A !important; padding: 22px 24px !important; cursor: pointer !important; display: flex !important; justify-content: space-between !important; align-items: center !important; }
+.vempra-howto-faq-arrow { color: #B85C38 !important; font-size: 22px !important; font-weight: 300 !important; }
+.vempra-howto-faq-a { padding: 0 24px 22px 24px !important; }
+.vempra-howto-faq-a p { font-family: 'Inter Tight', sans-serif !important; font-size: 14px !important; line-height: 1.65 !important; color: #5A5651 !important; margin: 0 !important; }
+.vempra-howto-faq-cta { text-align: center !important; margin-top: 40px !important; }
+.vempra-howto-faq-cta p { font-family: 'Bodoni Moda', Georgia, serif !important; font-style: italic !important; color: #5A5651 !important; margin-bottom: 12px !important; }
+.vempra-howto-wa-link { display: inline-flex !important; align-items: center !important; gap: 10px !important; color: #B85C38 !important; font-weight: 600 !important; font-family: 'Inter Tight', sans-serif !important; font-size: 14px !important; text-transform: uppercase !important; letter-spacing: 1px !important; text-decoration: none !important; border-bottom: 1px solid #B85C38 !important; padding-bottom: 4px !important; }
+
+/* === FINAL CTA: malbec dark === */
+.vempra-howto-finalcta-section { background: #3D0719 !important; padding: 100px 5% !important; text-align: center !important; }
+.vempra-howto-finalcta-title { font-family: 'Bodoni Moda', Georgia, serif !important; font-size: clamp(40px, 6vw, 72px) !important; font-weight: 400 !important; letter-spacing: -2px !important; color: #fff !important; margin: 0 0 20px 0 !important; line-height: 1.05 !important; }
+.vempra-howto-finalcta-subtitle { font-family: 'Bodoni Moda', Georgia, serif !important; font-style: italic !important; font-size: 18px !important; color: rgba(255,255,255,0.85) !important; max-width: 600px !important; margin: 0 auto 40px auto !important; }
+.vempra-howto-finalcta-buttons { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+
+/* === MOBILE === */
+@media (max-width: 1024px) {
+  .vempra-howto-section { padding: 60px 5% !important; }
+  .vempra-howto-steps-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-howto-garantias-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-howto-mp-inner { grid-template-columns: 1fr !important; padding: 40px !important; text-align: center !important; }
+  .vempra-howto-mp-icon { margin: 0 auto !important; }
+  .vempra-howto-mp-badges { justify-content: center !important; }
+}
+@media (max-width: 600px) {
+  .vempra-howto-steps-grid, .vempra-howto-garantias-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ===== snippet 29: vempra nosotros (prioridad 9999) ===== */
+/* === HERO === */
+.vempra-about-hero { min-height: 60vh !important; }
+.vempra-about-hero-overlay { background: linear-gradient(180deg, rgba(61,7,25,0.55) 0%, rgba(91,11,43,0.85) 100%) !important; }
+.vempra-about-hero-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  background: #B85C38 !important;
+  padding: 10px 22px !important;
+  margin-bottom: 32px !important;
+}
+.vempra-about-hero-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(56px, 7vw, 96px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  line-height: 1 !important;
+  margin-bottom: 24px !important;
+  color: #fff !important;
+}
+.vempra-about-hero-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,0.9) !important;
+}
+.vempra-about-hero-trust {
+  margin-top: 40px !important;
+  padding: 16px 32px !important;
+  background: rgba(0,0,0,0.3) !important;
+  display: inline-block !important;
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* === HISTORIA — BLANCO editorial === */
+.vempra-about-section { padding: 100px 5% !important; }
+.vempra-about-historia-section { background: #fff !important; border-top: 1px solid #E5DDD0 !important; }
+.vempra-about-historia-inner { max-width: 780px !important; margin: 0 auto !important; }
+.vempra-about-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+.vempra-about-eyebrow::before { content: '' !important; width: 40px !important; height: 1px !important; background: #B85C38 !important; }
+.vempra-about-section-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(36px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  color: #1A1A1A !important;
+  margin: 0 0 40px 0 !important;
+}
+.vempra-about-historia-text p {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 19px !important;
+  line-height: 1.7 !important;
+  color: #3A3530 !important;
+  margin: 0 0 24px 0 !important;
+}
+.vempra-about-historia-text strong { color: #5B0B2B !important; font-weight: 500 !important; }
+
+/* === VALORES — CREMA === */
+.vempra-about-valores-section { background: #FAF7F0 !important; }
+.vempra-about-section-header { max-width: 700px !important; margin: 0 auto 70px auto !important; text-align: center !important; }
+.vempra-about-section-header .vempra-about-section-title { text-align: center !important; margin-bottom: 16px !important; }
+.vempra-about-section-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  color: #5A5651 !important;
+  margin: 0 !important;
+}
+.vempra-about-valores-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+}
+.vempra-about-valor {
+  background: #fff !important;
+  box-shadow: 0 4px 20px rgba(91,11,43,0.06) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 40px 28px !important;
+  text-align: center !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.vempra-about-valor:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 32px rgba(91,11,43,0.12) !important; }
+.vempra-about-valor-icon {
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 24px auto !important;
+  background: #B85C38 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+.vempra-about-valor-icon::after {
+  content: '' !important;
+  width: 30px !important;
+  height: 30px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  display: block !important;
+}
+.vempra-about-valor:nth-child(1) .vempra-about-valor-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E") !important; }
+.vempra-about-valor:nth-child(2) .vempra-about-valor-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") !important; }
+.vempra-about-valor:nth-child(3) .vempra-about-valor-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E") !important; }
+.vempra-about-valor:nth-child(4) .vempra-about-valor-icon::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") !important; }
+.vempra-about-valor-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: #1A1A1A !important;
+  margin: 0 0 12px 0 !important;
+}
+.vempra-about-valor-text {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 !important;
+}
+
+/* === EQUIPO — MALBEC DARK === */
+.vempra-about-equipo-section { background: #3D0719 !important; padding: 100px 5% !important; }
+.vempra-about-equipo-inner {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: center !important;
+}
+.vempra-about-equipo-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4) !important;
+}
+.vempra-about-equipo-content .vempra-about-eyebrow { color: #B85C38 !important; }
+.vempra-about-equipo-content .vempra-about-eyebrow::before { background: #B85C38 !important; }
+.vempra-about-equipo-content .vempra-about-section-title {
+  color: #fff !important;
+  margin-bottom: 24px !important;
+}
+.vempra-about-equipo-content p {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,0.85) !important;
+  margin: 0 0 20px 0 !important;
+}
+.vempra-about-equipo-content p strong { color: #F5F0E6 !important; font-weight: 500 !important; }
+.vempra-about-equipo-team {
+  margin-top: 32px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+.vempra-about-team-pill {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1px !important;
+  color: #F5F0E6 !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  padding: 8px 16px !important;
+  font-weight: 500 !important;
+}
+
+/* === NÚMEROS — BLANCO editorial === */
+.vempra-about-numbers-section { background: #fff !important; }
+.vempra-about-numbers-section .vempra-about-section-header { margin-bottom: 60px !important; }
+.vempra-about-numbers-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0 !important;
+  border-top: 1px solid #E5DDD0 !important;
+  border-bottom: 1px solid #E5DDD0 !important;
+}
+.vempra-about-number {
+  padding: 56px 32px !important;
+  text-align: center !important;
+  border-right: 1px solid #E5DDD0 !important;
+}
+.vempra-about-number:last-child { border-right: none !important; }
+.vempra-about-number-value {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: clamp(56px, 8vw, 96px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: -3px !important;
+  color: #5B0B2B !important;
+  margin-bottom: 16px !important;
+}
+.vempra-about-number-label {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #5A5651 !important;
+  font-weight: 500 !important;
+}
+
+/* === ASOCIACIONES — CREMA === */
+.vempra-about-asoc-section { background: #FAF7F0 !important; }
+.vempra-about-asoc-logos {
+  max-width: 1100px !important;
+  margin: 0 auto 60px auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+.vempra-about-asoc-badge {
+  background: #fff !important;
+  padding: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 120px !important;
+  box-shadow: 0 4px 20px rgba(91,11,43,0.06) !important;
+  text-decoration: none !important;
+  transition: transform 0.3s ease !important;
+}
+.vempra-about-asoc-badge:hover { transform: translateY(-2px) !important; box-shadow: 0 12px 32px rgba(91,11,43,0.12) !important; }
+.vempra-about-asoc-badge img {
+  max-width: 100% !important;
+  max-height: 60px !important;
+  width: auto !important;
+  height: auto !important;
+  filter: none !important;
+}
+.vempra-about-legal {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  padding: 32px !important;
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+}
+.vempra-about-legal p {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 0 8px 0 !important;
+}
+.vempra-about-legal p strong { color: #5B0B2B !important; }
+.vempra-about-legal-small {
+  font-size: 12px !important;
+  color: #999 !important;
+  margin-top: 12px !important;
+  font-style: italic !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+}
+
+/* === CTA FINAL — MALBEC DARK === */
+.vempra-about-finalcta-section { background: #3D0719 !important; padding: 100px 5% !important; text-align: center !important; }
+.vempra-about-finalcta-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 6vw, 72px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  color: #fff !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.05 !important;
+}
+.vempra-about-finalcta-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px !important;
+  margin: 0 auto 40px auto !important;
+}
+.vempra-about-finalcta-buttons {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/* === MOBILE === */
+@media (max-width: 1024px) {
+  .vempra-about-section { padding: 60px 5% !important; }
+  .vempra-about-valores-grid, .vempra-about-asoc-logos { grid-template-columns: 1fr 1fr !important; }
+  .vempra-about-equipo-inner { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .vempra-about-numbers-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-about-number:nth-child(2) { border-right: none !important; }
+  .vempra-about-number { border-bottom: 1px solid #E5DDD0 !important; }
+  .vempra-about-number:nth-last-child(-n+2) { border-bottom: none !important; }
+}
+@media (max-width: 600px) {
+  .vempra-about-valores-grid, .vempra-about-asoc-logos, .vempra-about-numbers-grid { grid-template-columns: 1fr !important; }
+  .vempra-about-number { border-right: none !important; }
+}
+
+/* ===== snippet 30: Vempra blog (prioridad 9999) ===== */
+/* === HERO === */
+.vempra-blog-hero {
+  background: linear-gradient(135deg, #3D0719 0%, #5B0B2B 100%) !important;
+  min-height: 50vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  padding: 80px 5% !important;
+}
+.vempra-blog-hero-overlay { display: none !important; }
+.vempra-blog-hero-content { max-width: 900px !important; text-align: center !important; position: relative !important; z-index: 2 !important; }
+.vempra-blog-hero-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  background: #B85C38 !important;
+  padding: 10px 22px !important;
+  margin-bottom: 32px !important;
+}
+.vempra-blog-hero-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(48px, 6vw, 80px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  line-height: 1.05 !important;
+  margin-bottom: 24px !important;
+  color: #fff !important;
+}
+.vempra-blog-hero-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,0.9) !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+}
+
+/* === SECTION HEADERS === */
+.vempra-blog-section { padding: 100px 5% !important; }
+.vempra-blog-section-header { max-width: 720px !important; margin: 0 auto 70px auto !important; text-align: center !important; }
+.vempra-blog-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 20px !important;
+  display: inline-block !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #B85C38 !important;
+}
+.vempra-blog-section-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(36px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  margin: 0 0 16px 0 !important;
+}
+.vempra-blog-section-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
+/* === RAZONES — MALBEC DARK === */
+.vempra-blog-razones-section { background: #3D0719 !important; }
+.vempra-blog-razones-section .vempra-blog-eyebrow { color: #B85C38 !important; border-color: #B85C38 !important; }
+.vempra-blog-razones-section .vempra-blog-section-title { color: #fff !important; }
+.vempra-blog-razones-section .vempra-blog-section-subtitle { color: rgba(255,255,255,0.75) !important; }
+.vempra-blog-razones-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+.vempra-blog-razon {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  padding: 40px 32px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+}
+.vempra-blog-razon:hover { background: rgba(255,255,255,0.08) !important; border-color: rgba(184,92,56,0.5) !important; }
+.vempra-blog-razon-icon {
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 24px auto !important;
+  background: #B85C38 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+.vempra-blog-razon-icon::after {
+  content: '' !important;
+  width: 30px !important;
+  height: 30px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  display: block !important;
+}
+.vempra-blog-icon-check::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") !important; }
+.vempra-blog-icon-pin::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") !important; }
+.vempra-blog-icon-refresh::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/%3E%3Cpath d='M3 3v5h5'/%3E%3C/svg%3E") !important; }
+.vempra-blog-razon-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  margin: 0 0 14px 0 !important;
+}
+.vempra-blog-razon-text {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: rgba(255,255,255,0.75) !important;
+  margin: 0 !important;
+}
+
+/* === DESTACADOS — BLANCO === */
+.vempra-blog-destacados-section { background: #fff !important; }
+.vempra-blog-destacados-section .vempra-blog-section-title { color: #1A1A1A !important; }
+.vempra-blog-destacados-section .vempra-blog-section-subtitle { color: #5A5651 !important; }
+.vempra-blog-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 32px !important;
+}
+.vempra-blog-card {
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: all 0.3s ease !important;
+}
+.vempra-blog-card:hover {
+  border-color: #B85C38 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(91,11,43,0.1) !important;
+}
+.vempra-blog-card-image {
+  position: relative !important;
+  width: 100% !important;
+  height: 220px !important;
+  background: linear-gradient(135deg, #5B0B2B 0%, #B85C38 100%) !important;
+  overflow: hidden !important;
+}
+.vempra-blog-card-img-agencia { background: linear-gradient(135deg, #3D0719 0%, #5B0B2B 100%) !important; }
+.vempra-blog-card-img-altamontana { background: linear-gradient(135deg, #5B0B2B 0%, #B85C38 100%) !important; }
+.vempra-blog-card-img-winetour { background: linear-gradient(135deg, #B85C38 0%, #5B0B2B 100%) !important; }
+.vempra-blog-card-badge {
+  position: absolute !important;
+  top: 20px !important;
+  left: 20px !important;
+  background: #fff !important;
+  color: #5B0B2B !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  padding: 7px 13px !important;
+}
+.vempra-blog-card-body { padding: 32px 28px !important; flex-grow: 1 !important; display: flex !important; flex-direction: column !important; }
+.vempra-blog-card-category {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 14px !important;
+}
+.vempra-blog-card-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.5px !important;
+  color: #1A1A1A !important;
+  margin: 0 0 16px 0 !important;
+}
+.vempra-blog-card-desc {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 0 20px 0 !important;
+  flex-grow: 1 !important;
+}
+.vempra-blog-card-meta {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  color: #999 !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid #E5DDD0 !important;
+}
+.vempra-blog-card-cta {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 600 !important;
+}
+
+/* === CATEGORÍAS — CREMA === */
+.vempra-blog-categorias-section { background: #FAF7F0 !important; }
+.vempra-blog-categorias-section .vempra-blog-section-title { color: #1A1A1A !important; }
+.vempra-blog-categorias-section .vempra-blog-section-subtitle { color: #5A5651 !important; }
+.vempra-blog-categorias-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+.vempra-blog-categoria {
+  background: #fff !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  padding: 48px 36px !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(91,11,43,0.06) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.vempra-blog-categoria:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 32px rgba(91,11,43,0.12) !important; }
+.vempra-blog-categoria-number {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 56px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #B85C38 !important;
+  letter-spacing: -2px !important;
+  margin-bottom: 24px !important;
+}
+.vempra-blog-categoria-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.5px !important;
+  color: #5B0B2B !important;
+  margin: 0 0 14px 0 !important;
+}
+.vempra-blog-categoria-text {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 0 24px 0 !important;
+  flex-grow: 1 !important;
+}
+.vempra-blog-categoria-cta {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 600 !important;
+  padding-top: 16px !important;
+  border-top: 1px solid #E5DDD0 !important;
+}
+
+/* === CTA FINAL — MALBEC DARK === */
+.vempra-blog-finalcta { background: #3D0719 !important; padding: 100px 5% !important; text-align: center !important; }
+.vempra-blog-finalcta-content { max-width: 800px !important; margin: 0 auto !important; }
+.vempra-blog-finalcta-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  color: #fff !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.05 !important;
+}
+.vempra-blog-finalcta-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px !important;
+  margin: 0 auto 40px auto !important;
+}
+.vempra-blog-finalcta-buttons {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/* === MOBILE === */
+@media (max-width: 1024px) {
+  .vempra-blog-section { padding: 60px 5% !important; }
+  .vempra-blog-razones-grid, .vempra-blog-grid, .vempra-blog-categorias-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ===== snippet 31: Vempra - FAQ (prioridad 9999) ===== */
+/* === FULL WIDTH: romper container del theme === */
+.vempra-faq-wrap {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  max-width: none !important;
+  overflow-x: hidden !important;
+}
+/* === HERO === */
+.vempra-faq-hero {
+  background: linear-gradient(135deg, #3D0719 0%, #5B0B2B 100%) !important;
+  min-height: 45vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 80px 5% !important;
+  text-align: center !important;
+}
+.vempra-faq-hero-content { max-width: 800px !important; }
+.vempra-faq-hero-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  background: #B85C38 !important;
+  padding: 10px 22px !important;
+  margin-bottom: 32px !important;
+}
+.vempra-faq-hero-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(48px, 6vw, 80px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  line-height: 1.05 !important;
+  margin: 0 0 20px 0 !important;
+  color: #fff !important;
+}
+.vempra-faq-hero-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+/* === NAV === */
+.vempra-faq-nav {
+  background: #fff !important;
+  border-bottom: 1px solid #E5DDD0 !important;
+  padding: 20px 5% !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+}
+.vempra-faq-nav-inner {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  gap: 12px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+.vempra-faq-nav-pill {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #5B0B2B !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  padding: 10px 20px !important;
+  border: 1px solid #E5DDD0 !important;
+  background: #fff !important;
+  transition: all 0.2s ease !important;
+}
+.vempra-faq-nav-pill:hover {
+  background: #5B0B2B !important;
+  color: #fff !important;
+  border-color: #5B0B2B !important;
+}
+
+/* === SECCIONES === */
+.vempra-faq-section { padding: 100px 5% !important; }
+.vempra-faq-section-blanco { background: #fff !important; border-bottom: 1px solid #E5DDD0 !important; }
+.vempra-faq-section-malbec { background: #3D0719 !important; }
+.vempra-faq-section-crema { background: #FAF7F0 !important; }
+.vempra-faq-section-inner { max-width: 900px !important; margin: 0 auto !important; }
+.vempra-faq-section-header { text-align: center !important; margin-bottom: 60px !important; }
+.vempra-faq-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 20px !important;
+  display: inline-block !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #B85C38 !important;
+}
+.vempra-faq-section-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(32px, 4vw, 48px) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  margin: 0 !important;
+}
+.vempra-faq-section-blanco .vempra-faq-section-title,
+.vempra-faq-section-crema .vempra-faq-section-title { color: #1A1A1A !important; }
+.vempra-faq-section-malbec .vempra-faq-section-title { color: #fff !important; }
+
+/* === ACORDEÓN === */
+.vempra-faq-list { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+.vempra-faq-wrap .vempra-faq-item {
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
+}
+.vempra-faq-section-malbec .vempra-faq-item {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+.vempra-faq-section-crema .vempra-faq-item { background: #fff !important; border-color: transparent !important; box-shadow: 0 4px 16px rgba(91,11,43,0.05) !important; }
+.vempra-faq-wrap .vempra-faq-item.open { border-color: #B85C38 !important; }
+.vempra-faq-section-malbec .vempra-faq-item.open { background: rgba(255,255,255,0.1) !important; border-color: #B85C38 !important; }
+
+.vempra-faq-wrap .vempra-faq-q {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #1A1A1A !important;
+  padding: 22px 28px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
+  list-style: none !important;
+}
+.vempra-faq-wrap .vempra-faq-q::-webkit-details-marker { display: none !important; }
+.vempra-faq-section-malbec .vempra-faq-q { color: #fff !important; }
+
+.vempra-faq-wrap .vempra-faq-arrow {
+  width: 24px !important;
+  height: 24px !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.3s ease !important;
+}
+.vempra-faq-wrap .vempra-faq-arrow::before,
+.vempra-faq-wrap .vempra-faq-arrow::after {
+  content: '' !important;
+  position: absolute !important;
+  background: #B85C38 !important;
+  top: 50% !important;
+  left: 50% !important;
+  transition: all 0.3s ease !important;
+}
+.vempra-faq-wrap .vempra-faq-arrow::before {
+  width: 16px !important;
+  height: 2px !important;
+  transform: translate(-50%, -50%) !important;
+}
+.vempra-faq-wrap .vempra-faq-arrow::after {
+  width: 2px !important;
+  height: 16px !important;
+  transform: translate(-50%, -50%) !important;
+}
+.vempra-faq-wrap .vempra-faq-item.open .vempra-faq-arrow::after {
+  transform: translate(-50%, -50%) rotate(90deg) !important;
+  opacity: 0 !important;
+}
+
+/* === FIX: forzar display de respuesta cuando está abierta === */
+.vempra-faq-wrap details.vempra-faq-item > .vempra-faq-a {
+  display: none !important;
+  padding: 0 28px 24px 28px !important;
+}
+.vempra-faq-wrap details.vempra-faq-item.open > .vempra-faq-a,
+.vempra-faq-wrap details.vempra-faq-item[open] > .vempra-faq-a {
+  display: block !important;
+}
+
+.vempra-faq-wrap .vempra-faq-a p {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #5A5651 !important;
+  margin: 0 !important;
+}
+.vempra-faq-wrap .vempra-faq-a p strong { color: #B85C38 !important; font-weight: 600 !important; }
+.vempra-faq-wrap .vempra-faq-a p a { color: #B85C38 !important; text-decoration: underline !important; }
+.vempra-faq-section-malbec .vempra-faq-a p { color: rgba(255,255,255,0.85) !important; }
+.vempra-faq-section-malbec .vempra-faq-a p strong { color: #F5F0E6 !important; }
+.vempra-faq-section-malbec .vempra-faq-a p a { color: #F5F0E6 !important; }
+
+/* === CTA FINAL === */
+.vempra-faq-finalcta {
+  background: #3D0719 !important;
+  padding: 100px 5% !important;
+  text-align: center !important;
+}
+.vempra-faq-finalcta-content { max-width: 800px !important; margin: 0 auto !important; }
+.vempra-faq-finalcta-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(36px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  color: #fff !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.05 !important;
+}
+.vempra-faq-finalcta-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px !important;
+  margin: 0 auto 40px auto !important;
+}
+.vempra-faq-finalcta-buttons {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/* === MOBILE === */
+@media (max-width: 1024px) {
+  .vempra-faq-section { padding: 60px 5% !important; }
+  .vempra-faq-finalcta { padding: 60px 5% !important; }
+  .vempra-faq-wrap .vempra-faq-q { font-size: 16px !important; padding: 20px !important; }
+  .vempra-faq-wrap details.vempra-faq-item > .vempra-faq-a { padding: 0 20px 20px 20px !important; }
+  .vempra-faq-nav-pill { font-size: 11px !important; padding: 8px 14px !important; }
+	
+}
+
+/* ===== snippet 32: Vempra - Contacto (prioridad 9999) ===== */
+/* === FULL WIDTH === */
+.vempra-contact-wrap {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  max-width: none !important;
+  overflow-x: hidden !important;
+}
+
+/* === HERO === */
+.vempra-contact-hero {
+  background: linear-gradient(135deg, #3D0719 0%, #5B0B2B 100%) !important;
+  min-height: 45vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 80px 5% !important;
+  text-align: center !important;
+}
+.vempra-contact-hero-content { max-width: 800px !important; }
+.vempra-contact-hero-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+  background: #B85C38 !important;
+  padding: 10px 22px !important;
+  margin-bottom: 32px !important;
+}
+.vempra-contact-hero-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(56px, 8vw, 96px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  line-height: 1 !important;
+  margin: 0 0 20px 0 !important;
+  color: #fff !important;
+}
+.vempra-contact-hero-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+/* === HEADERS === */
+.vempra-contact-section { padding: 100px 5% !important; }
+.vempra-contact-section-header { max-width: 720px !important; margin: 0 auto 70px auto !important; text-align: center !important; }
+.vempra-contact-eyebrow {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 500 !important;
+  margin-bottom: 20px !important;
+  display: inline-block !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #B85C38 !important;
+}
+.vempra-contact-section-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(36px, 4vw, 52px) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1.5px !important;
+  margin: 0 0 16px 0 !important;
+  color: #1A1A1A !important;
+}
+.vempra-contact-section-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  color: #5A5651 !important;
+}
+
+/* === CANALES === */
+.vempra-contact-canales-section { background: #fff !important; }
+.vempra-contact-canales-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+.vempra-contact-canal {
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  padding: 48px 32px !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: center !important;
+}
+a.vempra-contact-canal:hover {
+  border-color: #B85C38 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(91,11,43,0.1) !important;
+}
+.vempra-contact-canal-whatsapp {
+  background: #5B0B2B !important;
+  border-color: #5B0B2B !important;
+  color: #fff !important;
+}
+.vempra-contact-canal-whatsapp:hover {
+  background: #3D0719 !important;
+  border-color: #25D366 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(91,11,43,0.25) !important;
+}
+.vempra-contact-canal-badge {
+  position: absolute !important;
+  top: -12px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: #25D366 !important;
+  color: #fff !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  padding: 6px 16px !important;
+}
+.vempra-contact-canal-icon {
+  width: 72px !important;
+  height: 72px !important;
+  margin: 0 auto 24px auto !important;
+  background: #FAF7F0 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+.vempra-contact-canal-whatsapp .vempra-contact-canal-icon { background: #25D366 !important; }
+.vempra-contact-canal-icon::after {
+  content: '' !important;
+  width: 34px !important;
+  height: 34px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  display: block !important;
+}
+.vempra-contact-icon-whatsapp::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.18 2.095 3.195 5.076 4.485.71.3 1.265.48 1.695.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a9.869 9.869 0 0 1-1.516-5.26c0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.875 2.909 4.365 2.909 7.02-.004 5.444-4.46 9.885-9.935 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.946L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z'/%3E%3C/svg%3E") !important; width: 38px !important; height: 38px !important; }
+.vempra-contact-icon-mail::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/%3E%3Cpolyline points='22,6 12,13 2,6'/%3E%3C/svg%3E") !important; }
+.vempra-contact-icon-instagram::after { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'/%3E%3Cpath d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'/%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'/%3E%3C/svg%3E") !important; }
+
+.vempra-contact-canal-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 26px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.5px !important;
+  color: #1A1A1A !important;
+  margin: 0 0 14px 0 !important;
+}
+.vempra-contact-canal-whatsapp .vempra-contact-canal-title { color: #fff !important; }
+.vempra-contact-canal-value {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #B85C38 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: 0.5px !important;
+}
+.vempra-contact-canal-whatsapp .vempra-contact-canal-value { color: #25D366 !important; }
+.vempra-contact-canal-text {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: #5A5651 !important;
+  margin: 0 0 24px 0 !important;
+  flex-grow: 1 !important;
+}
+.vempra-contact-canal-whatsapp .vempra-contact-canal-text { color: rgba(255,255,255,0.8) !important; }
+
+/* === BOTONES dentro de cards === */
+.vempra-contact-canal-btn {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  padding: 14px 24px !important;
+  background: #B85C38 !important;
+  color: #fff !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: center !important;
+  transition: all 0.2s ease !important;
+  margin-top: auto !important;
+}
+.vempra-contact-canal-btn:hover { background: #5B0B2B !important; color: #fff !important; }
+.vempra-contact-canal-btn-wa {
+  background: #25D366 !important;
+  color: #fff !important;
+}
+.vempra-contact-canal-btn-wa:hover { background: #1ea952 !important; }
+.vempra-contact-canal-btn-ghost {
+  background: transparent !important;
+  color: #B85C38 !important;
+  border: 1px solid #B85C38 !important;
+}
+.vempra-contact-canal-btn-ghost:hover { background: #B85C38 !important; color: #fff !important; }
+.vempra-contact-canal-btn-group {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  margin-top: auto !important;
+}
+.vempra-contact-canal-btn-group .vempra-contact-canal-btn { margin-top: 0 !important; padding: 14px 18px !important; font-size: 12px !important; }
+
+/* === UBICACIÓN — CREMA === */
+.vempra-contact-ubicacion-section { background: #FAF7F0 !important; }
+.vempra-contact-ubicacion-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr !important;
+  gap: 48px !important;
+  align-items: stretch !important;
+}
+.vempra-contact-mapa-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+.vempra-contact-mapa {
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+  min-height: 440px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 20px rgba(91,11,43,0.06) !important;
+  flex-grow: 1 !important;
+}
+.vempra-contact-mapa iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 440px !important;
+  border: 0 !important;
+  display: block !important;
+}
+.vempra-contact-mapa-link {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  padding: 14px 24px !important;
+  background: #fff !important;
+  border: 1px solid #E5DDD0 !important;
+  transition: all 0.2s ease !important;
+}
+.vempra-contact-mapa-link:hover { background: #B85C38 !important; color: #fff !important; border-color: #B85C38 !important; }
+.vempra-contact-info {
+  background: #fff !important;
+  padding: 48px !important;
+  border: 1px solid #E5DDD0 !important;
+  box-shadow: 0 4px 20px rgba(91,11,43,0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 32px !important;
+}
+.vempra-contact-info-block {
+  border-bottom: 1px solid #E5DDD0 !important;
+  padding-bottom: 32px !important;
+}
+.vempra-contact-info-block:last-child { border-bottom: none !important; padding-bottom: 0 !important; }
+.vempra-contact-info-title {
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #B85C38 !important;
+  font-weight: 600 !important;
+  margin: 0 0 14px 0 !important;
+}
+.vempra-contact-info-text {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+}
+.vempra-contact-info-note {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 14px !important;
+  color: #5A5651 !important;
+  margin: 12px 0 0 0 !important;
+}
+
+/* === CTA FINAL === */
+.vempra-contact-finalcta { background: #3D0719 !important; padding: 100px 5% !important; text-align: center !important; }
+.vempra-contact-finalcta-content { max-width: 800px !important; margin: 0 auto !important; }
+.vempra-contact-finalcta-title {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -2px !important;
+  color: #fff !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.05 !important;
+}
+.vempra-contact-finalcta-subtitle {
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 18px !important;
+  color: rgba(255,255,255,0.85) !important;
+  max-width: 600px !important;
+  margin: 0 auto 40px auto !important;
+}
+.vempra-contact-finalcta-buttons {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/* === MOBILE === */
+@media (max-width: 1024px) {
+  .vempra-contact-section { padding: 60px 5% !important; }
+  .vempra-contact-canales-grid { grid-template-columns: 1fr !important; }
+  .vempra-contact-ubicacion-grid { grid-template-columns: 1fr !important; }
+  .vempra-contact-mapa, .vempra-contact-mapa iframe { min-height: 320px !important; }
+  .vempra-contact-info { padding: 32px !important; }
+  .vempra-contact-finalcta { padding: 60px 5% !important; }
+}
+
+/* ===== snippet 27: Vempra Fix - Hide Side Menu Overlay (prioridad 99999) ===== */
+/* EL OVERLAY DEL SIDE MENU SE QUEDÓ ACTIVO — OCULTARLO === */
+#side_menu_wrapper,
+#side_menu_wrapper.overlay_background,
+.overlay_background {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+  background: transparent !important;
+}
+
+/* Por si abre el side menu (cuando el usuario lo abra a propósito), que se vea */
+body.side_menu_open #side_menu_wrapper,
+body.menu-open #side_menu_wrapper,
+body.is-menu-open #side_menu_wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+}

@@ -68,6 +68,9 @@ function vempra_pantalla_precios() {
 	echo '<label><input type="checkbox" name="vempra_precio_unico" value="si" ' . checked( $activo, true, false ) . '> ';
 	echo '<strong>Precio unico</strong>: el precio se lee siempre del producto de WooCommerce.</label>';
 	echo '<p class="description">Destildalo si alguna vez necesitas volver al comportamiento anterior. No se pierde ningun dato.</p>';
+	echo '<br><input type="hidden" name="vempra_nieve" value="no">';
+	echo '<label><input type="checkbox" name="vempra_nieve" value="si" ' . checked( vempra_nieve_activa(), true, false ) . '> ';
+	echo 'Mostrar los banners de temporada de nieve (la barra de arriba con el cupón NIEVE2026 y el banner de la portada).</label> ';
 	submit_button( 'Guardar', 'secondary', 'submit', false );
 	echo '</form>';
 

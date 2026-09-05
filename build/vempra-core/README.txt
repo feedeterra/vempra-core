@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.8.0
+VEMPRA CORE — v1.9.0
 ====================
 
 Que hace
@@ -110,6 +110,54 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.9.0
+
+Todo lo que estaba en Code Snippets pasa al plugin. Quedan 0 snippets
+activos; el sitio se ve igual, pero ahora cada pieza tiene un archivo con
+nombre, esta versionada en GitHub y se cambia editando texto, no pegando
+codigo en el panel.
+
+Donde quedo cada cosa:
+- inc/sitio.php      pie de pagina propio y boton flotante de WhatsApp.
+- inc/portada.php    las 4 tarjetas destacadas [vempra_featured_tours], la
+                     barra "10% OFF NIEVE2026" y el banner de temporada de
+                     nieve de la portada.
+- inc/paginas.php    clase de las paginas legales y datos estructurados de
+                     la guia del Tour Alta Montana.
+- inc/tours.php      shortcode [vempra_booking_form], redireccion producto
+                     -> tour, foto del tour copiada al producto, "Valor" en
+                     vez de "Coste de la reserva", formulario arriba en
+                     celular, LiteSpeed sin cache ni defer en tours.
+- inc/tienda.php     carrito sin sugeridos, cupon por URL (?cupon=CODIGO),
+                     checkout sin direccion, cartel del asesor, sellos,
+                     cupon dentro del resumen, transferencia por defecto,
+                     boton "Ir a pagar", cartel de gracias y el corte de
+                     reservas.
+- inc/snippets.php   apaga una sola vez los 53 snippets migrados.
+- assets/sitio.css   todo el CSS de la portada, pie, paginas, legales, blog
+                     (antes eran 28 snippets que se imprimian en cada
+                     pagina; ahora es un archivo cacheado, con un comentario
+                     por bloque diciendo de que snippet salio).
+- assets/sitio.js, tienda.js, tour-extras.js, checkout.css, checkout.js.
+
+Lo que cambia de verdad:
+- Corte de reservas: ya no se puede reservar despues de las 18:00 del dia
+  anterior a la salida (el snippet existia pero estaba apagado). La hora se
+  calcula con la hora de salida de cada tour.
+- Las tarjetas destacadas de la portada leen el precio real del producto de
+  WooCommerce (antes tenian los precios escritos a mano: $86.000, $185.000,
+  $212.000 y $102.000) y cuentan los tours publicados ("Ver los 17 tours")
+  en vez de tener el 17 escrito.
+- La politica de cancelacion dice 72 hs en todos lados. Los badges de la
+  ficha y la FAQ de compra decian "24 horas".
+- Los banners de nieve se prenden y apagan con un tilde en Vempra > Precios
+  (vienen prendidos). Apagados no dejan rastro: ni la barra ni el espacio
+  de 46 px que le hace lugar.
+- Los snippets migrados quedan desactivados en Code Snippets, no borrados.
+  Cuando se verifique que todo esta bien se pueden borrar desde ahi, junto
+  con los que ya estaban apagados o eran de una sola vez (1 a 8, 35, 39, 40).
 
 
 NOVEDADES v1.8.0
