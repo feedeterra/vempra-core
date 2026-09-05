@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.7.0
+VEMPRA CORE — v1.8.0
 ====================
 
 Que hace
@@ -90,6 +90,7 @@ vempra-core.php      arranque y constantes
 inc/precios.php      la logica del precio unico
 inc/tarjetas.php     el precio real en las tarjetas de la pagina de tours
 inc/accesibilidad.php un solo H1, nombres accesibles y separadores de precio
+inc/actualizador.php  se actualiza solo desde GitHub
 inc/admin.php        la pantalla "Vempra" del panel
 inc/assets.php       carga del CSS y del JavaScript
 assets/vempra.css    los estilos, ex post 22
@@ -109,6 +110,23 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.8.0
+
+El plugin se actualiza solo. Es la ultima version que se instala subiendo
+un ZIP a mano.
+
+- El codigo vive en GitHub (feedeterra/vempra-core). Cada version nueva es
+  un release con su ZIP adjunto.
+- WordPress consulta GitHub como mucho cada 12 horas y, si hay una version
+  mayor, muestra el aviso de actualizacion en Plugins como con cualquier
+  plugin del repositorio oficial. Un clic y listo; o automatico, si se
+  activan las actualizaciones automaticas en la fila del plugin.
+- En la fila del plugin hay un enlace "Buscar actualizacion" para no esperar
+  las 12 horas.
+- Sin credenciales: el repositorio es publico y el plugin no contiene
+  ninguna clave.
 
 
 NOVEDADES v1.7.0
