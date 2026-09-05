@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.11.0
+VEMPRA CORE — v1.12.0
 =====================
 
 Que hace
@@ -110,6 +110,26 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.12.0
+
+URGENTE: desde la 1.9.0 (4 de septiembre) el calendario de reserva de
+produccion no mostraba ningun dia disponible y abria en septiembre de 2027.
+El corte de reservas a las 18:00 se mandaba al calendario en minutos
+("+780m") y el datepicker lee esa "m" como meses. Ultimo pedido con
+reserva: 1 de septiembre.
+
+- El corte ahora se expresa en dias: antes de las 18:00 (hora de Mendoza)
+  se reserva desde manana; despues de las 18:00, desde pasado manana.
+- La zona horaria del sitio queda fijada por codigo en Mendoza (UTC-3),
+  ademas del ajuste en Ajustes > Generales, para que el corte no dependa
+  de una opcion que se puede tocar sin querer.
+- El pie de pagina dice "Ver todos los tours" en vez de "Ver los 17 tours"
+  (ya son 18).
+
+Instalar y despues abrir cualquier ficha: el calendario tiene que mostrar
+el mes actual con dias verdes.
 
 
 NOVEDADES v1.11.0

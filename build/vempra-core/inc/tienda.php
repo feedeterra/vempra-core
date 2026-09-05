@@ -127,28 +127,38 @@ add_action( 'woocommerce_thankyou', function ( $order_id ) {
 }, 5 );
 
 // ---------------------------------------------------------------------------
+// Zona horaria del sitio: Mendoza (UTC-3, sin horario de verano).
+//
+// WordPress venia en UTC+0 y el corte de reservas de abajo se mide con la
+// hora del sitio: a las 15:00 de Mendoza ya eran las 18:00 en UTC y se
+// cerraba la venta del dia siguiente tres horas antes de lo previsto. Las
+// fechas de los pedidos tambien salian corridas. Se fija por codigo para
+// que no dependa de un ajuste en Ajustes > Generales que cualquiera puede
+// tocar sin querer; Royal MCP no permite escribir esta opcion.
+// ---------------------------------------------------------------------------
+add_filter( 'pre_option_timezone_string', function () { return 'America/Argentina/Mendoza'; } );
+add_filter( 'pre_option_gmt_offset', function () { return -3; } );
+
+// ---------------------------------------------------------------------------
 // Corte de reservas: hasta las 18:00 del dia anterior a la salida.
 //
-// WooCommerce Bookings solo sabe decir "como minimo X horas/dias antes". Para
-// que el corte caiga siempre a las 18:00 se lee la hora de salida del tour
-// (_wc_booking_first_block_time, por ejemplo "07:00") y se le suman las 6
-// horas que van de las 18:00 a la medianoche: 7:00 + 6 h = 13 horas de
-// anticipacion minima, expresadas en minutos. Un tour sin hora de salida no
-// se toca.
+// Se expresa en DIAS, nunca en minutos u horas: el calendario de WooCommerce
+// Bookings pasa el valor al datepicker de jQuery UI como "+Nm" / "+Nh", y ese
+// datepicker lee la "m" como MESES (la 1.9.0 mandaba "+780m" y el calendario
+// saltaba a septiembre de 2027 sin ningun dia reservable). Con dias:
+//   - antes de las 18:00 (hora de Mendoza) se puede reservar desde manana;
+//   - a partir de las 18:00, desde pasado manana.
+// La hora de corte se cambia con el filtro vempra_hora_corte_reservas.
 // ---------------------------------------------------------------------------
-function vempra_hora_salida( $product_id ) {
-	$start = get_post_meta( $product_id, '_wc_booking_first_block_time', true );
-	if ( ! $start || false === strpos( $start, ':' ) ) { return null; }
-	return array_map( 'intval', explode( ':', $start ) );
+function vempra_dias_minimos_reserva() {
+	$corte = (int) apply_filters( 'vempra_hora_corte_reservas', 18 );
+	return ( (int) current_time( 'G' ) >= $corte ) ? 2 : 1;
 }
 
 add_filter( 'woocommerce_bookings_min_date_value', function ( $value, $product_id ) {
-	$hm = vempra_hora_salida( $product_id );
-	if ( ! $hm ) { return $value; }
-	$corte = (int) apply_filters( 'vempra_hora_corte_reservas', 18 );
-	return ( $hm[0] * 60 ) + $hm[1] + ( ( 24 - $corte ) * 60 );
+	return vempra_dias_minimos_reserva();
 }, 20, 2 );
 
 add_filter( 'woocommerce_bookings_min_date_unit', function ( $unit, $product_id ) {
-	return vempra_hora_salida( $product_id ) ? 'minute' : $unit;
+	return 'day';
 }, 20, 2 );

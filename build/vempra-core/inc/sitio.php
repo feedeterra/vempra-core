@@ -110,7 +110,7 @@ add_action( 'wp_footer', function () {
               <li><a href="/tours-en-mendoza/?filter=aventura">Aventura</a></li>
               <li><a href="/tours-en-mendoza/?filter=nieve">Nieve</a></li>
               <li><a href="/tours-en-mendoza/?filter=relax">Relax y Termas</a></li>
-              <li><a href="/tours-en-mendoza/" class="vempra-footer-link-strong">Ver los 17 tours →</a></li>
+              <li><a href="/tours-en-mendoza/" class="vempra-footer-link-strong">Ver todos los tours →</a></li>
             </ul>
           </div>
 
