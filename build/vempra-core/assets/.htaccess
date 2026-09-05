@@ -1,0 +1,29 @@
+# Los archivos de este directorio cambian en cada version del plugin.
+#
+# En este sitio el "?ver=" de WordPress no llega al navegador: algo del lado
+# del hosting le saca la cadena de consulta a las URLs de los assets, y el
+# CDN de Hostinger encima las guarda siete dias. Sin lo de abajo, cada
+# actualizacion del plugin tardaba una semana en verse.
+#
+# 1) La version viaja en el nombre del archivo (ux.1757003872.js). Esta
+#    regla le borra ese numero para servir el ux.js de siempre, asi que en
+#    el disco hay un solo archivo por asset. Ver vempra_asset_url() en
+#    inc/assets.php, que es quien arma esas URLs.
+#
+# 2) Cinco minutos de cache en vez de siete dias, por las dudas.
+#
+# Todo va entre IfModule para que, si al servidor le falta el modulo, el
+# archivo se ignore en vez de tirar un error 500.
+
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /wp-content/plugins/vempra-core/assets/
+	RewriteRule ^(.+)\.[0-9]+\.(js|css)$ $1.$2 [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+	<FilesMatch "\.(js|css)$">
+		Header set Cache-Control "public, max-age=300, must-revalidate"
+	</FilesMatch>
+</IfModule>

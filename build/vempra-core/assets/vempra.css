@@ -1,0 +1,2356 @@
+/**
+ * ESTILOS DE VEMPRA
+ *
+ * Salieron del post 22 de WordPress, donde vivian como texto de una entrada.
+ * Se copiaron tal cual, sin tocar una sola regla, para que la mudanza no
+ * cambie nada de lo que se ve.
+ *
+ * Aplican a todo el sitio, no solo a la ficha de tour, por eso se cargan en
+ * todas las paginas.
+ */
+
+/* === VARIABLES DE COLOR DE MARCA === */
+:root {
+  --terracota: #B85C38;
+  --malbec: #5B0B2B;
+  --texto: #242424;
+  --hueso: #F5F0E6;
+  --borde: #DDDDDD;
+}
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.above_top_bar { padding-left: 1%; }
+
+.ppb_header.withbg .ppb_title { font-size: 68px !important; line-height: 1.1em !important; }
+.ppb_header.withbg .page_tagline { font-size: 20px !important; }
+
+#main_menu.nav { display: flex; align-items: center; justify-content: flex-end; width: 100%; }
+#main_menu li.boton-menu-principal a { background-color: var(--terracota) !important; color: #fff !important; padding: 10px 20px !important; border-radius: 5px; margin-left: 20px; line-height: 1.2 !important; transition: background-color 0.3s ease; }
+#main_menu li.boton-menu-principal a:hover { background-color: var(--malbec) !important; color: #fff !important; }
+
+.button, a.button, input[type=submit], input[type=button] { background-color: var(--terracota) !important; color: #fff !important; padding: 15px 30px !important; font-size: 16px !important; border: none !important; line-height: 1 !important; transition: background-color 0.3s ease; }
+.button:hover, a.button:hover, input[type=submit]:hover, input[type=button]:hover { background-color: var(--malbec) !important; }
+
+.btn-wa-vempra { background-color: #B85C38 !important; color: #F5F0E6 !important; display: block; padding: 18px; text-align: center; font-family: 'Playfair Display', serif; font-weight: 700; text-decoration: none; border-radius: 2px; font-size: 16px; transition: 0.3s; }
+.btn-wa-vempra:hover { background-color: #5B0B2B !important; }
+
+.mobile_menu_wrapper { transform: translateX(-100%) !important; opacity: 0 !important; visibility: hidden !important; transition: transform 0.3s ease-in-out, opacity 0.3s ease; }
+@media only screen and (max-width: 768px) {
+  .mobile_menu_wrapper { background-color: #111 !important; color: #fff !important; z-index: 9999 !important; opacity: 1 !important; visibility: visible !important; }
+  .mobile_menu_wrapper a { color: #fff !important; display: block !important; }
+}
+
+.single_tour_booking_wrapper .wpcf7 { display: none !important; }
+.tour_cf7_form { display: none !important; }
+
+.single_tour_content h3 { font-family: "Playfair Display", Georgia, serif !important; font-size: 28px !important; font-weight: 700 !important; color: #242424 !important; border-left: 4px solid #B85C38 !important; padding-left: 16px !important; margin-top: 50px !important; margin-bottom: 20px !important; letter-spacing: 0.2px !important; line-height: 1.3 !important; }
+.single_tour_content p { font-size: 17px !important; line-height: 1.75 !important; margin-bottom: 18px !important; color: #3c3c3b !important; }
+.single_tour_content > p:first-of-type { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-style: italic !important; color: #5B0B2B !important; line-height: 1.5 !important; margin-bottom: 25px !important; padding-bottom: 20px !important; border-bottom: 1px solid #DDDDDD !important; }
+.single_tour_content > ul { list-style: none !important; padding-left: 0 !important; margin-bottom: 30px !important; }
+.single_tour_content > ul > li { position: relative !important; padding-left: 32px !important; margin-bottom: 14px !important; line-height: 1.7 !important; font-size: 16.5px !important; list-style: none !important; }
+.single_tour_content > ul > li::before { content: "" !important; position: absolute !important; left: 6px !important; top: 12px !important; width: 8px !important; height: 8px !important; background-color: #B85C38 !important; border-radius: 50% !important; display: block !important; }
+.single_tour_content > ul > li strong { color: #5B0B2B !important; font-weight: 700 !important; }
+.single_tour_content p em { display: block !important; background-color: #F5F0E6 !important; border-left: 4px solid #B85C38 !important; padding: 20px 24px !important; font-size: 18px !important; font-family: "Playfair Display", Georgia, serif !important; font-style: italic !important; color: #5B0B2B !important; margin-top: 30px !important; border-radius: 0 4px 4px 0 !important; }
+
+.single_tour_attribute_wrapper { background-color: #fafafa !important; padding: 24px 0 !important; border-radius: 4px; border: 1px solid #eee !important; }
+.tour_attribute_icon { color: #B85C38 !important; font-size: 24px !important; }
+.tour_attribute_content { color: #5B0B2B !important; font-family: "Playfair Display", Georgia, serif !important; font-weight: 700 !important; }
+
+.single_tour_departure_wrapper { margin-top: 50px !important; border-top: 2px solid #B85C38 !important; list-style: none !important; padding-left: 0 !important; }
+.single_tour_departure_wrapper > li { border-bottom: 1px solid #DDDDDD !important; padding: 18px 0 !important; list-style: none !important; }
+.single_tour_departure_wrapper > li::before { content: none !important; display: none !important; }
+.single_tour_departure_title { font-family: "Playfair Display", Georgia, serif !important; color: #5B0B2B !important; font-weight: 700 !important; font-size: 16px !important; }
+.single_tour_departure_content { color: #3c3c3b !important; font-size: 15px !important; }
+
+.single_tour_header_price { background-color: #5B0B2B !important; color: #fff !important; padding: 18px 22px !important; font-family: "Playfair Display", Georgia, serif !important; border-radius: 4px 4px 0 0; }
+.single_tour_price { font-size: 28px !important; font-weight: 700 !important; }
+.single_tour_per_person { font-size: 13px !important; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+.single_tour_booking_wrapper { background-color: #fff !important; border: 1px solid #DDDDDD !important; border-radius: 0 0 4px 4px; padding: 22px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important; }
+
+.vempra-cta-scroll { margin-top: 40px !important; margin-bottom: 30px !important; text-align: center !important; background: none !important; border-left: none !important; padding: 0 !important; }
+.vempra-btn-reserva { display: inline-block !important; background-color: #B85C38 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 20px !important; font-weight: 700 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; padding: 18px 48px !important; border-radius: 4px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(184, 92, 56, 0.25) !important; }
+.vempra-btn-reserva:hover { background-color: #5B0B2B !important; color: #ffffff !important; transform: translateY(-2px) !important; box-shadow: 0 6px 20px rgba(91, 11, 43, 0.35) !important; text-decoration: none !important; }
+
+.vempra-reviews { margin: 30px 0 40px 0 !important; padding: 0 !important; }
+.vempra-reviews-header { text-align: center !important; background-color: #F5F0E6 !important; padding: 24px 20px !important; border-radius: 6px !important; margin-bottom: 24px !important; border: 1px solid #e8dfd0 !important; }
+.vempra-reviews-stars { color: #f4b400 !important; font-size: 28px !important; letter-spacing: 4px !important; margin-bottom: 6px !important; line-height: 1 !important; }
+.vempra-reviews-score { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; color: #5B0B2B !important; margin-bottom: 4px !important; }
+.vempra-reviews-score strong { color: #5B0B2B !important; font-weight: 700 !important; }
+.vempra-reviews-count { font-size: 14px !important; color: #666 !important; margin: 0 !important; }
+
+.vempra-slider { position: relative !important; overflow: hidden !important; padding: 0 50px 50px 50px !important; margin-bottom: 10px !important; }
+.vempra-slider-track { position: relative !important; min-height: 220px !important; }
+.vempra-slide { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; opacity: 0 !important; visibility: hidden !important; transform: translateX(20px) !important; transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s !important; pointer-events: none !important; }
+.vempra-slide.active { opacity: 1 !important; visibility: visible !important; transform: translateX(0) !important; pointer-events: auto !important; transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0s !important; }
+.vempra-review-card { background-color: #ffffff !important; border: 1px solid #DDDDDD !important; border-left: 4px solid #B85C38 !important; border-radius: 4px !important; padding: 28px 32px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important; }
+.vempra-review-stars { color: #f4b400 !important; font-size: 18px !important; letter-spacing: 2px !important; margin-bottom: 12px !important; line-height: 1 !important; }
+.vempra-review-text { font-size: 17px !important; line-height: 1.7 !important; color: #3c3c3b !important; font-style: italic !important; margin-bottom: 14px !important; border-bottom: none !important; padding-bottom: 0 !important; font-family: inherit !important; background: none !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-review-author { font-size: 14px !important; color: #888 !important; font-family: "Playfair Display", Georgia, serif !important; font-style: normal !important; margin: 0 !important; padding: 0 !important; background: none !important; border-left: none !important; }
+.vempra-slider-prev, .vempra-slider-next { position: absolute !important; top: 50% !important; transform: translateY(-50%) !important; background-color: #ffffff !important; color: #B85C38 !important; border: 2px solid #B85C38 !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; font-size: 24px !important; font-weight: 700 !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 0 !important; line-height: 1 !important; transition: all 0.3s ease !important; z-index: 2 !important; box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; }
+.vempra-slider-prev:hover, .vempra-slider-next:hover { background-color: #B85C38 !important; color: #ffffff !important; transform: translateY(-50%) scale(1.1) !important; }
+.vempra-slider-prev { left: 0 !important; }
+.vempra-slider-next { right: 0 !important; }
+.vempra-slider-dots { position: absolute !important; bottom: 10px !important; left: 50% !important; transform: translateX(-50%) !important; display: flex !important; gap: 10px !important; z-index: 2 !important; }
+.vempra-slider-dot { width: 12px !important; height: 12px !important; border-radius: 50% !important; background-color: #ddd !important; border: none !important; cursor: pointer !important; padding: 0 !important; transition: all 0.3s ease !important; }
+.vempra-slider-dot.active { background-color: #B85C38 !important; transform: scale(1.3) !important; }
+.vempra-slider-dot:hover { background-color: #B85C38 !important; }
+.vempra-reviews-cta { text-align: center !important; margin-top: 24px !important; background: none !important; border-left: none !important; padding: 0 !important; }
+.vempra-reviews-cta a { color: #B85C38 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 16px !important; font-weight: 700 !important; text-decoration: none !important; border-bottom: 1px solid #B85C38 !important; padding-bottom: 2px !important; transition: color 0.3s ease !important; }
+.vempra-reviews-cta a:hover { color: #5B0B2B !important; border-bottom-color: #5B0B2B !important; }
+
+.vempra-trust-block { margin-top: 22px !important; padding-top: 20px !important; border-top: 1px solid #eee !important; }
+.vempra-trust-badges { display: flex !important; flex-direction: column !important; gap: 10px !important; margin-bottom: 18px !important; }
+.vempra-trust-badge { display: flex !important; align-items: center !important; gap: 10px !important; font-size: 14px !important; color: #3c3c3b !important; line-height: 1.4 !important; }
+.vempra-trust-check { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 20px !important; height: 20px !important; background-color: #B85C38 !important; color: #ffffff !important; border-radius: 50% !important; font-size: 12px !important; font-weight: 700 !important; flex-shrink: 0 !important; line-height: 1 !important; }
+.vempra-cancellation-policy { display: flex !important; align-items: center !important; gap: 12px !important; background-color: #F5F0E6 !important; padding: 14px 16px !important; border-radius: 6px !important; border-left: 4px solid #B85C38 !important; }
+.vempra-cancellation-icon { font-size: 22px !important; line-height: 1 !important; flex-shrink: 0 !important; }
+.vempra-cancellation-text { display: flex !important; flex-direction: column !important; gap: 2px !important; line-height: 1.3 !important; }
+.vempra-cancellation-text strong { font-family: "Playfair Display", Georgia, serif !important; color: #5B0B2B !important; font-size: 15px !important; font-weight: 700 !important; }
+.vempra-cancellation-text span { font-size: 13px !important; color: #666 !important; }
+
+.vempra-faq-item { border-bottom: 1px solid #DDDDDD !important; margin: 0 !important; padding: 0 !important; list-style: none !important; }
+.vempra-faq-item:last-child { border-bottom: none !important; }
+.vempra-faq-q { width: 100% !important; background: none !important; border: none !important; text-align: left !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; padding: 16px 0 !important; font-family: "Playfair Display", Georgia, serif !important; color: #242424 !important; font-weight: 700 !important; line-height: 1.4 !important; transition: color 0.3s ease !important; box-shadow: none !important; text-transform: none !important; letter-spacing: 0 !important; }
+.vempra-faq-q:hover { color: #B85C38 !important; background: none !important; transform: none !important; }
+.vempra-faq-arrow { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 24px !important; height: 24px !important; border-radius: 50% !important; background-color: #F5F0E6 !important; color: #B85C38 !important; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0 !important; transition: all 0.3s ease !important; line-height: 1 !important; }
+.vempra-faq-item.open .vempra-faq-arrow { background-color: #B85C38 !important; color: #ffffff !important; transform: rotate(45deg) !important; }
+.vempra-faq-a { max-height: 0 !important; overflow: hidden !important; opacity: 0 !important; transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease !important; color: #3c3c3b !important; line-height: 1.7 !important; padding: 0 !important; }
+.vempra-faq-item.open .vempra-faq-a { max-height: 600px !important; opacity: 1 !important; padding-bottom: 16px !important; }
+
+.vempra-faq-compra { margin-top: 22px !important; padding-top: 20px !important; border-top: 1px solid #eee !important; }
+.vempra-faq-compra-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 18px !important; color: #5B0B2B !important; font-weight: 700 !important; margin: 0 0 8px 0 !important; padding: 0 !important; }
+.vempra-faq-compra .vempra-faq-q { font-size: 14px !important; padding: 12px 0 !important; }
+.vempra-faq-compra .vempra-faq-a { font-size: 13.5px !important; line-height: 1.6 !important; }
+.vempra-faq-compra .vempra-faq-arrow { width: 20px !important; height: 20px !important; font-size: 14px !important; }
+
+.vempra-faq-seo { margin: 30px 0 40px 0 !important; background-color: #ffffff !important; border: 1px solid #eee !important; border-radius: 6px !important; padding: 8px 24px !important; }
+.vempra-faq-seo .vempra-faq-q { font-size: 17px !important; padding: 20px 0 !important; }
+.vempra-faq-seo .vempra-faq-a { font-size: 16px !important; }
+.vempra-faq-seo .vempra-faq-hidden { display: none !important; }
+.vempra-faq-seo.vempra-faq-expanded .vempra-faq-hidden { display: block !important; animation: vempra-fade-in 0.4s ease !important; }
+@keyframes vempra-fade-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.vempra-faq-toggle { width: 100% !important; background: none !important; border: none !important; border-top: 1px solid #eee !important; padding: 18px 0 14px 0 !important; margin-top: 4px !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 15px !important; font-weight: 700 !important; color: #B85C38 !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; text-transform: uppercase !important; letter-spacing: 0.6px !important; transition: color 0.3s ease !important; box-shadow: none !important; }
+.vempra-faq-toggle:hover { color: #5B0B2B !important; background: none !important; transform: none !important; }
+.vempra-faq-toggle-arrow { display: inline-block !important; font-size: 14px !important; transition: transform 0.3s ease !important; line-height: 1 !important; }
+.vempra-faq-toggle-arrow.up { transform: rotate(180deg) !important; }
+
+.vempra-wa-float { position: fixed !important; bottom: 24px !important; left: 24px !important; width: 60px !important; height: 60px !important; background-color: #25D366 !important; color: #ffffff !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; z-index: 9998 !important; box-shadow: 0 4px 16px rgba(37,211,102,0.4), 0 2px 8px rgba(0,0,0,0.15) !important; text-decoration: none !important; transition: all 0.3s ease !important; }
+.vempra-wa-float:hover { background-color: #1da851 !important; transform: scale(1.08) !important; box-shadow: 0 6px 24px rgba(37,211,102,0.55), 0 4px 12px rgba(0,0,0,0.2) !important; text-decoration: none !important; color: #ffffff !important; }
+.vempra-wa-float svg { width: 32px !important; height: 32px !important; display: block !important; position: relative !important; z-index: 2 !important; }
+.vempra-wa-float-pulse { position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; border-radius: 50% !important; background-color: #25D366 !important; z-index: 1 !important; animation: vempra-wa-pulse 2.2s ease-out infinite !important; opacity: 0.6 !important; }
+@keyframes vempra-wa-pulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.6); opacity: 0; } }
+.vempra-wa-float-tooltip { position: absolute !important; left: calc(100% + 12px) !important; top: 50% !important; transform: translateY(-50%) translateX(-8px) !important; background-color: #242424 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 14px !important; font-weight: 700 !important; padding: 8px 14px !important; border-radius: 6px !important; white-space: nowrap !important; opacity: 0 !important; visibility: hidden !important; transition: all 0.25s ease !important; box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important; pointer-events: none !important; }
+.vempra-wa-float-tooltip::after { content: "" !important; position: absolute !important; top: 50% !important; right: 100% !important; transform: translateY(-50%) !important; border: 6px solid transparent !important; border-right-color: #242424 !important; }
+.vempra-wa-float:hover .vempra-wa-float-tooltip { opacity: 1 !important; visibility: visible !important; transform: translateY(-50%) translateX(0) !important; }
+@media (prefers-reduced-motion: reduce) { .vempra-wa-float-pulse { animation: none !important; display: none !important; } }
+
+
+
+/* === HOMEPAGE + TIENDA + COMO FUNCIONA + NOSOTROS — fullwidth y reset === */
+body.home .vempra-home-wrap, body.page-id-9 .vempra-home-wrap, body.page-id-331 .vempra-shop-wrap, body.page-id-136 .vempra-howto-wrap, body.page-id-176 .vempra-about-wrap { position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; width: 100vw !important; max-width: 100vw !important; }
+body.home .ppb_header, body.page-id-9 .ppb_header, body.page-id-331 .ppb_header, body.page-id-136 .ppb_header, body.page-id-176 .ppb_header,
+body.home .single_post_header, body.page-id-9 .single_post_header, body.page-id-331 .single_post_header, body.page-id-136 .single_post_header, body.page-id-176 .single_post_header,
+body.home .post_header, body.page-id-9 .post_header, body.page-id-331 .post_header, body.page-id-136 .post_header, body.page-id-176 .post_header,
+body.home .page_title, body.page-id-9 .page_title, body.page-id-331 .page_title, body.page-id-136 .page_title, body.page-id-176 .page_title,
+body.home h1.entry-title, body.page-id-9 h1.entry-title, body.page-id-331 h1.entry-title, body.page-id-136 h1.entry-title, body.page-id-176 h1.entry-title,
+body.page-id-9 .post-9.page > h1, body.page-id-331 .post-331.page > h1, body.page-id-136 .post-136.page > h1, body.page-id-176 .post-176.page > h1,
+body.page-id-9 article > h1.entry-title, body.page-id-331 article > h1.entry-title, body.page-id-136 article > h1.entry-title, body.page-id-176 article > h1.entry-title,
+body.page-id-9 article > header, body.page-id-331 article > header, body.page-id-136 article > header, body.page-id-176 article > header { display: none !important; }
+body.home .container, body.page-id-9 .container, body.page-id-331 .container, body.page-id-136 .container, body.page-id-176 .container,
+body.home .page_content_wrapper, body.page-id-9 .page_content_wrapper, body.page-id-331 .page_content_wrapper, body.page-id-136 .page_content_wrapper, body.page-id-176 .page_content_wrapper,
+body.home #content, body.page-id-9 #content, body.page-id-331 #content, body.page-id-136 #content, body.page-id-176 #content,
+body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .row, body.page-id-176 .row { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
+
+/* HERO HOME */
+.vempra-home-hero { position: relative !important; width: 100% !important; min-height: 88vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; margin: 0 !important; }
+.vempra-home-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.45) 0%, rgba(91,11,43,0.65) 100%) !important; z-index: 1 !important; }
+.vempra-home-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 40px 24px !important; color: #ffffff !important; }
+.vempra-home-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 14px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 32px !important; font-weight: 400 !important; }
+.vempra-home-hero-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 72px !important; font-weight: 700 !important; line-height: 1.1 !important; color: #ffffff !important; margin: 0 0 24px 0 !important; letter-spacing: -0.5px !important; text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-home-hero-subtitle { font-size: 22px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 40px 0 !important; font-weight: 300 !important; text-shadow: 0 1px 8px rgba(0,0,0,0.3) !important; }
+.vempra-home-hero-cta { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; margin-bottom: 48px !important; }
+.vempra-home-hero-trust { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 14px !important; flex-wrap: wrap !important; font-size: 14px !important; color: #F5F0E6 !important; background-color: rgba(0,0,0,0.35) !important; padding: 14px 24px !important; border-radius: 4px !important; }
+.vempra-home-hero-trust-item { color: #F5F0E6 !important; }
+.vempra-home-hero-trust-item strong { color: #ffffff !important; font-weight: 700 !important; }
+.vempra-home-hero-trust-divider { color: rgba(255,255,255,0.4) !important; }
+
+/* Buttons */
+.vempra-btn-primary { display: inline-block !important; background-color: #B85C38 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 18px !important; font-weight: 700 !important; letter-spacing: 0.5px !important; padding: 18px 42px !important; border-radius: 4px !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 4px 20px rgba(184,92,56,0.4) !important; border: 2px solid #B85C38 !important; }
+.vempra-btn-primary:hover { background-color: #5B0B2B !important; border-color: #5B0B2B !important; color: #ffffff !important; transform: translateY(-2px) !important; box-shadow: 0 6px 24px rgba(91,11,43,0.5) !important; text-decoration: none !important; }
+.vempra-btn-ghost { display: inline-block !important; background-color: transparent !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 18px !important; font-weight: 700 !important; letter-spacing: 0.5px !important; padding: 18px 42px !important; border-radius: 4px !important; text-decoration: none !important; border: 2px solid rgba(255,255,255,0.6) !important; transition: all 0.3s ease !important; }
+.vempra-btn-ghost:hover { background-color: #ffffff !important; color: #5B0B2B !important; border-color: #ffffff !important; text-decoration: none !important; }
+.vempra-btn-secondary { display: inline-block !important; background-color: transparent !important; color: #B85C38 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 17px !important; font-weight: 700 !important; letter-spacing: 0.5px !important; padding: 16px 36px !important; border-radius: 4px !important; text-decoration: none !important; border: 2px solid #B85C38 !important; transition: all 0.3s ease !important; }
+.vempra-btn-secondary:hover { background-color: #B85C38 !important; color: #ffffff !important; text-decoration: none !important; }
+.vempra-btn-link { display: inline-block !important; color: #B85C38 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 17px !important; font-weight: 700 !important; text-decoration: none !important; border-bottom: 2px solid #B85C38 !important; padding-bottom: 4px !important; transition: all 0.3s ease !important; }
+.vempra-btn-link:hover { color: #5B0B2B !important; border-bottom-color: #5B0B2B !important; text-decoration: none !important; }
+.vempra-btn-large { font-size: 22px !important; padding: 22px 56px !important; }
+
+.vempra-home-section { padding: 100px 24px !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; box-sizing: border-box !important; }
+.vempra-home-section-header { max-width: 760px !important; margin: 0 auto 60px auto !important; text-align: center !important; }
+.vempra-home-section-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 48px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 16px 0 !important; letter-spacing: -0.3px !important; line-height: 1.2 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-home-section-subtitle { font-size: 20px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 !important; font-weight: 300 !important; }
+.vempra-home-section-cta { text-align: center !important; margin-top: 50px !important; }
+
+.vempra-home-categories-section { background-color: #ffffff !important; }
+.vempra-home-categories { display: grid !important; grid-template-columns: repeat(6, 1fr) !important; gap: 28px !important; max-width: 1400px !important; margin: 0 auto !important; padding: 0 8px !important; font-size: 0 !important; }
+.vempra-home-category-card { position: relative !important; display: block !important; aspect-ratio: 3/4 !important; min-height: 320px !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; transition: all 0.4s ease !important; background-size: cover !important; background-position: center center !important; background-color: #5B0B2B !important; box-shadow: 0 4px 14px rgba(0,0,0,0.1) !important; font-size: 16px !important; cursor: pointer !important; }
+.vempra-home-category-card:hover { transform: translateY(-6px) !important; box-shadow: 0 20px 40px rgba(91,11,43,0.3) !important; text-decoration: none !important; }
+.vempra-home-category-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 50%, rgba(36,36,36,0.85) 100%) !important; z-index: 1 !important; transition: background 0.4s ease !important; }
+.vempra-home-category-card:hover .vempra-home-category-overlay { background: linear-gradient(180deg, rgba(91,11,43,0.2) 0%, rgba(91,11,43,0.5) 50%, rgba(91,11,43,0.95) 100%) !important; }
+.vempra-home-category-content { position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important; padding: 24px 22px !important; z-index: 2 !important; color: #ffffff !important; text-align: left !important; }
+.vempra-home-category-name { font-family: "Playfair Display", Georgia, serif !important; font-size: 24px !important; font-weight: 700 !important; color: #ffffff !important; margin-bottom: 6px !important; line-height: 1.15 !important; text-shadow: 0 2px 12px rgba(0,0,0,0.5) !important; }
+.vempra-home-category-desc { font-size: 13.5px !important; color: rgba(255,255,255,0.92) !important; line-height: 1.45 !important; margin-bottom: 14px !important; font-weight: 300 !important; text-shadow: 0 1px 4px rgba(0,0,0,0.4) !important; }
+.vempra-home-category-from { display: inline-block !important; font-size: 12px !important; color: #ffffff !important; background-color: rgba(184,92,56,0.95) !important; font-weight: 700 !important; font-family: "Playfair Display", Georgia, serif !important; letter-spacing: 0.4px !important; padding: 6px 12px !important; border-radius: 3px !important; text-transform: uppercase !important; }
+
+.vempra-cat-bg-panoramicos { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-panoramicos.jpg') !important; }
+.vempra-cat-bg-wine { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-wine-tours.jpg') !important; }
+.vempra-cat-bg-cabalgatas { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-cabalgatas.jpg') !important; }
+.vempra-cat-bg-aventura { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-aventura.jpg') !important; }
+.vempra-cat-bg-nieve { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-nieve.jpg') !important; }
+.vempra-cat-bg-relax { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-relax-termas.jpg') !important; }
+
+.vempra-home-featured-section { background-color: #F5F0E6 !important; }
+.vempra-home-featured-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 28px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-home-tour-card { background-color: #ffffff !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(0,0,0,0.06) !important; display: flex !important; flex-direction: column !important; font-size: 16px !important; }
+.vempra-home-tour-card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important; text-decoration: none !important; }
+.vempra-home-tour-image { position: relative !important; width: 100% !important; height: 220px !important; background-size: cover !important; background-position: center !important; background-color: #ddd !important; background-repeat: no-repeat !important; }
+
+.vempra-tour-bg-altamontana { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-alta-montana.jpg') !important; }
+.vempra-tour-bg-winetour { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-wine-tour.jpg') !important; }
+.vempra-tour-bg-cabalgata { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-cabalgata.jpg') !important; }
+.vempra-tour-bg-atuel { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-atuel.jpg') !important; }
+.vempra-tour-bg-aventura { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-aventura.jpg') !important; }
+.vempra-tour-bg-bodegas2      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/unnamed.webp') !important; }
+.vempra-tour-bg-bodegas       { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/074487bf-fbe9-4b48-acf5-9c1134ee768f.png') !important; }
+.vempra-tour-bg-villavicencio { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-villavicencio.jpg') !important; }
+.vempra-tour-bg-villa4x4 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1502680390469-be75c86b636f.jpg') !important; }
+.vempra-tour-bg-cabalgata2 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1504025468847-0e438279542c.jpg') !important; }
+.vempra-tour-bg-cabalgata3 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1553284965-83fd3e82fa5a.jpg') !important; }
+.vempra-tour-bg-termas { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-termas-cacheuta.jpg') !important; }
+.vempra-tour-bg-combo { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1530866495561-507c9faab2ed.jpg') !important; }
+.vempra-tour-bg-rafting { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1523987355523-c7b5b0dd90a7.jpg') !important; }
+.vempra-tour-bg-lenas { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-nieve-lenas.jpg') !important; }
+.vempra-tour-bg-puquios { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-nieve-puquios.jpg') !important; }
+.vempra-tour-bg-penitentes { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-nieve-penitentes.jpg') !important; }
+
+.vempra-home-tour-badge { position: absolute !important; top: 14px !important; left: 14px !important; background-color: #5B0B2B !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.8px !important; text-transform: uppercase !important; padding: 6px 14px !important; border-radius: 2px !important; z-index: 2 !important; }
+.vempra-home-tour-body { padding: 24px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+.vempra-home-tour-category { font-size: 12px !important; color: #B85C38 !important; font-weight: 700 !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-bottom: 10px !important; font-family: inherit !important; }
+.vempra-home-tour-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 10px 0 !important; line-height: 1.3 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-home-tour-desc { font-size: 14.5px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 0 16px 0 !important; flex-grow: 1 !important; }
+.vempra-home-tour-meta { display: flex !important; gap: 10px !important; font-size: 13px !important; color: #888 !important; margin-bottom: 18px !important; padding-bottom: 18px !important; border-bottom: 1px solid #eee !important; flex-wrap: wrap !important; font-family: inherit !important; }
+.vempra-home-tour-footer { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; }
+.vempra-home-tour-price { display: flex !important; flex-direction: column !important; }
+.vempra-home-tour-price-label { font-size: 11px !important; color: #888 !important; text-transform: uppercase !important; letter-spacing: 0.8px !important; }
+.vempra-home-tour-price-value { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-weight: 700 !important; color: #5B0B2B !important; line-height: 1.1 !important; }
+.vempra-home-tour-cta { font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; font-weight: 700 !important; color: #B85C38 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; transition: color 0.3s ease !important; }
+.vempra-home-tour-card:hover .vempra-home-tour-cta { color: #5B0B2B !important; }
+
+.vempra-home-trust-section { background-color: #ffffff !important; }
+.vempra-home-trust-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 32px !important; max-width: 1280px !important; margin: 0 auto 70px auto !important; font-size: 0 !important; }
+.vempra-home-trust-card { text-align: center !important; padding: 32px 20px !important; font-size: 16px !important; }
+.vempra-home-trust-icon { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 64px !important; height: 64px !important; background-color: #F5F0E6 !important; border-radius: 50% !important; margin-bottom: 20px !important; color: #B85C38 !important; }
+.vempra-home-trust-icon svg { width: 30px !important; height: 30px !important; display: block !important; }
+.vempra-home-trust-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-weight: 700 !important; color: #5B0B2B !important; margin: 0 0 14px 0 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-home-trust-text { font-size: 15px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 !important; }
+.vempra-home-stats { background-color: #5B0B2B !important; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 20px !important; padding: 50px 30px !important; max-width: 1280px !important; margin: 0 auto !important; border-radius: 8px !important; box-shadow: 0 10px 40px rgba(91,11,43,0.2) !important; font-size: 0 !important; }
+.vempra-home-stat { text-align: center !important; color: #ffffff !important; font-size: 16px !important; }
+.vempra-home-stat-value { font-family: "Playfair Display", Georgia, serif !important; font-size: 44px !important; font-weight: 700 !important; color: #ffffff !important; line-height: 1 !important; margin-bottom: 8px !important; }
+.vempra-home-stat-label { font-size: 14px !important; color: #F5F0E6 !important; letter-spacing: 0.5px !important; }
+
+.vempra-home-reviews-section { background-color: #F5F0E6 !important; }
+.vempra-home-reviews-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 28px !important; max-width: 1180px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-home-review { background-color: #ffffff !important; border-radius: 8px !important; padding: 32px !important; box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important; border-left: 4px solid #B85C38 !important; font-size: 16px !important; }
+.vempra-home-review-stars { color: #f4b400 !important; font-size: 20px !important; letter-spacing: 2px !important; margin-bottom: 16px !important; line-height: 1 !important; }
+.vempra-home-review-text { font-size: 16px !important; line-height: 1.7 !important; color: #3c3c3b !important; font-style: italic !important; margin: 0 0 22px 0 !important; }
+.vempra-home-review-author { font-family: "Playfair Display", Georgia, serif !important; font-weight: 700 !important; color: #5B0B2B !important; font-size: 15px !important; margin-bottom: 4px !important; }
+.vempra-home-review-source { font-size: 13px !important; color: #888 !important; letter-spacing: 0.5px !important; }
+
+.vempra-home-howto-section { background-color: #ffffff !important; }
+.vempra-home-howto-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 50px !important; max-width: 1100px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-home-howto-step { text-align: center !important; position: relative !important; font-size: 16px !important; }
+.vempra-home-howto-number { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 64px !important; height: 64px !important; background-color: #B85C38 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 28px !important; font-weight: 700 !important; border-radius: 50% !important; margin-bottom: 24px !important; box-shadow: 0 6px 20px rgba(184,92,56,0.3) !important; line-height: 1 !important; }
+.vempra-home-howto-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 24px !important; font-weight: 700 !important; color: #5B0B2B !important; margin: 0 0 14px 0 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-home-howto-text { font-size: 16px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 !important; }
+
+.vempra-home-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 110px 24px !important; }
+.vempra-home-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
+.vempra-home-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 52px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 20px 0 !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-home-finalcta-subtitle { font-size: 20px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 40px 0 !important; font-weight: 300 !important; }
+.vempra-home-finalcta-buttons { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+.vempra-home-finalcta-section .vempra-btn-primary { background-color: #ffffff !important; color: #5B0B2B !important; border-color: #ffffff !important; }
+.vempra-home-finalcta-section .vempra-btn-primary:hover { background-color: #F5F0E6 !important; color: #5B0B2B !important; border-color: #F5F0E6 !important; }
+.vempra-home-finalcta-section .vempra-btn-ghost { border-color: rgba(255,255,255,0.7) !important; }
+.vempra-home-finalcta-section .vempra-btn-ghost:hover { background-color: rgba(255,255,255,0.15) !important; color: #ffffff !important; border-color: #ffffff !important; }
+
+
+/* === TIENDA (page-id 331) === */
+.vempra-shop-hero { position: relative !important; width: 100% !important; min-height: 40vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
+.vempra-shop-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.55) 0%, rgba(91,11,43,0.75) 100%) !important; z-index: 1 !important; }
+.vempra-shop-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
+.vempra-shop-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 6px 14px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 22px !important; }
+.vempra-shop-hero-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 56px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 16px 0 !important; line-height: 1.1 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-shop-hero-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 !important; font-weight: 300 !important; }
+.vempra-shop-section { padding: 60px 24px 100px !important; background-color: #ffffff !important; margin: 0 !important; }
+.vempra-shop-controls { max-width: 1320px !important; margin: 0 auto 40px auto !important; display: flex !important; align-items: flex-start !important; justify-content: space-between !important; gap: 24px !important; flex-wrap: wrap !important; padding-bottom: 24px !important; border-bottom: 1px solid #eee !important; }
+.vempra-shop-filters { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; flex: 1 !important; }
+.vempra-shop-filter { background-color: #ffffff !important; color: #5B0B2B !important; border: 1px solid #DDDDDD !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 14px !important; font-weight: 700 !important; padding: 10px 18px !important; border-radius: 24px !important; cursor: pointer !important; transition: all 0.25s ease !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; line-height: 1 !important; text-transform: none !important; letter-spacing: 0 !important; box-shadow: none !important; }
+.vempra-shop-filter:hover { background-color: #B85C38 !important; color: #ffffff !important; border-color: #B85C38 !important; transform: translateY(-1px) !important; }
+.vempra-shop-filter.active { background-color: #5B0B2B !important; color: #ffffff !important; border-color: #5B0B2B !important; }
+.vempra-shop-filter-count { background-color: rgba(91,11,43,0.08) !important; color: inherit !important; font-size: 11px !important; padding: 2px 8px !important; border-radius: 20px !important; font-weight: 700 !important; }
+.vempra-shop-filter:hover .vempra-shop-filter-count, .vempra-shop-filter.active .vempra-shop-filter-count { background-color: rgba(255,255,255,0.22) !important; }
+.vempra-shop-sort { display: flex !important; align-items: center !important; gap: 10px !important; }
+.vempra-shop-sort label { font-size: 13px !important; color: #666 !important; font-family: inherit !important; margin: 0 !important; }
+.vempra-shop-sort-select { background-color: #ffffff !important; color: #242424 !important; border: 1px solid #DDDDDD !important; font-size: 14px !important; padding: 8px 30px 8px 12px !important; border-radius: 6px !important; cursor: pointer !important; font-family: inherit !important; }
+.vempra-shop-sort-select:focus { border-color: #B85C38 !important; outline: none !important; }
+.vempra-shop-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 28px !important; max-width: 1320px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-shop-card { background-color: #ffffff !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(0,0,0,0.07) !important; display: flex !important; flex-direction: column !important; font-size: 16px !important; border: 1px solid #f0f0f0 !important; }
+.vempra-shop-card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important; text-decoration: none !important; border-color: #B85C38 !important; }
+.vempra-shop-card-image { position: relative !important; width: 100% !important; height: 220px !important; background-size: cover !important; background-position: center !important; background-color: #ddd !important; background-repeat: no-repeat !important; }
+.vempra-shop-card-badge { position: absolute !important; top: 14px !important; left: 14px !important; background-color: #5B0B2B !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.8px !important; text-transform: uppercase !important; padding: 6px 14px !important; border-radius: 2px !important; z-index: 2 !important; }
+.vempra-shop-card-body { padding: 22px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
+.vempra-shop-card-category { font-size: 11px !important; color: #B85C38 !important; font-weight: 700 !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-bottom: 8px !important; font-family: inherit !important; }
+.vempra-shop-card-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 21px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 10px 0 !important; line-height: 1.3 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-shop-card-desc { font-size: 14px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 0 14px 0 !important; flex-grow: 1 !important; }
+.vempra-shop-card-meta { display: flex !important; gap: 8px !important; font-size: 12.5px !important; color: #888 !important; margin-bottom: 16px !important; padding-bottom: 16px !important; border-bottom: 1px solid #eee !important; flex-wrap: wrap !important; font-family: inherit !important; }
+.vempra-shop-card-footer { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; }
+.vempra-shop-card-price { display: flex !important; flex-direction: column !important; }
+.vempra-shop-card-price-label { font-size: 10.5px !important; color: #888 !important; text-transform: uppercase !important; letter-spacing: 0.8px !important; }
+.vempra-shop-card-price-value { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-weight: 700 !important; color: #5B0B2B !important; line-height: 1.1 !important; }
+.vempra-shop-card-cta { font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; font-weight: 700 !important; color: #B85C38 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; transition: color 0.3s ease !important; }
+.vempra-shop-card:hover .vempra-shop-card-cta { color: #5B0B2B !important; }
+.vempra-shop-noresults { max-width: 600px !important; margin: 60px auto !important; text-align: center !important; padding: 40px 20px !important; color: #666 !important; font-size: 18px !important; }
+.vempra-shop-help { padding: 70px 24px !important; background-color: #F5F0E6 !important; text-align: center !important; }
+.vempra-shop-help-inner { max-width: 600px !important; margin: 0 auto !important; }
+.vempra-shop-help h3 { font-family: "Playfair Display", Georgia, serif !important; font-size: 30px !important; color: #5B0B2B !important; margin: 0 0 12px 0 !important; font-weight: 700 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-shop-help p { font-size: 16px !important; color: #555 !important; margin: 0 0 24px 0 !important; }
+.vempra-shop-help-btn { display: inline-block !important; background-color: #25D366 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 16px !important; font-weight: 700 !important; padding: 16px 32px !important; border-radius: 50px !important; text-decoration: none !important; box-shadow: 0 4px 14px rgba(37,211,102,0.4) !important; transition: all 0.3s ease !important; }
+.vempra-shop-help-btn:hover { background-color: #1da851 !important; color: #ffffff !important; transform: translateY(-2px) !important; text-decoration: none !important; box-shadow: 0 6px 20px rgba(37,211,102,0.5) !important; }
+
+
+/* === CÓMO FUNCIONA (page-id 136) === */
+.vempra-howto-hero { position: relative !important; width: 100% !important; min-height: 60vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/como-funciona-hero.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
+.vempra-howto-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.45) 0%, rgba(91,11,43,0.65) 100%) !important; z-index: 1 !important; }
+.vempra-howto-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
+.vempra-howto-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 28px !important; }
+.vempra-howto-hero-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 62px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.1 !important; letter-spacing: -0.5px !important; text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-howto-hero-subtitle { font-size: 19px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 32px 0 !important; font-weight: 300 !important; }
+.vempra-howto-hero-trust { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 14px !important; flex-wrap: wrap !important; font-size: 14px !important; color: #F5F0E6 !important; background-color: rgba(0,0,0,0.35) !important; padding: 14px 24px !important; border-radius: 4px !important; }
+.vempra-howto-hero-trust-item { color: #F5F0E6 !important; }
+.vempra-howto-hero-trust-item strong { color: #ffffff !important; font-weight: 700 !important; }
+.vempra-howto-hero-trust-divider { color: rgba(255,255,255,0.4) !important; }
+.vempra-howto-section { padding: 100px 24px !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; box-sizing: border-box !important; }
+.vempra-howto-section-header { max-width: 760px !important; margin: 0 auto 60px auto !important; text-align: center !important; }
+.vempra-howto-section-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 44px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 16px 0 !important; letter-spacing: -0.3px !important; line-height: 1.2 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-howto-section-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 !important; font-weight: 300 !important; }
+.vempra-howto-steps-section { background-color: #ffffff !important; }
+.vempra-howto-steps-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 28px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-howto-step { position: relative !important; background-color: #ffffff !important; border: 1px solid #eee !important; border-radius: 12px !important; padding: 36px 24px 28px !important; text-align: center !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(0,0,0,0.04) !important; font-size: 16px !important; }
+.vempra-howto-step:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(91,11,43,0.15) !important; border-color: #B85C38 !important; }
+.vempra-howto-step-number { font-family: "Playfair Display", Georgia, serif !important; font-size: 14px !important; font-weight: 700 !important; color: #B85C38 !important; letter-spacing: 2px !important; margin-bottom: 16px !important; }
+.vempra-howto-step-icon { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 64px !important; height: 64px !important; background-color: #F5F0E6 !important; border-radius: 50% !important; margin-bottom: 22px !important; color: #B85C38 !important; }
+.vempra-howto-step-icon svg { width: 30px !important; height: 30px !important; display: block !important; }
+.vempra-howto-step-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-weight: 700 !important; color: #5B0B2B !important; margin: 0 0 14px 0 !important; line-height: 1.3 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-howto-step-text { font-size: 14.5px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 !important; }
+.vempra-howto-step-text strong { color: #B85C38 !important; font-weight: 700 !important; }
+.vempra-howto-mp-section { background-color: #F5F0E6 !important; padding: 50px 24px !important; }
+.vempra-howto-mp-inner { max-width: 980px !important; margin: 0 auto !important; display: flex !important; align-items: center !important; gap: 32px !important; background-color: #ffffff !important; border-radius: 12px !important; padding: 32px 36px !important; box-shadow: 0 4px 20px rgba(91,11,43,0.08) !important; }
+.vempra-howto-mp-icon { flex-shrink: 0 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 72px !important; height: 72px !important; background-color: #5B0B2B !important; border-radius: 50% !important; color: #ffffff !important; }
+.vempra-howto-mp-icon svg { width: 36px !important; height: 36px !important; display: block !important; }
+.vempra-howto-mp-content { flex: 1 !important; }
+.vempra-howto-mp-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 26px !important; font-weight: 700 !important; color: #5B0B2B !important; margin: 0 0 8px 0 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-howto-mp-text { font-size: 15px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 0 16px 0 !important; }
+.vempra-howto-mp-text strong { color: #5B0B2B !important; font-weight: 700 !important; }
+.vempra-howto-mp-badges { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+.vempra-howto-mp-badge { background-color: #F5F0E6 !important; color: #5B0B2B !important; font-size: 12px !important; padding: 6px 12px !important; border-radius: 3px !important; font-weight: 700 !important; letter-spacing: 0.3px !important; border: 1px solid #e8dfd0 !important; }
+.vempra-howto-garantias-section { background-color: #ffffff !important; }
+.vempra-howto-garantias-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 28px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-howto-garantia { text-align: center !important; padding: 28px 20px !important; background-color: #F5F0E6 !important; border-radius: 12px !important; transition: all 0.3s ease !important; font-size: 16px !important; }
+.vempra-howto-garantia:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 30px rgba(91,11,43,0.12) !important; }
+.vempra-howto-garantia-icon { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 56px !important; height: 56px !important; background-color: #ffffff !important; border-radius: 50% !important; margin-bottom: 18px !important; color: #B85C38 !important; }
+.vempra-howto-garantia-icon svg { width: 28px !important; height: 28px !important; display: block !important; }
+.vempra-howto-garantia-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 19px !important; font-weight: 700 !important; color: #5B0B2B !important; margin: 0 0 12px 0 !important; line-height: 1.3 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-howto-garantia-text { font-size: 14px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 !important; }
+.vempra-howto-faq-section { background-color: #F5F0E6 !important; }
+.vempra-howto-faq-list { max-width: 840px !important; margin: 0 auto !important; background-color: #ffffff !important; border-radius: 12px !important; padding: 8px 32px !important; box-shadow: 0 4px 14px rgba(0,0,0,0.06) !important; }
+.vempra-howto-faq-item { border-bottom: 1px solid #eee !important; padding: 0 !important; margin: 0 !important; list-style: none !important; }
+.vempra-howto-faq-item:last-child { border-bottom: none !important; }
+.vempra-howto-faq-item summary { list-style: none !important; }
+.vempra-howto-faq-item summary::-webkit-details-marker { display: none !important; }
+.vempra-howto-faq-q { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 14px !important; padding: 22px 0 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 17px !important; font-weight: 700 !important; color: #242424 !important; line-height: 1.4 !important; cursor: pointer !important; transition: color 0.25s ease !important; }
+.vempra-howto-faq-q:hover { color: #B85C38 !important; }
+.vempra-howto-faq-arrow { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 28px !important; height: 28px !important; border-radius: 50% !important; background-color: #F5F0E6 !important; color: #B85C38 !important; font-size: 18px !important; font-weight: 700 !important; flex-shrink: 0 !important; transition: all 0.3s ease !important; line-height: 1 !important; }
+.vempra-howto-faq-item[open] .vempra-howto-faq-arrow { background-color: #B85C38 !important; color: #ffffff !important; transform: rotate(45deg) !important; }
+.vempra-howto-faq-a { padding: 0 0 22px 0 !important; }
+.vempra-howto-faq-a p { font-size: 15.5px !important; line-height: 1.7 !important; color: #555 !important; margin: 0 !important; }
+.vempra-howto-faq-cta { text-align: center !important; margin-top: 40px !important; }
+.vempra-howto-faq-cta p { font-size: 16px !important; color: #666 !important; margin: 0 0 14px 0 !important; }
+.vempra-howto-wa-link { display: inline-flex !important; align-items: center !important; gap: 8px !important; color: #25D366 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 16px !important; font-weight: 700 !important; text-decoration: none !important; border-bottom: 2px solid #25D366 !important; padding-bottom: 4px !important; transition: all 0.25s ease !important; }
+.vempra-howto-wa-link:hover { color: #1da851 !important; border-bottom-color: #1da851 !important; text-decoration: none !important; }
+.vempra-howto-wa-link svg { width: 18px !important; height: 18px !important; }
+.vempra-howto-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 100px 24px !important; }
+.vempra-howto-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
+.vempra-howto-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 46px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-howto-finalcta-subtitle { font-size: 19px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 36px 0 !important; font-weight: 300 !important; }
+.vempra-howto-finalcta-buttons { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+.vempra-howto-finalcta-section .vempra-btn-primary { background-color: #ffffff !important; color: #5B0B2B !important; border-color: #ffffff !important; }
+.vempra-howto-finalcta-section .vempra-btn-primary:hover { background-color: #F5F0E6 !important; color: #5B0B2B !important; border-color: #F5F0E6 !important; }
+
+
+/* === NOSOTROS (page-id 176) === */
+.vempra-about-hero { position: relative !important; width: 100% !important; min-height: 60vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/nosotros-mendoza.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
+.vempra-about-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.45) 0%, rgba(91,11,43,0.65) 100%) !important; z-index: 1 !important; }
+.vempra-about-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
+.vempra-about-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 28px !important; }
+.vempra-about-hero-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 62px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.1 !important; letter-spacing: -0.5px !important; text-shadow: 0 2px 20px rgba(0,0,0,0.4) !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-about-hero-subtitle { font-size: 20px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 32px 0 !important; font-weight: 300 !important; }
+.vempra-about-hero-trust { display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 14px !important; flex-wrap: wrap !important; font-size: 14px !important; color: #F5F0E6 !important; background-color: rgba(0,0,0,0.35) !important; padding: 14px 24px !important; border-radius: 4px !important; }
+.vempra-about-hero-trust-item { color: #F5F0E6 !important; }
+.vempra-about-hero-trust-item strong { color: #ffffff !important; font-weight: 700 !important; }
+.vempra-about-hero-trust-divider { color: rgba(255,255,255,0.4) !important; }
+.vempra-about-section { padding: 90px 24px !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; box-sizing: border-box !important; }
+.vempra-about-section-header { max-width: 760px !important; margin: 0 auto 50px auto !important; text-align: center !important; }
+.vempra-about-section-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 42px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 16px 0 !important; letter-spacing: -0.3px !important; line-height: 1.2 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-about-section-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 !important; font-weight: 300 !important; }
+.vempra-about-eyebrow { font-size: 12px !important; color: #B85C38 !important; font-weight: 700 !important; letter-spacing: 2px !important; text-transform: uppercase !important; margin-bottom: 14px !important; display: inline-block !important; }
+.vempra-about-historia-section { background-color: #ffffff !important; }
+.vempra-about-historia-inner { max-width: 820px !important; margin: 0 auto !important; text-align: center !important; }
+.vempra-about-historia-text { text-align: left !important; margin-top: 30px !important; }
+.vempra-about-historia-text p { font-size: 17px !important; line-height: 1.8 !important; color: #3a3a3a !important; margin: 0 0 22px 0 !important; }
+.vempra-about-historia-text p strong { color: #5B0B2B !important; font-weight: 700 !important; }
+.vempra-about-valores-section { background-color: #F5F0E6 !important; }
+.vempra-about-valores-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 24px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-about-valor { background-color: #ffffff !important; border-radius: 12px !important; padding: 32px 24px !important; text-align: center !important; transition: all 0.3s ease !important; box-shadow: 0 4px 14px rgba(0,0,0,0.04) !important; font-size: 16px !important; }
+.vempra-about-valor:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(91,11,43,0.15) !important; }
+.vempra-about-valor-icon { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 60px !important; height: 60px !important; background-color: #F5F0E6 !important; border-radius: 50% !important; margin-bottom: 20px !important; color: #B85C38 !important; }
+.vempra-about-valor-icon svg { width: 28px !important; height: 28px !important; display: block !important; }
+.vempra-about-valor-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 21px !important; font-weight: 700 !important; color: #B85C38 !important; margin: 0 0 12px 0 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-about-valor-text { font-size: 14.5px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 !important; }
+.vempra-about-equipo-section { background-color: #ffffff !important; }
+.vempra-about-equipo-inner { max-width: 1180px !important; margin: 0 auto !important; display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 60px !important; align-items: center !important; }
+.vempra-about-equipo-image img { width: 100% !important; height: auto !important; border-radius: 12px !important; box-shadow: 0 10px 30px rgba(91,11,43,0.15) !important; display: block !important; }
+.vempra-about-equipo-content h2 { font-family: "Playfair Display", Georgia, serif !important; font-size: 36px !important; font-weight: 700 !important; color: #242424 !important; margin: 0 0 18px 0 !important; line-height: 1.2 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-about-equipo-content p { font-size: 16px !important; line-height: 1.75 !important; color: #3a3a3a !important; margin: 0 0 16px 0 !important; }
+.vempra-about-equipo-content p strong { color: #5B0B2B !important; font-weight: 700 !important; }
+.vempra-about-equipo-team { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; margin-top: 24px !important; }
+.vempra-about-team-pill { background-color: #F5F0E6 !important; color: #5B0B2B !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; font-weight: 700 !important; padding: 8px 14px !important; border-radius: 20px !important; border: 1px solid #e8dfd0 !important; }
+.vempra-about-numbers-section { background-color: #5B0B2B !important; padding: 80px 24px !important; }
+.vempra-about-numbers-section .vempra-about-section-title { color: #ffffff !important; }
+.vempra-about-numbers-section .vempra-about-section-subtitle { color: rgba(255,255,255,0.7) !important; }
+.vempra-about-numbers-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 30px !important; max-width: 1100px !important; margin: 0 auto !important; font-size: 0 !important; }
+.vempra-about-number { text-align: center !important; padding: 24px 16px !important; font-size: 16px !important; border-right: 1px solid rgba(255,255,255,0.1) !important; }
+.vempra-about-number:last-child { border-right: none !important; }
+.vempra-about-number-value { font-family: "Playfair Display", Georgia, serif !important; font-size: 52px !important; font-weight: 700 !important; color: #ffffff !important; line-height: 1 !important; margin-bottom: 12px !important; letter-spacing: -0.5px !important; }
+.vempra-about-number-label { font-size: 13px !important; color: #F5F0E6 !important; letter-spacing: 1px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+.vempra-about-asoc-section { background-color: #F5F0E6 !important; }
+.vempra-about-asoc-logos { display: flex !important; flex-wrap: wrap !important; align-items: center !important; justify-content: center !important; gap: 20px !important; max-width: 1100px !important; margin: 0 auto 50px auto !important; }
+.vempra-about-asoc-badge { display: inline-flex !important; align-items: center !important; justify-content: center !important; background-color: #ffffff !important; padding: 18px 32px !important; border-radius: 8px !important; min-height: 90px !important; min-width: 200px !important; box-shadow: 0 4px 14px rgba(0,0,0,0.08) !important; transition: all 0.25s ease !important; text-decoration: none !important; }
+.vempra-about-asoc-badge img { max-height: 56px !important; max-width: 200px !important; width: auto !important; height: auto !important; display: block !important; object-fit: contain !important; }
+.vempra-about-asoc-badge-link { cursor: pointer !important; }
+.vempra-about-asoc-badge-link:hover { transform: translateY(-3px) !important; box-shadow: 0 10px 24px rgba(0,0,0,0.15) !important; }
+.vempra-about-legal { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; padding: 32px !important; background-color: #ffffff !important; border-radius: 8px !important; border: 1px solid #e8dfd0 !important; }
+.vempra-about-legal p { font-size: 15px !important; line-height: 1.7 !important; color: #3a3a3a !important; margin: 0 0 10px 0 !important; }
+.vempra-about-legal p:last-child { margin-bottom: 0 !important; }
+.vempra-about-legal p strong { color: #5B0B2B !important; font-weight: 700 !important; }
+.vempra-about-legal-small { font-size: 13px !important; color: #888 !important; margin-top: 16px !important; }
+.vempra-about-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 100px 24px !important; }
+.vempra-about-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
+.vempra-about-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 44px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-about-finalcta-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 36px 0 !important; font-weight: 300 !important; }
+.vempra-about-finalcta-buttons { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+.vempra-about-finalcta-section .vempra-btn-primary { background-color: #ffffff !important; color: #5B0B2B !important; border-color: #ffffff !important; }
+.vempra-about-finalcta-section .vempra-btn-primary:hover { background-color: #F5F0E6 !important; color: #5B0B2B !important; border-color: #F5F0E6 !important; }
+
+
+/* === FOOTER CUSTOM VEMPRA === */
+.vempra-footer { background-color: #1f1d1c !important; color: #c8c4bd !important; font-family: inherit !important; margin-top: 0 !important; width: 100% !important; font-size: 14.5px !important; line-height: 1.6 !important; }
+.vempra-footer * { box-sizing: border-box !important; }
+.vempra-footer-container { max-width: 1320px !important; margin: 0 auto !important; padding: 0 32px !important; width: 100% !important; }
+.vempra-footer-top { background-color: #5B0B2B !important; padding: 60px 0 40px !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+.vempra-footer-top .vempra-footer-container { display: grid !important; grid-template-columns: 1.2fr 1fr !important; gap: 60px !important; align-items: start !important; }
+.vempra-footer-brand { color: #ffffff !important; }
+.vempra-footer-logo { max-width: 160px !important; height: auto !important; margin-bottom: 20px !important; display: block !important; filter: brightness(0) invert(1) !important; }
+.vempra-footer-tagline { color: rgba(255,255,255,0.85) !important; font-size: 15px !important; line-height: 1.6 !important; margin: 0 0 12px 0 !important; max-width: 460px !important; }
+.vempra-footer-legajo { color: #F5F0E6 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 0.5px !important; margin: 0 0 22px 0 !important; }
+.vempra-footer-social { display: flex !important; gap: 10px !important; align-items: center !important; }
+.vempra-footer-social a { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 38px !important; height: 38px !important; border-radius: 50% !important; background-color: rgba(255,255,255,0.1) !important; color: #ffffff !important; text-decoration: none !important; transition: all 0.25s ease !important; border: 1px solid rgba(255,255,255,0.15) !important; }
+.vempra-footer-social a:hover { background-color: #B85C38 !important; border-color: #B85C38 !important; transform: translateY(-2px) !important; }
+.vempra-footer-social svg { width: 18px !important; height: 18px !important; display: block !important; }
+.vempra-footer-newsletter { color: #ffffff !important; }
+.vempra-footer-newsletter h4 { font-family: "Playfair Display", Georgia, serif !important; font-size: 22px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 10px 0 !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-footer-newsletter p { color: rgba(255,255,255,0.8) !important; font-size: 14.5px !important; margin: 0 0 18px 0 !important; line-height: 1.5 !important; }
+.vempra-footer-newsletter-form { display: flex !important; gap: 8px !important; flex-wrap: wrap !important; margin-bottom: 10px !important; }
+.vempra-footer-newsletter-form input[type="email"] { flex: 1 !important; min-width: 200px !important; background-color: rgba(255,255,255,0.95) !important; border: 1px solid rgba(255,255,255,0.3) !important; color: #242424 !important; font-size: 15px !important; padding: 12px 16px !important; border-radius: 4px !important; font-family: inherit !important; outline: none !important; transition: all 0.25s ease !important; }
+.vempra-footer-newsletter-form input[type="email"]:focus { background-color: #ffffff !important; border-color: #B85C38 !important; box-shadow: 0 0 0 3px rgba(184,92,56,0.2) !important; }
+.vempra-footer-newsletter-form button { background-color: #B85C38 !important; color: #ffffff !important; border: none !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 15px !important; font-weight: 700 !important; padding: 12px 24px !important; border-radius: 4px !important; cursor: pointer !important; transition: all 0.25s ease !important; letter-spacing: 0.3px !important; }
+.vempra-footer-newsletter-form button:hover { background-color: #ffffff !important; color: #5B0B2B !important; }
+.vempra-footer-newsletter-disclaimer { color: rgba(255,255,255,0.55) !important; font-size: 12px !important; margin: 0 !important; font-style: italic !important; }
+.vempra-footer-asociaciones { max-width: 1320px !important; margin: 40px auto 0 !important; padding: 30px 32px 0 !important; border-top: 1px solid rgba(255,255,255,0.1) !important; text-align: center !important; }
+.vempra-footer-asoc-label { color: rgba(255,255,255,0.7) !important; font-size: 11px !important; letter-spacing: 2.5px !important; text-transform: uppercase !important; margin: 0 0 22px 0 !important; font-weight: 700 !important; }
+.vempra-footer-asoc-logos { display: flex !important; flex-wrap: wrap !important; align-items: center !important; justify-content: center !important; gap: 16px !important; }
+.vempra-asoc-badge { display: inline-flex !important; align-items: center !important; justify-content: center !important; background-color: #ffffff !important; padding: 12px 22px !important; border-radius: 6px !important; min-height: 64px !important; min-width: 160px !important; box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important; transition: all 0.25s ease !important; text-decoration: none !important; }
+.vempra-asoc-badge img { max-height: 40px !important; max-width: 160px !important; width: auto !important; height: auto !important; display: block !important; object-fit: contain !important; }
+.vempra-asoc-badge-link { cursor: pointer !important; }
+.vempra-asoc-badge-link:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 16px rgba(0,0,0,0.25) !important; }
+.vempra-footer-main { padding: 60px 0 40px !important; background-color: #1f1d1c !important; }
+.vempra-footer-columns { display: grid !important; grid-template-columns: 1fr 1fr 1fr 1.3fr !important; gap: 48px !important; }
+.vempra-footer-col h4.vempra-footer-col-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 16px !important; font-weight: 700 !important; color: #ffffff !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; margin: 0 0 22px 0 !important; padding: 0 0 12px 0 !important; border-bottom: 2px solid #B85C38 !important; display: inline-block !important; border-left: none !important; padding-left: 0 !important; }
+.vempra-footer-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+.vempra-footer-list li { margin: 0 0 11px 0 !important; padding: 0 !important; list-style: none !important; font-size: 14.5px !important; }
+.vempra-footer-list li::before { content: none !important; display: none !important; }
+.vempra-footer-list a { color: #c8c4bd !important; text-decoration: none !important; transition: color 0.2s ease !important; font-size: 14.5px !important; line-height: 1.5 !important; }
+.vempra-footer-list a:hover { color: #B85C38 !important; text-decoration: none !important; }
+.vempra-footer-link-strong { color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-weight: 700 !important; display: inline-block !important; margin-top: 6px !important; }
+.vempra-footer-qrs { display: flex !important; gap: 14px !important; margin-top: 22px !important; padding-top: 18px !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
+.vempra-footer-qr-item { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 6px !important; text-decoration: none !important; transition: transform 0.25s ease !important; }
+.vempra-footer-qr-item:hover { transform: translateY(-2px) !important; }
+.vempra-footer-qr-item img { width: 64px !important; height: 64px !important; background-color: #ffffff !important; padding: 4px !important; border-radius: 4px !important; display: block !important; object-fit: contain !important; }
+.vempra-footer-qr-item span { color: rgba(255,255,255,0.7) !important; font-size: 10px !important; letter-spacing: 0.4px !important; text-align: center !important; line-height: 1.3 !important; text-transform: uppercase !important; font-weight: 700 !important; }
+.vempra-footer-qr-empty { width: 64px !important; height: 64px !important; background-color: rgba(255,255,255,0.06) !important; border: 1px dashed rgba(255,255,255,0.2) !important; border-radius: 4px !important; display: flex !important; align-items: center !important; justify-content: center !important; color: rgba(255,255,255,0.3) !important; font-size: 11px !important; font-weight: 700 !important; }
+.vempra-footer-qr-placeholder { cursor: not-allowed !important; opacity: 0.6 !important; }
+.vempra-footer-contact-list li { display: flex !important; align-items: flex-start !important; gap: 10px !important; margin-bottom: 14px !important; font-size: 14px !important; line-height: 1.5 !important; color: #c8c4bd !important; }
+.vempra-footer-contact-list li svg { width: 16px !important; height: 16px !important; flex-shrink: 0 !important; color: #B85C38 !important; margin-top: 3px !important; }
+.vempra-footer-contact-list li a { color: #c8c4bd !important; }
+.vempra-footer-contact-list li a:hover { color: #ffffff !important; }
+.vempra-footer-wa-btn { display: inline-flex !important; align-items: center !important; gap: 8px !important; background-color: #25D366 !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 14px !important; font-weight: 700 !important; padding: 12px 22px !important; border-radius: 4px !important; text-decoration: none !important; margin-top: 16px !important; transition: all 0.25s ease !important; }
+.vempra-footer-wa-btn:hover { background-color: #1da851 !important; color: #ffffff !important; transform: translateY(-2px) !important; text-decoration: none !important; }
+.vempra-footer-wa-btn svg { width: 16px !important; height: 16px !important; }
+.vempra-footer-bottom { background-color: #161514 !important; padding: 22px 0 !important; border-top: 1px solid rgba(255,255,255,0.05) !important; }
+.vempra-footer-bottom-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 24px !important; flex-wrap: wrap !important; }
+.vempra-footer-copyright { color: rgba(255,255,255,0.6) !important; font-size: 13px !important; line-height: 1.6 !important; }
+.vempra-footer-copyright-small { color: rgba(255,255,255,0.4) !important; font-size: 12px !important; }
+.vempra-footer-payments { display: flex !important; align-items: center !important; gap: 14px !important; }
+.vempra-footer-payments-label { color: rgba(255,255,255,0.5) !important; font-size: 12px !important; text-transform: uppercase !important; letter-spacing: 1px !important; font-weight: 700 !important; }
+.vempra-footer-payments-icons { display: flex !important; gap: 8px !important; flex-wrap: wrap !important; }
+.vempra-pay-badge { background-color: rgba(255,255,255,0.08) !important; color: rgba(255,255,255,0.85) !important; font-size: 11px !important; padding: 5px 10px !important; border-radius: 3px !important; font-weight: 700 !important; letter-spacing: 0.3px !important; border: 1px solid rgba(255,255,255,0.1) !important; }
+
+
+/* ============================================================ */
+/* === FIX: restaurar header del tour (single-tour) === */
+/* ============================================================ */
+body.single-tour #page_caption {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+  margin: initial !important;
+  padding: initial !important;
+}
+body.single-tour #page_caption.hasbg {
+  height: 600px !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* ============================================================ */
+/* === OVERRIDE FOTOS DE TARJETAS — featured image real de cada tour Grand Tour CPT === */
+/* ============================================================ */
+.vempra-tour-bg-altamontana   { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cerro-aconcagua-1.jpg.webp') !important; }
+.vempra-tour-bg-winetour      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/Bandini-0005-1.webp') !important; }
+.vempra-tour-bg-bodegas  { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/074487bf-fbe9-4b48-acf5-9c1134ee768f.png') !important; }
+.vempra-tour-bg-bodegas2 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/unnamed.webp') !important; }
+.vempra-tour-bg-cabalgata     { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/c6173c73-b0b4-4b3f-a70d-470cf725f785.png') !important; }
+.vempra-tour-bg-cabalgata2    { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/caption-2.jpg') !important; }
+.vempra-tour-bg-cabalgata3    { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/e3.jpg') !important; }
+.vempra-tour-bg-atuel         { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/El-Submarino-Valle-Grande-2-scaled-1.jpg') !important; }
+.vempra-tour-bg-villavicencio { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/03.jpg') !important; }
+.vempra-tour-bg-villa4x4      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/villavicencio-2026-005.webp') !important; }
+.vempra-tour-bg-aventura      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/rapel-en-mendoza.png') !important; }
+.vempra-tour-bg-combo         { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/rafting-en-mendoza.png') !important; }
+.vempra-tour-bg-rafting       { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/b204a53b-c31e-4ade-b710-32184f56e71c.png') !important; }
+.vempra-tour-bg-termas        { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/c372bfdb-9f8d-45b0-acde-545b3e968a0c.jpg') !important; }
+.vempra-tour-bg-lenas         { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/6-min.png') !important; }
+.vempra-tour-bg-puquios       { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/3.png') !important; }
+.vempra-tour-bg-penitentes    { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/penitentes-parkjpg.webp') !important; }
+
+
+/* === MOBILE === */
+@media only screen and (max-width: 768px) {
+  .single_tour_content > p:first-of-type { font-size: 18px !important; }
+  .single_tour_content h3 { font-size: 22px !important; margin-top: 35px !important; }
+  .single_tour_content > ul > li { font-size: 15px !important; }
+  .vempra-btn-reserva { font-size: 17px !important; padding: 16px 32px !important; width: 100% !important; box-sizing: border-box !important; }
+  .vempra-reviews-header { padding: 18px 16px !important; }
+  .vempra-reviews-stars { font-size: 24px !important; }
+  .vempra-slider { padding: 0 0 50px 0 !important; }
+  .vempra-slider-prev, .vempra-slider-next { display: none !important; }
+  .vempra-review-card { padding: 20px 18px !important; }
+  .vempra-review-text { font-size: 15px !important; }
+  .vempra-slider-track { min-height: 280px !important; }
+  .vempra-trust-badge { font-size: 13px !important; }
+  .vempra-cancellation-text strong { font-size: 14px !important; }
+  .vempra-faq-seo { padding: 4px 16px !important; }
+  .vempra-faq-seo .vempra-faq-q { font-size: 15px !important; padding: 16px 0 !important; }
+  .vempra-faq-seo .vempra-faq-a { font-size: 14.5px !important; }
+  .vempra-faq-toggle { font-size: 14px !important; padding: 14px 0 12px 0 !important; }
+  .vempra-wa-float { bottom: 18px !important; left: 18px !important; width: 56px !important; height: 56px !important; }
+  .vempra-wa-float svg { width: 28px !important; height: 28px !important; }
+  .vempra-wa-float-tooltip { display: none !important; }
+  .vempra-home-hero { min-height: 75vh !important; }
+  .vempra-home-hero-title { font-size: 38px !important; line-height: 1.15 !important; }
+  .vempra-home-hero-subtitle { font-size: 17px !important; margin-bottom: 32px !important; }
+  .vempra-home-hero-eyebrow { font-size: 12px !important; margin-bottom: 22px !important; }
+  .vempra-home-hero-cta { flex-direction: column !important; gap: 12px !important; align-items: center !important; }
+  .vempra-home-hero-cta a { width: 100% !important; max-width: 320px !important; text-align: center !important; box-sizing: border-box !important; }
+  .vempra-home-hero-trust { font-size: 12px !important; gap: 8px !important; padding: 10px 16px !important; }
+  .vempra-home-hero-trust-divider { display: none !important; }
+  .vempra-home-section { padding: 60px 16px !important; }
+  .vempra-home-section-header { margin-bottom: 40px !important; }
+  .vempra-home-section-title { font-size: 30px !important; }
+  .vempra-home-section-subtitle { font-size: 16px !important; }
+  .vempra-home-categories { grid-template-columns: 1fr 1fr !important; gap: 18px !important; padding: 0 !important; }
+  .vempra-home-category-card { aspect-ratio: 3/4 !important; min-height: 260px !important; }
+  .vempra-home-category-content { padding: 18px 16px !important; }
+  .vempra-home-category-name { font-size: 19px !important; }
+  .vempra-home-category-desc { font-size: 12.5px !important; margin-bottom: 10px !important; }
+  .vempra-home-category-from { font-size: 11px !important; padding: 5px 10px !important; }
+  .vempra-home-featured-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .vempra-home-tour-image { height: 200px !important; }
+  .vempra-home-trust-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; margin-bottom: 50px !important; }
+  .vempra-home-trust-card { padding: 20px 12px !important; }
+  .vempra-home-trust-icon { width: 56px !important; height: 56px !important; }
+  .vempra-home-trust-icon svg { width: 26px !important; height: 26px !important; }
+  .vempra-home-trust-title { font-size: 18px !important; }
+  .vempra-home-trust-text { font-size: 13.5px !important; }
+  .vempra-home-stats { grid-template-columns: 1fr 1fr !important; padding: 36px 20px !important; gap: 28px 16px !important; }
+  .vempra-home-stat-value { font-size: 34px !important; }
+  .vempra-home-stat-label { font-size: 12.5px !important; }
+  .vempra-home-reviews-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
+  .vempra-home-review { padding: 24px !important; }
+  .vempra-home-howto-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .vempra-home-finalcta-section { padding: 70px 20px !important; }
+  .vempra-home-finalcta-title { font-size: 32px !important; }
+  .vempra-home-finalcta-subtitle { font-size: 16px !important; }
+  .vempra-home-finalcta-buttons { flex-direction: column !important; gap: 12px !important; }
+  .vempra-home-finalcta-buttons a { width: 100% !important; max-width: 320px !important; text-align: center !important; box-sizing: border-box !important; }
+  .vempra-btn-large { font-size: 18px !important; padding: 18px 36px !important; }
+  .vempra-shop-hero { min-height: 30vh !important; }
+  .vempra-shop-hero-title { font-size: 36px !important; }
+  .vempra-shop-hero-subtitle { font-size: 15px !important; }
+  .vempra-shop-section { padding: 40px 16px 70px !important; }
+  .vempra-shop-controls { flex-direction: column !important; align-items: stretch !important; }
+  .vempra-shop-filters { overflow-x: auto !important; flex-wrap: nowrap !important; padding-bottom: 8px !important; }
+  .vempra-shop-filter { white-space: nowrap !important; flex-shrink: 0 !important; font-size: 13px !important; padding: 8px 14px !important; }
+  .vempra-shop-sort { justify-content: flex-end !important; }
+  .vempra-shop-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .vempra-shop-card-image { height: 200px !important; }
+  .vempra-shop-help { padding: 50px 20px !important; }
+  .vempra-shop-help h3 { font-size: 24px !important; }
+  .vempra-howto-hero { min-height: 50vh !important; }
+  .vempra-howto-hero-title { font-size: 38px !important; }
+  .vempra-howto-hero-subtitle { font-size: 16px !important; }
+  .vempra-howto-hero-eyebrow { font-size: 11px !important; margin-bottom: 22px !important; }
+  .vempra-howto-hero-trust { font-size: 12px !important; gap: 8px !important; padding: 10px 16px !important; }
+  .vempra-howto-hero-trust-divider { display: none !important; }
+  .vempra-howto-section { padding: 60px 16px !important; }
+  .vempra-howto-section-header { margin-bottom: 40px !important; }
+  .vempra-howto-section-title { font-size: 28px !important; }
+  .vempra-howto-section-subtitle { font-size: 15px !important; }
+  .vempra-howto-steps-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .vempra-howto-step { padding: 28px 22px 24px !important; }
+  .vempra-howto-mp-section { padding: 30px 16px !important; }
+  .vempra-howto-mp-inner { flex-direction: column !important; text-align: center !important; padding: 28px 22px !important; gap: 22px !important; }
+  .vempra-howto-mp-title { font-size: 22px !important; }
+  .vempra-howto-mp-text { font-size: 14px !important; }
+  .vempra-howto-mp-badges { justify-content: center !important; }
+  .vempra-howto-garantias-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .vempra-howto-garantia { padding: 22px 14px !important; }
+  .vempra-howto-garantia-title { font-size: 16px !important; }
+  .vempra-howto-garantia-text { font-size: 13px !important; }
+  .vempra-howto-faq-list { padding: 4px 20px !important; }
+  .vempra-howto-faq-q { font-size: 15px !important; padding: 18px 0 !important; }
+  .vempra-howto-faq-a p { font-size: 14px !important; }
+  .vempra-howto-finalcta-section { padding: 70px 20px !important; }
+  .vempra-howto-finalcta-title { font-size: 30px !important; }
+  .vempra-howto-finalcta-subtitle { font-size: 16px !important; }
+  .vempra-howto-finalcta-buttons { flex-direction: column !important; gap: 12px !important; }
+  .vempra-howto-finalcta-buttons a { width: 100% !important; max-width: 320px !important; text-align: center !important; box-sizing: border-box !important; }
+  .vempra-about-hero { min-height: 50vh !important; }
+  .vempra-about-hero-title { font-size: 38px !important; }
+  .vempra-about-hero-subtitle { font-size: 16px !important; }
+  .vempra-about-hero-eyebrow { font-size: 11px !important; }
+  .vempra-about-hero-trust { font-size: 12px !important; gap: 8px !important; padding: 10px 16px !important; }
+  .vempra-about-hero-trust-divider { display: none !important; }
+  .vempra-about-section { padding: 60px 16px !important; }
+  .vempra-about-section-title { font-size: 28px !important; }
+  .vempra-about-section-subtitle { font-size: 15px !important; }
+  .vempra-about-historia-text p { font-size: 15.5px !important; }
+  .vempra-about-valores-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .vempra-about-valor { padding: 24px 18px !important; }
+  .vempra-about-valor-title { font-size: 18px !important; }
+  .vempra-about-valor-text { font-size: 13.5px !important; }
+  .vempra-about-equipo-inner { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .vempra-about-equipo-content h2 { font-size: 26px !important; }
+  .vempra-about-equipo-content p { font-size: 15px !important; }
+  .vempra-about-numbers-section { padding: 50px 16px !important; }
+  .vempra-about-numbers-grid { grid-template-columns: 1fr 1fr !important; gap: 24px 16px !important; }
+  .vempra-about-number { padding: 16px 8px !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+  .vempra-about-number:nth-last-child(-n+2) { border-bottom: none !important; }
+  .vempra-about-number-value { font-size: 38px !important; }
+  .vempra-about-number-label { font-size: 11px !important; }
+  .vempra-about-asoc-logos { gap: 12px !important; }
+  .vempra-about-asoc-badge { padding: 14px 22px !important; min-width: 150px !important; min-height: 72px !important; }
+  .vempra-about-asoc-badge img { max-height: 40px !important; max-width: 130px !important; }
+  .vempra-about-legal { padding: 22px !important; }
+  .vempra-about-legal p { font-size: 14px !important; }
+  .vempra-about-finalcta-section { padding: 70px 20px !important; }
+  .vempra-about-finalcta-title { font-size: 28px !important; }
+  .vempra-about-finalcta-subtitle { font-size: 15px !important; }
+  .vempra-about-finalcta-buttons { flex-direction: column !important; gap: 12px !important; }
+  .vempra-about-finalcta-buttons a { width: 100% !important; max-width: 320px !important; text-align: center !important; box-sizing: border-box !important; }
+  .vempra-footer-container { padding: 0 20px !important; }
+  .vempra-footer-top { padding: 40px 0 30px !important; }
+  .vempra-footer-top .vempra-footer-container { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .vempra-footer-logo { max-width: 130px !important; }
+  .vempra-footer-tagline { font-size: 14px !important; }
+  .vempra-footer-newsletter h4 { font-size: 20px !important; }
+  .vempra-footer-newsletter-form { flex-direction: column !important; }
+  .vempra-footer-newsletter-form input[type="email"] { width: 100% !important; }
+  .vempra-footer-newsletter-form button { width: 100% !important; }
+  .vempra-footer-asociaciones { padding: 24px 20px 0 !important; }
+  .vempra-footer-asoc-logos { gap: 10px !important; }
+  .vempra-asoc-badge { padding: 10px 16px !important; min-width: 130px !important; min-height: 56px !important; }
+  .vempra-asoc-badge img { max-height: 32px !important; max-width: 110px !important; }
+  .vempra-footer-main { padding: 40px 0 30px !important; }
+  .vempra-footer-columns { grid-template-columns: 1fr 1fr !important; gap: 30px !important; }
+  .vempra-footer-col:nth-child(4) { grid-column: 1 / -1 !important; }
+  .vempra-footer-qrs { justify-content: flex-start !important; gap: 18px !important; }
+  .vempra-footer-bottom { padding: 18px 0 !important; }
+  .vempra-footer-bottom-inner { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; text-align: left !important; }
+  body.single-tour #page_caption.hasbg { height: 350px !important; }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1100px) {
+  .vempra-home-categories { grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; }
+  .vempra-home-featured-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-home-trust-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-home-stats { grid-template-columns: 1fr 1fr !important; gap: 30px !important; }
+  .vempra-home-hero-title { font-size: 56px !important; }
+  .vempra-shop-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-howto-steps-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-howto-garantias-grid { grid-template-columns: 1fr 1fr !important; }
+  .vempra-about-valores-grid { grid-template-columns: 1fr 1fr !important; gap: 22px !important; }
+  .vempra-about-equipo-inner { gap: 40px !important; }
+  .vempra-about-numbers-grid { grid-template-columns: 1fr 1fr !important; gap: 30px !important; }
+  .vempra-footer-columns { grid-template-columns: 1fr 1fr !important; gap: 36px !important; }
+  .vempra-footer-top .vempra-footer-container { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .vempra-asoc-badge { min-width: 140px !important; }
+}
+/* ============================================================ */
+/* === FIX: prevenir overflow horizontal en secciones v2 === */
+/* === Snippet PHP Editorial Wine Country usa content-box === */
+/* === que sumaba padding al width causando overflow de 82px === */
+/* ============================================================ */
+[class*="vempra-v2-"],
+[class*="vempra-v2-"] *,
+[class*="vempra-v2-"] *::before,
+[class*="vempra-v2-"] *::after {
+  box-sizing: border-box !important;
+}
+
+/* ============================================================ */
+/* === FIX: ocultar menú desktop en mobile === */
+/* === Restaura hamburger nativo del theme Grand Tour === */
+/* ============================================================ */
+@media (max-width: 768px) {
+  #main_menu.nav { display: none !important; }
+}
+/* ============================================================ */
+/* === ORDEN ADD-TO-CART: Calendario arriba, Personas debajo === */
+/* ============================================================ */
+
+.wc-bookings-booking-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+/* Calendario primero */
+.wc-bookings-booking-form .wc-bookings-date-picker {
+  order: 1 !important;
+  margin: 0 0 24px 0 !important;
+}
+
+/* Personas debajo, agrupadas con caja editorial */
+.wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] {
+  order: 2 !important;
+  margin: 0 !important;
+  padding: 14px 20px !important;
+  background: #F5F0E6 !important;
+  border-left: 1px solid #E5DDD0 !important;
+  border-right: 1px solid #E5DDD0 !important;
+  border-top: 1px solid #E5DDD0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  gap: 16px !important;
+}
+
+/* Última fila de persona: borde inferior */
+.wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"]:last-of-type {
+  border-bottom: 1px solid #E5DDD0 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Label del tipo de persona */
+.wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] label {
+  margin: 0 !important;
+  font-weight: 500 !important;
+  color: #1A1A1A !important;
+  font-size: 15px !important;
+  flex: 1 !important;
+}
+
+/* Description / leyenda del tipo de persona si existe */
+.wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] small,
+.wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] .description {
+  display: block !important;
+  font-size: 12px !important;
+  color: #5A5651 !important;
+  margin-top: 2px !important;
+}
+
+/* Input numérico */
+.wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] input[type="number"] {
+  width: 80px !important;
+  padding: 8px 10px !important;
+  border: 1px solid #C7BFB1 !important;
+  border-radius: 3px !important;
+  font-size: 15px !important;
+  text-align: center !important;
+  background: #fff !important;
+}
+/* ============================================================ */
+/* === Precio total: debajo de personas, antes del botón === */
+/* ============================================================ */
+.wc-bookings-booking-form .wc-bookings-booking-cost,
+.wc-bookings-booking-form .wc-bookings-booking-cost.price {
+  order: 3 !important;
+  display: block !important;
+  margin: 0 0 20px 0 !important;
+  padding: 18px 20px !important;
+  background: #5B0B2B !important;
+  color: #fff !important;
+  font-family: 'Bodoni Moda', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.3px !important;
+  text-align: center !important;
+  border-radius: 4px !important;
+}
+
+/* Botón al final */
+.single_add_to_cart_button,
+form.cart .single_add_to_cart_button {
+  order: 4 !important;
+}
+/* ============================================================ */
+/* === FIX: FAQ acordeón - mostrar respuesta al abrir === */
+/* ============================================================ */
+.vempra-faq-a {
+  display: none !important;
+  padding: 12px 4px 16px !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #5A5651 !important;
+  font-family: 'Inter Tight', sans-serif !important;
+}
+
+.vempra-faq-item.open .vempra-faq-a {
+  display: block !important;
+}
+
+/* Animación + → × al abrir */
+.vempra-faq-arrow {
+  display: inline-block;
+  margin-left: 12px;
+  transition: transform 0.2s ease;
+  font-weight: 400;
+}
+
+.vempra-faq-item.open .vempra-faq-arrow {
+  transform: rotate(45deg);
+}
+
+/* Items SEO ocultos por default (>4 preguntas) */
+.vempra-faq-hidden {
+  display: none !important;
+}
+
+.vempra-faq-seo.vempra-faq-expanded .vempra-faq-hidden {
+  display: block !important;
+}
+
+/* Botón "Ver más" */
+.vempra-faq-toggle {
+  display: block !important;
+  width: 100% !important;
+  margin: 20px 0 0 !important;
+  padding: 12px 18px !important;
+  background: transparent !important;
+  border: 1px solid #B85C38 !important;
+  color: #B85C38 !important;
+  font-family: 'Inter Tight', sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.vempra-faq-toggle:hover {
+  background: #B85C38 !important;
+  color: #fff !important;
+}
+
+.vempra-faq-toggle-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.vempra-faq-toggle-arrow.up {
+  transform: rotate(180deg);
+}
+/* ============================================================ */
+/* === FIX FAQ: sobrescribir max-height/opacity heredados === */
+/* ============================================================ */
+.vempra-faq-a {
+  display: none !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease !important;
+}
+
+.vempra-faq-item.open .vempra-faq-a {
+  display: block !important;
+  max-height: 1000px !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  padding: 12px 4px 16px !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #5A5651 !important;
+  font-family: 'Inter Tight', sans-serif !important;
+}
+
+/* ================================================================== */
+/* === VEMPRA FICHA PREMIUM v1 — INICIO ============================= */
+/* Bloque agregado al final del CSS personalizado. Para revertir:     */
+/* borrar todo lo que está entre este marcador y el de FIN.           */
+/* Usa las variables de marca ya definidas arriba (terracota/malbec). */
+/* ================================================================== */
+
+.single-tour {
+  --vp-vino: #5B0B2B;
+  --vp-terra: #B85C38;
+  --vp-hueso: #F5F0E6;
+  --vp-borde: #E5DDD0;
+  --vp-tinta: #242424;
+  --vp-suave: #5A5651;
+  --vp-ok: #2E6B4E;
+  --vp-serif: "Playfair Display", Georgia, serif;
+  --vp-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ------------------------------------------------------------------ */
+/* 1. CALENDARIO — reemplaza el look jQuery-UI de fábrica              */
+/* ------------------------------------------------------------------ */
+.single-tour .wc-bookings-date-picker .picker .ui-datepicker {
+  background: #fff !important;
+  border: 1px solid var(--vp-borde) !important;
+  border-radius: 14px !important;
+  padding: 14px 10px 12px !important;
+  width: 100% !important;
+  box-shadow: 0 1px 2px rgba(36,36,36,.04), 0 10px 28px -16px rgba(36,36,36,.28);
+  font-family: var(--vp-sans) !important;
+}
+
+/* -- encabezado del mes -- */
+.single-tour .wc-bookings-date-picker .ui-datepicker-header {
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  position: static !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-title {
+  order: 2 !important;
+  margin: 0 !important;
+  font-family: var(--vp-serif) !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  color: var(--vp-tinta) !important;
+  text-transform: capitalize !important;
+  line-height: 1.2 !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-prev,
+.single-tour .wc-bookings-date-picker .ui-datepicker-next {
+  position: static !important;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  background: none !important;
+  background-image: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color .18s ease !important;
+  top: auto !important; left: auto !important; right: auto !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-prev { order: 1 !important; }
+.single-tour .wc-bookings-date-picker .ui-datepicker-next { order: 3 !important; }
+.single-tour .wc-bookings-date-picker .ui-datepicker-prev:hover,
+.single-tour .wc-bookings-date-picker .ui-datepicker-next:hover { background: var(--vp-hueso) !important; }
+/* flechas dibujadas con CSS: el sprite de jQuery-UI ya no se usa */
+.single-tour .wc-bookings-date-picker .ui-datepicker-header .ui-icon {
+  display: block !important;
+  width: 9px !important; height: 9px !important;
+  background: none !important;
+  background-image: none !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  border-right: 1.6px solid var(--vp-vino) !important;
+  border-bottom: 1.6px solid var(--vp-vino) !important;
+  margin: 0 !important; position: static !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-prev .ui-icon { transform: rotate(135deg) translate(-1px,-1px) !important; }
+.single-tour .wc-bookings-date-picker .ui-datepicker-next .ui-icon { transform: rotate(-45deg) translate(-1px,-1px) !important; }
+.single-tour .wc-bookings-date-picker .ui-datepicker-prev.ui-state-disabled,
+.single-tour .wc-bookings-date-picker .ui-datepicker-next.ui-state-disabled {
+  opacity: .22 !important; pointer-events: none !important;
+}
+
+/* -- grilla -- */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar {
+  width: 100% !important;
+  margin: 0 !important;
+  border: none !important;
+  border-collapse: separate !important;
+  border-spacing: 2px !important;
+  table-layout: fixed !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar th,
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td {
+  border: none !important;
+  padding: 0 !important;
+  background: none !important;
+  text-align: center !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar th span {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  color: var(--vp-suave) !important;
+  padding-bottom: 6px !important;
+  display: block !important;
+}
+
+/* -- cada día -- */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td > a,
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td > span {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1px !important;
+  aspect-ratio: 1 / 1 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 11px !important;
+  background: none !important;
+  background-image: none !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  color: var(--vp-tinta) !important;
+  text-decoration: none !important;
+  font-variant-numeric: tabular-nums !important;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .12s ease !important;
+}
+/* día con cupo */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.bookable > a {
+  background: var(--vp-hueso) !important;
+  cursor: pointer !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.bookable > a::after {
+  content: "" !important;
+  width: 4px !important; height: 4px !important;
+  border-radius: 50% !important;
+  background: var(--vp-ok) !important;
+  opacity: .8 !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.bookable > a:hover {
+  background: #F3E4E9 !important;
+  border-color: rgba(91,11,43,.35) !important;
+}
+/* día sin salida */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-state-disabled > span {
+  color: var(--vp-suave) !important;
+  opacity: .4 !important;
+  text-decoration: line-through !important;
+  cursor: not-allowed !important;
+}
+/* día de otro mes: casi invisible, no distrae */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-datepicker-other-month > a,
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-datepicker-other-month > span {
+  opacity: .28 !important;
+}
+/* día elegido */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td > a.ui-state-active {
+  background: var(--vp-vino) !important;
+  border-color: var(--vp-vino) !important;
+  color: #fff !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 6px 16px -6px rgba(91,11,43,.7) !important;
+  animation: vpDiaElegido .34s cubic-bezier(.16,1.1,.3,1) !important;
+}
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-datepicker-current-day > a::after,
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td > a.ui-state-active::after {
+  background: #fff !important; opacity: .9 !important;
+}
+@keyframes vpDiaElegido {
+  0%   { transform: scale(.86); }
+  60%  { transform: scale(1.11); }
+  100% { transform: scale(1.04); }
+}
+/* hoy, si no está elegido */
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-datepicker-today:not(.ui-datepicker-current-day) > a,
+.single-tour .wc-bookings-date-picker .ui-datepicker-calendar td.ui-datepicker-today:not(.ui-datepicker-current-day) > span {
+  border-color: var(--vp-terra) !important;
+}
+
+/* mientras el visitante no eligió fecha, el día por defecto de jQuery UI
+   no debe verse como seleccionado (confunde con el total del resumen) */
+.single-tour .vempra-sin-fecha .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.single-tour .vempra-sin-fecha .ui-datepicker-calendar td > a.ui-state-active {
+  background: var(--vp-hueso) !important;
+  color: var(--vp-tinta) !important;
+  border-color: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+.single-tour .vempra-sin-fecha .ui-datepicker-calendar td.ui-datepicker-current-day > a::after,
+.single-tour .vempra-sin-fecha .ui-datepicker-calendar td > a.ui-state-active::after {
+  background: var(--vp-ok) !important; opacity: .8 !important;
+}
+
+/* -- referencia de colores debajo del calendario (la agrega el JS) -- */
+.single-tour .vempra-cal-leyenda {
+  display: flex !important;
+  gap: 16px !important;
+  justify-content: center !important;
+  margin: 11px 2px 0 !important;
+  padding-top: 10px !important;
+  border-top: 1px solid #EFE6E9 !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 11.5px !important;
+  color: var(--vp-suave) !important;
+}
+.single-tour .vempra-cal-leyenda i {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 5px;
+}
+
+/* -- campos dd/mm/aaaa: quedan como respaldo, discretos -- */
+.single-tour .wc-bookings-date-picker-date-fields {
+  margin-top: 10px !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 12px !important;
+  color: var(--vp-suave) !important;
+  opacity: .75;
+}
+.single-tour .wc-bookings-date-picker-date-fields input {
+  width: 54px !important;
+  padding: 6px 8px !important;
+  border: 1px solid var(--vp-borde) !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. FORMULARIO — primero cuántos son, después qué día                */
+/* ------------------------------------------------------------------ */
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] { order: 1 !important; }
+.single-tour .wc-bookings-booking-form .wc-bookings-date-picker { order: 2 !important; margin: 0 0 4px !important; }
+.single-tour .wc-bookings-booking-form .wc-bookings-booking-cost { order: 3 !important; }
+.single-tour .vempra-paso { order: 0; }
+
+/* rótulo de paso, lo inserta el JS */
+.single-tour .vempra-paso {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  margin: 22px 0 12px !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: var(--vp-suave) !important;
+}
+.single-tour .vempra-paso:first-child { margin-top: 0 !important; }
+.single-tour .vempra-paso b {
+  width: 20px; height: 20px; flex: none;
+  border-radius: 50%;
+  background: var(--vp-vino); color: #fff;
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 700; letter-spacing: 0;
+}
+.single-tour .vempra-paso-1 { order: 0 !important; }
+.single-tour .vempra-paso-2 { order: 1 !important; }
+
+/* fila de personas con contador */
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] {
+  background: #fff !important;
+  border: 1px solid var(--vp-borde) !important;
+  border-radius: 14px !important;
+  padding: 10px 10px 10px 16px !important;
+  margin: 0 0 8px !important;
+  gap: 12px !important;
+}
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"]:last-of-type {
+  margin-bottom: 18px !important;
+}
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] label {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+.single-tour .vempra-contador { display: flex !important; align-items: center !important; gap: 4px !important; }
+.single-tour .vempra-contador button {
+  width: 44px; height: 44px; flex: none;
+  border: 1px solid var(--vp-borde);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--vp-vino);
+  font-size: 20px; line-height: 1;
+  display: grid; place-items: center;
+  cursor: pointer; padding: 0;
+  transition: background-color .18s ease, border-color .18s ease, transform .12s ease;
+}
+.single-tour .vempra-contador button:hover:not(:disabled) { background: #F3E4E9; border-color: var(--vp-vino); }
+.single-tour .vempra-contador button:active:not(:disabled) { transform: scale(.9); }
+.single-tour .vempra-contador button:disabled { opacity: .3; cursor: not-allowed; }
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] input[type="number"] {
+  width: 46px !important;
+  border: none !important;
+  background: none !important;
+  font-family: var(--vp-serif) !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+  padding: 0 !important;
+  -moz-appearance: textfield;
+}
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] input[type="number"]::-webkit-outer-spin-button,
+.single-tour .wc-bookings-booking-form .form-field[class*="wc_bookings_field_persons_"] input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; margin: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. RESUMEN Y BOTÓN                                                   */
+/* ------------------------------------------------------------------ */
+.single-tour .vempra-resumen {
+  order: 3 !important;
+  margin: 16px 0 0 !important;
+  padding-top: 14px !important;
+  border-top: 1px dashed var(--vp-borde) !important;
+  font-family: var(--vp-sans) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+.single-tour .vempra-fila {
+  display: flex; justify-content: space-between; gap: 10px;
+  font-size: 14.5px; color: var(--vp-suave);
+  font-variant-numeric: tabular-nums;
+}
+.single-tour .vempra-fila .vempra-cuando { color: var(--vp-terra); font-weight: 600; }
+.single-tour .vempra-fila.vempra-total {
+  font-family: var(--vp-serif); font-size: 21px; font-weight: 600; color: var(--vp-tinta);
+  border-top: 1px solid var(--vp-borde); padding-top: 11px; margin-top: 2px;
+}
+
+/* el precio grande del plugin queda de respaldo, oculto cuando hay resumen propio */
+.single-tour .vempra-tiene-resumen .wc-bookings-booking-cost { display: none !important; }
+
+/* botón principal a todo el ancho */
+.single-tour .wc-bookings-booking-form-button,
+.single-tour form.cart .single_add_to_cart_button {
+  order: 4 !important;
+  width: 100% !important;
+  min-height: 56px !important;
+  margin-top: 16px !important;
+  border-radius: 999px !important;
+  background-color: var(--vp-vino) !important;
+  color: #fff !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 16.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: .005em !important;
+  padding: 16px 24px !important;
+  box-shadow: 0 8px 22px -10px rgba(91,11,43,.85) !important;
+  transition: background-color .2s ease, transform .12s ease !important;
+}
+.single-tour .wc-bookings-booking-form-button:hover,
+.single-tour form.cart .single_add_to_cart_button:hover { background-color: #3F0620 !important; }
+.single-tour .wc-bookings-booking-form-button:active { transform: scale(.985) !important; }
+
+/* tranquilizadores debajo del botón (los agrega el JS) */
+.single-tour .vempra-garantias {
+  order: 5 !important;
+  display: flex !important; flex-wrap: wrap !important;
+  gap: 6px 16px !important; justify-content: center !important;
+  margin: 13px 0 0 !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 12.5px !important; color: var(--vp-suave) !important;
+}
+.single-tour .vempra-garantias span { display: inline-flex; align-items: center; gap: 6px; }
+.single-tour .vempra-garantias span::before {
+  content: ""; width: 9px; height: 5px; flex: none;
+  border-left: 1.8px solid var(--vp-ok); border-bottom: 1.8px solid var(--vp-ok);
+  transform: rotate(-45deg); margin-top: -3px;
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. BARRA INFERIOR FIJA (móvil) — la arma el JS                       */
+/* ------------------------------------------------------------------ */
+.single-tour .vempra-dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 9998;
+  background: rgba(255,255,255,.94);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  backdrop-filter: blur(16px) saturate(1.3);
+  border-top: 1px solid var(--vp-borde);
+  padding: 11px 16px calc(11px + env(safe-area-inset-bottom));
+  display: flex; align-items: center; gap: 14px;
+  transform: translateY(110%);
+  transition: transform .42s cubic-bezier(.16,.8,.3,1);
+  font-family: var(--vp-sans);
+}
+.single-tour .vempra-dock.vempra-visible { transform: translateY(0); }
+.single-tour .vempra-dock-precio { flex: 1; min-width: 0; }
+.single-tour .vempra-dock-precio b {
+  display: block; font-family: var(--vp-serif); font-size: 19px; font-weight: 600;
+  line-height: 1.15; color: var(--vp-tinta); font-variant-numeric: tabular-nums;
+}
+.single-tour .vempra-dock-precio small { display: block; font-size: 11.5px; color: var(--vp-suave); }
+.single-tour .vempra-dock a {
+  flex: none; min-height: 50px; padding: 0 26px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; background: var(--vp-vino); color: #fff !important;
+  font-size: 15.5px; font-weight: 600; text-decoration: none;
+}
+@media (min-width: 1000px) {
+  .single-tour .vempra-dock {
+    padding-left: max(24px, calc((100% - 1160px) / 2));
+    padding-right: max(24px, calc((100% - 1160px) / 2));
+    gap: 22px;
+  }
+  .single-tour .vempra-dock-precio b { font-size: 21px; }
+}
+/* que el pie no tape la barra */
+.single-tour #footer, .single-tour .footer_wrapper { padding-bottom: 84px; }
+
+/* En móvil el carrito flotante del side cart duplicaba al del encabezado: mismo
+   globito con la cantidad, mismo destino (/carrito/). Dos accesos idénticos a
+   30 px uno del otro, y el de abajo comiéndose 64 px de pantalla encima del
+   texto de la descripción. Queda el del encabezado, que es el que el visitante
+   ya busca arriba a la derecha. En escritorio no se toca nada.
+   WhatsApp baja al hueco que deja el carrito: a 88 px queda 15 px por encima
+   de la barra de reserva (73 px de alto) cuando ésta aparece. */
+@media (max-width: 999px) {
+  .single-tour .xoo-wsc-basket { display: none !important; }
+  .single-tour .vempra-wa-floating { bottom: 88px !important; }
+  /* al quedar como único acceso al carrito, el ícono del encabezado necesita
+     un área de toque de 44 px. El ::after la agranda sin mover el ícono ni
+     tocar el alto del encabezado. */
+  .single-tour .header_cart_wrapper { position: relative; }
+  .single-tour .header_cart_wrapper > a { position: relative; }
+  .single-tour .header_cart_wrapper > a::after {
+    content: ""; position: absolute;
+    top: 50%; left: 50%; width: 44px; height: 44px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. LA DESCRIPCIÓN: de bloques sueltos a un relato                    */
+/* ------------------------------------------------------------------ */
+
+/* entrada */
+.single-tour .single_tour_content .vempra-lead {
+  font-family: var(--vp-sans) !important;
+  font-size: 17.5px !important;
+  line-height: 1.62 !important;
+  color: #3c3c3b !important;
+  border: none !important;
+  font-style: normal !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 0 !important;
+}
+.single-tour .single_tour_content .vempra-lead b,
+.single-tour .single_tour_content .vempra-lead strong { color: var(--vp-tinta) !important; font-weight: 600 !important; }
+.single-tour .single_tour_content .vempra-capital::first-letter {
+  float: left;
+  font-family: var(--vp-serif);
+  font-size: 52px;
+  line-height: .86;
+  padding: 5px 9px 0 0;
+  color: var(--vp-vino);
+}
+
+/* franja de datos rapidos: una sola tarjeta debajo del titulo.
+   Reemplaza al cuadro de atributos del tema (duracion/edad/cupos), que
+   venia con el rotulo y el valor pegados en el mismo renglon. */
+.single-tour .vempra-oculto { display: none !important; }
+.single-tour .vempra-quick {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  margin: 0 0 26px !important;
+  padding: 4px 0 !important;
+  border: 1px solid var(--vp-borde);
+  border-radius: 14px;
+  background: var(--vp-hueso);
+  overflow: hidden;
+}
+.single-tour .vempra-quick > div {
+  padding: 15px 8px; text-align: center; position: relative;
+  font-family: var(--vp-sans);
+}
+.single-tour .vempra-quick > div::before {
+  content: ""; position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: var(--vp-borde);
+}
+.single-tour .vempra-quick > div:nth-child(3n + 1)::before { display: none; }
+.single-tour .vempra-quick > div:nth-child(n + 4)::after {
+  content: ""; position: absolute; left: 12%; right: 12%; top: 0; height: 1px; background: var(--vp-borde);
+}
+.single-tour .vempra-quick b {
+  display: block; font-family: var(--vp-serif); font-size: 19px; font-weight: 600;
+  color: var(--vp-tinta); line-height: 1.15;
+}
+.single-tour .vempra-quick span {
+  display: block; font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--vp-suave); margin-top: 5px;
+}
+@media (min-width: 1000px) {
+  .single-tour .vempra-quick { grid-template-columns: repeat(6, 1fr) !important; }
+  .single-tour .vempra-quick > div:nth-child(3n + 1)::before { display: block; }
+  .single-tour .vempra-quick > div:first-child::before { display: none; }
+  .single-tour .vempra-quick > div:nth-child(n + 4)::after { display: none; }
+}
+
+/* El precio estaba a 964px de scroll: sube junto al titulo, que es donde
+   el visitante decide si sigue leyendo o se va. */
+.single-tour .vempra-precio-ficha {
+  display: flex; align-items: baseline; gap: 8px;
+  margin: 0 0 10px; font-family: var(--vp-sans);
+}
+.single-tour .vempra-precio-ficha b {
+  font-family: var(--vp-serif); font-size: 27px; font-weight: 600;
+  color: var(--vp-vino); line-height: 1.1;
+}
+.single-tour .vempra-precio-ficha span { font-size: 13.5px; color: var(--vp-suave); }
+
+/* En el telefono la tarjeta de seis celdas robaba 158px arriba de todo.
+   El script arma la misma informacion en dos renglones de texto y aca
+   cambiamos cual de las dos se ve segun el ancho. */
+.single-tour .vempra-quick-linea { display: none; }
+@media (max-width: 999px) {
+  .single-tour .vempra-quick { display: none !important; }
+  .single-tour .vempra-quick-linea {
+    display: block;
+    margin: 0 0 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--vp-borde);
+    font-family: var(--vp-sans);
+  }
+  .single-tour .vempra-quick-linea .vempra-ql {
+    display: block;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--vp-suave);
+  }
+  .single-tour .vempra-quick-linea .vempra-ql-fuerte {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--vp-tinta);
+  }
+  .single-tour .vempra-quick-linea ~ .single_tour_content { margin-top: 0 !important; }
+}
+
+/* la tarjeta ya separa del titulo: el contenido no suma su propio aire */
+.single-tour .vempra-quick ~ .single_tour_content { margin-top: 0 !important; }
+.single-tour .vempra-quick ~ .single_tour_content > .vempra-lead:first-child { margin-top: 0 !important; }
+
+/* En las fichas ya migradas la salida y los horarios estan arriba, en la
+   tarjeta y en el recorrido: repetirlos abajo solo alarga la pagina.
+   En las que todavia no lo estan, esa lista es la unica fuente. */
+.vempra-ficha-v2 .single_tour_departure_wrapper { display: none !important; }
+/* Estos dos si sobran en todas: estan en ingles y no aportan a la venta. */
+.single-tour .fullwidth_comment_wrapper,
+.single-tour .tour_recently_view { display: none !important; }
+
+/* Hasta que el script la sube junto al titulo, la tarjeta no se muestra:
+   evita verla aparecer abajo y saltar. */
+.single-tour .single_tour_content > .vempra-quick { display: none !important; }
+
+/* elegir fecha en un toque: las proximas salidas disponibles */
+.single-tour .vempra-fechas { margin: 0 0 16px; }
+.single-tour .vempra-fechas-tit {
+  display: block; font-family: var(--vp-sans); font-size: 10.5px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--vp-suave); margin-bottom: 9px;
+}
+/* en rejilla 2x2: en el sidebar de escritorio una fila unica de 4 chips
+   ensanchaba el modulo de reserva y desbordaba la pagina */
+.single-tour .vempra-fechas-fila {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+}
+.single-tour button.vempra-chip {
+  min-width: 0; min-height: 56px;
+  padding: 9px 12px; margin: 0; cursor: pointer;
+  background: #fff; border: 1px solid var(--vp-borde) !important; border-radius: 11px;
+  font-family: var(--vp-sans); text-align: center; line-height: 1.2;
+  transition: border-color .18s ease, background .18s ease, transform .18s ease;
+}
+.single-tour button.vempra-chip b {
+  display: block; font-size: 14.5px; font-weight: 600; color: var(--vp-tinta); text-transform: capitalize;
+}
+.single-tour button.vempra-chip span {
+  display: block; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--vp-suave); margin-top: 3px;
+}
+.single-tour button.vempra-chip:hover { border-color: var(--vp-terra) !important; transform: translateY(-1px); }
+.single-tour button.vempra-chip.vempra-chip-activo {
+  background: var(--vp-terra); border-color: var(--vp-terra) !important;
+}
+.single-tour button.vempra-chip.vempra-chip-activo b,
+.single-tour button.vempra-chip.vempra-chip-activo span { color: #fff; }
+.single-tour button.vempra-chip-otra { background: transparent; border-style: dashed !important; }
+
+/* seguir explorando: en vez del formulario de reseñas en ingles */
+.single-tour .vempra-relacionados { margin: 44px 0 8px; }
+.single-tour .vempra-relacionados h2 {
+  margin: 0 0 4px !important; font-family: var(--vp-serif) !important; line-height: 1.25 !important;
+  font-size: 22px !important; letter-spacing: .2px !important;
+}
+.single-tour .vempra-rel-sub {
+  margin: 0 0 22px !important; font-size: 14px !important; color: var(--vp-suave) !important;
+  font-style: normal !important;
+}
+.single-tour .vempra-rel-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 700px) {
+  .single-tour .vempra-rel-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.single-tour a.vempra-rel-card {
+  display: block; border: 1px solid var(--vp-borde); border-radius: 14px; overflow: hidden;
+  background: #fff; text-decoration: none !important; color: inherit !important;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.single-tour a.vempra-rel-card:hover {
+  transform: translateY(-3px); border-color: var(--vp-terra);
+  box-shadow: 0 10px 26px rgba(91, 11, 43, .10);
+}
+.single-tour .vempra-rel-img {
+  height: 150px; background-size: cover !important; background-position: center !important;
+}
+.single-tour .vempra-rel-body { padding: 15px 16px 17px; }
+.single-tour .vempra-rel-rubro {
+  font-family: var(--vp-sans); font-size: 10px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--vp-terra); margin-bottom: 6px;
+}
+.single-tour .vempra-rel-body h4 {
+  margin: 0 0 6px !important; font-family: var(--vp-serif) !important; font-size: 18px !important;
+  font-weight: 600 !important; color: var(--vp-tinta) !important; line-height: 1.25 !important;
+  border: none !important; padding: 0 !important;
+}
+.single-tour .vempra-rel-meta {
+  font-family: var(--vp-sans); font-size: 12.5px; color: var(--vp-suave); margin-bottom: 12px;
+}
+.single-tour .vempra-rel-precio {
+  font-family: var(--vp-sans); font-size: 12.5px; color: var(--vp-suave);
+  padding-top: 11px; border-top: 1px solid var(--vp-borde);
+}
+.single-tour .vempra-rel-precio b {
+  font-family: var(--vp-serif); font-size: 18px; color: var(--vp-vino); margin-left: 3px;
+}
+.single-tour a.vempra-rel-todos {
+  display: inline-block; margin-top: 20px; font-family: var(--vp-sans); font-size: 14px;
+  font-weight: 600; color: var(--vp-terra) !important; text-decoration: none !important;
+}
+.single-tour a.vempra-rel-todos:hover { text-decoration: underline !important; }
+
+/* el recorrido, parada por parada
+   riel finito a la izquierda: el texto usa casi todo el ancho, que en
+   movil es lo que escasea. El rotulo va arriba del titulo, no al costado. */
+.single-tour .vempra-trail { list-style: none !important; margin: 0 0 6px !important; padding: 0 !important; position: relative; }
+.single-tour .vempra-trail::before {
+  content: ""; position: absolute; left: 5px; top: 9px; bottom: 12px; width: 1px;
+  background: linear-gradient(to bottom, var(--vp-terra), var(--vp-borde));
+}
+.single-tour .single_tour_content ol.vempra-trail > li {
+  display: block !important;
+  padding: 0 0 26px 28px !important;
+  margin: 0 !important;
+  position: relative !important;
+  list-style: none !important;
+  font-size: inherit !important;
+}
+.single-tour .single_tour_content ol.vempra-trail > li::before {
+  content: "" !important; position: absolute !important; left: 0 !important; top: 5px !important;
+  width: 11px !important; height: 11px !important; border-radius: 50% !important;
+  background: #fff !important; border: 2px solid var(--vp-terra) !important;
+  margin: 0 !important; padding: 0 !important; display: block !important; z-index: 1;
+}
+.single-tour .vempra-trail > li:last-child { padding-bottom: 0 !important; }
+.single-tour .vempra-trail .vempra-hito {
+  display: block; font-family: var(--vp-sans);
+  font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--vp-terra); font-weight: 700; margin-bottom: 4px;
+}
+.single-tour .vempra-trail h3 {
+  margin: 0 0 5px !important; font-family: var(--vp-serif) !important;
+  font-size: 18px !important; font-weight: 600 !important; color: var(--vp-tinta) !important;
+  border: none !important; padding: 0 !important; line-height: 1.25 !important;
+}
+.single-tour .vempra-trail p {
+  margin: 0 !important; font-size: 14.5px !important; color: var(--vp-suave) !important; line-height: 1.6 !important;
+}
+
+/* incluye / no incluye */
+.single-tour .vempra-pair { display: grid; gap: 22px; margin-bottom: 10px; }
+.single-tour .vempra-pair h3 {
+  margin: 0 0 10px !important; font-family: var(--vp-sans) !important;
+  font-size: 11px !important; letter-spacing: .15em !important; text-transform: uppercase !important;
+  color: var(--vp-suave) !important; font-weight: 700 !important; border: none !important; padding: 0 !important;
+}
+.single-tour .single_tour_content .vempra-pair ul { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+.single-tour .single_tour_content .vempra-pair li {
+  position: relative !important; padding-left: 28px !important; margin-bottom: 9px !important;
+  font-size: 14.5px !important; line-height: 1.5 !important; list-style: none !important;
+}
+.single-tour .single_tour_content .vempra-pair li::before {
+  position: absolute !important; left: 4px !important; background: none !important;
+  border-radius: 0 !important; width: auto !important; height: auto !important;
+}
+.single-tour .single_tour_content .vempra-si li::before {
+  content: "" !important; top: 7px !important;
+  width: 10px !important; height: 5px !important;
+  border-left: 2px solid var(--vp-ok) !important; border-bottom: 2px solid var(--vp-ok) !important;
+  transform: rotate(-45deg) !important;
+}
+.single-tour .single_tour_content .vempra-no li { color: var(--vp-suave) !important; }
+.single-tour .single_tour_content .vempra-no li::before {
+  content: "×" !important; top: 0 !important; left: 5px !important;
+  color: var(--vp-suave) !important; font-size: 17px !important; line-height: 1.4 !important;
+}
+
+/* ficha técnica */
+/* "Antes de salir" dejo de ser una seccion propia: ahora es el segundo   */
+/* subtitulo de "Que incluye y que necesitas saber", al mismo nivel que   */
+/* "Incluido en el precio", asi las dos listas de datos leen como una.    */
+.single-tour .single_tour_content h3.vempra-specs-titulo {
+  margin: 26px 0 10px !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 11px !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: var(--vp-suave) !important;
+  font-weight: 700 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.single-tour .vempra-specs { margin: 0 0 10px !important; border-top: 1px solid #EFE6E9; }
+.single-tour .vempra-specs > div {
+  display: grid; grid-template-columns: 104px 1fr; gap: 14px;
+  padding: 13px 0; border-bottom: 1px solid #EFE6E9;
+  font-family: var(--vp-sans); font-size: 14.5px;
+}
+.single-tour .vempra-specs dt {
+  font-size: 11px; letter-spacing: .11em; text-transform: uppercase;
+  color: var(--vp-suave); font-weight: 700; padding-top: 3px; margin: 0;
+}
+.single-tour .vempra-specs dd { margin: 0; color: #3c3c3b; }
+
+/* por que Vempra: mismo lenguaje visual que el resto, no la vineta del tema */
+.single-tour .single_tour_content ul.vempra-porque {
+  list-style: none !important; margin: 0 0 6px !important; padding: 0 !important;
+  display: grid; gap: 10px;
+}
+.single-tour .single_tour_content ul.vempra-porque li {
+  position: relative !important; list-style: none !important;
+  margin: 0 !important; padding: 14px 16px 14px 44px !important;
+  background: var(--vp-hueso); border-radius: 10px;
+  font-size: 14.5px !important; line-height: 1.5 !important; color: #3c3c3b !important;
+}
+.single-tour .single_tour_content ul.vempra-porque li::before {
+  content: "" !important; position: absolute !important;
+  left: 18px !important; top: 21px !important;
+  width: 11px !important; height: 6px !important;
+  background: none !important; border-radius: 0 !important;
+  border-left: 2px solid var(--vp-terra) !important;
+  border-bottom: 2px solid var(--vp-terra) !important;
+  transform: rotate(-45deg) !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* 5b. RITMO DE LA PAGINA                                               */
+/*     Un solo compas entre secciones para que no parezcan bloques      */
+/*     pegados de distintos lados.                                      */
+/* ------------------------------------------------------------------ */
+.single-tour .single_tour_content > h3,
+.single-tour .single_tour_content > h2 {
+  margin: 48px 0 18px !important;
+  font-family: var(--vp-serif) !important;
+  line-height: 1.25 !important;
+}
+/* el h2 del tema es 28px: lo igualamos al h3 para no cambiar nada visual */
+.single-tour .single_tour_content > h2 { font-size: 22px !important; letter-spacing: .2px !important; }
+.single-tour .single_tour_content > h3:first-child,
+.single-tour .single_tour_content > h2:first-child { margin-top: 0 !important; }
+/* titulo que el script le pone adentro del bloque de reserva (movil y escritorio) */
+.single-tour .vempra-titulo-reserva {
+  margin: 0 0 16px !important;
+  font-family: var(--vp-serif) !important;
+  font-size: 23px !important;
+  line-height: 1.25 !important;
+}
+.single-tour .vempra-titulo-reserva small {
+  display: block; font-family: var(--vp-sans); font-size: 13.5px;
+  letter-spacing: 0; text-transform: none; color: var(--vp-suave);
+  font-weight: 400; margin-top: 6px;
+}
+/* subtitulo bajo un h3 */
+.single-tour .single_tour_content > h3 + .vempra-sub,
+.single-tour .single_tour_content > h2 + .vempra-sub {
+  margin: -10px 0 20px !important; font-size: 14px !important;
+  color: var(--vp-suave) !important; font-style: normal !important;
+}
+.single-tour .single_tour_content > .vempra-faq-seo,
+.single-tour .single_tour_content > .vempra-reviews { margin-top: 0 !important; margin-bottom: 6px !important; }
+.single-tour .single_tour_content > .vempra-cta-scroll { margin: 40px 0 0 !important; }
+/* el bloque de reserva ya no necesita separarse dos veces */
+@media (max-width: 999px) {
+  .single-tour .single_tour_booking_wrapper { margin-top: 44px !important; margin-bottom: 8px !important; }
+}
+/* ancho de lectura en escritorio: ~70 caracteres por linea */
+@media (min-width: 1000px) {
+  .single-tour .single_tour_content { max-width: 660px; }
+  /* la columna lateral pasa de float a flex para que se estire a lo alto:
+     sin eso el modulo de reserva no puede quedar fijo al bajar */
+  .single-tour .inner_wrapper { display: flex; align-items: stretch; gap: 34px; }
+  .single-tour .inner_wrapper > .sidebar_content { order: 1; float: none; }
+  .single-tour .inner_wrapper > .sidebar_wrapper { order: 2; float: none; }
+  .single-tour .inner_wrapper > .sidebar_wrapper > .sidebar,
+  .single-tour .inner_wrapper > .sidebar_wrapper > .sidebar > .content {
+    float: none; height: 100%;
+  }
+  /* solo en fichas migradas: el JS calcula el top segun la altura de la ventana */
+  .vempra-ficha-v2 .single_tour_booking_wrapper { position: sticky; top: 92px; }
+  .single-tour .vempra-trust-block.vempra-trust-suelto { margin-top: 14px; }
+}
+
+/* las preguntas de compra salen de la caja de reserva (en movil metian 300px
+   entre el boton y el recorrido) y se suman a la zona de preguntas del final */
+.single-tour .vempra-faq-compra.vempra-faq-suelta {
+  margin: 26px 0 6px !important;
+  padding: 0 !important;
+  border-top: none !important;
+}
+.single-tour .vempra-faq-suelta .vempra-faq-compra-title {
+  font-family: var(--vp-sans) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: var(--vp-suave) !important;
+  margin: 0 0 4px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.single-tour .vempra-faq-suelta .vempra-faq-q {
+  font-size: 15px !important;
+  padding: 16px 0 !important;
+}
+
+/* wpautop mete un <br> antes de cada etiqueta de bloque que encuentra
+   dentro de un <li>: sobra y desalinea el rotulo del titulo */
+.single-tour .single_tour_content .vempra-trail br,
+.single-tour .single_tour_content .vempra-pair br,
+.single-tour .single_tour_content .vempra-porque br { display: none !important; }
+
+/* aire de mas dentro del bloque de reserva */
+.single-tour .vempra-paso.vempra-paso-1 { margin-top: 4px !important; }
+.single-tour .wc-bookings-date-picker .ui-datepicker { margin-top: 0 !important; padding-top: 8px !important; }
+.single-tour .wc-bookings-date-picker .ui-datepicker-title { padding: 4px 0 !important; }
+
+/* ------------------------------------------------------------------ */
+/* 5d. LA FRANJA DE ATRIBUTOS DEL TEMA                                  */
+/*     Venia como tres columnas rotas con mucho aire muerto. En las     */
+/*     fichas ya migradas la reemplaza .vempra-quick; en las que        */
+/*     todavia no lo estan sigue siendo el unico lugar con estos datos. */
+/* ------------------------------------------------------------------ */
+.single-tour .single_tour_attribute_wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 4px !important;
+  padding: 16px 6px !important;
+  border-radius: 12px !important;
+  background: var(--vp-hueso) !important;
+  border: 1px solid var(--vp-borde) !important;
+}
+.single-tour .single_tour_attribute_wrapper .one_fourth {
+  width: auto !important; margin: 0 !important; padding: 0 8px !important;
+  float: none !important; display: block !important; text-align: center !important;
+  position: relative;
+}
+.single-tour .single_tour_attribute_wrapper .one_fourth + .one_fourth::before {
+  content: ""; position: absolute; left: 0; top: 12%; bottom: 12%; width: 1px; background: var(--vp-borde);
+}
+.single-tour .single_tour_attribute_wrapper .tour_attribute_icon {
+  float: none !important; display: block !important;
+  margin: 0 auto 8px !important; width: auto !important;
+  font-size: 21px !important; line-height: 1 !important; color: var(--vp-terra) !important;
+}
+.single-tour .single_tour_attribute_wrapper .tour_attribute_content {
+  float: none !important; display: block !important; width: auto !important;
+  margin: 0 !important; padding: 0 !important;
+  font-family: var(--vp-sans) !important;
+  font-size: 12.5px !important; line-height: 1.35 !important;
+  font-weight: 600 !important; color: var(--vp-tinta) !important;
+  text-transform: none !important; letter-spacing: 0 !important;
+}
+.single-tour .single_tour_attribute_wrapper.vempra-oculto { display: none !important; }
+
+/* ------------------------------------------------------------------ */
+/* 5c. LOS BOTONES FLOTANTES NO TAPAN EL CALENDARIO                     */
+/*     Tapaban las columnas de sabado y domingo: dias sin poder tocar.  */
+/* ------------------------------------------------------------------ */
+@media (max-width: 999px) {
+  .single-tour.vempra-cal-a-la-vista .vempra-wa-floating,
+  .single-tour.vempra-cal-a-la-vista .xoo-wsc-basket {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(14px) scale(.9);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+  .single-tour .vempra-wa-floating,
+  .single-tour .xoo-wsc-basket { transition: opacity .25s ease, transform .25s ease; }
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. ANIMACIONES DE ENTRADA AL HACER SCROLL                            */
+/* ------------------------------------------------------------------ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .single-tour .single_tour_content > h3,
+    .single-tour .single_tour_content > h2,
+    .single-tour .single_tour_content > .vempra-quick,
+    .single-tour .single_tour_content > .vempra-trail,
+    .single-tour .single_tour_content > .vempra-pair,
+    .single-tour .single_tour_content > .vempra-specs,
+    .single-tour .single_tour_content > .vempra-faq-seo,
+    .single-tour .single_tour_content > .vempra-reviews {
+      animation: vpAparecer linear both;
+      animation-timeline: view();
+      animation-range: entry 4% cover 22%;
+    }
+  }
+}
+@keyframes vpAparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* 7. ÁREAS TÁCTILES Y DETALLES MÓVILES                                 */
+/* ------------------------------------------------------------------ */
+@media (max-width: 999px) {
+  .single-tour .vempra-faq-q { min-height: 48px !important; }
+  .single-tour .vempra-slider-prev,
+  .single-tour .vempra-slider-next { min-width: 44px !important; min-height: 44px !important; }
+  .single-tour .vempra-specs > div { grid-template-columns: 96px 1fr; }
+  .single-tour .single_tour_content .vempra-lead { font-size: 16.5px !important; }
+  .single-tour .vempra-trail h3 { font-size: 17px !important; }
+}
+
+/* ------------------------------------------------------------------ */
+/* 8. EL BLOQUE DE RESERVA A TODO EL ANCHO EN MÓVIL                     */
+/*    Sin esto los días del calendario quedan de 31px (imposibles de    */
+/*    tocar con el dedo). A todo el ancho pasan a ~45px.                */
+/* ------------------------------------------------------------------ */
+@media (max-width: 999px) {
+  .single-tour .single_tour_booking_wrapper {
+    margin-left: -30px !important;
+    margin-right: -30px !important;
+    width: auto !important;
+    max-width: none !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    background: var(--vp-hueso) !important;
+  }
+  .single-tour .single_tour_booking_wrapper .wc-bookings-booking-form {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .single-tour .wc-bookings-date-picker { padding-left: 0 !important; padding-right: 0 !important; }
+  .single-tour .wc-bookings-date-picker .picker .ui-datepicker { padding-left: 7px !important; padding-right: 7px !important; }
+  .single-tour .wc-bookings-date-picker .ui-datepicker-calendar td > a,
+  .single-tour .wc-bookings-date-picker .ui-datepicker-calendar td > span { font-size: 15.5px !important; }
+}
+
+/* El respaldo institucional solo existia como logos chiquitos en el pie.
+   Aca abajo de las resenas, justo antes del boton, contesta la ultima duda
+   que frena una compra: a quien le estoy pagando. */
+.single-tour .vempra-respaldo {
+  margin: 44px 0 30px;
+  padding: 26px 24px;
+  background: var(--vp-hueso);
+  border: 1px solid var(--vp-borde);
+  border-radius: 14px;
+}
+.single-tour .vempra-respaldo h2 {
+  margin: 0 0 18px !important;
+  font-family: var(--vp-serif) !important;
+  font-size: 20px !important;
+  letter-spacing: .2px !important;
+  line-height: 1.25 !important;
+}
+.single-tour .single_tour_content .vempra-respaldo ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+/* los motivos van adentro de la misma tarjeta que las credenciales, pero en */
+/* una sola columna y arriba: primero la promesa, despues la prueba.         */
+.single-tour .single_tour_content .vempra-respaldo ul.vempra-porque {
+  display: block;
+  margin: 0 0 22px !important;
+  padding: 0 0 20px !important;
+  border-bottom: 1px solid var(--vp-borde);
+}
+.single-tour .single_tour_content .vempra-respaldo li {
+  position: relative;
+  margin: 0 !important;
+  padding: 0 0 0 27px !important;
+  list-style: none !important;
+}
+.single-tour .single_tour_content .vempra-respaldo li:before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid var(--vp-terra);
+  border-bottom: 2px solid var(--vp-terra);
+  border-radius: 0;
+  background: none !important;
+  transform: rotate(-45deg);
+}
+.single-tour .vempra-respaldo b {
+  display: block;
+  font-family: var(--vp-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--vp-tinta);
+  line-height: 1.35;
+}
+.single-tour .vempra-respaldo span {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--vp-sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--vp-suave);
+}
+@media (min-width: 760px) {
+  .single-tour .single_tour_content .vempra-respaldo ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 26px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 10. LA BARRA DE ARRIBA TENIA FONDO TRANSPARENTE EN DESKTOP           */
+/*     Medido: .top_bar.hasbg = rgba(0,0,0,0) a cualquier altura de     */
+/*     scroll, con el texto del menu en rgb(36,36,36). Sobre la pared   */
+/*     blanca de la bodega del hero no se leia, y al volver a subir la  */
+/*     barra reaparecia encima del texto del cuerpo. En movil el tema   */
+/*     ya le pone crema (.top_bar.scroll): esto lo iguala en desktop.   */
+/* ------------------------------------------------------------------ */
+/*     Opaco, no translucido: la barra pasa por encima del calendario y
+       con 95% los numeros de los dias se transparentaban. */
+.single-tour .top_bar {
+  background: rgb(245, 240, 230) !important;
+  border-bottom: 1px solid var(--vp-borde);
+}
+.single-tour .top_bar .standard_wrapper { background: transparent !important; }
+
+/* ------------------------------------------------------------------ */
+/* 11. AREAS TACTILES: 44 px es el minimo para tocar sin errar          */
+/*     Solo se agranda el area de toque, el dibujo queda igual.         */
+/* ------------------------------------------------------------------ */
+.single-tour .vempra-slider-dot {
+  position: relative;
+  min-width: 12px;
+  min-height: 12px;
+}
+.single-tour .vempra-slider-dot:after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 44px; height: 44px;
+  transform: translate(-50%, -50%);
+}
+.single-tour .vempra-slider-prev,
+.single-tour .vempra-slider-next { min-width: 44px; min-height: 44px; }
+
+.single-tour .vempra-reviews-cta a,
+.single-tour .vempra-rel-todos {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* los dias del calendario median 29 px: en el telefono se erraba el dia */
+@media (max-width: 999px) {
+  .single-tour .ui-datepicker-calendar td a,
+  .single-tour .ui-datepicker-calendar td span {
+    min-height: 40px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 12. GALERIA DEL TOUR                                                 */
+/*     La ficha tenia UNA sola foto y encima como fondo CSS, asi que    */
+/*     no la veia Google ni se podia ampliar. Esto es una grilla de     */
+/*     <img> reales, con pie, alt y lightbox.                           */
+/* ------------------------------------------------------------------ */
+.single-tour .vempra-galeria { margin: 54px 0 60px; }
+
+.single-tour .vempra-galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.single-tour .vempra-foto {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--vp-borde);
+}
+
+.single-tour .vempra-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: zoom-in;
+  transition: transform 0.5s ease;
+}
+
+/* la primera manda: ocupa dos columnas de la fila de arriba.               */
+/* 2.05 es el ancho de dos celdas mas el gap dividido por el alto de una,   */
+/* asi la foto ancha termina justo a la misma altura que su vecina cuadrada */
+.single-tour .vempra-foto-grande { grid-column: span 2; }
+.single-tour .vempra-foto-grande img { aspect-ratio: 2.05 / 1; }
+
+.single-tour .vempra-foto figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 26px 14px 11px;
+  font-family: var(--vp-sans);
+  font-size: 13px;
+  line-height: 1.3;
+  color: #fff;
+  background: linear-gradient(to top, rgba(20, 16, 14, 0.78), rgba(20, 16, 14, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.single-tour .vempra-foto:hover figcaption,
+.single-tour .vempra-foto:focus-within figcaption { opacity: 1; }
+.single-tour .vempra-foto:hover img { transform: scale(1.045); }
+
+.single-tour .vempra-galeria-nota {
+  margin-top: 12px;
+  font-family: var(--vp-sans);
+  font-size: 13px;
+  color: var(--vp-suave);
+}
+
+/* en el telefono el hover no existe: el pie va siempre visible */
+@media (max-width: 700px) {
+  .single-tour .vempra-galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 7px; }
+  .single-tour .vempra-foto-grande { grid-column: span 2; grid-row: span 1; }
+  .single-tour .vempra-foto-grande img { aspect-ratio: 4 / 3; }
+  /* con la primera ancha quedan siete cuadradas: impar. La ultima tambien */
+  /* se pone ancha para que ninguna fila quede a medias.                   */
+  .single-tour .vempra-galeria .vempra-foto:last-of-type { grid-column: span 2; }
+  .single-tour .vempra-galeria .vempra-foto:last-of-type img { aspect-ratio: 4 / 3; }
+  .single-tour .vempra-foto figcaption { opacity: 1; font-size: 12px; padding: 20px 10px 8px; }
+}
+
+/* ------------------------------------------------------------------ */
+/* 13. LIGHTBOX                                                         */
+/*     z-index alto: la barra de arriba usa 9 y el carrito 9998.        */
+/* ------------------------------------------------------------------ */
+.vempra-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 16, 14, 0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.vempra-lightbox.vempra-abierto { opacity: 1; visibility: visible; }
+
+.vempra-lightbox-figura {
+  margin: 0;
+  max-width: 92vw;
+  text-align: center;
+}
+
+.vempra-lightbox-figura img {
+  display: block;
+  max-width: 92vw;
+  max-height: 78vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.vempra-lightbox-pie {
+  margin-top: 14px;
+  font-family: var(--vp-sans);
+  font-size: 14px;
+  color: #e8e2d8;
+}
+
+.vempra-lightbox-cuenta {
+  margin-top: 4px;
+  font-family: var(--vp-sans);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #9d958a;
+}
+
+.vempra-lightbox button {
+  position: absolute;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.vempra-lightbox button:hover { background: rgba(255, 255, 255, 0.2); }
+.vempra-lightbox button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.vempra-lightbox-cerrar { top: 18px; right: 18px; }
+.vempra-lightbox-ant { left: 18px; top: 50%; transform: translateY(-50%); }
+.vempra-lightbox-sig { right: 18px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 700px) {
+  .vempra-lightbox-ant { left: 8px; }
+  .vempra-lightbox-sig { right: 8px; }
+  .vempra-lightbox-figura img { max-height: 68vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .single-tour .vempra-foto img,
+  .single-tour .vempra-foto figcaption,
+  .vempra-lightbox { transition: none; }
+  .single-tour .vempra-foto:hover img { transform: none; }
+}
+
+/* ================================================================== */
+/* === VEMPRA FICHA PREMIUM v1 — FIN ================================ */
+/* ================================================================== */
+
+/* ================================================================== */
+/* === VEMPRA v1.3.0 — CONFIRMACION, ERROR DE PRECIO Y CHECKOUT ===== */
+/* ================================================================== */
+
+/* --- Confirmacion al agregar al carrito ---------------------------
+   Aparece despues de la recarga que hace el formulario de Bookings, que
+   deja al visitante arriba de todo sin ninguna senal de que la reserva
+   entro. Es una barra, no un modal: no tapa la ficha y no obliga a
+   cerrarla para seguir. */
+.vempra-confirma {
+  position: fixed;
+  z-index: 10050;
+  left: 16px; right: 16px; bottom: 16px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 16px 46px 16px 20px;
+  background: #FFFFFF;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-left: 5px solid #2E6B4E;
+  border-radius: 6px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .18);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.vempra-confirma-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .vempra-confirma { transition: none; transform: none; }
+}
+
+.vempra-confirma-cuerpo { display: flex; flex-direction: column; gap: 2px; flex: 1 1 220px; min-width: 0; }
+.vempra-confirma-titulo { font-size: 16px; line-height: 1.3; color: #1D5E42; }
+.vempra-confirma-titulo::before { content: "✓ "; }
+.vempra-confirma-tour {
+  font-size: 14px; color: #55504F;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.vempra-confirma-total { font-size: 14px; font-weight: 700; color: var(--texto); }
+
+.vempra-confirma-acciones { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+.vempra-confirma-pagar {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 22px;
+  background: var(--terracota); color: #fff !important;
+  border-radius: 4px; font-size: 15px; font-weight: 700;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color .3s ease;
+}
+.vempra-confirma-pagar:hover { background: var(--malbec); }
+.vempra-confirma-seguir {
+  min-height: 44px; padding: 0 12px;
+  background: none; border: none; cursor: pointer;
+  color: #55504F; font-size: 15px; text-decoration: underline;
+  white-space: nowrap;
+}
+.vempra-confirma-cerrar {
+  position: absolute; top: 6px; right: 6px;
+  width: 34px; height: 34px; line-height: 1;
+  background: none; border: none; cursor: pointer;
+  color: #8A8483; font-size: 22px;
+}
+.vempra-confirma :focus-visible { outline: 2px solid var(--malbec); outline-offset: 2px; }
+
+@media (max-width: 999px) {
+  /* Por encima de la barra de reserva flotante, que en esta pantalla vive
+     pegada al pie. */
+  .vempra-confirma { bottom: 86px; padding-right: 20px; }
+  .vempra-confirma-acciones { width: 100%; }
+  .vempra-confirma-pagar { flex: 1 1 auto; }
+}
+
+/* --- Fallo el calculo del precio ---------------------------------- */
+.vempra-precio-error {
+  display: none;
+  align-items: center; gap: 12px; flex-wrap: wrap;
+  margin: 12px 0;
+  padding: 12px 14px;
+  background: #FDF3F0;
+  border: 1px solid #E0B4A6;
+  border-radius: 4px;
+  color: #8C3A1E;
+  font-size: 14px; line-height: 1.4;
+}
+.vempra-precio-error-visible { display: flex; }
+.vempra-precio-reintentar {
+  min-height: 40px; padding: 0 18px;
+  background: var(--terracota); color: #fff;
+  border: none; border-radius: 4px; cursor: pointer;
+  font-size: 14px; font-weight: 700;
+}
+.vempra-precio-reintentar:hover { background: var(--malbec); }
+.vempra-precio-reintentar[disabled] { opacity: .6; cursor: default; }
+
+/* --- Altura de los campos del checkout ----------------------------
+   Venian en 38 px. Debajo de 44 px el dedo falla seguido en pantallas
+   chicas, y es el ultimo paso antes de pagar: cada error ahi es una
+   compra menos. */
+.woocommerce-checkout .form-row input.input-text,
+.woocommerce-checkout .form-row select,
+.woocommerce-checkout .select2-container .select2-selection--single,
+.woocommerce-cart .form-row input.input-text {
+  min-height: 44px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.woocommerce-checkout .form-row textarea.input-text { min-height: 88px; }
+.woocommerce-checkout .select2-container .select2-selection--single .select2-selection__rendered {
+  line-height: 24px;
+}
+
+/* ================================================================== */
+/* === VEMPRA v1.3.0 — FIN ========================================== */
+/* ================================================================== */
+
+/* ================================================================== */
+/* === VEMPRA v1.4.0 ================================================ */
+/* ================================================================== */
+
+/* --- Carrito flotante: fuera en movil, en todo el sitio ------------
+   En la ficha ya estaba oculto desde la v1.3.0. Se reviso el resto del
+   sitio a 375 px y en la portada el globito del side cart queda encima
+   del boton principal del hero: tapa justo lo unico que la portada
+   quiere que el visitante toque. En movil el carrito del encabezado
+   alcanza, asi que el flotante se va de todas las pantallas chicas.
+   En escritorio no se toca: ahi no molesta a nadie. */
+@media (max-width: 999px) {
+  .xoo-wsc-basket { display: none !important; }
+}
+
+/* --- Campo de personas de Bookings --------------------------------
+   Venia en 46x26 px. Los 26 de alto son la mitad del minimo tactil y es
+   el primer campo que toca quien reserva: si falla ahi, no llega ni al
+   calendario. Se lo lleva a 44 px como el resto de los campos. */
+.wc-bookings-booking-form .wc-bookings-booking-cost ~ * input[type="number"],
+.wc-bookings-booking-form input.wc_bookings_field_persons,
+.wc-bookings-booking-form .form-field input[type="number"],
+.wc-bookings-booking-form .persons-total input[type="number"],
+.wc-bookings-booking-form input[name^="wc_bookings_field_persons"] {
+  min-height: 44px;
+  min-width: 72px;
+  padding: 8px 10px;
+  font-size: 16px; /* Debajo de 16 px iOS agranda solo la pagina al enfocar. */
+}

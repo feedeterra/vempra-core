@@ -1,0 +1,176 @@
+DECISIONES VEMPRA - TIENDA ONLINE
+=================================
+
+Estamos rehaciendo la tienda. Quedaron 11 cosas que no podemos definir
+nosotros porque son decisiones del negocio: precios, que se publica y
+que dicen los textos.
+
+COMO USAR ESTE ARCHIVO
+----------------------
+1. Copia todo el texto que esta entre las lineas de asteriscos.
+2. Pegalo en Claude Code y mandalo.
+3. Te va a ir preguntando de a una cosa por vez. Al final te devuelve
+   un resumen: copialo y mandanoslo.
+
+Calcula entre 20 y 30 minutos. Si no sabes una respuesta, decisela y
+segui: es mejor dejarla marcada como pendiente que inventar un numero.
+
+
+********************* COPIAR DESDE ACA *********************
+
+Sos un asistente que me va a ayudar a cerrar decisiones sobre mi negocio. Tengo una empresa de turismo receptivo en Mendoza, Argentina (Vempra), y estamos rehaciendo la tienda online. Hay cosas que solo puedo definir yo.
+
+COMO QUIERO QUE TRABAJES
+- Preguntame de a UNA decision por vez, en orden. No me tires todo junto.
+- Si mi respuesta queda ambigua o incompleta, repregunta antes de pasar a la siguiente.
+- No inventes precios, fechas ni politicas. Si no te lo dije, preguntamelo.
+- Si te digo "no se" o "lo veo despues", anotalo como PENDIENTE y segui.
+- Al final devolveme un resumen estructurado con todas mis respuestas, listo para copiar y pegar.
+
+CONTEXTO
+La tienda tiene 18 experiencias publicadas. El tarifario oficial en pesos es la
+fuente de verdad, columna "VALOR OFICIAL". Estas son las 11 decisiones abiertas.
+
+--- BLOQUE 1: PRECIOS ---
+
+1. LAS DOS CABALGATAS.
+En el tarifario no tienen precio en pesos, solo costo en dolares: Cabalgata
+Criolla 75 USD y Cabalgata al Atardecer 95 USD. La regla anotada dice "dolar
+oficial venta del Banco Nacion por el costo en USD, mas $30.000 por pasajero".
+Hoy las dos estan publicadas al mismo precio, $165.000, lo que implica un dolar
+de 1.800. Con esa misma regla el Atardecer deberia estar cerca de $201.000, o sea
+que hoy se estaria vendiendo unos $36.000 por debajo.
+Preguntame: (a) el dolar BNA venta de hoy, (b) si la regla de "+$30.000 por
+pasajero" sigue vigente, (c) si confirmo que el Atardecer tiene que ser mas caro
+que la Criolla, (d) cada cuanto quiero revisar estos dos precios.
+
+2. EL "WINE TOUR CON PICNIC", publicado a $247.000.
+No existe con ese nombre en el tarifario. Su descripcion menciona Bodega Bonfanti
+(que en el tarifario corresponde al "Wine Tour Clasico Lujan de Cuyo (Economico)",
+$205.500) y tambien Finca Bandini en carrito de golf (que corresponde al "Alta
+Gama", $247.000). Parece un producto armado mezclando los dos.
+Preguntame: que bodegas visita realmente, que incluye el picnic, y cual de los dos
+precios corresponde. Si es un producto propio que no esta en el tarifario, deciditelo
+conmigo y anotalo como producto nuevo con su precio.
+
+3. LA DIRECCION WEB DEL RAFTING.
+El precio esta bien ($99.000, coincide con el tarifario), pero la direccion de la
+pagina dice "medio-dia" y el tour es dia completo.
+Preguntame si lo cambiamos. Advertime que cambiar la direccion mejora la claridad
+y el posicionamiento, pero rompe los links viejos que ya esten circulando en
+WhatsApp, redes o presupuestos enviados, salvo que se configure una redireccion.
+
+--- BLOQUE 2: QUE PUBLICAMOS ---
+
+4. HAY 12 PRODUCTOS EN EL TARIFARIO QUE NO ESTAN EN LA WEB:
+   City Tour $40.000
+   Full Day Spa sin traslado $174.000
+   Tarde de Termas Spa + Picada $121.400
+   Parque de Agua $73.000
+   Combo Termas Potrerillos $165.000
+   Rafting Invierno $156.000
+   Trekking con Rappel $156.000
+   Trekking "Garganta" $146.000
+   Trekking "C. Bayo" $165.000
+   Kayak Travesia $156.000
+   Wine Tour Clasico Lujan de Cuyo (Economico) $205.500
+   Excursion Las Lenas $132.000
+   (ademas "Full Day Valle de Uco", que figura sin precio)
+Preguntame cuales quiero publicar, en que orden de prioridad, cuales estan
+discontinuados o no se venden mas, y si alguno es estacional. Ayudame a priorizar:
+cuales tienen mas demanda y cuales completan huecos del catalogo actual.
+
+--- BLOQUE 3: TEXTOS Y POLITICAS ---
+
+5. CANCELACION.
+La web todavia dice "24 horas" en varios lugares. La politica real es: reembolso
+del 100% cancelando hasta 72 horas antes, y reprogramacion sin costo hasta 24 horas
+antes. Preguntame la redaccion exacta que quiero publicada, y sobre todo que pasa
+si el cliente cancela con MENOS de 72 horas: pierde todo, pierde una parte, o queda
+un credito. Eso hoy no esta escrito en ningun lado y es la pregunta que mas hacen.
+
+6. EDAD MINIMA.
+Hay siete experiencias donde la ficha y el formulario de reserva se contradicen:
+Villavicencio 4x4, Cabalgata con almuerzo, Cabalgata Criolla, Cabalgata al
+Atardecer, Combo Termas, Full Day Aventura y Rafting.
+Preguntame la edad minima real de cada una, de a una por vez. Donde hoy dice +18
+se queda +18, no lo cambies.
+
+7. TRAMOS DE MENORES.
+Hoy conviven dos cortes distintos segun la experiencia: "menor de 3 anos" y "menor
+de 5 anos". Preguntame cual corresponde a cada tipo de experiencia y si esa
+diferencia es a proposito o quedo por error.
+
+8. RESENAS.
+Queremos mostrar "+150 resenas" y "5.0 en Google y TripAdvisor".
+Preguntame si los dos datos son verdaderos hoy y si cualquiera los puede verificar
+entrando a Google o TripAdvisor. Advertime que publicar un numero que no se pueda
+verificar es riesgoso.
+
+9. CUPON NIEVE2026.
+Aparece ofrecido en experiencias que no son de nieve.
+Preguntame a que experiencias aplica realmente, que descuento da, hasta cuando
+esta vigente, y si hay que mostrarlo o solo aceptarlo si el cliente lo escribe.
+
+--- BLOQUE 4: OPERACION ---
+
+10. CALENDARIO.
+Hoy el calendario de reservas solo deja elegir fechas hasta el 21 de septiembre de
+2026. Despues de esa fecha el cliente no puede reservar.
+Preguntame hasta cuando quiero vender, si hay temporadas cerradas o dias fijos sin
+salida, y cual es la anticipacion minima para reservar.
+
+11. CATEGORIAS E IMAGENES.
+La experiencia "Bodegas Caminos del Vino" esta en la categoria Bodegas mientras que
+las otras tres de vino estan en Wine Tours. Preguntame si las unifico.
+Ademas hay un logo (amavyt.png) que hay que reemplazar por la version buena, y
+falta publicar el QR del formulario F.960/D de AFIP, que es obligatorio en el sitio.
+Preguntame si tengo esos dos archivos y donde estan.
+
+Empeza por la decision 1 y no avances hasta que la cerremos.
+
+********************* HASTA ACA *********************
+
+
+LAS 11 DECISIONES, DE UN VISTAZO
+--------------------------------
+PLATA
+  1. Precio de las dos cabalgatas - estan en dolares y hoy las dos
+     cuestan lo mismo, aunque una es 75 USD y la otra 95 USD.
+  2. Que es el Wine Tour con Picnic - no figura en el tarifario y la
+     descripcion mezcla dos tours, de $205.500 y $247.000.
+  3. Direccion web del Rafting - dice "medio dia" y es dia completo.
+  4. Que productos nuevos publicamos - hay 12 con precio sin publicar.
+
+TEXTO
+  5. Politica de cancelacion - falta lo mas consultado: que pasa si
+     cancela con menos de 72 horas.
+  6. Edad minima de siete experiencias - la ficha y el formulario de
+     reserva dicen cosas distintas.
+  7. Tramos de menores - conviven "menor de 3" y "menor de 5".
+  8. Resenas que mostramos - "+150 resenas" y "5.0 en Google y
+     TripAdvisor" tienen que ser verificables.
+  9. Alcance del cupon NIEVE2026 - se ofrece en tours que no son de nieve.
+
+OPERACION
+  10. Hasta cuando se puede reservar - el calendario corta el 21/09/2026.
+  11. Categorias, logo y QR de AFIP.
+
+
+UNA COSA MAS, DEL PANEL
+-----------------------
+Aparte de las decisiones necesitamos UN ARCHIVO que solo se saca desde el
+panel de WordPress. Son los "snippets": unos 22 bloques de codigo que hoy
+viven sueltos dentro de la base de datos y que queremos guardar como
+archivos de verdad, para que dejen de perderse y se pueda volver atras.
+
+Entra al panel de STAGING (no el sitio real), busca "Snippets" en el menu
+de la izquierda, tilda la casilla del encabezado para seleccionarlos todos,
+y en "Acciones en lote" elegi "Exportar". Si aparece la opcion "Exportar
+como PHP", mejor esa. Se descarga un archivo: mandanoslo tal cual.
+
+Exportar no modifica nada, solo descarga una copia. El sitio real no se toca.
+
+
+Nada de esto se aplica al sitio real hasta que lo apruebes.
+Todo se esta probando en una copia aparte.

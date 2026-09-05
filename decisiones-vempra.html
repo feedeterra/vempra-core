@@ -1,0 +1,402 @@
+<title>Decisiones Vempra</title>
+<style>
+  :root {
+    --papel:      #FBF9F8;
+    --superficie: #FFFFFF;
+    --borde:      #E5DCD7;
+    --tinta:      #241C19;
+    --tenue:      #6E605A;
+    --terracota:  #B85C38;
+    --verde:      #2E6B4E;
+    --ambar:      #8A5A08;
+    --consola:    #241C19;
+    --consola-tx: #EFE7E2;
+    --consola-bd: #3D302B;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --papel:      #17120F;
+      --superficie: #201916;
+      --borde:      #362B26;
+      --tinta:      #F1EBE7;
+      --tenue:      #A79892;
+      --terracota:  #E28C61;
+      --verde:      #74BE92;
+      --ambar:      #DCA845;
+      --consola:    #0F0C0A;
+      --consola-tx: #EFE7E2;
+      --consola-bd: #332822;
+    }
+  }
+  :root[data-theme="dark"] {
+    --papel:      #17120F;
+    --superficie: #201916;
+    --borde:      #362B26;
+    --tinta:      #F1EBE7;
+    --tenue:      #A79892;
+    --terracota:  #E28C61;
+    --verde:      #74BE92;
+    --ambar:      #DCA845;
+    --consola:    #0F0C0A;
+    --consola-tx: #EFE7E2;
+    --consola-bd: #332822;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 20px 96px;
+  }
+
+  .env { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+  header { display: flex; flex-direction: column; gap: 14px; padding-top: 64px; }
+  .sello {
+    font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--terracota);
+  }
+  h1 {
+    font-size: clamp(34px, 6vw, 46px); line-height: 1.1; letter-spacing: -.025em;
+    font-weight: 700; margin: 0; text-wrap: balance;
+  }
+  .bajada { font-size: 19px; color: var(--tenue); margin: 0; max-width: 62ch; }
+
+  section { display: flex; flex-direction: column; gap: 20px; }
+  h2 {
+    font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--borde); color: var(--tenue);
+  }
+  h3 { font-size: 19px; font-weight: 650; letter-spacing: -.01em; margin: 0; }
+  p  { margin: 0; max-width: 68ch; }
+  a  { color: var(--terracota); }
+
+  .pasos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; counter-reset: n; }
+  .pasos li {
+    display: grid; grid-template-columns: 30px 1fr; gap: 16px; align-items: start; counter-increment: n;
+  }
+  .pasos li::before {
+    content: counter(n);
+    font-variant-numeric: tabular-nums;
+    font-weight: 700; font-size: 14px; line-height: 28px; text-align: center;
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1.5px solid var(--terracota); color: var(--terracota);
+  }
+
+  .consola {
+    background: var(--consola); color: var(--consola-tx);
+    border: 1px solid var(--consola-bd); border-radius: 6px;
+    overflow: hidden;
+  }
+  .consola-barra {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 10px 14px; border-bottom: 1px solid var(--consola-bd);
+  }
+  .consola-tit {
+    font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+    color: var(--consola-tx); opacity: .6;
+  }
+  #copiar {
+    font: inherit; font-size: 13px; font-weight: 600;
+    background: var(--terracota); color: #fff; border: 0; border-radius: 4px;
+    padding: 7px 15px; cursor: pointer;
+  }
+  #copiar:hover { filter: brightness(1.08); }
+  #copiar:focus-visible { outline: 2px solid var(--consola-tx); outline-offset: 2px; }
+  .consola pre {
+    margin: 0; padding: 20px 18px; overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px; line-height: 1.72; white-space: pre-wrap; word-break: break-word;
+  }
+
+  .lista { display: flex; flex-direction: column; gap: 2px; }
+  .item {
+    display: grid; grid-template-columns: 1fr auto; gap: 8px 20px; align-items: baseline;
+    padding: 13px 0; border-bottom: 1px solid var(--borde);
+  }
+  .item:first-child { border-top: 1px solid var(--borde); }
+  .item b { font-weight: 600; }
+  .item span { color: var(--tenue); font-size: 15px; grid-column: 1 / -1; max-width: 62ch; }
+  .pill {
+    font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 3px; white-space: nowrap;
+    border: 1px solid currentColor;
+  }
+  .pill-plata { color: var(--terracota); }
+  .pill-texto { color: var(--verde); }
+  .pill-oper  { color: var(--ambar); }
+
+  .nota {
+    background: var(--superficie); border: 1px solid var(--borde);
+    border-radius: 6px; padding: 20px 22px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .nota strong { font-weight: 650; }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .88em; background: var(--superficie);
+    border: 1px solid var(--borde); border-radius: 3px; padding: 1px 5px;
+  }
+
+  footer {
+    color: var(--tenue); font-size: 14px;
+    border-top: 1px solid var(--borde); padding-top: 22px;
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; padding: 0 16px 64px; }
+    .env { gap: 44px; }
+    .item { grid-template-columns: 1fr; }
+    .consola pre { font-size: 12px; }
+  }
+</style>
+
+<div class="env">
+
+  <header>
+    <div class="sello">Vempra · tienda online</div>
+    <h1>Decisiones que dependen de vos</h1>
+    <p class="bajada">
+      Estamos rehaciendo la tienda. Quedaron once cosas que no podemos definir nosotros
+      porque son del negocio: precios, qué se publica y qué dicen los textos.
+      Este documento te ayuda a cerrarlas todas de una sentada.
+    </p>
+  </header>
+
+  <section>
+    <h2>Cómo usarlo</h2>
+    <ol class="pasos">
+      <li><div><strong>Copiá el texto</strong> del recuadro de abajo con el botón "Copiar".</div></li>
+      <li><div><strong>Pegalo en Claude Code</strong> y mandalo. Te va a ir preguntando de a una cosa por vez.</div></li>
+      <li><div><strong>Al final te devuelve un resumen.</strong> Copialo y mandánoslo. Con eso cerramos.</div></li>
+    </ol>
+    <p style="color:var(--tenue);font-size:15px">
+      Calculá entre 20 y 30 minutos. Si no sabés una respuesta, decíselo y seguí:
+      es mejor dejarla marcada como pendiente que inventar un número.
+    </p>
+  </section>
+
+  <section>
+    <h2>El texto para pegar</h2>
+    <div class="consola">
+      <div class="consola-barra">
+        <span class="consola-tit">Pegar en Claude Code</span>
+        <button id="copiar" type="button">Copiar</button>
+      </div>
+      <pre id="prompt">Sos un asistente que me va a ayudar a cerrar decisiones sobre mi negocio. Tengo una empresa de turismo receptivo en Mendoza, Argentina (Vempra), y estamos rehaciendo la tienda online. Hay cosas que solo puedo definir yo.
+
+COMO QUIERO QUE TRABAJES
+- Preguntame de a UNA decision por vez, en orden. No me tires todo junto.
+- Si mi respuesta queda ambigua o incompleta, repregunta antes de pasar a la siguiente.
+- No inventes precios, fechas ni politicas. Si no te lo dije, preguntamelo.
+- Si te digo "no se" o "lo veo despues", anotalo como PENDIENTE y segui.
+- Al final devolveme un resumen estructurado con todas mis respuestas, listo para copiar y pegar.
+
+CONTEXTO
+La tienda tiene 18 experiencias publicadas. El tarifario oficial en pesos es la
+fuente de verdad, columna "VALOR OFICIAL". Estas son las 11 decisiones abiertas.
+
+--- BLOQUE 1: PRECIOS ---
+
+1. LAS DOS CABALGATAS.
+En el tarifario no tienen precio en pesos, solo costo en dolares: Cabalgata
+Criolla 75 USD y Cabalgata al Atardecer 95 USD. La regla anotada dice "dolar
+oficial venta del Banco Nacion por el costo en USD, mas $30.000 por pasajero".
+Hoy las dos estan publicadas al mismo precio, $165.000, lo que implica un dolar
+de 1.800. Con esa misma regla el Atardecer deberia estar cerca de $201.000, o sea
+que hoy se estaria vendiendo unos $36.000 por debajo.
+Preguntame: (a) el dolar BNA venta de hoy, (b) si la regla de "+$30.000 por
+pasajero" sigue vigente, (c) si confirmo que el Atardecer tiene que ser mas caro
+que la Criolla, (d) cada cuanto quiero revisar estos dos precios.
+
+2. EL "WINE TOUR CON PICNIC", publicado a $247.000.
+No existe con ese nombre en el tarifario. Su descripcion menciona Bodega Bonfanti
+(que en el tarifario corresponde al "Wine Tour Clasico Lujan de Cuyo (Economico)",
+$205.500) y tambien Finca Bandini en carrito de golf (que corresponde al "Alta
+Gama", $247.000). Parece un producto armado mezclando los dos.
+Preguntame: que bodegas visita realmente, que incluye el picnic, y cual de los dos
+precios corresponde. Si es un producto propio que no esta en el tarifario, deciditelo
+conmigo y anotalo como producto nuevo con su precio.
+
+3. LA DIRECCION WEB DEL RAFTING.
+El precio esta bien ($99.000, coincide con el tarifario), pero la direccion de la
+pagina dice "medio-dia" y el tour es dia completo.
+Preguntame si lo cambiamos. Advertime que cambiar la direccion mejora la claridad
+y el posicionamiento, pero rompe los links viejos que ya esten circulando en
+WhatsApp, redes o presupuestos enviados, salvo que se configure una redireccion.
+
+--- BLOQUE 2: QUE PUBLICAMOS ---
+
+4. HAY 12 PRODUCTOS EN EL TARIFARIO QUE NO ESTAN EN LA WEB:
+   City Tour $40.000
+   Full Day Spa sin traslado $174.000
+   Tarde de Termas Spa + Picada $121.400
+   Parque de Agua $73.000
+   Combo Termas Potrerillos $165.000
+   Rafting Invierno $156.000
+   Trekking con Rappel $156.000
+   Trekking "Garganta" $146.000
+   Trekking "C. Bayo" $165.000
+   Kayak Travesia $156.000
+   Wine Tour Clasico Lujan de Cuyo (Economico) $205.500
+   Excursion Las Lenas $132.000
+   (ademas "Full Day Valle de Uco", que figura sin precio)
+Preguntame cuales quiero publicar, en que orden de prioridad, cuales estan
+discontinuados o no se venden mas, y si alguno es estacional. Ayudame a priorizar:
+cuales tienen mas demanda y cuales completan huecos del catalogo actual.
+
+--- BLOQUE 3: TEXTOS Y POLITICAS ---
+
+5. CANCELACION.
+La web todavia dice "24 horas" en varios lugares. La politica real es: reembolso
+del 100% cancelando hasta 72 horas antes, y reprogramacion sin costo hasta 24 horas
+antes. Preguntame la redaccion exacta que quiero publicada, y sobre todo que pasa
+si el cliente cancela con MENOS de 72 horas: pierde todo, pierde una parte, o queda
+un credito. Eso hoy no esta escrito en ningun lado y es la pregunta que mas hacen.
+
+6. EDAD MINIMA.
+Hay siete experiencias donde la ficha y el formulario de reserva se contradicen:
+Villavicencio 4x4, Cabalgata con almuerzo, Cabalgata Criolla, Cabalgata al
+Atardecer, Combo Termas, Full Day Aventura y Rafting.
+Preguntame la edad minima real de cada una, de a una por vez. Donde hoy dice +18
+se queda +18, no lo cambies.
+
+7. TRAMOS DE MENORES.
+Hoy conviven dos cortes distintos segun la experiencia: "menor de 3 anos" y "menor
+de 5 anos". Preguntame cual corresponde a cada tipo de experiencia y si esa
+diferencia es a proposito o quedo por error.
+
+8. RESENAS.
+Queremos mostrar "+150 resenas" y "5.0 en Google y TripAdvisor".
+Preguntame si los dos datos son verdaderos hoy y si cualquiera los puede verificar
+entrando a Google o TripAdvisor. Advertime que publicar un numero que no se pueda
+verificar es riesgoso.
+
+9. CUPON NIEVE2026.
+Aparece ofrecido en experiencias que no son de nieve.
+Preguntame a que experiencias aplica realmente, que descuento da, hasta cuando
+esta vigente, y si hay que mostrarlo o solo aceptarlo si el cliente lo escribe.
+
+--- BLOQUE 4: OPERACION ---
+
+10. CALENDARIO.
+Hoy el calendario de reservas solo deja elegir fechas hasta el 21 de septiembre de
+2026. Despues de esa fecha el cliente no puede reservar.
+Preguntame hasta cuando quiero vender, si hay temporadas cerradas o dias fijos sin
+salida, y cual es la anticipacion minima para reservar.
+
+11. CATEGORIAS E IMAGENES.
+La experiencia "Bodegas Caminos del Vino" esta en la categoria Bodegas mientras que
+las otras tres de vino estan en Wine Tours. Preguntame si las unifico.
+Ademas hay un logo (amavyt.png) que hay que reemplazar por la version buena, y
+falta publicar el QR del formulario F.960/D de AFIP, que es obligatorio en el sitio.
+Preguntame si tengo esos dos archivos y donde estan.
+
+Empeza por la decision 1 y no avances hasta que la cerremos.</pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>Las once decisiones, de un vistazo</h2>
+    <div class="lista">
+
+      <div class="item">
+        <b>Precio de las dos cabalgatas</b><span class="pill pill-plata">Plata</span>
+        <span>Están en dólares y hoy las dos cuestan lo mismo, aunque una cuesta 75 USD y la otra 95 USD.</span>
+      </div>
+      <div class="item">
+        <b>Qué es el Wine Tour con Picnic</b><span class="pill pill-plata">Plata</span>
+        <span>No figura en el tarifario. La descripción mezcla dos tours distintos, de $205.500 y $247.000.</span>
+      </div>
+      <div class="item">
+        <b>Dirección web del Rafting</b><span class="pill pill-plata">Plata</span>
+        <span>Dice "medio día" y es día completo. Cambiarla rompe los links ya enviados.</span>
+      </div>
+      <div class="item">
+        <b>Qué productos nuevos publicamos</b><span class="pill pill-plata">Plata</span>
+        <span>Hay 12 experiencias con precio en el tarifario que no están en la web.</span>
+      </div>
+      <div class="item">
+        <b>Política de cancelación</b><span class="pill pill-texto">Texto</span>
+        <span>Falta lo más consultado: qué pasa si cancela con menos de 72 horas.</span>
+      </div>
+      <div class="item">
+        <b>Edad mínima de siete experiencias</b><span class="pill pill-texto">Texto</span>
+        <span>La ficha y el formulario de reserva dicen cosas distintas.</span>
+      </div>
+      <div class="item">
+        <b>Tramos de menores</b><span class="pill pill-texto">Texto</span>
+        <span>Conviven "menor de 3" y "menor de 5" según la experiencia.</span>
+      </div>
+      <div class="item">
+        <b>Reseñas que mostramos</b><span class="pill pill-texto">Texto</span>
+        <span>"+150 reseñas" y "5.0 en Google y TripAdvisor" tienen que ser verificables.</span>
+      </div>
+      <div class="item">
+        <b>Alcance del cupón NIEVE2026</b><span class="pill pill-texto">Texto</span>
+        <span>Se está ofreciendo en experiencias que no son de nieve.</span>
+      </div>
+      <div class="item">
+        <b>Hasta cuándo se puede reservar</b><span class="pill pill-oper">Operación</span>
+        <span>El calendario se corta el 21 de septiembre de 2026.</span>
+      </div>
+      <div class="item">
+        <b>Categorías, logo y QR de AFIP</b><span class="pill pill-oper">Operación</span>
+        <span>Una experiencia de vino está en otra categoría, y falta el QR del F.960/D.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Una cosa más, del panel</h2>
+    <div class="nota">
+      <p>
+        Aparte de las decisiones, necesitamos <strong>un archivo</strong> que sólo se saca
+        desde el panel de WordPress. Son los "snippets": unos 22 bloques de código que
+        hoy viven sueltos dentro de la base de datos y que queremos guardar como
+        archivos de verdad, para que dejen de perderse y se pueda volver atrás.
+      </p>
+      <p>
+        Entrá al panel de <strong>staging</strong> (no el sitio real), buscá
+        <strong>Snippets</strong> en el menú de la izquierda, tildá la casilla del
+        encabezado para seleccionarlos todos, y en <em>Acciones en lote</em> elegí
+        <strong>Exportar</strong>. Si aparece la opción <em>Exportar como PHP</em>, mejor esa.
+        Se te descarga un archivo: mandánoslo tal cual.
+      </p>
+      <p style="color:var(--tenue);font-size:15px">
+        Exportar no modifica nada, sólo descarga una copia. El sitio real no se toca.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Nada de esto se aplica al sitio real hasta que lo apruebes.
+    Todo se está probando en una copia aparte.
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('copiar').addEventListener('click', function () {
+    var t = document.getElementById('prompt').textContent;
+    var b = this;
+    function ok() { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = 'Copiar'; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(ok, fallback);
+    } else { fallback(); }
+    function fallback() {
+      var a = document.createElement('textarea');
+      a.value = t; a.style.position = 'fixed'; a.style.opacity = '0';
+      document.body.appendChild(a); a.select();
+      try { document.execCommand('copy'); ok(); } catch (e) { b.textContent = 'Copiá a mano'; }
+      document.body.removeChild(a);
+    }
+  });
+</script>

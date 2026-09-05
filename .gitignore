@@ -1,0 +1,9 @@
+# credenciales: nunca al repositorio
+tools/clave.txt
+# paquetes generados
+*.zip
+# copia vieja del plugin (v1.1.0), la fuente real es build/vempra-core
+/vempra-core/
+# respaldos de contenido de produccion
+respaldo_*.json
+.DS_Store

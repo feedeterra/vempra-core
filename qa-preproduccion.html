@@ -1,0 +1,295 @@
+<title>QA pre-producción Vempra</title>
+<style>
+:root{
+  --nieve:#F7F4F0; --papel:#FFFFFF; --tinta:#241A22; --tinta-suave:#5B4E56;
+  --vino:#6E1F3C; --cobre:#B0663A; --andes:#6F6D7C; --verde:#3F6B52;
+  --linea:#E3DCD6; --sombra:0 1px 2px rgba(36,26,34,.06),0 8px 24px rgba(36,26,34,.05);
+  --display:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --texto:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --dato:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --nieve:#191419; --papel:#211B21; --tinta:#F0E9E6; --tinta-suave:#B6A9B0;
+  --vino:#D9718F; --cobre:#DE9A67; --andes:#9C99AA; --verde:#7FBF98;
+  --linea:#392F38; --sombra:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}}
+:root[data-theme="dark"]{
+  --nieve:#191419; --papel:#211B21; --tinta:#F0E9E6; --tinta-suave:#B6A9B0;
+  --vino:#D9718F; --cobre:#DE9A67; --andes:#9C99AA; --verde:#7FBF98;
+  --linea:#392F38; --sombra:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{background:var(--nieve);color:var(--tinta);font-family:var(--texto);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.hoja{max-width:860px;margin:0 auto;padding:56px 24px 96px;display:flex;flex-direction:column;gap:48px}
+header{display:flex;flex-direction:column;gap:14px;border-bottom:2px solid var(--vino);padding-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cobre);font-weight:600}
+h1{font-family:var(--display);font-size:clamp(32px,6vw,48px);line-height:1.08;margin:0;text-wrap:balance;font-weight:400}
+.bajada{color:var(--tinta-suave);max-width:60ch;margin:0;font-size:17px}
+.meta{font-family:var(--dato);font-size:12.5px;color:var(--andes);display:flex;flex-wrap:wrap;gap:6px 18px}
+
+.tablero{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.ficha{background:var(--papel);border:1px solid var(--linea);border-radius:3px;padding:16px 18px;box-shadow:var(--sombra);border-top:3px solid var(--andes)}
+.ficha.b{border-top-color:var(--vino)} .ficha.a{border-top-color:var(--cobre)} .ficha.m{border-top-color:var(--andes)} .ficha.ok{border-top-color:var(--verde)}
+.ficha .n{font-family:var(--display);font-size:38px;line-height:1;font-variant-numeric:tabular-nums;display:block}
+.ficha.b .n{color:var(--vino)} .ficha.a .n{color:var(--cobre)} .ficha.ok .n{color:var(--verde)}
+.ficha .q{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-suave);margin-top:6px;display:block}
+
+section{display:flex;flex-direction:column;gap:20px}
+h2{font-family:var(--display);font-size:26px;font-weight:400;margin:0;display:flex;align-items:baseline;gap:12px}
+h2 .rot{font-family:var(--texto);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:4px 9px;border-radius:2px;color:#fff;background:var(--andes)}
+h2 .rot.b{background:var(--vino)} h2 .rot.a{background:var(--cobre)} h2 .rot.ok{background:var(--verde)}
+.nota{color:var(--tinta-suave);margin:-8px 0 0;max-width:64ch;font-size:15px}
+
+.item{background:var(--papel);border:1px solid var(--linea);border-left:4px solid var(--andes);border-radius:3px;padding:18px 20px;box-shadow:var(--sombra);display:flex;flex-direction:column;gap:9px}
+.item.b{border-left-color:var(--vino)} .item.a{border-left-color:var(--cobre)}
+.cab{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.cod{font-family:var(--dato);font-size:12px;font-weight:700;color:var(--andes);letter-spacing:.04em}
+.tit{font-weight:650;font-size:17px;line-height:1.35}
+.item p{margin:0;color:var(--tinta-suave);font-size:15px}
+.item p strong{color:var(--tinta);font-weight:620}
+.donde{font-family:var(--dato);font-size:12px;color:var(--andes)}
+.arreglo{font-size:14.5px;border-top:1px dashed var(--linea);padding-top:9px;color:var(--tinta)}
+.arreglo b{color:var(--cobre);font-weight:700;letter-spacing:.04em;font-size:11.5px;text-transform:uppercase;display:block;margin-bottom:2px}
+code{font-family:var(--dato);font-size:13px;background:color-mix(in srgb,var(--andes) 14%,transparent);padding:1px 5px;border-radius:2px}
+
+.tabla-envoltorio{overflow-x:auto;border:1px solid var(--linea);border-radius:3px;background:var(--papel);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:460px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--linea)}
+th{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--andes);font-weight:700;background:color-mix(in srgb,var(--andes) 7%,transparent)}
+tr:last-child td{border-bottom:0}
+td.num{font-family:var(--dato);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.cero{color:var(--vino);font-weight:700}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:2px}
+.pill.falta{background:color-mix(in srgb,var(--vino) 16%,transparent);color:var(--vino)}
+.pill.ok{background:color-mix(in srgb,var(--verde) 16%,transparent);color:var(--verde)}
+
+footer{border-top:1px solid var(--linea);padding-top:22px;color:var(--andes);font-size:13.5px;display:flex;flex-direction:column;gap:8px}
+</style>
+
+<div class="hoja">
+
+<header>
+  <span class="eyebrow">Staging · previo a producción</span>
+  <h1>Lo que falta antes de<br>encender la tienda</h1>
+  <p class="bajada">Recorrido completo de compra en escritorio y en teléfono, sobre el sitio de pruebas. Sin tocar producción y sin ningún pago.</p>
+  <div class="meta">
+    <span>4 de septiembre de 2026</span><span>·</span>
+    <span>papayawhip-hyena-382000.hostingersite.com</span><span>·</span>
+    <span>vempra-core 1.3.3 instalado</span>
+  </div>
+</header>
+
+<div class="tablero">
+  <div class="ficha b"><span class="n">7</span><span class="q">Bloquean el lanzamiento</span></div>
+  <div class="ficha a"><span class="n">7</span><span class="q">Cuestan reservas</span></div>
+  <div class="ficha m"><span class="n">9</span><span class="q">A ordenar</span></div>
+  <div class="ficha ok"><span class="n">6</span><span class="q">Ya verificados</span></div>
+</div>
+
+<section>
+  <h2><span class="rot b">Bloqueante</span> No salir así</h2>
+  <p class="nota">Cada uno de estos hace que la tienda pierda plata, quede en inglés o prometa algo que no vamos a cumplir. Van primero.</p>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B1</span><span class="tit">11 de los 17 tours no se pueden reservar: el precio es $0</span></div>
+    <p>Recorrí las 17 fichas una por una y leí el precio que cada una le pasa a la medición. Seis tienen precio; <strong>once están en cero</strong>. Un tour en $0 igual deja agregar al carrito y llegar al checkout con total $0.</p>
+    <div class="tabla-envoltorio">
+      <table>
+        <thead><tr><th>Tour</th><th>Categoría</th><th style="text-align:right">Precio</th></tr></thead>
+        <tbody>
+          <tr><td>Wine Tour Luján de Cuyo — Premium</td><td>Wine Tours</td><td class="num">$247.000</td></tr>
+          <tr><td>Wine Tour Maipú — Bodegas históricas</td><td>Wine Tours</td><td class="num">$185.000</td></tr>
+          <tr><td>Tour Cañón del Atuel</td><td>Panorámicos</td><td class="num">$109.000</td></tr>
+          <tr><td>Alta Montaña</td><td>Panorámicos</td><td class="num">$95.000</td></tr>
+          <tr><td>Tour Villavicencio — 365 caracoles</td><td>Panorámicos</td><td class="num">$55.000</td></tr>
+          <tr><td>Tour Bodegas Mendoza — medio día</td><td>Panorámicos</td><td class="num">$53.000</td></tr>
+          <tr><td>Tour Villavicencio 4x4</td><td>Panorámicos</td><td class="num cero">$0</td></tr>
+          <tr><td>Cabalgata al atardecer</td><td>Cabalgatas</td><td class="num cero">$0</td></tr>
+          <tr><td>Cabalgata con almuerzo criollo</td><td>Cabalgatas</td><td class="num cero">$0</td></tr>
+          <tr><td>Cabalgata criolla — caballos y asado</td><td>Cabalgatas</td><td class="num cero">$0</td></tr>
+          <tr><td>Full Day Spa Termas de Cacheuta</td><td>Panorámicos</td><td class="num cero">$0</td></tr>
+          <tr><td>Combo Termas + Rafting</td><td>Aventura</td><td class="num cero">$0</td></tr>
+          <tr><td>Full Day Aventura — rafting, canopy, rappel</td><td>Aventura</td><td class="num cero">$0</td></tr>
+          <tr><td>Tour Rafting medio día — 12 km</td><td>Aventura</td><td class="num cero">$0</td></tr>
+          <tr><td>Tour Las Leñas</td><td>Nieve</td><td class="num cero">$0</td></tr>
+          <tr><td>Tour Los Puquios</td><td>Nieve</td><td class="num cero">$0</td></tr>
+          <tr><td>Tour Penitentes</td><td>Nieve</td><td class="num cero">$0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="arreglo"><b>Qué hace falta</b>Los precios de la planilla, columna VALOR OFICIAL, en pesos. Las tres cabalgatas están atadas al dólar: hay que recalcularlas contra el BNA del día, no copiarlas. Con eso cargo los once de una sola vez.</div>
+  </div>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B2</span><span class="tit">Al reservar no aparece ninguna confirmación</span></div>
+    <p>Hice una reserva real: elegí el 20 de septiembre, el precio salió <strong>$53.000</strong>, apreté "Reservar ahora" y el tour entró al carrito — pero <strong>en pantalla no pasó nada</strong>. Ni un cartel, ni el número del carrito moviéndose. El visitante no sabe si funcionó y vuelve a apretar.</p>
+    <p class="donde">Causa: el carrito lateral resuelve el alta por AJAX y la página nunca se recarga; todo el aviso estaba escrito esperando esa recarga.</p>
+    <div class="arreglo"><b>Estado</b>Arreglado en la v1.3.4, ya empaquetada. Falta instalarla: la sesión de wp-admin se cerró y no escribo contraseñas.</div>
+  </div>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B3</span><span class="tit">El checkout promete "cancelación sin cargo", que no es la política real</span></div>
+    <p>Debajo del botón de pago dice <strong>"✓ Reprogramación y cancelación sin cargo"</strong>, sin condiciones. La política real es reembolso del 100% hasta <strong>72 horas</strong> antes y reprogramación libre hasta <strong>24 horas</strong>. Prometer más de lo que se cumple, en la pantalla donde la persona acepta los términos, es el peor lugar posible para una discusión.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Cambiarlo por "Cancelás hasta 72 hs antes y te devolvemos el 100%".</div>
+  </div>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B4</span><span class="tit">La página de error está en inglés</span></div>
+    <p>Cualquier dirección equivocada muestra: <strong>"404 Not Found! We're sorry, the page you have looked for does not exist"</strong>. En inglés, sin buscador y sin un solo enlace a los tours. Toda visita que caiga ahí desde Google se pierde.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Texto en castellano, buscador y los tours más vendidos.</div>
+  </div>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B5</span><span class="tit">"Recently Viewed Tours" — en inglés, en el carrito</span></div>
+    <p>Aparece en la página del carrito, justo donde la persona está por pagar.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Traducirlo con Loco Translate a "Tours que viste hace poco". Ya estaba anotado y sigue ahí.</div>
+  </div>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B6</span><span class="tit">Precios con coma en vez de punto: $53,000 y $247,000</span></div>
+    <p>En el bloque de tours vistos del carrito. Para un argentino <code>$53,000</code> se lee como cincuenta y tres pesos. Lo habíamos corregido en el widget de reserva; <strong>en este bloque sigue mal</strong>.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Aplicar el mismo formato a este bloque desde el plugin.</div>
+  </div>
+
+  <div class="item b">
+    <div class="cab"><span class="cod">B7</span><span class="tit">"Ver los 18 tours" — son 17, y el error lo metí yo</span></div>
+    <p>Conté las fichas publicadas: <strong>17</strong>. La portada y el listado dicen "Ver los 17 tours", que está bien; la ficha del tour de bodegas dice 18 porque en la v1.3.1 lo cambié con un número fijo equivocado.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Que el número lo cuente el plugin solo, para que nunca más quede viejo cuando se agregue o saque un tour.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="rot a">Alto</span> Cuesta reservas todos los días</h2>
+  <p class="nota">No rompen nada, pero cada uno es gente que se va antes de pagar.</p>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A1</span><span class="tit">En el teléfono, el botón de pagar está a 3,6 pantallas de scroll</span></div>
+    <p>El checkout mide <strong>5.992 px</strong> de alto y "Realizar el pedido" queda a 2.952 px del inicio. Además el texto no dice qué va a pasar ni cuánto se paga.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Un botón fijo abajo con el total —"Pagar $53.000"— y colapsar los términos y condiciones, que hoy se muestran enteros dentro del checkout.</div>
+  </div>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A2</span><span class="tit">La ficha del tour no muestra el precio hasta elegir fecha</span></div>
+    <p>Se entra desde Google, se lee todo y no hay un número en ningún lado hasta que se abre el calendario y se elige un día. La primera pregunta de cualquiera es cuánto sale.</p>
+    <div class="arreglo"><b>Qué hace falta</b>"Desde $53.000 por persona" arriba de todo, junto al título.</div>
+  </div>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A3</span><span class="tit">El carrito flotante sigue tapando el botón principal en el teléfono</span></div>
+    <p>Lo habíamos sacado, pero <strong>en la portada sigue apareciendo</strong>: una bolsa de 64×64 px encima del "Explorar tours" del hero. El CSS que lo oculta no llega a la portada. Además comparte esquina con el botón de WhatsApp.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Ocultarlo en todo el sitio en teléfono, no sólo en las fichas.</div>
+  </div>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A4</span><span class="tit">El campo de cantidad de personas mide 26 px de alto</span></div>
+    <p>46×26 px en teléfono. El mínimo cómodo es 44. Es el único campo que la persona toca antes de reservar.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Llevarlo a 44 px con botones de − y + bien grandes.</div>
+  </div>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A5</span><span class="tit">16 de las 17 fichas están vacías de contenido</span></div>
+    <p>Sólo la de bodegas tiene el recorrido paso a paso, qué incluye, preguntas frecuentes y opiniones — siete secciones. <strong>Las otras dieciséis tienen una sola.</strong> Son las que hoy no venden ni posicionan.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Replicar la estructura al resto. El plugin ya lo soporta: hay que sumar los IDs a la lista.</div>
+  </div>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A6</span><span class="tit">La portada pesa 3,1 MB y tarda 3,9 s en cargar</span></div>
+    <p>165 archivos: <strong>42 scripts y 40 hojas de estilo</strong> sin unir ni minimizar. Las fotos van sin comprimir y sin WebP — <code>cabalgatas.jpg</code> 566 KB, <code>Rafting-0001.jpg</code> 529 KB, <code>5b.jpg</code> 306 KB. Con datos móviles eso es media pantalla en blanco.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Convertir a WebP y activar la unión de CSS y JS de LiteSpeed. Se puede hacer sin tocar nada del diseño.</div>
+  </div>
+
+  <div class="item a">
+    <div class="cab"><span class="cod">A7</span><span class="tit">La ficha del tour mide 12.004 px: quince pantallas</span></div>
+    <p>Es lo que venías notando cuando dijiste que había demasiados elementos. El formulario está bien arriba (al 9%), así que el problema no es llegar a reservar: es todo lo que viene después y nadie lee.</p>
+    <div class="arreglo"><b>Qué hace falta</b>Plegar las secciones largas —"qué incluye", preguntas frecuentes, opiniones— en acordeones. Se conserva todo, ocupa un tercio.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="rot">Medio</span> A ordenar antes de encender</h2>
+
+  <div class="item">
+    <div class="cab"><span class="cod">M1</span><span class="tit">Dos H1 en la portada</span></div>
+    <p>"Vempra Turismo · Tours en Mendoza" y "Mendoza, con paladar local". Google espera uno solo.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M2</span><span class="tit">Siete enlaces sin nombre: el carrito es uno</span></div>
+    <p>Un lector de pantalla los anuncia como "enlace" a secas. Uno de ellos es el carrito de la cabecera.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M3</span><span class="tit">Categorías mal puestas</span></div>
+    <p>"Tour Bodegas Mendoza" y "Termas de Cacheuta" figuran como <strong>Panorámicos</strong>. El primero es Wine Tours. Se ve en el sitio y en los informes de la medición.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M4</span><span class="tit">Un "Share" suelto como título de sección</span></div>
+    <p>En la ficha del tour, al mismo nivel que "Preguntas frecuentes".</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M5</span><span class="tit">Texto de 10 y 11 px en el teléfono</span></div>
+    <p>"3 cuotas sin interés" a 10 px, las duraciones y "Desde, por persona" a 11–12. El mínimo cómodo es 14.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M6</span><span class="tit">Una imagen sin texto alternativo en la ficha del tour</span></div>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M7</span><span class="tit">La transferencia bancaria está activa como medio de pago</span></div>
+    <p>Significa reservar un cupo sin cobrar y perseguir el comprobante a mano. <strong>Decisión tuya</strong>: la dejamos o la sacamos.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M8</span><span class="tit">Falta cerrar el embudo de medición</span></div>
+    <p><code>view_item</code> y <code>begin_checkout</code> disparan bien, y el checkout informa ARS 53.000. Faltan verificar <code>add_to_cart</code> —que hoy no salta porque el alta es por AJAX— y <code>purchase</code>, que no se puede probar hasta tener las credenciales de prueba de Mercado Pago.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">M9</span><span class="tit">Pendientes de panel que ya veníamos arrastrando</span></div>
+    <p>Idioma es_AR y zona horaria Mendoza · los textos que todavía dicen 24 hs y van a 72 · reemplazar <code>amavyt.png</code> · el QR real de AFIP F.960/D · verificar que el cupón NIEVE2026 exista y descuente.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="rot ok">Verificado</span> Esto está bien</h2>
+  <div class="item">
+    <div class="cab"><span class="cod">V1</span><span class="tit">El checkout es corto y está bien armado</span></div>
+    <p>Sólo cuatro datos obligatorios —nombre, apellido, teléfono, correo—, campos de 44 px y autocompletado correcto en todos. Sin dirección ni datos de más.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">V2</span><span class="tit">Ninguna página se desborda a lo ancho en el teléfono</span></div>
+    <p>Portada, ficha, carrito y checkout a 375 px: sin scroll horizontal. Sólo el botón "Ver tours de nieve" se pasa 34 px del borde.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">V3</span><span class="tit">Sin errores de JavaScript en ninguna pantalla</span></div>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">V4</span><span class="tit">El número del carrito coincide con el carrito real</span></div>
+    <p>La cabecera y el carrito lateral marcaban 4 y el servidor confirmó 4.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">V5</span><span class="tit">Los títulos y descripciones de Google están completos</span></div>
+    <p>Las 17 fichas tienen título de 53–65 caracteres y descripción de 130–187. Un solo H1 por ficha.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="cod">V6</span><span class="tit">Términos, privacidad, contacto, nosotros y blog responden</span></div>
+    <p>Todas en línea. Los términos ya tienen el CUIT y la fecha de actualización.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Por dónde empezar</h2>
+  <p class="nota">Los bloqueantes son siete, pero cinco los resuelvo yo en una sola versión del plugin. Los otros dos dependen de vos.</p>
+  <div class="item a">
+    <div class="cab"><span class="tit">Lo que necesito de vos</span></div>
+    <p><strong>1.</strong> Entrar una vez a wp-admin en Chrome, para que pueda instalar la v1.3.4 y seguir solo.<br>
+    <strong>2.</strong> Los once precios que faltan, y el dólar BNA del día para las tres cabalgatas.<br>
+    <strong>3.</strong> Decidir si la transferencia bancaria queda o se saca.</p>
+  </div>
+  <div class="item">
+    <div class="cab"><span class="tit">Lo que hago yo apenas tenga eso</span></div>
+    <p>Una versión del plugin que cierra B2, B3, B6, B7, A2, A3 y A4 de una sola vez — nada de instalar de a uno. Después los once precios, y recién ahí replicar la ficha buena a los dieciséis tours que están vacíos.</p>
+  </div>
+</section>
+
+<footer>
+  <div>Todo se probó en el sitio de pruebas. Producción no se tocó en ningún momento y no se intentó ningún pago.</div>
+  <div>El carrito de pruebas quedó con 4 reservas de mentira. Las vacío antes de seguir.</div>
+</footer>
+
+</div>

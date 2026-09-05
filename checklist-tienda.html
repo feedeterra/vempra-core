@@ -1,0 +1,429 @@
+<title>Lanzamiento Tienda Vempra</title>
+<style id="css">
+:root{
+  --wine:#6E1B2E;
+  --wine-deep:#40101C;
+  --wine-soft:#F3E7EA;
+  --ground:#F7F6F4;
+  --panel:#FFFFFF;
+  --ink:#1B1917;
+  --ink-2:#4A4642;
+  --muted:#7C7772;
+  --line:#E2DFDA;
+  --block:#A82D18;
+  --ok:#2C6B4F;
+  --wait:#8A6D22;
+  --shadow:0 1px 2px rgba(27,25,23,.05),0 8px 24px -16px rgba(27,25,23,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --wine:#C77E8E;
+    --wine-deep:#E8C4CC;
+    --wine-soft:#2A1A1F;
+    --ground:#141312;
+    --panel:#1D1B1A;
+    --ink:#F0EDE9;
+    --ink-2:#C4BFB9;
+    --muted:#8E8880;
+    --line:#312E2C;
+    --block:#E58A72;
+    --ok:#79C09B;
+    --wait:#D6B45F;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --wine:#C77E8E;
+  --wine-deep:#E8C4CC;
+  --wine-soft:#2A1A1F;
+  --ground:#141312;
+  --panel:#1D1B1A;
+  --ink:#F0EDE9;
+  --ink-2:#C4BFB9;
+  --muted:#8E8880;
+  --line:#312E2C;
+  --block:#E58A72;
+  --ok:#79C09B;
+  --wait:#D6B45F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.7);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font:16px/1.55 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+
+/* ---------- barra superior ---------- */
+.top{
+  position:sticky;top:0;z-index:20;
+  background:var(--wine-deep);
+  color:#F6EFF0;
+  border-bottom:1px solid rgba(0,0,0,.2);
+}
+:root[data-theme="dark"] .top,
+:root:not([data-theme="light"]) .top{background:var(--wine-deep)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .top{background:#241417;color:#F0E4E7}
+}
+.top-in{
+  max-width:820px;margin:0 auto;padding:16px 22px 14px;
+  display:flex;flex-wrap:wrap;gap:14px 24px;align-items:baseline;
+}
+.top h1{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:19px;font-weight:600;margin:0;letter-spacing:.01em;
+  text-wrap:balance;
+}
+.top .sub{font-size:12.5px;opacity:.72;letter-spacing:.04em;text-transform:uppercase}
+.meter{width:100%;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:5px;border-radius:99px;background:rgba(255,255,255,.16);overflow:hidden}
+.bar i{display:block;height:100%;background:#E8C4CC;width:0;transition:width .35s ease}
+.count{font-variant-numeric:tabular-nums;font-size:12.5px;opacity:.85;white-space:nowrap}
+
+/* ---------- cuerpo ---------- */
+main{max-width:820px;margin:0 auto;padding:26px 22px 90px}
+.intro{
+  color:var(--ink-2);font-size:15px;margin:0 0 30px;max-width:62ch;
+}
+.intro b{color:var(--ink);font-weight:600}
+
+.fase{margin:0 0 34px}
+.fase-cab{
+  display:flex;align-items:baseline;gap:12px;
+  padding:0 0 10px;margin:0 0 14px;border-bottom:1px solid var(--line);
+}
+.fase-n{
+  font-variant-numeric:tabular-nums;font-size:12px;font-weight:700;
+  color:var(--wine);letter-spacing:.1em;
+}
+.fase-cab h2{
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:20px;font-weight:600;margin:0;flex:1;text-wrap:balance;
+}
+.fase-meta{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fase-nota{font-size:13.5px;color:var(--muted);margin:-6px 0 14px;max-width:60ch}
+
+.lista{display:flex;flex-direction:column;gap:8px}
+
+.item{
+  display:flex;gap:13px;align-items:flex-start;
+  background:var(--panel);
+  border:1px solid var(--line);border-radius:9px;
+  padding:13px 15px 13px 13px;
+  box-shadow:var(--shadow);
+  transition:opacity .2s ease,border-color .2s ease;
+}
+.item.bloq{border-left:3px solid var(--block);padding-left:11px}
+.item.listo{opacity:.52}
+.item.listo .t{text-decoration:line-through;text-decoration-color:var(--muted)}
+
+.tick{
+  flex:none;width:21px;height:21px;margin-top:1px;
+  border:1.5px solid var(--muted);border-radius:6px;
+  background:transparent;cursor:pointer;padding:0;
+  display:grid;place-items:center;
+  transition:background .15s ease,border-color .15s ease;
+}
+.tick:hover{border-color:var(--wine)}
+.tick:focus-visible{outline:2px solid var(--wine);outline-offset:2px}
+.tick svg{width:12px;height:12px;stroke:#fff;stroke-width:2.6;fill:none;opacity:0;transition:opacity .15s ease}
+.tick[aria-checked="true"]{background:var(--wine);border-color:var(--wine)}
+:root[data-theme="dark"] .tick[aria-checked="true"] svg,
+.tick[aria-checked="true"] svg{opacity:1}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .tick[aria-checked="true"] svg{stroke:#241417}
+}
+:root[data-theme="dark"] .tick[aria-checked="true"] svg{stroke:#241417}
+
+.cuerpo{flex:1;min-width:0}
+.t{font-size:15px;font-weight:550;line-height:1.4;margin:0;color:var(--ink)}
+.n{font-size:13.5px;color:var(--muted);margin:4px 0 0;line-height:1.5}
+.n code{
+  font:12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:var(--wine-soft);color:var(--ink-2);
+  padding:2px 5px;border-radius:4px;
+}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{
+  font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:3px 8px;border-radius:99px;border:1px solid var(--line);color:var(--muted);
+}
+.chip.vos{color:var(--wine);border-color:var(--wine);background:var(--wine-soft)}
+.chip.yo{color:var(--ink-2)}
+.chip.juntos{color:var(--wait);border-color:var(--wait)}
+.chip.b{color:var(--block);border-color:var(--block)}
+
+/* ---------- pie ---------- */
+.pie{
+  margin-top:38px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:13.5px;color:var(--muted);max-width:62ch;
+}
+.pie p{margin:0 0 10px}
+.pie b{color:var(--ink-2)}
+
+.estado{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:30;
+  background:var(--panel);border:1px solid var(--line);border-radius:99px;
+  padding:8px 16px;font-size:13px;color:var(--ink-2);
+  box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.estado.ver{opacity:1}
+.estado.mal{color:var(--block);border-color:var(--block)}
+
+@media (max-width:520px){
+  main{padding:20px 16px 80px}
+  .top-in{padding:14px 16px 12px}
+  .fase-cab{flex-wrap:wrap;gap:4px 10px}
+  .fase-meta{width:100%}
+}
+</style>
+
+<div class="top">
+  <div class="top-in">
+    <h1>Lanzamiento Tienda Vempra</h1>
+    <span class="sub">staging &rarr; producción</span>
+    <div class="meter">
+      <div class="bar"><i id="barra"></i></div>
+      <span class="count" id="contador">—</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <p class="intro">Todo lo que falta para que la tienda esté lista, en el orden en que conviene hacerlo. Los ítems marcados <b>bloqueante</b> frenan al resto: mientras no estén, el trabajo de abajo no puede avanzar. Tildá a medida que vayas cerrando — se guarda para los dos.</p>
+  <div id="fases"></div>
+
+  <div class="pie">
+    <p><b>El hueco más serio:</b> nunca se completó una compra de punta a punta. No hay forma de saber si la reserva se confirma, si el mail sale o si el voucher llega. No lo probé porque staging tiene credenciales vivas de Mercado Pago y no voy a mover plata real. Es la fase 4.</p>
+    <p><b>Aparte del checklist:</b> los conectores <code>meta-ads</code> y <code>zernio</code> siguen sin autorizar. Hasta que los habilites desde la configuración de conectores en claude.ai, no puedo ver ni tocar las campañas.</p>
+  </div>
+</main>
+
+<div class="estado" id="aviso"></div>
+
+<script id="estado-inicial" type="application/json">{"hechos":{"zip":true,"css":true}}</script>
+<script id="app">
+(function(){
+"use strict";
+
+var FASES = [
+  {
+    n:"01", titulo:"Destrabar", nota:"Depende de vos. Nada de lo demás puede avanzar hasta que esto esté.",
+    items:[
+      {id:"zip", quien:"vos", bloq:true, t:"Instalar vempra-core-v1.2.0.zip en staging",
+       n:"Está en tu Escritorio. Hoy staging corre la v1.1.0. Destraba el arreglo del <code>value: 0</code>, el precio único y el carrito flotante en mobile."},
+      {id:"css", quien:"vos", t:"Borrar el bloque «Carrito flotante fuera en movil» del CSS del Personalizador",
+       n:"Lo pegamos a mano como parche. Con la v1.2.0 instalada queda duplicado."},
+      {id:"snippets", quien:"vos", bloq:true, t:"Exportar los 22 snippets de Code Snippets",
+       n:"144.850 bytes. Sin ese export no puedo pasar el PHP al plugin, y si vamos a producción sin eso todo queda suelto y frágil."},
+      {id:"precio", quien:"vos", bloq:true, t:"Definir el precio real de los tours",
+       n:"Producción cobra $55.000, staging dice $53.000 y la planilla (columna VALOR OFICIAL) es la fuente de verdad. Tres números para el mismo tour."},
+      {id:"dolar", quien:"vos", t:"Fijar con qué cotización salen las cabalgatas",
+       n:"Se recalculan contra el dólar BNA, no se copian de la planilla."},
+      {id:"decisiones", quien:"vos", t:"Responder las decisiones del doc del dueño",
+       n:"Corrijo la #10: la ventana de reserva es móvil, ~37 días rodantes, no un corte fijo el 21-09."}
+    ]
+  },
+  {
+    n:"02", titulo:"Arreglos y replicación", nota:"Lo hago yo, una vez destrabado lo de arriba.",
+    items:[
+      {id:"php", quien:"yo", t:"Pasar el PHP de los snippets al plugin"},
+      {id:"sinprecio", quien:"yo", t:"Cargar precio a los 3 tours que no lo tienen",
+       n:"IDs 128, 237 y 134 — sin <code>_price</code>."},
+      {id:"replicar", quien:"yo", t:"Replicar la ficha optimizada a los 16 tours restantes",
+       n:"Hoy solo la tiene el 528. Es el ítem más grande que queda."},
+      {id:"confirmacion", quien:"yo", bloq:true, t:"Confirmación al agregar al carrito en mobile",
+       n:"Verificado tres veces: recarga arriba de todo, cero avisos, panel cerrado. Sin el carrito flotante, el cliente no tiene ninguna señal de que la reserva entró — y vuelve a apretar."},
+      {id:"coma", quien:"yo", t:"Formato $53,000 → $53.000 en «Recently Viewed Tours»",
+       n:"El widget del tema formatea el precio a mano en vez de usar <code>wc_price()</code>."},
+      {id:"zoom", quien:"yo", t:"Sacar maximum-scale=1",
+       n:"Bloquea el pinch-zoom en toda la tienda."},
+      {id:"17tours", quien:"yo", t:"«Ver los 17 tours» con 18 publicados"},
+      {id:"alt", quien:"yo", t:"Poner alt a las imágenes que faltan"},
+      {id:"campos", quien:"yo", t:"Subir el alto de los campos del checkout",
+       n:"Hoy 38 px; el mínimo cómodo en mobile es 44."},
+      {id:"reintento", quien:"yo", t:"Mensaje de error y reintento si falla el cálculo del precio",
+       n:"Hoy, si la consulta no vuelve, el formulario queda bloqueado sin explicación ni salida."},
+      {id:"viewcontent", quien:"yo", t:"ViewContent / view_item en las páginas de tour",
+       n:"El pixel hoy solo dispara PageView: las páginas son CPT <code>tour</code>, no productos, así que el plugin de Meta no las ve."},
+      {id:"purchase", quien:"yo", t:"Purchase con valor y moneda ARS"},
+      {id:"verificar-atc", quien:"yo", t:"Verificar add_to_cart con valor real tras instalar la v1.2.0",
+       n:"Hoy sigue mandando <code>value: 0</code> a GA4 y a Meta, en staging y en producción."}
+    ]
+  },
+  {
+    n:"03", titulo:"Ajustes en wp-admin", nota:"Cinco cosas que se hacen desde el panel, no desde el código.",
+    items:[
+      {id:"idioma", quien:"vos", t:"Idioma es_AR y zona horaria Mendoza"},
+      {id:"loco", quien:"vos", t:"Traducir con Loco Translate",
+       n:"«Recently Viewed Tours», «Subtotal» y el <code>View Cart</code> del ícono."},
+      {id:"72hs", quien:"vos", t:"Cambiar los textos de 24 hs a 72 hs",
+       n:"La política real es 72 hs con reembolso del 100% y reprogramación libre hasta 24 hs."},
+      {id:"amavyt", quien:"vos", t:"Reemplazar amavyt.png"},
+      {id:"qr", quien:"vos", t:"Poner el QR real de AFIP F.960/D"}
+    ]
+  },
+  {
+    n:"04", titulo:"Probar una compra de verdad", nota:"Sin esto, pasar a producción es a ciegas.",
+    items:[
+      {id:"mp-test", quien:"juntos", bloq:true, t:"Poner credenciales de test de Mercado Pago en staging",
+       n:"La alternativa es que hagas vos una compra real de monto mínimo en producción. Con las credenciales vivas que hay hoy, yo no toco el checkout."},
+      {id:"compra", quien:"juntos", t:"Compra completa, de la ficha al pago"},
+      {id:"mail", quien:"juntos", t:"Verificar que salgan el mail de confirmación y el voucher"},
+      {id:"pedido", quien:"juntos", t:"Verificar que el pedido quede bien cargado en WooCommerce"}
+    ]
+  },
+  {
+    n:"05", titulo:"Pasar a producción", nota:"Producción hoy no tiene nada de lo que hicimos: ni el plugin, ni la ficha optimizada, ni las correcciones de formato.",
+    items:[
+      {id:"backup", quien:"vos", bloq:true, t:"Backup fresco de UpdraftPlus"},
+      {id:"aprobar", quien:"vos", t:"Aprobar los cambios ítem por ítem"},
+      {id:"instalar-prod", quien:"juntos", t:"Instalar vempra-core en producción"},
+      {id:"verificar-prod", quien:"juntos", t:"Verificar precios, medición y checkout ya en vivo"}
+    ]
+  }
+];
+
+var ETIQUETA = {vos:"Vos", yo:"Yo", juntos:"Juntos"};
+
+var estado = leerEstado();
+var api = null;
+var pendiente = null;
+var timer = null;
+
+function leerEstado(){
+  try{
+    var e = document.getElementById("estado-inicial");
+    var d = JSON.parse(e.textContent || "{}");
+    return {hechos: (d && d.hechos) || {}};
+  }catch(err){ return {hechos:{}}; }
+}
+
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+/* Las notas llevan <code> a proposito, asi que se escapan a mano
+   antes de escribirlas y despues se reponen solo esa etiqueta. */
+function nota(s){
+  return esc(s).replace(/&lt;code&gt;/g,"<code>").replace(/&lt;\/code&gt;/g,"<\/code>");
+}
+
+function pintar(){
+  var cont = document.getElementById("fases");
+  var html = "";
+  var total = 0, hechos = 0, bloqAbiertos = 0;
+
+  FASES.forEach(function(f){
+    var fTotal = f.items.length;
+    var fHechos = f.items.filter(function(i){ return estado.hechos[i.id]; }).length;
+    total += fTotal; hechos += fHechos;
+
+    html += '<section class="fase">';
+    html += '<div class="fase-cab"><span class="fase-n">' + f.n + '</span>';
+    html += '<h2>' + esc(f.titulo) + '</h2>';
+    html += '<span class="fase-meta">' + fHechos + ' de ' + fTotal + '</span></div>';
+    if (f.nota) { html += '<p class="fase-nota">' + esc(f.nota) + '</p>'; }
+    html += '<div class="lista">';
+
+    f.items.forEach(function(it){
+      var listo = !!estado.hechos[it.id];
+      if (it.bloq && !listo) { bloqAbiertos++; }
+      html += '<div class="item' + (it.bloq ? ' bloq' : '') + (listo ? ' listo' : '') + '">';
+      html += '<button class="tick" role="checkbox" aria-checked="' + listo + '" data-id="' + it.id + '" aria-label="' + esc(it.t) + '">';
+      html += '<svg viewBox="0 0 14 14"><polyline points="2,7.5 5.5,11 12,3.5"/></svg></button>';
+      html += '<div class="cuerpo"><p class="t">' + esc(it.t) + '</p>';
+      if (it.n) { html += '<p class="n">' + nota(it.n) + '</p>'; }
+      html += '<div class="chips"><span class="chip ' + it.quien + '">' + ETIQUETA[it.quien] + '</span>';
+      if (it.bloq) { html += '<span class="chip b">Bloqueante</span>'; }
+      html += '</div></div></div>';
+    });
+
+    html += '</div></section>';
+  });
+
+  cont.innerHTML = html;
+
+  var pct = total ? Math.round(hechos / total * 100) : 0;
+  document.getElementById("barra").style.width = pct + "%";
+  document.getElementById("contador").textContent =
+    hechos + " de " + total + " listos" +
+    (bloqAbiertos ? "  ·  " + bloqAbiertos + " bloqueante" + (bloqAbiertos > 1 ? "s" : "") : "  ·  sin bloqueantes");
+}
+
+function aviso(txt, mal){
+  var el = document.getElementById("aviso");
+  el.textContent = txt;
+  el.className = "estado ver" + (mal ? " mal" : "");
+  if (aviso._t) { clearTimeout(aviso._t); }
+  if (txt) {
+    aviso._t = setTimeout(function(){ el.className = "estado"; }, mal ? 6000 : 2200);
+  }
+}
+
+/* Se reconstruye el documento desde la fuente propia de la pagina:
+   el mismo CSS y el mismo script, con el estado nuevo en el medio.
+   No se serializa el DOM vivo, que trae los scripts que inyecta el visor. */
+function documento(){
+  var css = document.getElementById("css").textContent;
+  var app = document.getElementById("app").textContent;
+  var fases = document.getElementById("fases");
+  fases.innerHTML = "";                       // se vacia para no publicar el render
+  var cuerpo = document.querySelector(".top").outerHTML +
+               document.querySelector("main").outerHTML +
+               '<div class="estado" id="aviso"><\/div>';
+  pintar();                                   // y se vuelve a pintar enseguida
+
+  return '<!doctype html>\n<html lang="es">\n<head>\n<meta charset="utf-8">\n' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1">\n' +
+    '<title>Lanzamiento Tienda Vempra<\/title>\n<style id="css">' + css + '<\/style>\n<\/head>\n<body>\n' +
+    cuerpo + '\n' +
+    '<script id="estado-inicial" type="application/json">' + JSON.stringify({hechos: estado.hechos}) + '<\/script>\n' +
+    '<script id="app">' + app + '<\/script>\n<\/body>\n<\/html>';
+}
+
+function guardar(){
+  if (!api) { return; }
+  clearTimeout(timer);
+  timer = setTimeout(function(){
+    aviso("Guardando…");
+    api.publish(documento()).then(function(){
+      aviso("Guardado");
+    }).catch(function(e){
+      var c = e && e.code;
+      if (c === "conflict") { return; }               // el visor ya recarga a la version que gano
+      if (c === "not_writer" || c === "not_granted" || c === "not_declared") {
+        api = null;
+        aviso("Esta vista es de solo lectura: los tildes no se guardan.", true);
+        return;
+      }
+      aviso("No se pudo guardar. Probá de nuevo.", true);
+    });
+  }, 1400);
+}
+
+document.addEventListener("click", function(ev){
+  var b = ev.target.closest ? ev.target.closest(".tick") : null;
+  if (!b) { return; }
+  var id = b.getAttribute("data-id");
+  if (estado.hechos[id]) { delete estado.hechos[id]; } else { estado.hechos[id] = true; }
+  pintar();
+  if (api) { guardar(); }
+  else { aviso("Marcado (no se guarda en esta vista)"); }
+});
+
+pintar();
+
+if (window.claude && window.claude.use) {
+  window.claude.use("artifact").then(function(a){
+    if (a) { api = a; }
+  }).catch(function(){});
+}
+})();
+</script>
