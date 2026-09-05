@@ -153,8 +153,12 @@ add_action( 'wp_enqueue_scripts', function () {
 		wp_enqueue_script( 'vempra-sitio', vempra_asset_url( 'sitio.js' ), array(), null, true );
 	}
 
-	// La pagina Tours en Mendoza (331): filtros y orden de las tarjetas.
-	if ( is_page( 331 ) && file_exists( VEMPRA_CORE_DIR . 'assets/tienda.js' ) ) {
+	// La pagina Tours en Mendoza: filtros y orden de las tarjetas. Se carga en
+	// la pagina configurada y en cualquier otra que lleve el shortcode.
+	$post_actual = get_post();
+	$es_catalogo = ( function_exists( 'vempra_pagina_tours' ) && is_page( vempra_pagina_tours() ) )
+		|| ( $post_actual && has_shortcode( (string) $post_actual->post_content, 'vempra_tours' ) );
+	if ( $es_catalogo && file_exists( VEMPRA_CORE_DIR . 'assets/tienda.js' ) ) {
 		wp_enqueue_script( 'vempra-tienda', vempra_asset_url( 'tienda.js' ), array(), null, true );
 	}
 

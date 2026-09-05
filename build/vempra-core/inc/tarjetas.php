@@ -118,6 +118,12 @@ add_filter( 'the_content', function ( $html ) {
 		return $html;
 	}
 
+	// El catalogo generado por [vempra_tours] (inc/catalogo.php) ya trae el
+	// precio real: no hay nada que corregir.
+	if ( false !== strpos( $html, 'data-vempra="catalogo"' ) ) {
+		return $html;
+	}
+
 	if ( function_exists( 'vempra_precio_unico_activo' ) && ! vempra_precio_unico_activo() ) {
 		return $html;
 	}

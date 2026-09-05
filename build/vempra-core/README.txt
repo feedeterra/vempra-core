@@ -1,5 +1,5 @@
-VEMPRA CORE — v1.9.0
-====================
+VEMPRA CORE — v1.10.0
+=====================
 
 Que hace
 --------
@@ -110,6 +110,34 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.10.0
+
+La pagina Tours (/tours-en-mendoza/, pagina 331) ya no es HTML escrito a
+mano: la arma el shortcode [vempra_tours] desde inc/catalogo.php. Se ve
+identica, pero ahora:
+
+- El precio de cada tarjeta sale del producto de WooCommerce (el mismo
+  precio que la ficha y la portada). Cambiar un precio cambia las tres.
+- El contador "+N experiencias disponibles" cuenta los tours publicados.
+- Un tour despublicado desaparece de la grilla solo.
+- Un tour nuevo que no este en la lista aparece igual al final, con su
+  titulo, extracto y foto destacada.
+
+Como se edita:
+- Textos (titulo, subtitulo, ayuda, boton): vempra_catalogo_textos().
+- Categorias de los filtros: vempra_catalogo_categorias().
+- Sellos de confianza de arriba: vempra_catalogo_confianza().
+- Las tarjetas y su orden: vempra_catalogo_tours(). Cada una tiene id del
+  tour, titulo, categoria de filtro (cats), etiqueta (categoria), texto
+  corto (desc), datos (meta), foto (clase vempra-tour-bg-* del CSS) y
+  opcionales badge, feature, cuotas y nombre (para el orden A-Z).
+- Para sumar un tour: copiar un bloque, cambiar el id y los textos.
+
+Mientras la pagina 331 conserve el HTML viejo, el plugin lo ignora y
+muestra el shortcode; cuando su contenido sea solo [vempra_tours] pasa lo
+mismo. El JavaScript de filtros y orden (assets/tienda.js) es el de siempre.
 
 
 NOVEDADES v1.9.0

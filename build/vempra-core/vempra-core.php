@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Vempra Core
  * Description:  La tienda de Vempra en codigo: precios, textos, portada, pie, checkout, fichas y todo lo que antes vivia en Code Snippets.
- * Version:      1.9.0
+ * Version:      1.10.0
  * Author:       Vempra
  * Text Domain:  vempra-core
  * Requires PHP: 7.4
@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'VEMPRA_CORE_VERSION', '1.9.0' );
+define( 'VEMPRA_CORE_VERSION', '1.10.0' );
 define( 'VEMPRA_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'VEMPRA_CORE_URL', plugin_dir_url( __FILE__ ) );
 
@@ -36,6 +36,7 @@ require_once VEMPRA_CORE_DIR . 'inc/portada.php';
 require_once VEMPRA_CORE_DIR . 'inc/paginas.php';
 require_once VEMPRA_CORE_DIR . 'inc/tours.php';
 require_once VEMPRA_CORE_DIR . 'inc/tienda.php';
+require_once VEMPRA_CORE_DIR . 'inc/catalogo.php';
 require_once VEMPRA_CORE_DIR . 'inc/snippets.php';
 
 /**
