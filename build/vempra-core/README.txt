@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.10.0
+VEMPRA CORE — v1.11.0
 =====================
 
 Que hace
@@ -110,6 +110,29 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.11.0
+
+Version chica, de acompanamiento: las 18 fichas de tour ya tienen la
+estructura optimizada (precio bajo el titulo, franja de datos, galeria con
+lightbox, recorrido paso a paso, FAQ y resenas). Eso se hizo editando el
+contenido de cada tour, sin tocar el plugin, porque desde la 1.10.0 el
+JavaScript reconoce la ficha por su HTML. Lo que si necesitaba el plugin:
+
+- En el telefono, las resenas van antes de las preguntas frecuentes. El
+  reorden buscaba los titulos como <h3> y las fichas nuevas los llevan
+  como <h2>; ahora busca ambos.
+- El boton "Ver todas las experiencias" de los tours relacionados llevaba
+  a /tours/; ahora lleva a /tours-en-mendoza/, la pagina real.
+- "Villavicencio 4x4" pasa a "Villavicencio 4×4" en la pagina Tours y en
+  los relacionados. Su precio de respaldo en el JavaScript pasa a 127.000
+  (el que manda sigue siendo el del producto de WooCommerce).
+- El tour de rafting de medio dia figuraba en los relacionados como
+  "Rafting Dia Completo" con duracion "Dia completo". Ahora dice
+  "Rafting Medio Dia" y "Medio dia".
+
+No hay nada que configurar: instalar y listo.
 
 
 NOVEDADES v1.10.0

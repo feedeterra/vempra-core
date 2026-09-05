@@ -154,7 +154,7 @@ function vempra_catalogo_tours() {
 		),
 		array(
 			'id'        => 531,
-			'titulo'    => 'Villavicencio 4x4',
+			'titulo'    => 'Villavicencio 4×4',
 			'cats'      => 'aventura',
 			'categoria' => 'Aventura',
 			'desc'      => 'La versión aventurera de Villavicencio. Zonas remotas accesibles solo en 4x4, mejor avistaje de fauna.',
