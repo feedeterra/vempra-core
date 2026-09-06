@@ -75,6 +75,8 @@ add_action( 'wp_head', function () {
 		// gettext: llegan desde inc/textos.php, que es el unico lugar
 		// donde vive la traduccion.
 		'textos' => function_exists( 'vempra_textos_a_mano' ) ? vempra_textos_a_mano() : array(),
+		// Lo mismo para los globitos: el title del carrito y los de compartir.
+		'titulos' => function_exists( 'vempra_titulos_a_mano' ) ? vempra_titulos_a_mano() : array(),
 	) );
 
 	// Sin dependencias y sin esperar a nada: la etiqueta del viewport tiene
@@ -134,7 +136,20 @@ add_action( 'wp_head', function () {
 		// El carrito lateral (Xoo Side Cart) guarda sus textos en sus propios
 		// ajustes, no en un archivo de traduccion, asi que la tilde hay que
 		// ponerla aca. Escrito sin tildes se lee como un error del sitio.
-		['Tu carrito esta vacio', 'Tu carrito está vacío']
+		['Tu carrito esta vacio', 'Tu carrito está vacío'],
+		// El carrito lateral arma sus renglones con las claves de WooCommerce y
+		// no las pasa por ninguna traduccion.
+		['Booking Date:', 'Fecha:'],
+		['Price:', 'Precio:'],
+		// Mercado Pago, por si el reemplazo del servidor no lo alcanza: el
+		// plugin arma estas frases con el nombre de la marca pegado con un
+		// espacio duro, asi que aca se toca solo el verbo. Si el filtro de
+		// inc/textos.php ya hizo su trabajo, ninguna de estas coincide.
+		['Descubre la practicidad', 'Descubrí la practicidad'],
+		['Paga con tus tarjetas guardadas', 'Pagá con tus tarjetas guardadas'],
+		['Compra de forma segura', 'Comprá de forma segura'],
+		['Te llevaremos a', 'Te llevamos a'],
+		['Si no tienes una cuenta, puedes usar tu e-mail.', 'Si no tenés una cuenta, podés usar tu e-mail.']
 	];
 
 	// Las que manda el PHP (pagina 404 y "Read More" del theme).
@@ -189,7 +204,24 @@ add_action( 'wp_head', function () {
 		}
 	}
 
-	function todo() { zoom(); logo(); tours(); dias(); textos(); }
+	// Los globitos que el theme escribe en el HTML y no pasan por gettext.
+	// Se comparan enteros y no por fragmento: un title es una frase corta y
+	// completa, y son un punado por pagina.
+	function titulos() {
+		if (!D.titulos || !D.titulos.length) { return; }
+		var e = document.querySelectorAll('[title]');
+		for (var i = 0; i < e.length; i++) {
+			var v = e[i].getAttribute('title');
+			if (!v) { continue; }
+			for (var j = 0; j < D.titulos.length; j++) {
+				if (v !== D.titulos[j][0]) { continue; }
+				e[i].setAttribute('title', D.titulos[j][1]);
+				break;
+			}
+		}
+	}
+
+	function todo() { zoom(); logo(); tours(); dias(); textos(); titulos(); }
 
 	todo();
 	if (document.readyState === 'loading') {

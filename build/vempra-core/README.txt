@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.12.0
+VEMPRA CORE — v1.13.0
 =====================
 
 Que hace
@@ -110,6 +110,63 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.13.0
+
+MEDICION: el pixel de Meta contaba compras que no existieron.
+
+Entre el 6 de agosto y el 6 de septiembre Meta registro 14 compras. En
+WooCommerce hubo 4 pedidos pagos. El plugin oficial de Meta manda su evento
+de compra en dos ganchos a la vez y sin dejar marca de que ya lo mando, asi
+que sumaba una compra por cada vuelta desde Mercado Pago, cada F5 del
+cliente y cada pedido que quedo pendiente o cancelado sin cobrarse.
+
+- El evento de compra sale una sola vez por pedido y solo cuando el pedido
+  queda en "procesando" o "completado". Queda anotada la fecha de envio en
+  el propio pedido.
+- Los eventos que van por la API de conversiones vuelven a llevar los datos
+  del cliente (mail, telefono, nombre, ciudad, provincia, codigo postal y
+  pais), hasheados por el SDK de Meta antes de salir. El plugin los estaba
+  borrando y la calidad de coincidencia estaba en 6.1 sobre 10.
+
+No se toca el plugin de Meta: si manana lo actualizan, esto sigue andando.
+
+PORTADA: el subtitulo de los banners de nieve cambia solo segun el mes.
+
+PORTADA: los precios "Desde" de las seis tarjetas de categoria se calculan
+solos. Estaban escritos a mano adentro del contenido de la pagina y habia
+que acordarse de tocarlos cada vez que cambiaba una tarifa. Ahora se busca
+el tour mas barato de cada categoria y se escribe ese importe. Hoy los seis
+dan el mismo numero que ya estaba (55.000, 55.000, 165.000, 127.000, 91.000
+y 130.000): no se ve ningun cambio, pero de aca en mas no se desactualiza.
+Si una categoria quedara sin precio, se deja el que estaba escrito.
+
+TRADUCCIONES: lo que todavia quedaba en ingles o en espanol de otro pais.
+
+- El calendario de reservas decia "Month", "Day" y "Year"; esos tres
+  titulos ya estan en castellano. En el carrito y en el carrito lateral,
+  "Booking Date" pasa a ser "Fecha".
+- Mercado Pago tuteaba: "Descubre la practicidad", "Paga con tus tarjetas
+  guardadas", "Compra de forma segura", "Te llevaremos a" y "Si no tienes
+  una cuenta, puedes usar tu e-mail". Todo eso pasa al voseo.
+- Los globitos que aparecen al pasar el mouse (el atributo title) estaban
+  en ingles: "View Cart" en el carrito del encabezado, y "Share On
+  Facebook", "Share On Twitter", "Share On Pinterest" y "Share by Email"
+  en los botones de compartir de la ficha.
+
+PANTALLA: cosas repetidas que sobraban.
+
+- La ficha mostraba el precio dos veces, uno abajo del otro. Queda el de
+  la cabecera, que es el que el celular ya venia mostrando solo.
+- "Vistos recientemente" no aparece mas en el carrito ni en el checkout:
+  ahi el cliente esta comprando, no mirando.
+- En el celular habia dos carritos, el del encabezado y el redondo
+  flotante. Queda uno solo en todo el sitio, como ya pasaba en las fichas
+  de tour.
+
+Despues de instalar, en el Administrador de eventos de Meta la compra tiene
+que aparecer una sola vez por pedido y la coincidencia tiene que subir.
 
 
 NOVEDADES v1.12.0

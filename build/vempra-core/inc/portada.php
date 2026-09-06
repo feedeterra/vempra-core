@@ -178,7 +178,11 @@ add_filter( 'the_content', function ( $content ) {
 	$banner .= '<div class="vnb-text">';
 	$banner .= '<span class="vnb-eyebrow">❄ Temporada de nieve ' . esc_html( date_i18n( 'Y' ) ) . '</span>';
 	$banner .= '<h2 class="vnb-title">Consultá por tu día de nieve</h2>';
-	$banner .= '<p class="vnb-sub">Se viene la temporada blanca en Mendoza. Asegurá tu salida a la montaña antes de que se llenen los cupos.</p>';
+	// El texto acompaña el momento de la temporada (junio a septiembre):
+	// al principio "se viene", en agosto y septiembre "últimas semanas".
+	$mes = (int) current_time( 'n' );
+	$sub = ( $mes >= 8 ) ? 'Últimas semanas de la temporada blanca en Mendoza. Asegurá tu salida a la montaña antes de que cierre.' : 'Se viene la temporada blanca en Mendoza. Asegurá tu salida a la montaña antes de que se llenen los cupos.';
+	$banner .= '<p class="vnb-sub">' . esc_html( $sub ) . '</p>';
 	$banner .= '<a class="vnb-cta" href="' . $url . '">Ver tours de nieve</a>';
 	$banner .= '</div>';
 	$banner .= '<div class="vnb-photo" role="img" aria-label="Padre e hijo esquiando en la nieve de la montaña de Mendoza"></div>';
@@ -186,3 +190,66 @@ add_filter( 'the_content', function ( $content ) {
 
 	return str_replace( $marker, $banner . $marker, $content );
 }, 20 );
+
+// ---------------------------------------------------------------------------
+// Los "Desde $X" de las seis tarjetas de categoria.
+// ---------------------------------------------------------------------------
+
+/**
+ * El precio del tour mas barato de una categoria del catalogo.
+ *
+ * Devuelve 0 cuando ninguna tarjeta de esa categoria tiene precio todavia
+ * (sin producto asociado o sin tarifas cargadas).
+ */
+function vempra_precio_desde_categoria( $slug ) {
+	if ( ! function_exists( 'vempra_catalogo_tours' ) || ! function_exists( 'vempra_precio_de_tour' ) ) { return 0.0; }
+
+	$minimo = 0.0;
+
+	foreach ( vempra_catalogo_tours() as $t ) {
+		if ( empty( $t['id'] ) || empty( $t['cats'] ) ) { continue; }
+		// Un tour puede estar en dos categorias a la vez: el rafting con
+		// termas figura como "aventura relax" y cuenta para las dos.
+		if ( ! in_array( $slug, preg_split( '/\s+/', trim( (string) $t['cats'] ) ), true ) ) { continue; }
+
+		$precio = (float) vempra_precio_de_tour( (int) $t['id'] );
+		if ( $precio <= 0 ) { continue; }
+		if ( $minimo <= 0 || $precio < $minimo ) { $minimo = $precio; }
+	}
+
+	return $minimo;
+}
+
+/**
+ * Reescribe el "Desde $X" de cada tarjeta con el precio real.
+ *
+ * Los seis importes estan escritos a mano dentro del contenido de la portada,
+ * asi que cada vez que cambiaba un precio en WooCommerce habia que acordarse
+ * de entrar a editar la pagina; hoy los seis coinciden, pero es cuestion de
+ * tiempo que dejen de hacerlo. Aca se recalculan solos a partir del catalogo.
+ *
+ * La categoria de cada tarjeta se saca de su propio enlace (?filter=slug) y
+ * la expresion exige la clase de la tarjeta, asi no confunde ese enlace con
+ * el "Ver tours de nieve" del banner, que apunta al mismo lugar. Ademas corre
+ * en prioridad 10, antes de que el banner se agregue (prioridad 20).
+ *
+ * Si una categoria no tiene ningun precio se deja el numero que ya estaba:
+ * es mejor un importe viejo que un "Desde $0".
+ */
+add_filter( 'the_content', function ( $content ) {
+	if ( ! is_front_page() || ! in_the_loop() || ! is_main_query() ) { return $content; }
+	if ( false === strpos( $content, 'vempra-v2-cat-from' ) ) { return $content; }
+
+	$nuevo = preg_replace_callback(
+		'/\?filter=([a-z0-9-]+)"\s+class="vempra-v2-cat-card(.*?<div class="vempra-v2-cat-from">\s*Desde\s+)\$[\d.,]+/s',
+		function ( $m ) {
+			$precio = vempra_precio_desde_categoria( $m[1] );
+			if ( $precio <= 0 ) { return $m[0]; }
+
+			return '?filter=' . $m[1] . '" class="vempra-v2-cat-card' . $m[2] . vempra_precio_en_pesos( $precio );
+		},
+		$content
+	);
+
+	return is_string( $nuevo ) ? $nuevo : $content;
+}, 10 );

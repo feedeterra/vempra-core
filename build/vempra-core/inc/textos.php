@@ -67,6 +67,7 @@ function vempra_traducciones() {
 			=> 'No pudimos calcular el precio. Escribinos por WhatsApp y lo resolvemos.',
 		'Store server time: '                                 => 'Hora del sitio: ',
 		'View cart'                                           => 'Ver el carrito',
+		'View Cart'                                           => 'Ver el carrito',
 
 		// Pagina 404 del theme.
 		'404 Not Found!'                                      => 'No encontramos esta página',
@@ -119,6 +120,46 @@ function vempra_traducir( $texto ) {
 }
 
 /**
+ * Traducciones que valen SOLO dentro de WooCommerce Bookings.
+ *
+ * "Month", "Day" y "Year" son palabras demasiado comunes para meterlas en el
+ * mapa de arriba, que no mira el dominio: aparecen en cualquier plugin y en
+ * medio escritorio. Aca se traducen unicamente cuando las escribe Bookings,
+ * que es donde el visitante las lee: los tres campitos de la fecha de salida
+ * y el renglon "Booking Date" del carrito y del carrito lateral.
+ */
+function vempra_traducciones_bookings() {
+	return array(
+		'Month'        => 'Mes',
+		'Day'          => 'Día',
+		'Year'         => 'Año',
+		'Booking Date' => 'Fecha',
+	);
+}
+
+/**
+ * Voseo para Mercado Pago.
+ *
+ * El plugin de Mercado Pago SI trae su traduccion al espanol, pero en neutro:
+ * "Descubre", "Paga", "Compra", "puedes". El mapa de arriba no lo alcanza
+ * porque solo actua cuando la cadena llega sin traducir; aca se reescribe la
+ * cadena YA traducida.
+ *
+ * Se reemplaza por fragmentos y no por la frase entera porque el nombre de la
+ * marca viaja con un espacio duro adentro ("Mercado&nbsp;Pago") y no hay
+ * manera segura de escribir el original completo desde afuera del plugin.
+ */
+function vempra_voseo_mercadopago() {
+	return array(
+		'Descubre la practicidad'                         => 'Descubrí la practicidad',
+		'Paga con tus tarjetas guardadas'                 => 'Pagá con tus tarjetas guardadas',
+		'Compra de forma segura'                          => 'Comprá de forma segura',
+		'Te llevaremos a'                                 => 'Te llevamos a',
+		'Si no tienes una cuenta, puedes usar tu e-mail.' => 'Si no tenés una cuenta, podés usar tu e-mail.',
+	);
+}
+
+/**
  * Se engancha en las cuatro variantes de gettext para cubrir __(), _x(),
  * _n() y _nx(). En las plurales se traduce la forma que gettext eligio, que
  * es la que llega en $traducido cuando no hay .mo cargado.
@@ -140,6 +181,30 @@ add_filter( 'ngettext_with_context', function ( $traducido, $singular, $plural, 
 	$original = ( 1 === (int) $numero ) ? $singular : $plural;
 	return $traducido === $original ? vempra_traducir( $original ) : $traducido;
 }, 20, 4 );
+
+/**
+ * Los dos mapas de arriba, que si miran el dominio. Corren despues de los
+ * generales (prioridad 21) y solo del lado del visitante: en el escritorio
+ * "Day" y "Year" encabezan columnas y reglas de disponibilidad, y ahi hay que
+ * dejarlos como estan. El AJAX cuenta como visitante: el carrito lateral se
+ * dibuja por admin-ajax.php y ahi is_admin() da verdadero igual.
+ */
+add_filter( 'gettext', function ( $traducido, $original, $dominio ) {
+
+	if ( is_admin() && ! wp_doing_ajax() ) { return $traducido; }
+
+	if ( 'woocommerce-bookings' === $dominio ) {
+		$mapa = vempra_traducciones_bookings();
+		return isset( $mapa[ $original ] ) ? $mapa[ $original ] : $traducido;
+	}
+
+	if ( 'woocommerce-mercadopago' === $dominio ) {
+		$voseo = vempra_voseo_mercadopago();
+		return str_replace( array_keys( $voseo ), array_values( $voseo ), $traducido );
+	}
+
+	return $traducido;
+}, 21, 3 );
 
 /**
  * Las cadenas que el theme o un snippet escriben a mano no pasan por
@@ -166,4 +231,20 @@ function vempra_textos_a_mano() {
 	}
 
 	return $salida;
+}
+
+/**
+ * Los globitos (el atributo title) que quedaron en ingles. No pasan por
+ * gettext porque el theme los escribe directo en el HTML: el del carrito de
+ * la cabecera, en todas las paginas, y los cuatro de compartir al pie de la
+ * ficha. Se corrigen del lado del navegador, igual que los textos de arriba.
+ */
+function vempra_titulos_a_mano() {
+	return array(
+		array( 'View Cart', 'Ver el carrito' ),
+		array( 'Share On Facebook', 'Compartir en Facebook' ),
+		array( 'Share On Twitter', 'Compartir en X' ),
+		array( 'Share On Pinterest', 'Compartir en Pinterest' ),
+		array( 'Share by Email', 'Compartir por correo' ),
+	);
 }

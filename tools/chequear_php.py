@@ -33,8 +33,11 @@ def limpiar(s):
     # ('https://...') tiene un "//" adentro y, si se sacaran antes los
     # comentarios, se comeria el resto del renglon con sus parentesis.
     s = re.sub(r'/\*.*?\*/', '', s, flags=re.S)
-    s = re.sub(r"'(?:\\.|[^'\\])*'", "''", s)
-    s = re.sub(r'"(?:\\.|[^"\\])*"', '""', s)
+    # Las dos clases de comilla se sacan en UNA sola pasada, no en dos: si
+    # primero se barrieran las simples, el apostrofo de "We're sorry" abriria
+    # una cadena falsa que se come hasta la comilla simple del renglon
+    # siguiente y descuadra los parentesis de todo el archivo.
+    s = re.sub(r'\'(?:\\.|[^\'\\])*\'|"(?:\\.|[^"\\])*"', "''", s)
     return re.sub(r'(?m)//.*$', '', s)
 
 

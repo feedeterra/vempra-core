@@ -3896,3 +3896,44 @@ body.is-menu-open #side_menu_wrapper {
   opacity: 1 !important;
   z-index: 9999 !important;
 }
+
+/* ===== 1.13.0: repeticiones que sobran en pantalla ===== */
+
+/* El precio de la ficha aparecía dos veces: arriba, sobre la foto grande, y
+   otra vez en la columna de la derecha, justo encima del formulario de
+   reserva. En el celular la columna de la derecha está oculta y se veía una
+   sola vez; ahora la computadora se comporta igual. Queda el de la foto, que
+   es el que tiene el fondo bordó. */
+body.single-tour #page_content_wrapper .sidebar_wrapper .sidebar > .content > .single_tour_header_price {
+  display: none !important;
+}
+
+/* "Vistos recientemente" en el carrito y en el checkout: ahí el visitante ya
+   eligió y lo único que hace ese bloque es ofrecerle una salida. En el resto
+   del sitio se queda. */
+body.woocommerce-cart .tour_recently_view,
+body.woocommerce-checkout .tour_recently_view {
+  display: none !important;
+}
+
+/* El carrito estaba dos veces en la misma pantalla del celular: el ícono de
+   la cabecera, que queda fijo arriba a la derecha, y el globito del carrito
+   lateral, apilado sobre el de WhatsApp abajo a la derecha. Mismo número y
+   mismo destino. En la ficha del tour esto ya estaba resuelto (vempra.css);
+   acá se hace lo mismo en el resto del sitio: portada, catálogo, carrito,
+   checkout y blog. Queda el del encabezado, que es donde el visitante lo
+   busca, y WhatsApp se queda solo abajo, que es el botón que más se usa. En
+   la computadora no cambia nada.
+   El área de toque del ícono del encabezado pasa a 44 px al quedar como
+   único acceso: el ::after la agranda sin mover el ícono ni cambiar el alto
+   del encabezado. */
+@media (max-width: 999px) {
+  div.xoo-wsc-basket { display: none !important; }
+  .header_cart_wrapper { position: relative; }
+  .header_cart_wrapper > a { position: relative; }
+  .header_cart_wrapper > a::after {
+    content: ""; position: absolute;
+    top: 50%; left: 50%; width: 44px; height: 44px;
+    transform: translate(-50%, -50%);
+  }
+}
