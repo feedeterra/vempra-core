@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.15.1
+VEMPRA CORE — v1.16.0
 =====================
 
 Que hace
@@ -96,6 +96,9 @@ inc/assets.php       carga del CSS y del JavaScript
 assets/vempra.css    los estilos, ex post 22
 assets/vempra.js     el JavaScript de la ficha, ex contenido del tour 528
 assets/medicion.js   corrige el valor que se le informa a GTM y a Meta
+inc/conversion.php   barra de reserva, minimo de personas y sugeridos
+assets/conversion.css  estilos de todo eso
+assets/conversion.js   barra fija, calendario plegado, acordeon y carrusel
 
 
 Novedades de la v1.2.0
@@ -110,6 +113,106 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.16.0
+=================
+
+EL LOTE DE LA AUDITORIA DE VENTA
+--------------------------------
+Todo lo que salio de auditar la ficha del tour y el proceso de compra en
+celular. Va junto en una sola version para no repetir instalaciones.
+
+BARRA DE RESERVA FIJA EN CELULAR
+--------------------------------
+En el celular el precio y el boton de reservar quedan abajo de todo: hay que
+bajar tres pantallas para encontrarlos. Ahora aparece una barra fija al pie
+—precio a la izquierda, "Reservar" a la derecha— que acompana el scroll y se
+esconde sola cuando el formulario de reserva ya esta a la vista. El boton
+abre el calendario y lleva el scroll hasta ahi.
+
+Se apaga con add_filter( 'vempra_barra_sticky', '__return_false' ).
+
+EL MINIMO DE PERSONAS, ANTES DE QUE FALLE
+-----------------------------------------
+Dos tours salen con un minimo de 2 personas, pero eso no se decia en ningun
+lado: el visitante cargaba 1 adulto, apretaba Reservar y recien ahi le
+aparecia el error en ingles. Ahora el minimo se avisa arriba del formulario
+y, mientras carga pasajeros, un renglon le dice cuantos le faltan. Cuenta el
+total del grupo —adultos y menores juntos—, asi que 1 adulto + 1 menor
+sigue siendo una reserva valida.
+
+El minimo se lee del producto de WooCommerce, no esta escrito en el codigo:
+si manana cambia, el aviso cambia solo.
+
+EL CALENDARIO YA NO ES UN MURO
+------------------------------
+En celular el calendario ocupa una pantalla entera y empuja todo lo demas
+para abajo. Ahora arranca plegado, detras de un boton "Elegir fecha de
+salida", y cuando se elige un dia el boton pasa a decir la fecha elegida y
+se vuelve a plegar. En escritorio no cambia nada.
+
+Se apaga con add_filter( 'vempra_calendario_colapsado', '__return_false' ).
+
+"MIENTRAS SE CARGA EL CALENDARIO"
+---------------------------------
+El formulario de reserva lo dibuja JavaScript: hasta que termina, ahi no hay
+nada y la ficha parece rota. Ahora aparece un renglon de estado que avisa que
+se esta preparando el calendario y desaparece cuando el formulario carga. Si
+despues de ocho segundos no cargo —conexion mala, JavaScript bloqueado— el
+renglon ofrece reservar por WhatsApp en vez de dejar la pagina muda.
+
+"COMBINALO CON" EN LAS 18 FICHAS
+--------------------------------
+Al pie de cada ficha van tres tours sugeridos, con foto, precio y enlace. La
+combinacion esta elegida a mano tour por tour —al Tour Bodegas le siguen Alta
+Montana, Cabalgata y Rafting, no tres al azar— y se puede cambiar desde
+afuera con el filtro vempra_combina_con.
+
+Se apaga con add_filter( 'vempra_mostrar_sugeridos', '__return_false' ).
+
+VENTA CRUZADA EN EL CARRITO
+---------------------------
+Mismo bloque, arriba del carrito: "Suma otro tour a tu viaje", con tres
+sugerencias elegidas a partir de lo que ya hay adentro. Los tours que ya
+estan en el carrito no se repiten.
+
+Se apaga con add_filter( 'vempra_sugeridos_carrito', '__return_false' ).
+
+RESPALDO EN ACORDEON Y GALERIA EN CARRUSEL
+------------------------------------------
+En celular el bloque de respaldo ocupaba media pantalla de texto que casi
+nadie lee entero: ahora arranca cerrado y se abre tocando el titulo. La
+galeria de fotos, que en celular era una columna larguisima, pasa a ser un
+carrusel que se desliza con el dedo y muestra en que foto va.
+
+LO QUE ESTAS ACEPTANDO
+----------------------
+Arriba de la casilla de terminos del checkout van tres renglones con lo que
+de verdad importa: cancelacion sin cargo hasta 72 hs antes, devolucion del
+100% si el tour se suspende, y el voucher por email al acreditarse el pago.
+El texto legal completo sigue estando abajo, igual que antes.
+
+Se edita con el filtro vempra_resumen_terminos.
+
+TEXTOS QUE QUEDABAN EN INGLES
+-----------------------------
+- "All Months" arriba del titulo ahora dice "Todo el ano".
+- "View Photos" en la galeria ahora dice "Ver fotos".
+- La duracion en horas se leia "12 Hours"; ahora dice "12 hs".
+- El globito de los dias de salida decia "Available on Monday, Tuesday..."
+  Ahora dice "Salidas: lunes, martes...". Lo escribe el theme directo en el
+  HTML, asi que no habia filtro que lo alcanzara.
+- En el checkout, "Apellidos" en plural —espanol de Espana— pasa a ser
+  "Apellido".
+- El sello del checkout decia "Reprogramacion y cancelacion sin cargo" sin
+  plazo; ahora dice "Cancelacion sin cargo hasta 72 hs antes", que es la
+  politica real.
+
+og:locale
+---------
+Yoast publicaba og:locale como es_ES. Facebook e Instagram leen eso para
+decidir a quien mostrarle el enlace compartido. Ahora dice es_AR.
 
 
 NOVEDADES v1.15.1

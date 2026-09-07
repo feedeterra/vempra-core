@@ -89,6 +89,11 @@ add_shortcode( 'vempra_booking_form', function ( $atts ) {
 
 	ob_start();
 	echo '<div class="vempra-booking-form">';
+	// Lo que se ve mientras Bookings todavia no dibujo el formulario: el
+	// minimo de personas y el estado del calendario (inc/conversion.php).
+	if ( function_exists( 'vempra_reserva_cabecera' ) ) {
+		echo vempra_reserva_cabecera( $product_id ); // phpcs:ignore WordPress.Security.EscapeOutput
+	}
 	woocommerce_template_single_add_to_cart();
 	echo '</div>';
 	$output = ob_get_clean();

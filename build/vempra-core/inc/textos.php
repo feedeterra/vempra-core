@@ -96,6 +96,11 @@ function vempra_traducciones() {
 		'Availability'                                        => 'Cupos',
 		'Departure Time'                                      => 'Hora de salida',
 		'Return Time'                                         => 'Hora de regreso',
+		// La tira de atributos arriba del titulo y el boton de la galeria.
+		// "All Months" es el renglon del calendario: quiere decir que el tour
+		// sale todo el anio, no que dure todos los meses.
+		'All Months'                                          => 'Todo el año',
+		'View Photos'                                         => 'Ver fotos',
 
 		// Formulario de opiniones al pie de la ficha.
 		'Write A Review'                                      => 'Escribí tu opinión',
@@ -223,6 +228,8 @@ function vempra_textos_a_mano() {
 		"We're sorry, the page you have looked for does not exist in our content!",
 		'Perhaps you would like to go to our homepage or try searching below.',
 		'Read More',
+		'All Months',
+		'View Photos',
 	);
 
 	$salida = array();

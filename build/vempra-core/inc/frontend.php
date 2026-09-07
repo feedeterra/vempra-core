@@ -164,13 +164,52 @@ add_action( 'wp_head', function () {
 	// No se traduce con un filtro global porque "day" es una palabra que
 	// aparece en medio panel; aca se toca solo el recuadro de atributos.
 	function dias() {
+		var DIAS = {
+			Monday: 'lunes', Tuesday: 'martes', Wednesday: 'miércoles',
+			Thursday: 'jueves', Friday: 'viernes', Saturday: 'sábado',
+			Sunday: 'domingo'
+		};
 		var c = document.querySelectorAll('.tour_attribute_content');
 		for (var i = 0; i < c.length; i++) {
-			var t = c[i].textContent.replace(/\s+/g, ' ').trim();
+
+			// El globito de disponibilidad vive DENTRO de este mismo div, asi
+			// que no se puede escribir textContent: se lleva puesto el <a> del
+			// tooltip y con el, los dias de salida. Se toca solo el primer
+			// nodo de texto, que es donde esta la duracion.
+			var n = null, k, x;
+			for (k = 0; k < c[i].childNodes.length; k++) {
+				x = c[i].childNodes[k];
+				if (x.nodeType === 3 && x.nodeValue.replace(/[\s\u00a0]/g, '') !== '') { n = x; break; }
+			}
+			if (!n) { continue; }
+
+			var t = n.nodeValue.replace(/\u00a0/g, ' ').replace(/\s+/g, ' ').trim();
 			var m = /^(\d+)\s*days?$/i.exec(t);
-			if (!m) { continue; }
-			c[i].textContent = D.durac ? D.durac
-				: m[1] + ' ' + (m[1] === '1' ? 'día' : 'días');
+
+			if (m) {
+				n.nodeValue = D.durac ? D.durac
+					: m[1] + ' ' + (m[1] === '1' ? 'día' : 'días');
+			} else if ((m = /^(\d+)\s*hours?$/i.exec(t))) {
+				// Los dos tours de dia entero declaran la duracion en horas y
+				// se leian "12 Hours" en ingles.
+				n.nodeValue = D.durac ? D.durac : m[1] + ' hs';
+			} else if (/^all\s+months$/i.test(t)) {
+				n.nodeValue = 'Todo el año';
+			}
+
+			// "Available on Monday, Tuesday, ..." es el unico texto en ingles
+			// que queda en la ficha y no pasa por ningun filtro: el theme lo
+			// escribe directo en el atributo title.
+			var a = c[i].querySelector('a[title]');
+			if (!a) { continue; }
+			var v = a.getAttribute('title').replace(/\u00a0/g, ' ');
+			if (!/available on/i.test(v)) { continue; }
+			for (var d in DIAS) {
+				if (Object.prototype.hasOwnProperty.call(DIAS, d)) {
+					v = v.split(d).join(DIAS[d]);
+				}
+			}
+			a.setAttribute('title', v.replace(/available on/i, 'Salidas:'));
 		}
 	}
 

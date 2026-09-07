@@ -55,9 +55,19 @@ add_action( 'woocommerce_before_calculate_totals', function ( $cart ) {
 // Checkout: solo nombre, apellido, email y telefono.
 // ---------------------------------------------------------------------------
 add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
+
 	foreach ( array( 'company', 'address_1', 'address_2', 'city', 'postcode', 'state', 'country' ) as $campo ) {
 		unset( $fields['billing'][ 'billing_' . $campo ] );
 	}
+
+	// WooCommerce traduce "Last name" como "Apellidos", en plural, que es
+	// espanol de Espana: aca es un solo apellido. No se puede corregir por
+	// gettext porque los filtros de inc/textos.php solo actuan cuando la
+	// cadena llega SIN traducir, y esta llega ya traducida.
+	if ( isset( $fields['billing']['billing_last_name'] ) ) {
+		$fields['billing']['billing_last_name']['label'] = 'Apellido';
+	}
+
 	return $fields;
 } );
 
@@ -74,7 +84,7 @@ function vempra_sellos_checkout() {
 		'🔒 Pago 100% seguro',
 		'★ 5.0 en Google',
 		'✓ Operador oficial RNAV Nº 18414',
-		'✓ Reprogramación y cancelación sin cargo',
+		'✓ Cancelación sin cargo hasta 72 hs antes',
 		'✓ Pagás en cuotas',
 	) );
 }
@@ -162,3 +172,36 @@ add_filter( 'woocommerce_bookings_min_date_value', function ( $value, $product_i
 add_filter( 'woocommerce_bookings_min_date_unit', function ( $unit, $product_id ) {
 	return 'day';
 }, 20, 2 );
+
+// ---------------------------------------------------------------------------
+// C-05: el resumen de lo que se acepta, arriba del casillero de terminos.
+//
+// WooCommerce ya deja el texto completo de Terminos y condiciones plegado en
+// el checkout, asi que el problema no es que no este: es que son cuatro mil
+// palabras de reglamento y nadie las lee antes de tildar. Lo que falta es la
+// version corta y comercial de lo que realmente importa a la hora de pagar.
+// El texto completo sigue estando, abajo, sin tocar.
+// ---------------------------------------------------------------------------
+function vempra_resumen_terminos() {
+	return (array) apply_filters( 'vempra_resumen_terminos', array(
+		'Cancelás o reprogramás sin cargo hasta 72 hs antes de la salida.',
+		'Si el tour se suspende por clima o por causas operativas, te devolvemos el 100%.',
+		'El voucher te llega por email apenas se acredita el pago.',
+	) );
+}
+
+add_action( 'woocommerce_checkout_before_terms_and_conditions', function () {
+
+	$puntos = vempra_resumen_terminos();
+	if ( ! $puntos ) { return; }
+
+	echo '<div class="vempra-terminos-resumen">';
+	echo '<p class="vempra-terminos-titulo">Lo que estás aceptando</p>';
+	echo '<ul>';
+	foreach ( $puntos as $punto ) {
+		echo '<li>' . esc_html( $punto ) . '</li>';
+	}
+	echo '</ul>';
+	echo '<p class="vempra-terminos-pie">El texto completo está más abajo, en Términos y condiciones.</p>';
+	echo '</div>';
+} );

@@ -177,6 +177,28 @@ add_action( 'wp_enqueue_scripts', function () {
 		wp_enqueue_script( 'vempra-tour-extras', vempra_asset_url( 'tour-extras.js' ), array(), null, true );
 	}
 
+	// Lo de la auditoria de CRO: barra sticky, cabecera del formulario,
+	// minimo de personas, calendario plegado, acordeon, carrusel y las
+	// tarjetas de "Combinalo con". El CSS va tambien al carrito y al
+	// checkout porque ahi viven los sugeridos y el resumen de terminos.
+	$es_carro = function_exists( 'is_cart' ) && ( is_cart() || is_checkout() );
+	$es_tour  = is_singular( VEMPRA_TOUR_CPT );
+
+	if ( ( $es_tour || $es_carro ) && file_exists( VEMPRA_CORE_DIR . 'assets/conversion.css' ) ) {
+		wp_enqueue_style( 'vempra-conversion', vempra_asset_url( 'conversion.css' ), array( 'vempra-core' ), null );
+	}
+
+	if ( $es_tour && file_exists( VEMPRA_CORE_DIR . 'assets/conversion.js' ) ) {
+		wp_enqueue_script( 'vempra-conversion', vempra_asset_url( 'conversion.js' ), array(), null, true );
+		wp_add_inline_script(
+			'vempra-conversion',
+			'window.VEMPRA_CONV = ' . wp_json_encode( array(
+				'calendario' => (bool) apply_filters( 'vempra_calendario_colapsado', true ),
+			) ) . ';',
+			'before'
+		);
+	}
+
 	if ( ! vempra_ficha_optimizada() ) { return; }
 
 	$js = VEMPRA_CORE_DIR . 'assets/vempra.js';

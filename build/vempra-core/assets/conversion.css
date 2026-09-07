@@ -1,0 +1,433 @@
+/* ==========================================================================
+   CONVERSIÓN
+   Lo que se agregó después de la auditoría de CRO: la barra de reserva fija
+   en celular, el estado del formulario mientras Bookings arranca, el mínimo
+   de personas, los tours sugeridos, el acordeón del respaldo, el carrusel de
+   fotos, el calendario plegado y el resumen de términos del checkout.
+
+   Nada de esto pisa estilos que ya existían: son clases nuevas, y lo único
+   que se toca de lo anterior es la posición del botón de WhatsApp, para que
+   la barra fija no se le monte encima.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   M-01 · Barra de reserva fija (solo celular)
+   -------------------------------------------------------------------------- */
+
+.vempra-sticky {
+	display: none;
+}
+
+@media (max-width: 768px) {
+
+	.vempra-sticky {
+		position: fixed !important;
+		left: 0 !important;
+		right: 0 !important;
+		bottom: 0 !important;
+		z-index: 9990 !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: space-between !important;
+		gap: 12px !important;
+		padding: 10px 14px calc(10px + env(safe-area-inset-bottom)) 14px !important;
+		background: #FFFFFF !important;
+		border-top: 1px solid #E5DDD0 !important;
+		box-shadow: 0 -6px 22px rgba(0, 0, 0, 0.13) !important;
+		transform: translateY(0);
+		transition: transform 0.25s ease;
+	}
+
+	/* Mientras el formulario de reserva está a la vista, la barra estorba:
+	   se va para abajo en lugar de desaparecer, así no salta el layout. */
+	.vempra-sticky.vempra-sticky-oculta {
+		transform: translateY(120%);
+		pointer-events: none;
+	}
+
+	.vempra-sticky-datos {
+		display: flex !important;
+		flex-direction: column !important;
+		line-height: 1.15 !important;
+		min-width: 0 !important;
+	}
+
+	.vempra-sticky-monto {
+		font-family: "Playfair Display", Georgia, serif !important;
+		font-size: 21px !important;
+		font-weight: 700 !important;
+		color: #5B0B2B !important;
+	}
+
+	.vempra-sticky-unidad {
+		font-size: 11.5px !important;
+		letter-spacing: 0.4px !important;
+		text-transform: uppercase !important;
+		color: #7A7570 !important;
+	}
+
+	.vempra-sticky-cta {
+		flex: 0 0 auto !important;
+		border: 0 !important;
+		border-radius: 4px !important;
+		background: #B85C38 !important;
+		color: #FFFFFF !important;
+		font-family: "Playfair Display", Georgia, serif !important;
+		font-size: 15px !important;
+		font-weight: 700 !important;
+		letter-spacing: 0.6px !important;
+		padding: 13px 26px !important;
+		cursor: pointer !important;
+		min-height: 46px !important;
+	}
+
+	.vempra-sticky-cta:active {
+		background: #5B0B2B !important;
+	}
+
+	/* Que la barra no tape el final de la página ni el botón de WhatsApp. */
+	body.single-tour {
+		padding-bottom: 72px !important;
+	}
+
+	body.single-tour .vempra-wa-floating {
+		bottom: 88px !important;
+		transition: bottom 0.25s ease;
+	}
+
+	body.single-tour.vempra-sin-sticky {
+		padding-bottom: 0 !important;
+	}
+
+	body.single-tour.vempra-sin-sticky .vempra-wa-floating {
+		bottom: 18px !important;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   M-02 y F-05 · Cabecera del formulario de reserva
+   -------------------------------------------------------------------------- */
+
+.vempra-reserva-cabecera {
+	margin: 0 0 14px 0;
+}
+
+.vempra-reserva-minimo {
+	margin: 0 0 10px 0 !important;
+	padding: 10px 12px !important;
+	background: #F5F0E6 !important;
+	border-left: 3px solid #B85C38 !important;
+	border-radius: 0 3px 3px 0 !important;
+	font-size: 13.5px !important;
+	line-height: 1.45 !important;
+	color: #242424 !important;
+}
+
+.vempra-reserva-minimo b {
+	color: #5B0B2B !important;
+}
+
+.vempra-reserva-estado {
+	display: flex !important;
+	align-items: center !important;
+	gap: 9px !important;
+	margin: 0 !important;
+	font-size: 13.5px !important;
+	color: #5A5651 !important;
+}
+
+.vempra-reserva-spin {
+	width: 15px;
+	height: 15px;
+	flex: 0 0 15px;
+	border: 2px solid #DDD5C6;
+	border-top-color: #B85C38;
+	border-radius: 50%;
+	animation: vempra-gira 0.9s linear infinite;
+}
+
+@keyframes vempra-gira {
+	to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.vempra-reserva-spin { animation: none; }
+}
+
+/* Si el calendario nunca apareció, el renglón se vuelve una salida por
+   WhatsApp: la reserva no se pierde porque un script no cargó. */
+.vempra-reserva-estado.vempra-reserva-falla {
+	background: #FBF3EE !important;
+	border: 1px solid #E8CDBE !important;
+	border-radius: 4px !important;
+	padding: 11px 12px !important;
+	color: #242424 !important;
+}
+
+.vempra-reserva-estado a {
+	color: #B85C38 !important;
+	font-weight: 700 !important;
+	text-decoration: underline !important;
+}
+
+/* El aviso vivo del mínimo de personas, debajo de los campos de pasajeros. */
+.vempra-personas-aviso {
+	display: none;
+	margin: 8px 0 4px 0 !important;
+	padding: 9px 11px !important;
+	background: #FBF3EE !important;
+	border: 1px solid #E8CDBE !important;
+	border-radius: 4px !important;
+	font-size: 13px !important;
+	line-height: 1.4 !important;
+	color: #8A3B12 !important;
+}
+
+.vempra-personas-aviso.visible {
+	display: block;
+}
+
+/* --------------------------------------------------------------------------
+   M-06 · Calendario plegado en celular
+   -------------------------------------------------------------------------- */
+
+.vempra-cal-btn {
+	display: none;
+}
+
+@media (max-width: 768px) {
+
+	.vempra-cal-btn {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: space-between !important;
+		gap: 10px !important;
+		width: 100% !important;
+		margin: 0 0 10px 0 !important;
+		padding: 13px 14px !important;
+		background: #FFFFFF !important;
+		border: 1px solid #B85C38 !important;
+		border-radius: 4px !important;
+		color: #5B0B2B !important;
+		font-family: inherit !important;
+		font-size: 14.5px !important;
+		font-weight: 700 !important;
+		text-align: left !important;
+		cursor: pointer !important;
+		min-height: 46px !important;
+	}
+
+	.vempra-cal-btn .vempra-cal-flecha {
+		font-size: 12px;
+		color: #B85C38;
+	}
+
+	.vempra-cal-plegado .picker {
+		max-height: 0 !important;
+		overflow: hidden !important;
+		opacity: 0 !important;
+		transition: max-height 0.25s ease, opacity 0.2s ease;
+	}
+
+	.vempra-cal-abierto .picker {
+		max-height: 780px !important;
+		opacity: 1 !important;
+		transition: max-height 0.3s ease, opacity 0.25s ease;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   U-03 y U-02 · "Combinalo con"
+   -------------------------------------------------------------------------- */
+
+.vempra-combina {
+	margin: 44px 0 8px 0;
+	padding-top: 30px;
+	border-top: 1px solid #E5DDD0;
+	clear: both;
+}
+
+.vempra-combina-titulo {
+	font-family: "Playfair Display", Georgia, serif !important;
+	font-size: 27px !important;
+	font-weight: 700 !important;
+	color: #242424 !important;
+	margin: 0 0 6px 0 !important;
+	border-left: none !important;
+	padding-left: 0 !important;
+}
+
+.vempra-combina-bajada {
+	margin: 0 0 22px 0 !important;
+	font-size: 15px !important;
+	line-height: 1.5 !important;
+	color: #5A5651 !important;
+}
+
+/* Tres columnas dentro de la columna de contenido, que es más angosta que la
+   página del catálogo: por eso el grid propio y no el del catálogo a secas. */
+.vempra-combina .vempra-combina-grid {
+	grid-template-columns: repeat(3, 1fr) !important;
+	gap: 18px !important;
+	max-width: none !important;
+}
+
+.vempra-combina .vempra-shop-card-image {
+	height: 150px !important;
+}
+
+.vempra-combina .vempra-shop-card-body {
+	padding: 16px !important;
+}
+
+.vempra-combina .vempra-shop-card-title {
+	font-size: 18px !important;
+}
+
+.vempra-combina .vempra-shop-card-desc {
+	font-size: 13px !important;
+}
+
+@media (max-width: 900px) {
+	.vempra-combina .vempra-combina-grid {
+		grid-template-columns: 1fr !important;
+	}
+	.vempra-combina .vempra-shop-card-image {
+		height: 190px !important;
+	}
+	.vempra-combina-titulo {
+		font-size: 23px !important;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   M-03 · Respaldo en acordeón y galería en carrusel (solo celular)
+   -------------------------------------------------------------------------- */
+
+.vempra-acordeon-cuerpo {
+	max-height: none;
+}
+
+@media (max-width: 768px) {
+
+	.single-tour .vempra-respaldo.vempra-acordeon > h2 {
+		position: relative !important;
+		padding-right: 36px !important;
+		cursor: pointer !important;
+		margin-bottom: 0 !important;
+	}
+
+	.single-tour .vempra-respaldo.vempra-acordeon > h2::after {
+		content: "+";
+		position: absolute;
+		right: 4px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-family: "Inter Tight", system-ui, sans-serif;
+		font-size: 26px;
+		font-weight: 400;
+		line-height: 1;
+		color: #B85C38;
+	}
+
+	.single-tour .vempra-respaldo.vempra-acordeon.vempra-abierto > h2::after {
+		content: "\2013";
+	}
+
+	.single-tour .vempra-respaldo.vempra-acordeon .vempra-acordeon-cuerpo {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	}
+
+	.single-tour .vempra-respaldo.vempra-acordeon.vempra-abierto .vempra-acordeon-cuerpo {
+		max-height: 2600px;
+	}
+
+	/* Galería: de grilla a carrusel con arrastre y ajuste al centro. */
+	.single-tour .vempra-galeria-carrusel .vempra-galeria-grid {
+		display: flex !important;
+		grid-template-columns: none !important;
+		gap: 10px !important;
+		overflow-x: auto !important;
+		scroll-snap-type: x mandatory !important;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		padding-bottom: 4px !important;
+	}
+
+	.single-tour .vempra-galeria-carrusel .vempra-galeria-grid::-webkit-scrollbar {
+		display: none;
+	}
+
+	.single-tour .vempra-galeria-carrusel .vempra-foto {
+		flex: 0 0 84% !important;
+		grid-column: auto !important;
+		grid-row: auto !important;
+		scroll-snap-align: center !important;
+		margin: 0 !important;
+	}
+
+	.single-tour .vempra-galeria-cuenta {
+		display: block;
+		margin: 10px 0 0 0;
+		font-size: 12.5px;
+		letter-spacing: 0.6px;
+		text-transform: uppercase;
+		color: #7A7570;
+		text-align: center;
+	}
+}
+
+.vempra-galeria-cuenta {
+	display: none;
+}
+
+/* --------------------------------------------------------------------------
+   C-05 · Resumen de términos en el checkout
+   -------------------------------------------------------------------------- */
+
+.vempra-terminos-resumen {
+	margin: 0 0 14px 0;
+	padding: 13px 15px;
+	background: #F5F0E6;
+	border-radius: 4px;
+}
+
+.vempra-terminos-titulo {
+	margin: 0 0 8px 0 !important;
+	font-family: "Playfair Display", Georgia, serif !important;
+	font-size: 15px !important;
+	font-weight: 700 !important;
+	color: #5B0B2B !important;
+}
+
+.vempra-terminos-resumen ul {
+	margin: 0 0 8px 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+}
+
+.vempra-terminos-resumen li {
+	position: relative;
+	margin: 0 0 5px 0 !important;
+	padding-left: 20px !important;
+	font-size: 13.5px !important;
+	line-height: 1.45 !important;
+	color: #242424 !important;
+}
+
+.vempra-terminos-resumen li::before {
+	content: "✓";
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #2E6B4E;
+	font-weight: 700;
+}
+
+.vempra-terminos-pie {
+	margin: 0 !important;
+	font-size: 12px !important;
+	color: #7A7570 !important;
+}
