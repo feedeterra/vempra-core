@@ -3928,7 +3928,8 @@ body.woocommerce-checkout .tour_recently_view {
    único acceso: el ::after la agranda sin mover el ícono ni cambiar el alto
    del encabezado. */
 @media (max-width: 999px) {
-  div.xoo-wsc-basket { display: none !important; }
+  div.xoo-wsc-basket,
+  body div.xoo-wsc-basket[style] { display: none !important; }
   .header_cart_wrapper { position: relative; }
   .header_cart_wrapper > a { position: relative; }
   .header_cart_wrapper > a::after {

@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.14.0
+VEMPRA CORE — v1.14.1
 =====================
 
 Que hace
@@ -111,6 +111,22 @@ Novedades de la v1.2.0
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
 
+
+NOVEDADES v1.14.1
+
+MOVIL: el carrito flotante seguia apareciendo en el listado de tours y en el
+carrito, aunque la 1.13.0 decia haberlo sacado de todas las pantallas chicas.
+
+Verificado en produccion: en la portada y en las fichas de tour si estaba
+oculto, pero en el listado y en el carrito no. La causa es que Xoo Side Cart
+le pone al globito un style="display: block" desde su JavaScript y trae su
+propia regla .xoo-wsc-basket[style*="block"] con display:flex !important. Esa
+regla pesa mas que la nuestra, asi que en las paginas donde el JavaScript de
+Xoo actuaba el globito volvia a aparecer y tapaba el contenido.
+
+- La regla nuestra ahora lleva el mismo atributo, con lo que pasa a pesar mas
+  y el globito queda oculto en todas las pantallas chicas, como decia la
+  1.13.0. En escritorio no cambia nada.
 
 NOVEDADES v1.14.0
 

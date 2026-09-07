@@ -2335,9 +2335,17 @@ form.cart .single_add_to_cart_button {
    del boton principal del hero: tapa justo lo unico que la portada
    quiere que el visitante toque. En movil el carrito del encabezado
    alcanza, asi que el flotante se va de todas las pantallas chicas.
-   En escritorio no se toca: ahi no molesta a nadie. */
+   En escritorio no se toca: ahi no molesta a nadie.
+
+   El selector lleva el [style] a proposito. Xoo Side Cart le pone al globito
+   un style="display: block" desde su JavaScript y trae su propia regla
+   .xoo-wsc-basket[style*="block"] { display: flex !important }, que por
+   especificidad le ganaba a un .xoo-wsc-basket pelado: el globito seguia
+   apareciendo en el listado de tours y en el carrito. Con el atributo de mas
+   la nuestra pesa mas y gana en las dos situaciones. */
 @media (max-width: 999px) {
-  .xoo-wsc-basket { display: none !important; }
+  .xoo-wsc-basket,
+  body .xoo-wsc-basket[style] { display: none !important; }
 }
 
 /* --- Campo de personas de Bookings --------------------------------
