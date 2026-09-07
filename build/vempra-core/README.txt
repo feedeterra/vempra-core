@@ -535,9 +535,8 @@ Donde quedo cada cosa:
                      celular, LiteSpeed sin cache ni defer en tours.
 - inc/tienda.php     carrito sin sugeridos, cupon por URL (?cupon=CODIGO),
                      checkout sin direccion, cartel del asesor, sellos,
-                     cupon dentro del resumen, transferencia por defecto,
-                     boton "Ir a pagar", cartel de gracias y el corte de
-                     reservas.
+                     cupon dentro del resumen, boton "Ir a pagar",
+                     cartel de gracias y el corte de reservas.
 - inc/snippets.php   apaga una sola vez los 53 snippets migrados.
 - assets/sitio.css   todo el CSS de la portada, pie, paginas, legales, blog
                      (antes eran 28 snippets que se imprimian en cada
