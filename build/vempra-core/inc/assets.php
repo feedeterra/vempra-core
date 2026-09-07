@@ -187,3 +187,34 @@ add_action( 'wp_enqueue_scripts', function () {
 	}
 
 }, 20 );
+
+/**
+ * Saca el script de emojis de WordPress del frontend.
+ *
+ * wp-emoji-release.min.js son 22 KB que WordPress carga en todas las paginas
+ * para dibujar emojis en navegadores que no los soportan. Ese navegador ya no
+ * existe: Android, iOS, Windows y Mac los dibujan solos desde hace anios. Los
+ * emojis que haya en los textos se siguen viendo igual, los dibuja el sistema.
+ *
+ * En el panel no se toca nada: ahi el editor si lo usa.
+ */
+add_action( 'init', function () {
+
+	if ( is_admin() ) { return; }
+	if ( ! apply_filters( 'vempra_sacar_emojis', true ) ) { return; }
+
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+	// Sin el script, el prefetch a s.w.org tampoco tiene sentido.
+	add_filter( 'wp_resource_hints', function ( $urls, $relacion ) {
+		if ( 'dns-prefetch' !== $relacion ) { return $urls; }
+		return array_values( array_filter( $urls, function ( $url ) {
+			return false === strpos( (string) $url, 's.w.org' );
+		} ) );
+	}, 10, 2 );
+
+} );

@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.14.1
+VEMPRA CORE — v1.15.0
 =====================
 
 Que hace
@@ -111,6 +111,75 @@ Novedades de la v1.2.0
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
 
+
+NOVEDADES v1.15.0
+-----------------
+
+1. LA FICHA DEL TOUR YA NO LE MIENTE A GOOGLE
+
+   El theme grandtour imprimia al final de cada ficha un bloque de datos
+   estructurados (JSON-LD) con seis lineas, y cuatro estaban mal:
+
+     "aggregateRating": { "ratingValue": "0", "reviewCount": "0" }
+     "priceCurrency": "$"
+     "itemCondition": "https://schema.org/UsedCondition"
+     "seller": { "name": "" }
+     "brand":  { "name": "<el nombre del tour, otra vez>" }
+     "sku":    "483"   <- el ID de la pagina, no el SKU del producto
+
+   Una valoracion de cero sobre cero resenas es marcado invalido y Google
+   puede descartar por eso el resultado enriquecido entero: la ficha se queda
+   sin estrellas y sin precio en el buscador. "$" no es una moneda, la moneda
+   es ARS. Y UsedCondition le estaba diciendo a Google que el tour es usado.
+
+   El theme no da ningun filtro para ese bloque —lo tiene escrito a mano en
+   su plantilla— asi que ahora se intercepta la salida de la ficha y se
+   reemplaza por uno armado con los datos reales del producto: SKU de
+   verdad, precio en ARS, NewCondition, vendedor y marca Vempra, y
+   priceValidUntil.
+
+   NO SE INVENTA NINGUNA VALORACION. El sitio no tiene ni una resena cargada
+   en WordPress, asi que el bloque sale sin aggregateRating, que es valido.
+   El "5.0 con +150 resenas" que ve el visitante son resenas de Google y de
+   TripAdvisor, son del negocio y no de cada tour, y marcarlas como propias
+   de cada producto es justo lo que Google sanciona. El dia que haya resenas
+   de verdad en WooCommerce, el bloque las publica solo.
+
+   Si un tour no tiene producto vinculado o no tiene precio, no se toca nada
+   y queda el bloque del theme como estaba.
+
+2. EL PRECIO DE LA FICHA, CON EL PUNTO DE LOS MILES
+
+   El theme escribia "$95,000", con la coma de los miles en ingles. En el
+   resto del sitio siempre fue "$95.000". Ahora coincide. Se corrige solo lo
+   que hay adentro del bloque de precio, no las comas del resto de la pagina.
+
+3. CUOTAS Y TAMANIO DEL GRUPO, DEBAJO DEL PRECIO
+
+   Dos datos que el visitante pregunta siempre y que la ficha no contestaba:
+
+     3 cuotas sin interes de $31.667
+     Hasta 15 personas por salida
+
+   Las cuotas son las mismas que ya anuncian la portada, la tienda y las
+   tarjetas del catalogo, ahora escritas una sola vez: si Mercado Pago
+   cambia la promocion se cambia el numero en un lugar y queda igual en todo
+   el sitio.
+
+   El cupo sale del propio producto reservable (_wc_booking_max_persons). Es
+   el MAXIMO del grupo, no los lugares que quedan libres: ese otro numero
+   depende de la fecha que el visitante todavia no eligio y no esta en la
+   pagina. Si un producto no tiene el cupo cargado, esa linea no aparece.
+
+   El bloque sale en los dos lugares donde el theme imprime el precio: la
+   cabecera sobre la foto y la barra lateral.
+
+4. FUERA EL SCRIPT DE EMOJIS
+
+   wp-emoji-release.min.js son 22 KB que WordPress carga en todas las
+   paginas para dibujar emojis en navegadores que no los soportan. Ese
+   navegador ya no existe. Los emojis que haya en los textos se siguen
+   viendo igual, los dibuja el sistema. En el panel no se toca nada.
 
 NOVEDADES v1.14.1
 

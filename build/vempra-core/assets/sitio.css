@@ -3938,3 +3938,44 @@ body.woocommerce-checkout .tour_recently_view {
     transform: translate(-50%, -50%);
   }
 }
+
+/* ---------------------------------------------------------------------------
+   FICHA DE TOUR — la letra chica debajo del precio.
+
+   Dos datos que el visitante pregunta siempre y que la ficha no contestaba:
+   en cuántas cuotas puede pagar y cuánta gente va en el grupo. Van pegados al
+   precio, en gris y chico, para que informen sin competir con el número ni
+   con el botón de reservar.
+
+   El bloque aparece dos veces en la ficha, porque el tema imprime el precio
+   dos veces: en la cabecera (sobre la foto) y en la barra lateral. En la
+   cabecera el fondo es la foto, así que ahí el texto va en blanco.
+--------------------------------------------------------------------------- */
+.vempra-precio-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #6b6b6b;
+}
+
+.vempra-precio-detalle span:first-child { font-weight: 600; color: #4a4a4a; }
+
+/* En la cabecera el bloque va sobre la foto de portada. */
+.single_tour_header_content .vempra-precio-detalle,
+#page_caption .vempra-precio-detalle {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.single_tour_header_content .vempra-precio-detalle span:first-child,
+#page_caption .vempra-precio-detalle span:first-child {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .vempra-precio-detalle { font-size: 12px; }
+}
