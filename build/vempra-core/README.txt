@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.15.0
+VEMPRA CORE — v1.15.1
 =====================
 
 Que hace
@@ -110,6 +110,19 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.15.1
+=================
+
+ARREGLO — LA LETRA CHICA DEL PRECIO SE METIA EN EL MEDIO
+--------------------------------------------------------
+En la cabecera de la ficha el precio va con float:left y el "POR PERSONA"
+con float:right, los dos adentro del mismo contenedor. El bloque nuevo de
+la 1.15.0 no tenia clear, asi que en vez de bajar se metia en el hueco de
+66 px que queda entre los dos floats y quedaba encimado, tanto en escritorio
+como en celular. Ahora lleva clear:both y ancho completo, y baja abajo de
+los dos como corresponde. Solo cambia el CSS.
 
 
 NOVEDADES v1.15.0

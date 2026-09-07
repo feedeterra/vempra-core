@@ -3955,6 +3955,10 @@ body.woocommerce-checkout .tour_recently_view {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  /* El precio va float:left y "por persona" float:right dentro del mismo
+     contenedor: sin clear el bloque se mete en el hueco del medio. */
+  clear: both;
+  width: 100%;
   margin-top: 6px;
   font-family: inherit;
   font-size: 13px;
