@@ -14,18 +14,23 @@
  *        woocommerce_thankyou         -> cada vez que se abre "pedido recibido"
  *        woocommerce_payment_complete -> cuando el pago se confirma
  *
- *    Con Mercado Pago eso son varias compras por pedido: la vuelta desde MP,
- *    el F5 del cliente, el link al pedido que llega por mail. Y ademas cuenta
- *    como compra los pedidos que quedan pendientes o se cancelan y nunca se
- *    cobraron, porque la pagina de "pedido recibido" se muestra igual.
+ *    Con Mercado Pago eso son varias compras por un solo pedido: el aviso de
+ *    pago que manda MP por atras, la vuelta del cliente al sitio, el F5, el
+ *    link al pedido que llega por mail. Cada una de esas vueltas manda un
+ *    Purchase nuevo, con identificador nuevo, asi que Meta las cuenta todas.
+ *
+ *    (La copia del navegador y la del servidor de una MISMA vuelta si las une
+ *    Meta solo, porque el plugin les pone el mismo event_id. Lo que se repite
+ *    son las vueltas, no las copias.)
  *
  *    Medido entre el 6 de agosto y el 6 de septiembre de 2026: Meta registro
  *    14 compras cuando en WooCommerce hubo 4 pedidos pagos. Las campanas se
  *    optimizan con esas compras infladas y el ROAS del administrador de
- *    anuncios sale al triple del real.
+ *    anuncios sale mas alto que el de verdad.
  *
  *    Aca el Purchase sale UNA sola vez por pedido y solo cuando el pedido
- *    esta pagado (processing o completed).
+ *    esta pagado (processing o completed). Los pedidos pendientes, fallados o
+ *    cancelados no mandan nada.
  *
  * 2) NO SE MANDABAN DATOS DEL CLIENTE
  *
@@ -38,6 +43,21 @@
  *    conversiones. El SDK de Meta los hashea con SHA-256 antes de mandarlos:
  *    nunca viaja un dato en claro. Se apaga con el filtro
  *    vempra_coincidencia_avanzada devolviendo false.
+ *
+ * 3) NO HABIA IDENTIFICADOR PROPIO
+ *
+ *    Los dos arreglos de arriba solo alcanzan a los eventos que tienen un
+ *    pedido o un checkout atras. El que entra, mira dos tours y se va sigue
+ *    siendo IP, navegador y cookie: por eso PageView y ViewContent quedaban
+ *    en 6.1 y AddToCart en 4.4.
+ *
+ *    El external_id arregla eso. Es un numero propio, del sitio, que viaja
+ *    con todos los eventos y le permite a Meta darse cuenta de que las ocho
+ *    visitas de la semana son la misma persona. El plugin lo manda solo por
+ *    el camino "openbridge", que en esta cuenta no esta activado.
+ *
+ *    Aca sale siempre. No dice quien es nadie: es un azar de 32 caracteres
+ *    guardado en una cookie del propio sitio.
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -144,7 +164,11 @@ function vempra_meta_sumar_datos_cliente( $eventos ) {
 	}
 
 	$datos = vempra_meta_datos_del_cliente();
-	if ( empty( $datos ) ) { return $eventos; }
+	$ids   = vempra_meta_identificadores();
+
+	// Los datos del cliente solo existen si hay pedido o checkout; el
+	// identificador propio existe siempre. Alcanza con tener uno de los dos.
+	if ( empty( $datos ) && empty( $ids ) ) { return $eventos; }
 
 	foreach ( $eventos as $evento ) {
 		if ( ! is_object( $evento ) || ! method_exists( $evento, 'getUserData' ) ) { continue; }
@@ -172,6 +196,16 @@ function vempra_meta_sumar_datos_cliente( $eventos ) {
 			if ( ! empty( $puesto ) ) { continue; }
 
 			$persona->{$metodos[1]}( $datos[ $clave ] );
+		}
+
+		// El identificador propio va en todos los eventos, tengan o no datos
+		// del cliente. Es lo unico que levanta la calidad de un PageView.
+		if ( ! empty( $ids )
+			&& method_exists( $persona, 'getExternalIds' )
+			&& method_exists( $persona, 'setExternalIds' )
+			&& empty( $persona->getExternalIds() ) ) {
+
+			$persona->setExternalIds( $ids );
 		}
 	}
 
@@ -223,4 +257,88 @@ function vempra_meta_datos_del_cliente() {
 	}
 
 	return array_filter( array_map( 'strval', $datos ), 'strlen' );
+}
+
+// ---------------------------------------------------------------------------
+// Identificador propio (external_id): el mismo numero en todos los eventos.
+// ---------------------------------------------------------------------------
+
+/**
+ * El nombre de la cookie donde vive el identificador del visitante.
+ */
+function vempra_nombre_cookie_id() {
+	return 'vempra_id';
+}
+
+/**
+ * Los identificadores que se le mandan a Meta con cada evento.
+ *
+ * Van dos como mucho: el azar de la cookie (todos los visitantes) y el numero
+ * de usuario si esta logueado (para que Meta una la visita de la compu con la
+ * del telefono). El de usuario va hasheado porque Meta NO hashea este campo:
+ * lo manda tal cual viene. El de la cookie ya es azar, no dice nada de nadie.
+ */
+function vempra_meta_identificadores() {
+	$ids = array();
+
+	$cookie = isset( $_COOKIE[ vempra_nombre_cookie_id() ] ) ? (string) $_COOKIE[ vempra_nombre_cookie_id() ] : '';
+	$cookie = preg_replace( '/[^a-f0-9]/', '', strtolower( $cookie ) );
+
+	if ( 32 === strlen( $cookie ) ) {
+		$ids[] = $cookie;
+	}
+
+	if ( is_user_logged_in() ) {
+		$ids[] = hash( 'sha256', 'vempra-usuario-' . get_current_user_id() );
+	}
+
+	return apply_filters( 'vempra_identificadores', array_values( array_unique( $ids ) ) );
+}
+
+/**
+ * Siembra la cookie desde el navegador, no desde PHP.
+ *
+ * Va en JavaScript a proposito: el cache de LiteSpeed guarda la respuesta
+ * entera, cabeceras incluidas. Si la cookie se pusiera con setcookie() de PHP
+ * quedaria pegada en la pagina cacheada y todos los visitantes terminarian con
+ * el MISMO identificador, que es justo lo contrario de lo que hace falta. El
+ * navegador la calcula por visitante y el cache no la toca.
+ *
+ * Dura un ano, no cruza dominios (SameSite=Lax) y solo viaja por https.
+ */
+add_action( 'wp_head', 'vempra_sembrar_cookie_id', 1 );
+
+function vempra_sembrar_cookie_id() {
+	if ( ! apply_filters( 'vempra_coincidencia_avanzada', true ) ) { return; }
+
+	$nombre = wp_json_encode( vempra_nombre_cookie_id() );
+	?>
+<script id="vempra-id">
+(function () {
+	var NOMBRE = <?php echo $nombre; // phpcs:ignore ?>;
+
+	try {
+		var puesta = document.cookie.match( new RegExp( '(?:^|; )' + NOMBRE + '=([a-f0-9]{32})' ) );
+		if ( puesta ) { return; }
+
+		var azar = '';
+		if ( window.crypto && window.crypto.getRandomValues ) {
+			var bytes = new Uint8Array( 16 );
+			window.crypto.getRandomValues( bytes );
+			for ( var i = 0; i < bytes.length; i++ ) {
+				azar += ( '0' + bytes[ i ].toString( 16 ) ).slice( -2 );
+			}
+		} else {
+			while ( azar.length < 32 ) {
+				azar += Math.floor( Math.random() * 16 ).toString( 16 );
+			}
+			azar = azar.slice( 0, 32 );
+		}
+
+		var seguro = 'https:' === location.protocol ? '; Secure' : '';
+		document.cookie = NOMBRE + '=' + azar + '; Max-Age=31536000; Path=/; SameSite=Lax' + seguro;
+	} catch ( e ) {}
+})();
+</script>
+	<?php
 }

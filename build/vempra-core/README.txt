@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.13.0
+VEMPRA CORE — v1.14.0
 =====================
 
 Que hace
@@ -112,6 +112,30 @@ Novedades de la v1.2.0
   con el total real de la reserva y con la cantidad de pasajeros.
 
 
+NOVEDADES v1.14.0
+
+MEDICION: la calidad de coincidencia de Meta estaba clavada en 6.1.
+
+La 1.13.0 le devolvio los datos del cliente a los eventos que tienen un
+pedido o un checkout atras. Pero al que entra, mira dos tours y se va no hay
+nada que ponerle: de esos eventos Meta solo recibia la IP, el navegador y su
+propia cookie. Por eso PageView y ViewContent seguian en 6.1 sobre 10, y
+"agregar al carrito" e "iniciar pago" en 4.4.
+
+- Ahora todos los eventos llevan un identificador propio del sitio
+  (external_id). No dice quien es nadie: es un azar de 32 caracteres que se
+  guarda en una cookie del propio dominio y dura un ano. Le alcanza a Meta
+  para darse cuenta de que las ocho visitas de la semana son la misma
+  persona, que es lo que levanta la calidad.
+- El que esta logueado suma ademas su numero de usuario, hasheado, para que
+  Meta una la visita de la computadora con la del telefono.
+- La cookie la calcula el navegador, no PHP. Es a proposito: LiteSpeed
+  guarda la pagina entera en el cache, cabeceras incluidas, y una cookie
+  puesta desde PHP habria quedado pegada ahi y le habria tocado la misma a
+  todos los visitantes.
+- Se apaga junto con el resto de la coincidencia avanzada, con el filtro
+  vempra_coincidencia_avanzada devolviendo false.
+
 NOVEDADES v1.13.0
 
 MEDICION: el pixel de Meta contaba compras que no existieron.
@@ -120,7 +144,8 @@ Entre el 6 de agosto y el 6 de septiembre Meta registro 14 compras. En
 WooCommerce hubo 4 pedidos pagos. El plugin oficial de Meta manda su evento
 de compra en dos ganchos a la vez y sin dejar marca de que ya lo mando, asi
 que sumaba una compra por cada vuelta desde Mercado Pago, cada F5 del
-cliente y cada pedido que quedo pendiente o cancelado sin cobrarse.
+cliente y cada vez que se abria el mail con el link al pedido. (Los pedidos
+cancelados no llegaron a mandar compra: eso se reviso pedido por pedido.)
 
 - El evento de compra sale una sola vez por pedido y solo cuando el pedido
   queda en "procesando" o "completado". Queda anotada la fecha de envio en
