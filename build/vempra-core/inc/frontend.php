@@ -125,12 +125,6 @@ add_action( 'wp_head', function () {
 	// la que agarrarlos; se saltean los campos y el codigo para no tocar lo
 	// que el visitante escribe ni romper ningun script.
 	var CAMBIOS = [
-		// El bloque de confianza del checkout prometia algo que no es cierto:
-		// la politica real es 100% de reintegro hasta 72 hs antes. Decir "sin
-		// cargo" a secas es una promesa que despues hay que desdecir por
-		// telefono, y eso cuesta mas que la venta.
-		['Reprogramación y cancelación sin cargo', 'Cancelación sin cargo hasta 72 hs antes'],
-		['Reprogramacion y cancelacion sin cargo', 'Cancelación sin cargo hasta 72 hs antes'],
 		['Recently Viewed Tours', 'Vistos recientemente'],
 		['Recently Viewed', 'Vistos recientemente'],
 		// El carrito lateral (Xoo Side Cart) guarda sus textos en sus propios

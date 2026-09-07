@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.16.0
+VEMPRA CORE — v1.16.1
 =====================
 
 Que hace
@@ -97,6 +97,7 @@ assets/vempra.css    los estilos, ex post 22
 assets/vempra.js     el JavaScript de la ficha, ex contenido del tour 528
 assets/medicion.js   corrige el valor que se le informa a GTM y a Meta
 inc/conversion.php   barra de reserva, minimo de personas y sugeridos
+inc/cache.php        que LiteSpeed no comparta el carrito entre visitantes
 assets/conversion.css  estilos de todo eso
 assets/conversion.js   barra fija, calendario plegado, acordeon y carrusel
 
@@ -113,6 +114,54 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.16.1
+=================
+
+EL CARRITO SE COMPARTIA ENTRE VISITANTES
+----------------------------------------
+Esto es lo urgente de esta version.
+
+LiteSpeed estaba guardando una copia publica de
+/wp-json/wc/store/v1/cart y sirviendosela a todo el mundo durante siete
+dias. Una peticion sin ninguna cookie devolvia el carrito de otra persona:
+el tour que habia elegido y la fecha de salida.
+
+El carrito de bloques se llena desde ese endpoint, asi que el efecto para
+el visitante era directo: abria el carrito y podia encontrar adentro un
+tour que nunca puso, o ver el contador con un numero que no era el suyo.
+Un cliente que ve eso no compra.
+
+WooCommerce ya mandaba "cache-control: no-store" en esa respuesta y
+LiteSpeed lo ignoraba. Ahora se le dice con su propia API, desde el
+plugin: toda la REST API y los AJAX de WooCommerce quedan marcados como
+"esto es de una sola persona, no lo guardes".
+
+Se hace por codigo y no desde el panel de LiteSpeed a proposito: la lista
+de exclusiones del panel no esta versionada, y una restauracion del
+backup o una importacion de ajustes la borra sin avisar. Asi viaja con el
+plugin.
+
+Al instalar esta version se purga LiteSpeed una vez, para que se vayan las
+copias que ya estaban guardadas. La regla nueva evita que se guarden mas,
+pero no borra las viejas.
+
+Se apaga con add_filter( 'vempra_no_cachear_api', '__return_false' ).
+La lista de rutas se cambia con el filtro vempra_rutas_sin_cache.
+
+PARA COMPROBARLO
+----------------
+curl -sI https://tienda.vempra.tur.ar/wp-json/wc/store/v1/cart
+
+Tiene que aparecer "x-vempra-nocache: api" y NO tiene que aparecer
+"x-litespeed-cache: hit".
+
+LIMPIEZA
+--------
+El script de la cabecera todavia buscaba y reemplazaba "Reprogramacion y
+cancelacion sin cargo". Desde la 1.14 el texto sale bien de origen, asi que
+ese reemplazo no encontraba nada. Se saco.
 
 
 NOVEDADES v1.16.0
@@ -135,7 +184,7 @@ Se apaga con add_filter( 'vempra_barra_sticky', '__return_false' ).
 
 EL MINIMO DE PERSONAS, ANTES DE QUE FALLE
 -----------------------------------------
-Dos tours salen con un minimo de 2 personas, pero eso no se decia en ningun
+Tres tours salen con un minimo de 2 personas, pero eso no se decia en ningun
 lado: el visitante cargaba 1 adulto, apretaba Reservar y recien ahi le
 aparecia el error en ingles. Ahora el minimo se avisa arriba del formulario
 y, mientras carga pasajeros, un renglon le dice cuantos le faltan. Cuenta el

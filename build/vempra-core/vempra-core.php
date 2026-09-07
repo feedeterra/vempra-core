@@ -2,7 +2,7 @@
 /**
  * Plugin Name:  Vempra Core
  * Description:  La tienda de Vempra en codigo: precios, textos, portada, pie, checkout, fichas y todo lo que antes vivia en Code Snippets.
- * Version:      1.16.0
+ * Version:      1.16.1
  * Author:       Vempra
  * Text Domain:  vempra-core
  * Requires PHP: 7.4
@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'VEMPRA_CORE_VERSION', '1.16.0' );
+define( 'VEMPRA_CORE_VERSION', '1.16.1' );
 define( 'VEMPRA_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'VEMPRA_CORE_URL', plugin_dir_url( __FILE__ ) );
 
@@ -38,6 +38,7 @@ require_once VEMPRA_CORE_DIR . 'inc/tours.php';
 require_once VEMPRA_CORE_DIR . 'inc/tienda.php';
 require_once VEMPRA_CORE_DIR . 'inc/catalogo.php';
 require_once VEMPRA_CORE_DIR . 'inc/conversion.php';
+require_once VEMPRA_CORE_DIR . 'inc/cache.php';
 require_once VEMPRA_CORE_DIR . 'inc/schema.php';
 require_once VEMPRA_CORE_DIR . 'inc/medicion.php';
 require_once VEMPRA_CORE_DIR . 'inc/snippets.php';
@@ -58,7 +59,15 @@ add_action( 'admin_notices', function () {
  * se lleno el cache, y no habia forma evidente de forzarlo desde el panel.
  */
 function vempra_core_limpiar_cache() {
+
 	delete_transient( 'vempra_mapa_precios' );
+
+	// Y de paso se purga LiteSpeed entero. Hace falta una sola vez, al subir
+	// la 1.16.1: hasta esa version LiteSpeed guardaba copias publicas del
+	// carrito, y la regla nueva de inc/cache.php evita que se guarden mas
+	// pero no borra las que ya estaban. Si LiteSpeed no esta instalado el
+	// do_action no hace nada.
+	do_action( 'litespeed_purge_all' );
 }
 
 register_activation_hook( __FILE__, 'vempra_core_limpiar_cache' );
