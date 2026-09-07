@@ -31,6 +31,26 @@ add_filter( 'body_class', function ( $classes ) {
 } );
 
 /**
+ * La URL del logo para los datos estructurados.
+ *
+ * Antes estaba clavado el archivo cropped-logo-vempra.png, que ya no existe
+ * en la biblioteca de medios: el publisher.logo del schema venia dando 404.
+ * Ahora se pide el logo que el sitio tiene configurado en el personalizador,
+ * asi que cambiar el logo alcanza para que el schema quede al dia solo.
+ */
+function vempra_logo_sitio() {
+
+	$id = (int) get_theme_mod( 'custom_logo' );
+	if ( $id ) {
+		$url = wp_get_attachment_image_url( $id, 'full' );
+		if ( $url ) { return $url; }
+	}
+
+	// Reserva: el logo de la cabecera, por si el tema no lo declara.
+	return home_url( '/wp-content/uploads/2026/03/Diseno_sin_titulo__10_-removebg-preview.png' );
+}
+
+/**
  * Datos estructurados por entrada del blog. Para sumar otra guia se agrega
  * una entrada al array con el ID del post y sus bloques.
  */
@@ -46,7 +66,7 @@ function vempra_schema_posts() {
 				'publisher'     => array(
 					'@type' => 'Organization',
 					'name'  => 'Vempra Turismo Mendoza',
-					'logo'  => array( '@type' => 'ImageObject', 'url' => home_url( '/wp-content/uploads/2026/03/cropped-logo-vempra.png' ) ),
+					'logo'  => array( '@type' => 'ImageObject', 'url' => vempra_logo_sitio() ),
 				),
 				'datePublished' => '2026-05-28',
 				'dateModified'  => '2026-05-28',
