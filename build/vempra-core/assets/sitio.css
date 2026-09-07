@@ -4,7 +4,7 @@
 .vempra-nieve-banner{background:#F5F0E6;border-top:3px solid #5B0B2B;border-bottom:1px solid rgba(91,11,43,.12);font-family:'Inter Tight',system-ui,sans-serif}
     .vempra-nieve-banner .vnb-inner{max-width:1200px;margin:0 auto;padding:26px 40px 18px;display:flex;align-items:center;gap:40px}
     .vempra-nieve-banner .vnb-text{flex:1 1 auto}
-    .vempra-nieve-banner .vnb-photo{flex:0 0 40%;aspect-ratio:17/10;border-radius:14px;background:#dcd6c9 url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/banner-foto.jpg') center/cover no-repeat}
+    .vempra-nieve-banner .vnb-photo{flex:0 0 40%;aspect-ratio:17/10;border-radius:14px;background:#dcd6c9 url('/wp-content/uploads/2026/06/banner-foto.jpg') center/cover no-repeat}
     .vempra-nieve-banner .vnb-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B85C38;margin-bottom:10px}
     .vempra-nieve-banner .vnb-title{font-family:'Bodoni Moda','Playfair Display',Georgia,serif;color:#5B0B2B;font-size:32px;line-height:1.08;margin:0 0 10px;font-weight:600}
     .vempra-nieve-banner .vnb-sub{color:#7a565e;font-size:15px;line-height:1.5;margin:0 0 18px;max-width:480px}
@@ -462,7 +462,7 @@ footer#footer, #footer_widgets, #footer_bottom,
     body.page-id-592 .ppb_header, body.page-id-592 h1.entry-title, body.page-id-592 article > header { display: none !important; }
     body.page-id-592 .container, body.page-id-592 .page_content_wrapper, body.page-id-592 #content, body.page-id-592 .row { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
     .vempra-blog-wrap { position: relative !important; left: 50% !important; right: 50% !important; margin-left: -50vw !important; margin-right: -50vw !important; width: 100vw !important; max-width: 100vw !important; }
-    .vempra-blog-hero { position: relative !important; width: 100% !important; min-height: 50vh !important; background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.85) 100%), url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+    .vempra-blog-hero { position: relative !important; width: 100% !important; min-height: 50vh !important; background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.85) 100%), url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; display: flex !important; align-items: center !important; justify-content: center !important; }
     .vempra-blog-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
     .vempra-blog-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 28px !important; }
     .vempra-blog-hero-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 56px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.1 !important; letter-spacing: -0.5px !important; border-left: none !important; padding-left: 0 !important; }
@@ -482,7 +482,7 @@ footer#footer, #footer_widgets, #footer_bottom,
     .vempra-blog-card-desc { font-size: 14.5px !important; line-height: 1.5 !important; color: #666 !important; margin: 0 0 14px 0 !important; flex-grow: 1 !important; }
     .vempra-blog-card-meta { font-size: 12.5px !important; color: #888 !important; margin-bottom: 14px !important; padding-bottom: 14px !important; border-bottom: 1px solid #eee !important; }
     .vempra-blog-card-cta { font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; font-weight: 700 !important; color: #B85C38 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; }
-    .vempra-blog-finalcta { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 90px 24px !important; }
+    .vempra-blog-finalcta { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 90px 24px !important; }
     .vempra-blog-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
     .vempra-blog-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 42px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.15 !important; border-left: none !important; padding-left: 0 !important; }
     .vempra-blog-finalcta-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 32px 0 !important; font-weight: 300 !important; }
@@ -551,7 +551,7 @@ body.page-id-9 article > h1, body.page-id-9 .row > h1 {
   position: absolute !important;
   top: 0 !important; right: 0 !important;
   width: 56% !important; height: 100% !important;
-  background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important;
+  background-image: url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   z-index: 1 !important;
@@ -697,9 +697,9 @@ body.page-id-9 article > h1, body.page-id-9 .row > h1 {
 .vempra-home-trust-card:nth-child(2) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='13' rx='2'/%3E%3Cpath d='M2 11h20M6 15h4'/%3E%3C/svg%3E") !important; }
 .vempra-home-trust-card:nth-child(3) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E") !important; }
 .vempra-home-trust-card:nth-child(4) .vempra-home-trust-icon { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B85C38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E") !important; }
-.vempra-blog-bg-agencia { background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; }
-.vempra-blog-bg-altamontana { background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/card-alta-montana.jpg') !important; }
-.vempra-blog-bg-winetour { background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/card-wine-tour.jpg') !important; }
+.vempra-blog-bg-agencia { background-image: url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; }
+.vempra-blog-bg-altamontana { background-image: url('/wp-content/uploads/2026/05/card-alta-montana.jpg') !important; }
+.vempra-blog-bg-winetour { background-image: url('/wp-content/uploads/2026/05/card-wine-tour.jpg') !important; }
 @media (max-width: 1024px) {
   .vempra-v2-hero { grid-template-columns: 1fr !important; min-height: 80vh !important; }
   .vempra-v2-hero-photo { width: 100% !important; opacity: 0.4 !important; }
@@ -2004,7 +2004,7 @@ grid-template-columns: 1fr 1fr !important;  grid-template-rows: auto auto auto !
 .vempra-v2-finalcta-photo {
   position: absolute !important;
   inset: 0 !important;
-  background-image: url('https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important;
+  background-image: url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important;
   background-size: cover !important;
   background-position: center 30% !important;
   z-index: 1 !important;
@@ -2196,30 +2196,30 @@ grid-template-columns: 1fr 1fr !important;  grid-template-rows: auto auto auto !
 
 /* ===== snippet 47: fotos blog home (prioridad 1000) ===== */
 .vempra-v2-blog-card[href*="alta-montana"] .vempra-v2-blog-card-image {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important;
 }
 .vempra-v2-blog-card[href*="wine-tour"] .vempra-v2-blog-card-image {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important;
 }
 .vempra-v2-blog-card[href*="agencia"] .vempra-v2-blog-card-image {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important;
 }
 
 /* ===== snippet 48: fotos blog - pagina blog (prioridad 1000) ===== */
 .vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   height: 280px !important;
 }
 .vempra-blog-card[href*="wine-tour"] .vempra-blog-card-image {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   height: 280px !important;
 }
 .vempra-blog-card[href*="agencia"] .vempra-blog-card-image {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   height: 280px !important;
@@ -2251,26 +2251,26 @@ body.js_nav::after {
 /* ===== HOME — HERO Y FINALCTA ===== */
 .vempra-v2-hero-photo,
 .vempra-v2-finalcta-photo {
-  background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/2f.jpg") !important;
+  background-image: url("/wp-content/uploads/2026/06/2f.jpg") !important;
 }
 
 /* ===== HOME — CATEGORÍAS (6) ===== */
-.vempra-cat-bg-panoramicos { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/panoramicos.jpg") !important; }
-.vempra-cat-bg-wine        { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/2023-Bodega.jpg") !important; }
-.vempra-cat-bg-cabalgatas  { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/cabalgatas.jpg") !important; }
-.vempra-cat-bg-aventura    { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/Rafting-0001.jpg") !important; }
-.vempra-cat-bg-nieve       { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/nieve.jpg") !important; }
-.vempra-cat-bg-relax       { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/5b.jpg") !important; }
+.vempra-cat-bg-panoramicos { background-image: url("/wp-content/uploads/2026/06/panoramicos.jpg") !important; }
+.vempra-cat-bg-wine        { background-image: url("/wp-content/uploads/2026/06/2023-Bodega.jpg") !important; }
+.vempra-cat-bg-cabalgatas  { background-image: url("/wp-content/uploads/2026/06/cabalgatas.jpg") !important; }
+.vempra-cat-bg-aventura    { background-image: url("/wp-content/uploads/2026/06/Rafting-0001.jpg") !important; }
+.vempra-cat-bg-nieve       { background-image: url("/wp-content/uploads/2026/06/nieve.jpg") !important; }
+.vempra-cat-bg-relax       { background-image: url("/wp-content/uploads/2026/06/5b.jpg") !important; }
 
 /* ===== HEADERS DE PÁGINAS ===== */
-.vempra-about-hero { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/portada.jpg") !important; }    /* Nosotros */
-.vempra-howto-hero { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/NORTON-52-1.jpg") !important; } /* Cómo Funciona */
-.vempra-shop-hero  { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MG_0859.jpg") !important; }     /* Tours en Mendoza */
+.vempra-about-hero { background-image: url("/wp-content/uploads/2026/06/portada.jpg") !important; }    /* Nosotros */
+.vempra-howto-hero { background-image: url("/wp-content/uploads/2026/06/NORTON-52-1.jpg") !important; } /* Cómo Funciona */
+.vempra-shop-hero  { background-image: url("/wp-content/uploads/2026/06/MG_0859.jpg") !important; }     /* Tours en Mendoza */
 
 /* ===== BLOG — TARJETAS DEL HOME ===== */
-.vempra-v2-blog-card[href*="alta-montana"] .vempra-v2-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important; }
-.vempra-v2-blog-card[href*="wine-tour"]    .vempra-v2-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important; }
-.vempra-v2-blog-card[href*="agencia"]      .vempra-v2-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important; }
+.vempra-v2-blog-card[href*="alta-montana"] .vempra-v2-blog-card-image { background-image: url("/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important; }
+.vempra-v2-blog-card[href*="wine-tour"]    .vempra-v2-blog-card-image { background-image: url("/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important; }
+.vempra-v2-blog-card[href*="agencia"]      .vempra-v2-blog-card-image { background-image: url("/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important; }
 
 /* ===== BLOG — TARJETAS DEL LISTADO ===== */
 .vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image,
@@ -2280,9 +2280,9 @@ body.js_nav::after {
   background-position: center !important;
   height: 280px !important;
 }
-.vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important; }
-.vempra-blog-card[href*="wine-tour"]    .vempra-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important; }
-.vempra-blog-card[href*="agencia"]      .vempra-blog-card-image { background-image: url("https://tienda.vempra.tur.ar/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important; }
+.vempra-blog-card[href*="alta-montana"] .vempra-blog-card-image { background-image: url("/wp-content/uploads/2026/06/MENDOZA-85-1-1.jpg") !important; }
+.vempra-blog-card[href*="wine-tour"]    .vempra-blog-card-image { background-image: url("/wp-content/uploads/2026/06/TEMPUSALBA-62-1.jpg") !important; }
+.vempra-blog-card[href*="agencia"]      .vempra-blog-card-image { background-image: url("/wp-content/uploads/2026/06/vigil-vinedo-1.jpg") !important; }
 
 /* ===== snippet 51: botones flotantes (prioridad 1000) ===== */
 /* WhatsApp: queda abajo del todo (canal principal de leads) */

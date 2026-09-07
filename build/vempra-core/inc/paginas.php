@@ -42,11 +42,11 @@ function vempra_schema_posts() {
 				'@type'         => 'Article',
 				'headline'      => 'Tour Alta Montaña Mendoza: guía completa 2026 (itinerario, precio, qué llevar)',
 				'description'   => 'Todo sobre el Tour Alta Montaña de Mendoza en 2026: itinerario hora por hora, qué incluye, mejor época, precios, qué llevar y cómo reservar.',
-				'author'        => array( '@type' => 'Organization', 'name' => 'Vempra Turismo Mendoza', 'url' => 'https://tienda.vempra.tur.ar/' ),
+				'author'        => array( '@type' => 'Organization', 'name' => 'Vempra Turismo Mendoza', 'url' => home_url( '/' ) ),
 				'publisher'     => array(
 					'@type' => 'Organization',
 					'name'  => 'Vempra Turismo Mendoza',
-					'logo'  => array( '@type' => 'ImageObject', 'url' => 'https://tienda.vempra.tur.ar/wp-content/uploads/2026/03/cropped-logo-vempra.png' ),
+					'logo'  => array( '@type' => 'ImageObject', 'url' => home_url( '/wp-content/uploads/2026/03/cropped-logo-vempra.png' ) ),
 				),
 				'datePublished' => '2026-05-28',
 				'dateModified'  => '2026-05-28',

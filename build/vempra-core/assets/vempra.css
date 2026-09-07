@@ -163,7 +163,7 @@ body.home #content, body.page-id-9 #content, body.page-id-331 #content, body.pag
 body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .row, body.page-id-176 .row { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
 
 /* HERO HOME */
-.vempra-home-hero { position: relative !important; width: 100% !important; min-height: 88vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; margin: 0 !important; }
+.vempra-home-hero { position: relative !important; width: 100% !important; min-height: 88vh !important; background-image: url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; margin: 0 !important; }
 .vempra-home-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.45) 0%, rgba(91,11,43,0.65) 100%) !important; z-index: 1 !important; }
 .vempra-home-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 40px 24px !important; color: #ffffff !important; }
 .vempra-home-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 14px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 32px !important; font-weight: 400 !important; }
@@ -203,12 +203,12 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 .vempra-home-category-desc { font-size: 13.5px !important; color: rgba(255,255,255,0.92) !important; line-height: 1.45 !important; margin-bottom: 14px !important; font-weight: 300 !important; text-shadow: 0 1px 4px rgba(0,0,0,0.4) !important; }
 .vempra-home-category-from { display: inline-block !important; font-size: 12px !important; color: #ffffff !important; background-color: rgba(184,92,56,0.95) !important; font-weight: 700 !important; font-family: "Playfair Display", Georgia, serif !important; letter-spacing: 0.4px !important; padding: 6px 12px !important; border-radius: 3px !important; text-transform: uppercase !important; }
 
-.vempra-cat-bg-panoramicos { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-panoramicos.jpg') !important; }
-.vempra-cat-bg-wine { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-wine-tours.jpg') !important; }
-.vempra-cat-bg-cabalgatas { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-cabalgatas.jpg') !important; }
-.vempra-cat-bg-aventura { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-aventura.jpg') !important; }
-.vempra-cat-bg-nieve { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-nieve.jpg') !important; }
-.vempra-cat-bg-relax { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cat-relax-termas.jpg') !important; }
+.vempra-cat-bg-panoramicos { background-image: url('/wp-content/uploads/2026/05/cat-panoramicos.jpg') !important; }
+.vempra-cat-bg-wine { background-image: url('/wp-content/uploads/2026/05/cat-wine-tours.jpg') !important; }
+.vempra-cat-bg-cabalgatas { background-image: url('/wp-content/uploads/2026/05/cat-cabalgatas.jpg') !important; }
+.vempra-cat-bg-aventura { background-image: url('/wp-content/uploads/2026/05/cat-aventura.jpg') !important; }
+.vempra-cat-bg-nieve { background-image: url('/wp-content/uploads/2026/05/cat-nieve.jpg') !important; }
+.vempra-cat-bg-relax { background-image: url('/wp-content/uploads/2026/05/cat-relax-termas.jpg') !important; }
 
 .vempra-home-featured-section { background-color: #F5F0E6 !important; }
 .vempra-home-featured-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 28px !important; max-width: 1280px !important; margin: 0 auto !important; font-size: 0 !important; }
@@ -216,23 +216,23 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 .vempra-home-tour-card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.15) !important; text-decoration: none !important; }
 .vempra-home-tour-image { position: relative !important; width: 100% !important; height: 220px !important; background-size: cover !important; background-position: center !important; background-color: #ddd !important; background-repeat: no-repeat !important; }
 
-.vempra-tour-bg-altamontana { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-alta-montana.jpg') !important; }
-.vempra-tour-bg-winetour { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-wine-tour.jpg') !important; }
-.vempra-tour-bg-cabalgata { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-cabalgata.jpg') !important; }
-.vempra-tour-bg-atuel { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-atuel.jpg') !important; }
-.vempra-tour-bg-aventura { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/card-aventura.jpg') !important; }
-.vempra-tour-bg-bodegas2      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/unnamed.webp') !important; }
-.vempra-tour-bg-bodegas       { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/074487bf-fbe9-4b48-acf5-9c1134ee768f.png') !important; }
-.vempra-tour-bg-villavicencio { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-villavicencio.jpg') !important; }
-.vempra-tour-bg-villa4x4 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1502680390469-be75c86b636f.jpg') !important; }
-.vempra-tour-bg-cabalgata2 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1504025468847-0e438279542c.jpg') !important; }
-.vempra-tour-bg-cabalgata3 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1553284965-83fd3e82fa5a.jpg') !important; }
-.vempra-tour-bg-termas { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-termas-cacheuta.jpg') !important; }
-.vempra-tour-bg-combo { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1530866495561-507c9faab2ed.jpg') !important; }
-.vempra-tour-bg-rafting { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/photo-1523987355523-c7b5b0dd90a7.jpg') !important; }
-.vempra-tour-bg-lenas { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-nieve-lenas.jpg') !important; }
-.vempra-tour-bg-puquios { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-nieve-puquios.jpg') !important; }
-.vempra-tour-bg-penitentes { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/tour-nieve-penitentes.jpg') !important; }
+.vempra-tour-bg-altamontana { background-image: url('/wp-content/uploads/2026/05/card-alta-montana.jpg') !important; }
+.vempra-tour-bg-winetour { background-image: url('/wp-content/uploads/2026/05/card-wine-tour.jpg') !important; }
+.vempra-tour-bg-cabalgata { background-image: url('/wp-content/uploads/2026/05/card-cabalgata.jpg') !important; }
+.vempra-tour-bg-atuel { background-image: url('/wp-content/uploads/2026/05/card-atuel.jpg') !important; }
+.vempra-tour-bg-aventura { background-image: url('/wp-content/uploads/2026/05/card-aventura.jpg') !important; }
+.vempra-tour-bg-bodegas2      { background-image: url('/wp-content/uploads/2026/05/unnamed.webp') !important; }
+.vempra-tour-bg-bodegas       { background-image: url('/wp-content/uploads/2026/05/074487bf-fbe9-4b48-acf5-9c1134ee768f.png') !important; }
+.vempra-tour-bg-villavicencio { background-image: url('/wp-content/uploads/2026/05/tour-villavicencio.jpg') !important; }
+.vempra-tour-bg-villa4x4 { background-image: url('/wp-content/uploads/2026/05/photo-1502680390469-be75c86b636f.jpg') !important; }
+.vempra-tour-bg-cabalgata2 { background-image: url('/wp-content/uploads/2026/05/photo-1504025468847-0e438279542c.jpg') !important; }
+.vempra-tour-bg-cabalgata3 { background-image: url('/wp-content/uploads/2026/05/photo-1553284965-83fd3e82fa5a.jpg') !important; }
+.vempra-tour-bg-termas { background-image: url('/wp-content/uploads/2026/05/tour-termas-cacheuta.jpg') !important; }
+.vempra-tour-bg-combo { background-image: url('/wp-content/uploads/2026/05/photo-1530866495561-507c9faab2ed.jpg') !important; }
+.vempra-tour-bg-rafting { background-image: url('/wp-content/uploads/2026/05/photo-1523987355523-c7b5b0dd90a7.jpg') !important; }
+.vempra-tour-bg-lenas { background-image: url('/wp-content/uploads/2026/05/tour-nieve-lenas.jpg') !important; }
+.vempra-tour-bg-puquios { background-image: url('/wp-content/uploads/2026/05/tour-nieve-puquios.jpg') !important; }
+.vempra-tour-bg-penitentes { background-image: url('/wp-content/uploads/2026/05/tour-nieve-penitentes.jpg') !important; }
 
 .vempra-home-tour-badge { position: absolute !important; top: 14px !important; left: 14px !important; background-color: #5B0B2B !important; color: #ffffff !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.8px !important; text-transform: uppercase !important; padding: 6px 14px !important; border-radius: 2px !important; z-index: 2 !important; }
 .vempra-home-tour-body { padding: 24px !important; display: flex !important; flex-direction: column !important; flex-grow: 1 !important; }
@@ -274,7 +274,7 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 .vempra-home-howto-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 24px !important; font-weight: 700 !important; color: #5B0B2B !important; margin: 0 0 14px 0 !important; border-left: none !important; padding-left: 0 !important; }
 .vempra-home-howto-text { font-size: 16px !important; line-height: 1.6 !important; color: #555 !important; margin: 0 !important; }
 
-.vempra-home-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 110px 24px !important; }
+.vempra-home-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 110px 24px !important; }
 .vempra-home-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
 .vempra-home-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 52px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 20px 0 !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; border-left: none !important; padding-left: 0 !important; }
 .vempra-home-finalcta-subtitle { font-size: 20px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 40px 0 !important; font-weight: 300 !important; }
@@ -286,7 +286,7 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 
 
 /* === TIENDA (page-id 331) === */
-.vempra-shop-hero { position: relative !important; width: 100% !important; min-height: 40vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
+.vempra-shop-hero { position: relative !important; width: 100% !important; min-height: 40vh !important; background-image: url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
 .vempra-shop-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.55) 0%, rgba(91,11,43,0.75) 100%) !important; z-index: 1 !important; }
 .vempra-shop-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
 .vempra-shop-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 6px 14px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 22px !important; }
@@ -330,7 +330,7 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 
 
 /* === CÓMO FUNCIONA (page-id 136) === */
-.vempra-howto-hero { position: relative !important; width: 100% !important; min-height: 60vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/como-funciona-hero.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
+.vempra-howto-hero { position: relative !important; width: 100% !important; min-height: 60vh !important; background-image: url('/wp-content/uploads/2026/05/como-funciona-hero.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
 .vempra-howto-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.45) 0%, rgba(91,11,43,0.65) 100%) !important; z-index: 1 !important; }
 .vempra-howto-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
 .vempra-howto-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 28px !important; }
@@ -389,7 +389,7 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 .vempra-howto-wa-link { display: inline-flex !important; align-items: center !important; gap: 8px !important; color: #25D366 !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 16px !important; font-weight: 700 !important; text-decoration: none !important; border-bottom: 2px solid #25D366 !important; padding-bottom: 4px !important; transition: all 0.25s ease !important; }
 .vempra-howto-wa-link:hover { color: #1da851 !important; border-bottom-color: #1da851 !important; text-decoration: none !important; }
 .vempra-howto-wa-link svg { width: 18px !important; height: 18px !important; }
-.vempra-howto-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 100px 24px !important; }
+.vempra-howto-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 100px 24px !important; }
 .vempra-howto-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
 .vempra-howto-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 46px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; border-left: none !important; padding-left: 0 !important; }
 .vempra-howto-finalcta-subtitle { font-size: 19px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 36px 0 !important; font-weight: 300 !important; }
@@ -399,7 +399,7 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 
 
 /* === NOSOTROS (page-id 176) === */
-.vempra-about-hero { position: relative !important; width: 100% !important; min-height: 60vh !important; background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/nosotros-mendoza.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
+.vempra-about-hero { position: relative !important; width: 100% !important; min-height: 60vh !important; background-image: url('/wp-content/uploads/2026/05/nosotros-mendoza.jpg') !important; background-size: cover !important; background-position: center !important; background-color: #5B0B2B !important; display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; }
 .vempra-about-hero-overlay { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: linear-gradient(180deg, rgba(36,36,36,0.45) 0%, rgba(91,11,43,0.65) 100%) !important; z-index: 1 !important; }
 .vempra-about-hero-content { position: relative !important; z-index: 2 !important; text-align: center !important; max-width: 880px !important; padding: 60px 24px !important; color: #ffffff !important; }
 .vempra-about-hero-eyebrow { display: inline-block !important; font-family: "Playfair Display", Georgia, serif !important; font-size: 13px !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #F5F0E6 !important; padding: 8px 18px !important; border: 1px solid rgba(255,255,255,0.4) !important; border-radius: 2px !important; margin-bottom: 28px !important; }
@@ -454,7 +454,7 @@ body.home .row, body.page-id-9 .row, body.page-id-331 .row, body.page-id-136 .ro
 .vempra-about-legal p:last-child { margin-bottom: 0 !important; }
 .vempra-about-legal p strong { color: #5B0B2B !important; font-weight: 700 !important; }
 .vempra-about-legal-small { font-size: 13px !important; color: #888 !important; margin-top: 16px !important; }
-.vempra-about-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 100px 24px !important; }
+.vempra-about-finalcta-section { background-image: linear-gradient(135deg, rgba(91,11,43,0.92) 0%, rgba(184,92,56,0.88) 100%), url('/wp-content/uploads/2026/05/hero-andes-mendoza-scaled.jpg') !important; background-size: cover !important; background-position: center !important; padding: 100px 24px !important; }
 .vempra-about-finalcta-content { max-width: 760px !important; margin: 0 auto !important; text-align: center !important; color: #ffffff !important; }
 .vempra-about-finalcta-title { font-family: "Playfair Display", Georgia, serif !important; font-size: 44px !important; font-weight: 700 !important; color: #ffffff !important; margin: 0 0 18px 0 !important; line-height: 1.15 !important; letter-spacing: -0.3px !important; border-left: none !important; padding-left: 0 !important; }
 .vempra-about-finalcta-subtitle { font-size: 18px !important; line-height: 1.5 !important; color: #F5F0E6 !important; margin: 0 0 36px 0 !important; font-weight: 300 !important; }
@@ -547,23 +547,23 @@ body.single-tour #page_caption.hasbg {
 /* ============================================================ */
 /* === OVERRIDE FOTOS DE TARJETAS — featured image real de cada tour Grand Tour CPT === */
 /* ============================================================ */
-.vempra-tour-bg-altamontana   { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/cerro-aconcagua-1.jpg.webp') !important; }
-.vempra-tour-bg-winetour      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/Bandini-0005-1.webp') !important; }
-.vempra-tour-bg-bodegas  { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/074487bf-fbe9-4b48-acf5-9c1134ee768f.png') !important; }
-.vempra-tour-bg-bodegas2 { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/unnamed.webp') !important; }
-.vempra-tour-bg-cabalgata     { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/c6173c73-b0b4-4b3f-a70d-470cf725f785.png') !important; }
-.vempra-tour-bg-cabalgata2    { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/caption-2.jpg') !important; }
-.vempra-tour-bg-cabalgata3    { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/e3.jpg') !important; }
-.vempra-tour-bg-atuel         { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/El-Submarino-Valle-Grande-2-scaled-1.jpg') !important; }
-.vempra-tour-bg-villavicencio { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/03.jpg') !important; }
-.vempra-tour-bg-villa4x4      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/villavicencio-2026-005.webp') !important; }
-.vempra-tour-bg-aventura      { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/rapel-en-mendoza.png') !important; }
-.vempra-tour-bg-combo         { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/rafting-en-mendoza.png') !important; }
-.vempra-tour-bg-rafting       { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/b204a53b-c31e-4ade-b710-32184f56e71c.png') !important; }
-.vempra-tour-bg-termas        { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/c372bfdb-9f8d-45b0-acde-545b3e968a0c.jpg') !important; }
-.vempra-tour-bg-lenas         { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/6-min.png') !important; }
-.vempra-tour-bg-puquios       { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/3.png') !important; }
-.vempra-tour-bg-penitentes    { background-image: url('https://papayawhip-hyena-382000.hostingersite.com/wp-content/uploads/2026/05/penitentes-parkjpg.webp') !important; }
+.vempra-tour-bg-altamontana   { background-image: url('/wp-content/uploads/2026/05/cerro-aconcagua-1.jpg.webp') !important; }
+.vempra-tour-bg-winetour      { background-image: url('/wp-content/uploads/2026/05/Bandini-0005-1.webp') !important; }
+.vempra-tour-bg-bodegas  { background-image: url('/wp-content/uploads/2026/05/074487bf-fbe9-4b48-acf5-9c1134ee768f.png') !important; }
+.vempra-tour-bg-bodegas2 { background-image: url('/wp-content/uploads/2026/05/unnamed.webp') !important; }
+.vempra-tour-bg-cabalgata     { background-image: url('/wp-content/uploads/2026/05/c6173c73-b0b4-4b3f-a70d-470cf725f785.png') !important; }
+.vempra-tour-bg-cabalgata2    { background-image: url('/wp-content/uploads/2026/05/caption-2.jpg') !important; }
+.vempra-tour-bg-cabalgata3    { background-image: url('/wp-content/uploads/2026/05/e3.jpg') !important; }
+.vempra-tour-bg-atuel         { background-image: url('/wp-content/uploads/2026/05/El-Submarino-Valle-Grande-2-scaled-1.jpg') !important; }
+.vempra-tour-bg-villavicencio { background-image: url('/wp-content/uploads/2026/05/03.jpg') !important; }
+.vempra-tour-bg-villa4x4      { background-image: url('/wp-content/uploads/2026/05/villavicencio-2026-005.webp') !important; }
+.vempra-tour-bg-aventura      { background-image: url('/wp-content/uploads/2026/05/rapel-en-mendoza.png') !important; }
+.vempra-tour-bg-combo         { background-image: url('/wp-content/uploads/2026/05/rafting-en-mendoza.png') !important; }
+.vempra-tour-bg-rafting       { background-image: url('/wp-content/uploads/2026/05/b204a53b-c31e-4ade-b710-32184f56e71c.png') !important; }
+.vempra-tour-bg-termas        { background-image: url('/wp-content/uploads/2026/05/c372bfdb-9f8d-45b0-acde-545b3e968a0c.jpg') !important; }
+.vempra-tour-bg-lenas         { background-image: url('/wp-content/uploads/2026/05/6-min.png') !important; }
+.vempra-tour-bg-puquios       { background-image: url('/wp-content/uploads/2026/05/3.png') !important; }
+.vempra-tour-bg-penitentes    { background-image: url('/wp-content/uploads/2026/05/penitentes-parkjpg.webp') !important; }
 
 
 /* === MOBILE === */
