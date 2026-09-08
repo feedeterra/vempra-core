@@ -9,7 +9,6 @@
  *   - Checkout sin campos de direccion                          (snippet 57)
  *   - Cartel "que pasa despues de reservar" + sellos            (snippet 58)
  *   - Campo de cupon siempre visible dentro del resumen         (snippet 60)
- *   - Transferencia como metodo de pago por defecto             (snippet 62)
  *   - Boton "Ir a pagar y reservar" despues de las notas        (snippet 64)
  *   - Cartel de "gracias" en la pagina de pedido recibido       (snippet 65)
  *   - Corte de reservas a las 18:00 del dia anterior            (snippet 66)
@@ -69,10 +68,6 @@ add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
 	}
 
 	return $fields;
-} );
-
-add_filter( 'woocommerce_default_checkout_payment_method', function () {
-	return 'bacs';
 } );
 
 /**

@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.16.1
+VEMPRA CORE — v1.16.2
 =====================
 
 Que hace
@@ -114,6 +114,45 @@ Novedades de la v1.2.0
   precio por el campo "quantity" del formulario, y el formulario de reservas
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
+
+
+NOVEDADES v1.16.2
+=================
+
+LA PORTADA PEDIA SU FOTO PRINCIPAL AL SITIO DE PRUEBAS
+------------------------------------------------------
+El CSS traia clavado el dominio de staging en 47 lugares. El caso grave era
+la foto grande de la portada (hero-andes-mendoza, 912 KB): la tienda de
+produccion la descargaba del sitio de pruebas. Eso significaba dos cosas
+malas al mismo tiempo — la foto mas pesada de la portada viajaba desde otro
+servidor mas lento (es el elemento que Google mide como LCP, o sea la
+velocidad que ve el visitante), y si algun dia se apagaba el sitio de
+pruebas la portada de produccion se quedaba sin foto.
+
+Se saco el dominio de todas las imagenes del plugin:
+
+- assets/vempra.css   47 direcciones que apuntaban a staging
+- assets/sitio.css    30 direcciones que apuntaban a produccion
+- inc/sitio.php        5 sellos del pie (Mendoza, FAEVYT, AMAVYT, RNAV y
+                       Defensa al Consumidor)
+- inc/paginas.php      2 direcciones de los datos estructurados
+
+En el CSS quedan rutas que arrancan en la raiz del sitio, sin dominio: la
+misma hoja de estilos sirve en produccion, en el sitio de pruebas y en
+cualquier dominio futuro, sin tener que tocar nada. En el pie se usa
+home_url(), que es la funcion con la que WordPress arma sus propias
+direcciones.
+
+EL LOGO DE LOS DATOS ESTRUCTURADOS ESTABA ROTO
+----------------------------------------------
+Los datos estructurados de la guia de Alta Montana declaraban un logo
+(cropped-logo-vempra.png) que ya no existe en la biblioteca de medios:
+daba error 404. Google lo usa para mostrar la marca en los resultados de
+busqueda, asi que venia fallando en silencio.
+
+Ahora el logo no esta escrito a mano: se pide el que el sitio tenga
+configurado en Apariencia > Personalizar. Si algun dia se cambia el logo,
+los datos estructurados se actualizan solos.
 
 
 NOVEDADES v1.16.1
@@ -535,9 +574,8 @@ Donde quedo cada cosa:
                      celular, LiteSpeed sin cache ni defer en tours.
 - inc/tienda.php     carrito sin sugeridos, cupon por URL (?cupon=CODIGO),
                      checkout sin direccion, cartel del asesor, sellos,
-                     cupon dentro del resumen, transferencia por defecto,
-                     boton "Ir a pagar", cartel de gracias y el corte de
-                     reservas.
+                     cupon dentro del resumen, boton "Ir a pagar",
+                     cartel de gracias y el corte de reservas.
 - inc/snippets.php   apaga una sola vez los 53 snippets migrados.
 - assets/sitio.css   todo el CSS de la portada, pie, paginas, legales, blog
                      (antes eran 28 snippets que se imprimian en cada

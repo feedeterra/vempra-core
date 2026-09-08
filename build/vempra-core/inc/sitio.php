@@ -80,16 +80,16 @@ add_action( 'wp_footer', function () {
           <p class="vempra-footer-asoc-label">Miembros de</p>
           <div class="vempra-footer-asoc-logos">
             <div class="vempra-asoc-badge">
-              <img src="https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/mendoza.png" alt="Mendoza" loading="lazy">
+              <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/05/mendoza.png' ) ); ?>" alt="Mendoza" loading="lazy">
             </div>
             <div class="vempra-asoc-badge">
-              <img src="https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/faevyt.png" alt="FAEVYT - Federación Argentina de Asociaciones de Empresas de Viajes y Turismo" loading="lazy">
+              <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/05/faevyt.png' ) ); ?>" alt="FAEVYT - Federación Argentina de Asociaciones de Empresas de Viajes y Turismo" loading="lazy">
             </div>
             <div class="vempra-asoc-badge">
-              <img src="https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/amavyt.png" alt="AMAVYT - Asociación Mendocina de Agencias de Viajes y Turismo" loading="lazy">
+              <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/05/amavyt.png' ) ); ?>" alt="AMAVYT - Asociación Mendocina de Agencias de Viajes y Turismo" loading="lazy">
             </div>
             <a href="https://agenciasdeviajes.ar/#buscador" target="_blank" rel="noopener" class="vempra-asoc-badge vempra-asoc-badge-link" title="Verificar habilitación en RNAV - Buscar Legajo 18414">
-              <img src="https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/rnav.png" alt="RNAV - Registro Nacional de Agencias de Viajes" loading="lazy">
+              <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/05/rnav.png' ) ); ?>" alt="RNAV - Registro Nacional de Agencias de Viajes" loading="lazy">
             </a>
           </div>
         </div>
@@ -139,7 +139,7 @@ add_action( 'wp_footer', function () {
             <!-- QR LEGALES -->
             <div class="vempra-footer-qrs">
               <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener" class="vempra-footer-qr-item" title="Defensa al Consumidor - Formulario oficial">
-                <img src="https://tienda.vempra.tur.ar/wp-content/uploads/2026/05/defensa-al-consumidor.png" alt="QR Defensa al Consumidor" loading="lazy">
+                <img src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/05/defensa-al-consumidor.png' ) ); ?>" alt="QR Defensa al Consumidor" loading="lazy">
                 <span>Defensa<br>Consumidor</span>
               </a>
               <!-- Placeholder para QR AFIP 960/D -->
