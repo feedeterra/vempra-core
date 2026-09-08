@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.16.2
+VEMPRA CORE — v1.16.3
 =====================
 
 Que hace
@@ -115,6 +115,31 @@ Novedades de la v1.2.0
   no tiene ese campo: la cantidad son los pasajeros. Ahora el evento viaja
   con el total real de la reserva y con la cantidad de pasajeros.
 
+
+NOVEDADES v1.16.3
+-----------------
+
+EL VIEWCONTENT DEL PIXEL DE META NO SALIA EN NINGUNA FICHA
+
+El plugin "Meta pixel for WordPress" manda cinco eventos. Cuatro de ellos
+—PageView, AddToCart, InitiateCheckout y Purchase— salen bien, porque van
+enganchados a acciones del servidor de WooCommerce. El quinto, ViewContent,
+va enganchado a la PLANTILLA de la pagina del producto, y esa plantilla en
+esta tienda no se dibuja nunca: la URL del producto se manda con un 301 a la
+ficha del tour. Resultado: de los dieciocho tours, ninguno mandaba ViewContent.
+
+Sin ViewContent, Meta no sabe que alguien miro un tour. No se puede armar
+publico de remarketing por tour ("los que vieron Alta Montana y no reservaron"),
+la optimizacion por interes no tiene con que trabajar, y el embudo del
+administrador de anuncios arranca directo en AddToCart, sin el escalon de
+arriba.
+
+Ahora el evento sale desde la ficha del tour. Se arma con las funciones del
+propio plugin de Meta, no a mano: usa el mismo formato de content_ids que el
+AddToCart y el Purchase (para que Meta una los tres eventos en un mismo
+producto), el mismo event_id que despareja la copia del navegador de la del
+servidor, y los datos del cliente que ya se agregan desde la version 1.13. Si
+manana Meta renombra sus clases, esto se apaga solo: no rompe la ficha.
 
 NOVEDADES v1.16.2
 =================

@@ -3,7 +3,7 @@
  * MEDICION: los eventos del pixel de Meta.
  *
  * El pixel lo pone el plugin oficial "Meta pixel for WordPress" (carpeta
- * official-facebook-pixel). Anda bien para casi todo, pero tiene dos
+ * official-facebook-pixel). Anda bien para casi todo, pero tiene cuatro
  * agujeros que se arreglan desde aca.
  *
  * 1) EL PURCHASE SE CONTABA VARIAS VECES
@@ -58,6 +58,12 @@
  *
  *    Aca sale siempre. No dice quien es nadie: es un azar de 32 caracteres
  *    guardado en una cookie del propio sitio.
+ *
+ * 4) EL VIEWCONTENT NO SALIA EN NINGUNA FICHA
+ *
+ *    El plugin lo engancha en la plantilla del producto de WooCommerce, que en
+ *    esta tienda no se dibuja nunca porque la URL del producto va con un 301 a
+ *    la ficha del tour. Explicado en detalle al pie de este archivo.
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -341,4 +347,94 @@ function vempra_sembrar_cookie_id() {
 })();
 </script>
 	<?php
+}
+
+// ---------------------------------------------------------------------------
+// 4) EL VIEWCONTENT NUNCA SALIA
+//
+//    El plugin de Meta engancha su ViewContent en woocommerce_after_single_product,
+//    que es un gancho de la PLANTILLA del producto de WooCommerce. En esta tienda
+//    esa plantilla no se dibuja nunca: inc/tours.php manda la URL del producto a
+//    la ficha del tour con un 301, asi que el visitante siempre esta parado en un
+//    post del tipo "tour" y el gancho no corre. Resultado: de los cinco eventos
+//    del plugin, cuatro salian (AddToCart, InitiateCheckout y Purchase van por
+//    ganchos del servidor de WooCommerce, que no dependen de la plantilla) y el
+//    ViewContent no salia en ninguna de las dieciocho fichas.
+//
+//    Sin ViewContent, Meta no tiene la senal de "miro este tour": no se puede
+//    armar publico de remarketing por tour, no se puede optimizar por interes y
+//    el embudo del administrador de anuncios arranca directo en AddToCart.
+//
+//    Aca el evento se arma con las funciones del propio plugin de Meta, no a
+//    mano. Eso trae de arriba el mismo formato de content_ids que ya usan el
+//    AddToCart y el Purchase (SKU_id, para que Meta los una), el event_id que
+//    despareja la copia del navegador de la del servidor, y los datos del
+//    cliente. Si Meta renombra sus clases, esto se apaga solo y no rompe nada.
+// ---------------------------------------------------------------------------
+add_action( 'wp_footer', 'vempra_meta_viewcontent_de_tour', 5 );
+
+function vempra_meta_viewcontent_de_tour() {
+
+	static $ya_salio = false;
+
+	if ( $ya_salio || is_admin() || ! is_singular( VEMPRA_TOUR_CPT ) ) { return; }
+
+	$fabrica = '\FacebookPixelPlugin\Core\ServerEventFactory';
+	$cola    = '\FacebookPixelPlugin\Core\FacebookServerSideEvent';
+	$woo     = '\FacebookPixelPlugin\Integration\FacebookWordpressWooCommerce';
+	$utiles  = '\FacebookPixelPlugin\Core\FacebookPluginUtils';
+
+	// Si el plugin de Meta no esta, o cambio de nombre, no pasa nada.
+	if ( ! class_exists( $fabrica ) || ! class_exists( $cola ) || ! class_exists( $woo ) ) { return; }
+	if ( ! method_exists( $fabrica, 'safe_create_event' ) ) { return; }
+	if ( ! method_exists( $woo, 'createViewContentEvent' ) || ! method_exists( $woo, 'enqueuePixelCode' ) ) { return; }
+	if ( ! method_exists( $cola, 'get_instance' ) ) { return; }
+
+	// Las visitas del equipo no se miden, igual que en el resto del plugin.
+	if ( class_exists( $utiles ) && method_exists( $utiles, 'is_internal_user' ) && $utiles::is_internal_user() ) { return; }
+
+	$producto = function_exists( 'vempra_producto_de_tour' ) ? vempra_producto_de_tour( get_queried_object_id() ) : null;
+	if ( ! $producto ) { return; }
+
+	$evento = $fabrica::safe_create_event(
+		'ViewContent',
+		'vempra_meta_datos_viewcontent',
+		array( $producto ),
+		'woocommerce'
+	);
+
+	if ( ! is_object( $evento ) ) { return; }
+
+	$ya_salio = true;
+
+	// false = va a la cola. El plugin la vacia en wp_footer con prioridad 10,
+	// que es despues de esta; por eso el evento sale en el mismo lote que los
+	// demas y con una sola llamada a la API de conversiones.
+	$cola::get_instance()->track( $evento, false );
+
+	// Y la copia del navegador, con el mismo event_id.
+	$woo::enqueuePixelCode( $evento );
+}
+
+/**
+ * Los datos del ViewContent de una ficha de tour.
+ *
+ * Se pide el armado al plugin de Meta y despues se corrige una sola cosa: el
+ * "value". Meta lo saca de get_price(), que en un producto de Bookings puede
+ * venir en cero cuando el precio esta cargado en los tipos de pasajero en vez
+ * del campo _price. Hoy los dieciocho tours tienen _price cargado, asi que esto
+ * no se usa; queda de red por si manana se carga un tour de la otra forma, para
+ * que Meta no reciba un tour que vale cero.
+ */
+function vempra_meta_datos_viewcontent( $producto ) {
+
+	$woo   = '\FacebookPixelPlugin\Integration\FacebookWordpressWooCommerce';
+	$datos = (array) $woo::createViewContentEvent( $producto );
+
+	if ( empty( $datos['value'] ) && function_exists( 'vempra_precio_de_producto' ) ) {
+		$precio = (float) vempra_precio_de_producto( $producto );
+		if ( $precio > 0 ) { $datos['value'] = $precio; }
+	}
+
+	return $datos;
 }
