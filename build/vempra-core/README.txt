@@ -1,4 +1,4 @@
-VEMPRA CORE — v1.16.3
+VEMPRA CORE — v1.16.4
 =====================
 
 Que hace
@@ -116,23 +116,79 @@ Novedades de la v1.2.0
   con el total real de la reserva y con la cantidad de pasajeros.
 
 
+NOVEDADES v1.16.4
+-----------------
+
+EL SITIO DE PRUEBAS LE MANDABA EVENTOS AL PIXEL DE PRODUCCION
+
+El sitio de pruebas de Hostinger es una copia entera de la tienda: mismo
+plugin de Meta, misma configuracion, mismo numero de pixel. Todo lo que se
+prueba ahi le entra al pixel de produccion mezclado con las visitas reales.
+
+Medido en el propio administrador de eventos, entre el 2 y el 5 de septiembre
+de 2026 el sitio de pruebas mando mas InitiateCheckout que la tienda de
+verdad: 3, 10, 3 y 5 contra 1, 2 y 1. Tambien ViewContent, de a cinco, siete,
+nueve y dieciseis por dia.
+
+Eso ensucia dos cosas que despues cuestan plata. Los publicos de remarketing
+se llenan de gente que nunca entro a la tienda, y la optimizacion de las
+campanas aprende de un embudo que no existe: Meta cree que hay gente llegando
+al checkout y no la hay.
+
+Ahora el pixel corre solo en tienda.vempra.tur.ar. En cualquier copia del
+sitio no se carga ni el pixel del navegador ni la API de conversiones. Se
+apagan las dos patas, no una: cortar solo la API de conversiones no alcanzaba,
+porque las reglas hechas a mano en el administrador de eventos miran el texto
+de un boton ("reservar ahora", "finalizar compra") y no el dominio, asi que se
+disparaban igual desde la copia.
+
+El panel de WordPress queda sin tocar, para poder seguir viendo la
+configuracion del plugin de Meta desde el sitio de pruebas.
+
+Si algun dia cambia el dominio de la tienda, no hace falta tocar el codigo:
+
+    add_filter( 'vempra_dominio_de_venta', function () {
+        return 'otro.dominio.com';
+    } );
+
+
+LA VERIFICACION DE DOMINIO DE META, LISTA PARA ENCHUFAR
+
+Meta pide verificar el dominio para poder decidir que enlaces se usan en los
+anuncios y para que la tienda mande eventos con permiso propio. El token sale
+del administrador comercial, en Configuracion del negocio -> Seguridad de la
+marca -> Dominios.
+
+El plugin ya sabe ponerlo en el <head>. Se guarda en una opcion y no en el
+codigo, asi cambiarlo no obliga a publicar una version nueva:
+
+    update_option( 'vempra_meta_token_dominio', 'el-token-que-da-meta' );
+
+Mientras la opcion este vacia no se imprime nada.
+
+Esta version reemplaza a la 1.16.2 y a la 1.16.3: trae todo lo de las dos.
+
+
 NOVEDADES v1.16.3
 -----------------
 
-EL VIEWCONTENT DEL PIXEL DE META NO SALIA EN NINGUNA FICHA
+EL VIEWCONTENT DEL PIXEL DE META NO DECIA QUE TOUR SE MIRO
 
 El plugin "Meta pixel for WordPress" manda cinco eventos. Cuatro de ellos
 —PageView, AddToCart, InitiateCheckout y Purchase— salen bien, porque van
 enganchados a acciones del servidor de WooCommerce. El quinto, ViewContent,
 va enganchado a la PLANTILLA de la pagina del producto, y esa plantilla en
 esta tienda no se dibuja nunca: la URL del producto se manda con un 301 a la
-ficha del tour. Resultado: de los dieciocho tours, ninguno mandaba ViewContent.
+ficha del tour. Del plugin, entonces, no salia ninguno.
 
-Sin ViewContent, Meta no sabe que alguien miro un tour. No se puede armar
-publico de remarketing por tour ("los que vieron Alta Montana y no reservaron"),
-la optimizacion por interes no tiene con que trabajar, y el embudo del
-administrador de anuncios arranca directo en AddToCart, sin el escalon de
-arriba.
+A Meta igual le llegaban ViewContent, y muchos, pero de otro lado: de una
+regla hecha a mano en el administrador de eventos que se fija si la URL
+contiene /tour/. Esa regla no manda content_ids, ni value, ni currency. Es un
+"alguien miro algo" pelado: Meta no sabe cual de los dieciocho tours fue.
+
+Con eso no se puede armar publico de remarketing por tour ("los que vieron
+Alta Montana y no reservaron"), la optimizacion por interes no tiene con que
+trabajar, y el catalogo de productos no se puede conectar.
 
 Ahora el evento sale desde la ficha del tour. Se arma con las funciones del
 propio plugin de Meta, no a mano: usa el mismo formato de content_ids que el

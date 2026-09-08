@@ -59,11 +59,26 @@
  *    Aca sale siempre. No dice quien es nadie: es un azar de 32 caracteres
  *    guardado en una cookie del propio sitio.
  *
- * 4) EL VIEWCONTENT NO SALIA EN NINGUNA FICHA
+ * 4) EL VIEWCONTENT NO LLEVABA NINGUN DATO DEL TOUR
  *
  *    El plugin lo engancha en la plantilla del producto de WooCommerce, que en
  *    esta tienda no se dibuja nunca porque la URL del producto va con un 301 a
- *    la ficha del tour. Explicado en detalle al pie de este archivo.
+ *    la ficha del tour. Asi que del plugin no salia ninguno.
+ *
+ *    A Meta igual le llegaban ViewContent, pero de otro lado: de reglas hechas
+ *    a mano en el administrador de eventos, que miran la URL o el texto de un
+ *    boton. Esas reglas no mandan content_ids, ni value, ni currency. Un
+ *    ViewContent sin producto adentro no sirve para remarketing por tour ni
+ *    para el catalogo.
+ *
+ * 5) EL PIXEL SE PRENDIA TAMBIEN EN LAS COPIAS DEL SITIO
+ *
+ *    El sitio de pruebas es una copia entera de este, con el mismo plugin y el
+ *    mismo numero de pixel. Todo lo que se probaba ahi le entraba al pixel de
+ *    produccion mezclado con las visitas reales; entre el 2 y el 5 de
+ *    septiembre de 2026 la copia mando mas InitiateCheckout que la tienda.
+ *
+ *    Ahora el pixel corre solo en el dominio de venta.
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -350,20 +365,23 @@ function vempra_sembrar_cookie_id() {
 }
 
 // ---------------------------------------------------------------------------
-// 4) EL VIEWCONTENT NUNCA SALIA
+// 4) EL VIEWCONTENT NO LLEVABA NINGUN DATO DEL TOUR
 //
 //    El plugin de Meta engancha su ViewContent en woocommerce_after_single_product,
 //    que es un gancho de la PLANTILLA del producto de WooCommerce. En esta tienda
 //    esa plantilla no se dibuja nunca: inc/tours.php manda la URL del producto a
 //    la ficha del tour con un 301, asi que el visitante siempre esta parado en un
-//    post del tipo "tour" y el gancho no corre. Resultado: de los cinco eventos
-//    del plugin, cuatro salian (AddToCart, InitiateCheckout y Purchase van por
-//    ganchos del servidor de WooCommerce, que no dependen de la plantilla) y el
-//    ViewContent no salia en ninguna de las dieciocho fichas.
+//    post del tipo "tour" y el gancho no corre. De los cinco eventos del plugin,
+//    cuatro salian (AddToCart, InitiateCheckout y Purchase van por ganchos del
+//    servidor de WooCommerce, que no dependen de la plantilla) y el ViewContent
+//    no salia en ninguna de las dieciocho fichas.
 //
-//    Sin ViewContent, Meta no tiene la senal de "miro este tour": no se puede
-//    armar publico de remarketing por tour, no se puede optimizar por interes y
-//    el embudo del administrador de anuncios arranca directo en AddToCart.
+//    A Meta igual le llegaban ViewContent, y muchos, pero no del plugin: los
+//    dispara una regla hecha a mano en el administrador de eventos que mira si
+//    la URL contiene /tour/. Esa regla no manda ni content_ids, ni value, ni
+//    currency: es un "alguien miro algo" pelado. Con eso no se puede armar
+//    publico de remarketing por tour ni conectar el catalogo, porque Meta no
+//    sabe cual de los dieciocho tours se miro.
 //
 //    Aca el evento se arma con las funciones del propio plugin de Meta, no a
 //    mano. Eso trae de arriba el mismo formato de content_ids que ya usan el
@@ -378,6 +396,7 @@ function vempra_meta_viewcontent_de_tour() {
 	static $ya_salio = false;
 
 	if ( $ya_salio || is_admin() || ! is_singular( VEMPRA_TOUR_CPT ) ) { return; }
+	if ( ! vempra_es_sitio_de_venta() ) { return; }
 
 	$fabrica = '\FacebookPixelPlugin\Core\ServerEventFactory';
 	$cola    = '\FacebookPixelPlugin\Core\FacebookServerSideEvent';
@@ -437,4 +456,151 @@ function vempra_meta_datos_viewcontent( $producto ) {
 	}
 
 	return $datos;
+}
+
+// ---------------------------------------------------------------------------
+// 5) EL CANDADO DE DOMINIO
+//
+//    El sitio de pruebas de Hostinger es una copia entera de este: mismo
+//    plugin de Meta, misma configuracion, mismo numero de pixel. Cada vez que
+//    se prueba algo ahi, esos eventos entran al pixel de produccion mezclados
+//    con las visitas reales. Medido en el propio administrador de eventos:
+//    entre el 2 y el 5 de septiembre de 2026 la copia mando mas
+//    InitiateCheckout que la tienda de verdad.
+//
+//    Eso ensucia dos cosas que despues cuestan plata: los publicos de
+//    remarketing se llenan de gente que nunca entro a la tienda, y la
+//    optimizacion de las campanas aprende de un embudo que no existe.
+//
+//    Aca se apagan las dos patas. La API de conversiones se corta con el
+//    filtro que el propio plugin ofrece. El pixel del navegador se apaga
+//    sacandole al plugin sus ganchos del frente: sin el fbq en la pagina
+//    tampoco corren las reglas hechas a mano en el administrador de eventos,
+//    que son las que se colaban desde la copia porque miran el texto de un
+//    boton y no el dominio.
+//
+//    Para cambiar el dominio de venta no hace falta tocar este archivo:
+//
+//        add_filter( 'vempra_dominio_de_venta', function () {
+//            return 'otro.dominio.com';
+//        } );
+// ---------------------------------------------------------------------------
+add_action( 'init', 'vempra_meta_candado_de_dominio', 5 );
+
+function vempra_meta_candado_de_dominio() {
+
+	if ( vempra_es_sitio_de_venta() ) { return; }
+
+	// La API de conversiones. El filtro es del plugin: devolviendo una lista
+	// vacia no sale nada, ni lo del plugin ni lo nuestro.
+	add_filter( 'before_conversions_api_event_sent', '__return_empty_array', 99 );
+
+	// Y el pixel del navegador. En el panel se lo deja tranquilo para poder
+	// seguir viendo su configuracion desde la copia.
+	if ( ! is_admin() ) {
+		vempra_meta_sacar_ganchos_del_plugin();
+	}
+}
+
+/**
+ * El dominio donde la tienda vende de verdad.
+ */
+function vempra_dominio_de_venta() {
+	return apply_filters( 'vempra_dominio_de_venta', 'tienda.vempra.tur.ar' );
+}
+
+/**
+ * Si este sitio es el de venta o una copia.
+ *
+ * Se mira home_url() y no la cabecera del pedido: home_url es la identidad del
+ * sitio, sirve igual en el cron y en WP-CLI, y una copia siempre la tiene
+ * cambiada porque WordPress no arranca de otra forma.
+ */
+function vempra_es_sitio_de_venta() {
+
+	$casa = wp_parse_url( home_url(), PHP_URL_HOST );
+	$casa = is_string( $casa ) ? strtolower( $casa ) : '';
+	$casa = preg_replace( '/^www\./', '', $casa );
+
+	return ( vempra_dominio_de_venta() === $casa );
+}
+
+/**
+ * Le saca al plugin de Meta todos sus ganchos.
+ *
+ * Se recorre el registro de ganchos de WordPress y se sacan las llamadas que
+ * pertenecen al espacio de nombres del plugin. No se nombra ninguna clase en
+ * particular a proposito: si Meta agrega o renombra integraciones, esto las
+ * agarra igual. Corre en init con prioridad 5, que es despues del init con
+ * prioridad 0 donde el plugin registra todo.
+ */
+function vempra_meta_sacar_ganchos_del_plugin() {
+
+	if ( empty( $GLOBALS['wp_filter'] ) || ! is_array( $GLOBALS['wp_filter'] ) ) { return; }
+
+	$sacar = array();
+
+	foreach ( $GLOBALS['wp_filter'] as $gancho => $registro ) {
+
+		if ( ! isset( $registro->callbacks ) || ! is_array( $registro->callbacks ) ) { continue; }
+
+		foreach ( $registro->callbacks as $prioridad => $entradas ) {
+			foreach ( $entradas as $entrada ) {
+				if ( isset( $entrada['function'] ) && vempra_es_del_plugin_de_meta( $entrada['function'] ) ) {
+					$sacar[] = array( $gancho, $entrada['function'], $prioridad );
+				}
+			}
+		}
+	}
+
+	foreach ( $sacar as $uno ) {
+		remove_filter( $uno[0], $uno[1], $uno[2] );
+	}
+}
+
+/**
+ * Reconoce una llamada que sale del plugin de Meta.
+ */
+function vempra_es_del_plugin_de_meta( $llamada ) {
+
+	$clase = '';
+
+	if ( is_array( $llamada ) && isset( $llamada[0] ) ) {
+		$clase = is_object( $llamada[0] ) ? get_class( $llamada[0] ) : (string) $llamada[0];
+	} elseif ( is_string( $llamada ) ) {
+		$clase = $llamada;
+	}
+
+	if ( '' === $clase ) { return false; }
+
+	return ( 0 === strpos( ltrim( $clase, '\\' ), 'FacebookPixelPlugin\\' ) );
+}
+
+// ---------------------------------------------------------------------------
+// 6) LA VERIFICACION DEL DOMINIO EN META
+//
+//    Meta pide verificar el dominio para poder elegir que enlaces se pueden
+//    usar en los anuncios y para que la tienda mande eventos con permiso
+//    propio y no prestado. El token sale del administrador comercial, en
+//    Configuracion del negocio -> Seguridad de la marca -> Dominios.
+//
+//    Se guarda en una opcion, no en el codigo, para no tener que publicar una
+//    version nueva del plugin cada vez que Meta lo cambie:
+//
+//        update_option( 'vempra_meta_token_dominio', 'el-token-que-da-meta' );
+// ---------------------------------------------------------------------------
+add_action( 'wp_head', 'vempra_meta_verificacion_de_dominio', 1 );
+
+function vempra_meta_verificacion_de_dominio() {
+
+	if ( ! vempra_es_sitio_de_venta() ) { return; }
+
+	$token = trim( (string) get_option( 'vempra_meta_token_dominio', '' ) );
+
+	if ( '' === $token ) { return; }
+
+	printf(
+		'<meta name="facebook-domain-verification" content="%s" />' . "\n",
+		esc_attr( $token )
+	);
 }
